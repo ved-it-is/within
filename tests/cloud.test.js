@@ -136,7 +136,7 @@ test("failed saves remain retryable and preserve local data", async () => {
   await store.flush();
   assert.equal(store.getItem(key), '{"step":1}');
 });
-test("conflicts stop overwrites of a newer cloud record", async () => {
+test("persistent conflicts use bounded retries without overwriting the server", async () => {
   let calls = 0;
   let status;
   const store = createCloudStore({
@@ -155,6 +155,97 @@ test("conflicts stop overwrites of a newer cloud record", async () => {
   store.setItem(key, "{}");
   await store.flush();
   await store.flush();
-  assert.equal(calls, 1);
-  assert.match(status, /another device/);
+  assert.equal(calls, 6);
+  assert.equal(status, "pending");
+});
+
+test("JSONB key ordering does not create a write", async () => {
+  let writes = 0;
+  const store = createCloudStore({
+    userId: "me",
+    local: memory(),
+    onStatus: () => {},
+    remote: {
+      load: async () => [
+        {
+          key,
+          data: { chapters: {}, introduction: { a: 0, b: 1 } },
+          revision: 1,
+        },
+      ],
+      save: async () => {
+        writes++;
+        return 2;
+      },
+    },
+  });
+  await store.load();
+  store.setItem(
+    key,
+    JSON.stringify({ introduction: { b: 1, a: 0 }, chapters: {} }),
+  );
+  await store.flush();
+  assert.equal(writes, 0);
+});
+
+test("pending work survives closing the store and signing into the same account", async () => {
+  const local = memory();
+  let online = false;
+  let saved = null;
+  const remote = {
+    load: async () => [],
+    save: async (key, data) => {
+      if (!online) throw Error("offline");
+      saved = data;
+      return 1;
+    },
+  };
+  const first = createCloudStore({
+    userId: "me",
+    local,
+    remote,
+    onStatus: () => {},
+  });
+  await first.load();
+  first.setItem(key, '{"introduction":{"one":0}}');
+  await first.flush();
+  first.close();
+  online = true;
+  const second = createCloudStore({
+    userId: "me",
+    local,
+    remote,
+    onStatus: () => {},
+  });
+  await second.load();
+  assert.deepEqual(JSON.parse(second.getItem(key)), {
+    introduction: { one: 0 },
+  });
+  assert.equal(await second.flush(), true);
+  assert.deepEqual(saved, { introduction: { one: 0 } });
+});
+
+test("a conflict preserves independent responses and the server's existing answer", async () => {
+  let row = { key, data: { introduction: { one: 0 } }, revision: 1 };
+  let changes = 0;
+  const store = createCloudStore({
+    userId: "me",
+    local: memory(),
+    onStatus: () => {},
+    onReconcile: () => changes++,
+    remote: {
+      load: async () => [row],
+      save: async (key, data, revision) => {
+        if (revision !== row.revision) throw Error("progress_conflict");
+        row = { key, data, revision: revision + 1 };
+        return row.revision;
+      },
+    },
+  });
+  await store.load();
+  row = { key, data: { introduction: { one: 2, remote: 1 } }, revision: 2 };
+  store.setItem(key, JSON.stringify({ introduction: { one: 3, local: 0 } }));
+  assert.equal(await store.flush(), true);
+  assert.deepEqual(row.data.introduction, { one: 2, remote: 1, local: 0 });
+  assert.equal(changes, 1);
 });

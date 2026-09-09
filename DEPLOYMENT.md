@@ -20,8 +20,8 @@ Deploy the `within-react` directory. Framework: Vite. Build: `npm run build`. Ou
 - Guests use the existing browser-only progress keys. Sign-in loads separate account progress; guest records are not automatically imported on shared devices.
 - Signed-in progress is held in `public.user_progress`. Row-level security restricts access to the authenticated owner.
 - No homepage feeling text is sent to the database. The uploaded records are question IDs, selected options and practice progress.
-- Edits are saved through a serialized queue. A revision mismatch stops sync rather than silently overwriting another device. Reload loads the cloud version; a local recovery copy of the displaced cache is retained under the account's `:recovery` key.
-- Offline edits remain cached locally while the page stays open and can retry automatically when the browser comes online. Full offline reload/resume is not implemented.
+- Edits are saved through a serialized queue. A revision mismatch reloads the server record and combines independent edits with bounded retries. The server wins overlapping changes, and practice sessions remain atomic. A local recovery copy is retained under the account's `:recovery` key.
+- Pending edits are cached with their base record, scoped to the account. They retry in the background and recover on the next successful account load in the same browser. Initial account loading still requires a connection. Sign-out never waits for progress writes.
 - Results use editorial answer keys. They are not verified clinical EQ scores, server-certified rankings or anti-cheat measurements.
 - Authenticated users can edit only their own progress. The introductory lock is a learning-flow rule, not a security boundary around paid content.
 
@@ -32,6 +32,6 @@ Deploy the `within-react` directory. Framework: Vite. Build: `npm run build`. Ou
 - Verify two separate users cannot access each other's rows, and that an anonymous request cannot read them.
 - Complete the five introduction questions, sign out, and verify another account starts locked.
 - On another device, sign in as the same user and verify progress restores.
-- Verify a cloud write conflict shows a clear message without replacing the newer record.
+- Verify independent concurrent edits are preserved, overlapping edits keep the server version, and sign-out works even when saving is unavailable.
 
 The question bank and Three.js currently trigger Vite's large-chunk advisory. The production build succeeds; splitting the graphics and content bundles remains a performance improvement.

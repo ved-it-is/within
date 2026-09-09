@@ -77,6 +77,6 @@ All questions are educational drafts with editorial answer keys, not independent
 - `#login` and `#signup` provide email/password sign-in and account creation. Existing email-link users can use `#link` without setting a password.
 - Email confirmation and allowed redirect URLs are controlled by the existing Supabase project. The production site URL must be allowed there.
 - Each signed-in account loads its own progress before rendering the app. All five introductory responses unlock Explore and Arcade; returning accounts resume without repeating the introduction. Guest progress stays separate.
-- Sign-out waits for successful progress sync. An unsuccessful sync leaves the session open and offers a retry.
+- Sign-out is independent of progress saving. Pending progress is cached per account and recovered on the next sign-in on the same browser; background retries require an active session.
 - Navigation stays on the left on mobile and desktop. The menu button expands or minimizes it; Escape closes it. Desktop preference is saved locally.
-- `npm test` includes completion round-trip, account isolation and unsuccessful-save checks. Email delivery and the deployed database still require a real-account smoke test.
+- `npm test` includes completion round-trip, account isolation and unsuccessful-save and conflict recovery checks. Email delivery and the deployed database still require a real-account smoke test.

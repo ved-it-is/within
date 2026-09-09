@@ -8,6 +8,7 @@ export default function AccountProvider({ children }) {
   const [ready, setReady] = useState(!supabase);
   const [loadError, setLoadError] = useState("");
   const [status, setStatus] = useState("");
+  const [progressVersion, setProgressVersion] = useState(0);
   const [authRoute, setAuthRoute] = useState(() =>
     window.location.hash.slice(1),
   );
@@ -52,6 +53,10 @@ export default function AccountProvider({ children }) {
         onStatus: (text) => {
           if (mounted && request === requestRef.current) setStatus(text);
         },
+        onReconcile: () => {
+          if (mounted && request === requestRef.current)
+            setProgressVersion((v) => v + 1);
+        },
         remote: {
           async load() {
             const { data, error } = await supabase
@@ -82,6 +87,7 @@ export default function AccountProvider({ children }) {
         setProgressStore(store);
         setScope(userId);
         setReady(true);
+        void store.flush();
       } catch {
         if (mounted && request === requestRef.current)
           setLoadError(
@@ -126,21 +132,27 @@ export default function AccountProvider({ children }) {
       void storeRef.current?.flush();
     };
     window.addEventListener("online", retry);
-    return () => window.removeEventListener("online", retry);
+    const interval = window.setInterval(retry, 30000);
+    return () => {
+      window.removeEventListener("online", retry);
+      window.clearInterval(interval);
+    };
   }, []);
 
   async function signOut() {
     setSending(true);
     try {
-      if (storeRef.current && !(await storeRef.current.flush())) {
-        setMessage(
-          "Your latest progress hasn’t synced yet. Reconnect and retry before signing out so it’s ready on your next visit.",
-        );
-        return;
-      }
+      // Writes are already queued and cached per account. A network problem
+      // must never prevent a user from ending their session.
+      setMessage("");
+      storeRef.current?.close();
       const { error } = await supabase.auth.signOut({ scope: "local" });
-      if (error) setMessage("Unable to sign out. Please try again.");
+      if (error) {
+        setMessage("Unable to sign out. Please try again.");
+        setReload((n) => n + 1);
+      } else window.location.hash = "login";
     } catch {
+      setReload((n) => n + 1);
       setMessage("Unable to sign out. Please try again.");
     } finally {
       setSending(false);
@@ -158,12 +170,14 @@ export default function AccountProvider({ children }) {
           <div>
             {session ? (
               <>
-                <span role="status">{status}</span>
-                <button onClick={() => storeRef.current?.flush()}>
-                  Retry sync
-                </button>
+                {status === "pending" && (
+                  <span className="save-notice" role="status">
+                    Recent progress hasn’t reached your account yet. We’ll try
+                    again automatically.
+                  </span>
+                )}
                 <button disabled={sending} onClick={signOut}>
-                  Sign out
+                  {sending ? "Signing out…" : "Sign out"}
                 </button>
               </>
             ) : (
@@ -196,7 +210,7 @@ export default function AccountProvider({ children }) {
           )}
         </section>
       ) : (
-        <div key={scope}>
+        <div key={`${scope}:${progressVersion}`}>
           {["login", "signup", "link"].includes(authRoute) && !session ? (
             <AuthPage key={authRoute} mode={authRoute} />
           ) : (
