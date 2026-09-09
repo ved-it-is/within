@@ -1,0 +1,107 @@
+export const PEOPLE_INTERVAL_MS = 10000;
+export const people = [
+  {
+    id: "steve",
+    name: "Steve Jobs",
+    theme: "Vision / intensity",
+    image: "/images/Steve Jobs  MAC.jpeg",
+    alt: "Colourful artwork of Steve Jobs with a Macintosh",
+    headline: "More than his intensity.",
+    text: "In his firsthand account, Macintosh engineer Andy Hertzfeld describes the “reality distortion field”: Jobs could persuade a team to believe in ambitious possibilities, while making realistic expectations harder to hold onto.",
+    reflection:
+      "Conviction can move an idea forward. Listening helps people move with it.",
+    source:
+      "https://www.folklore.org/StoryView.py?project=Macintosh&story=Reality_Distortion_Field.txt",
+    sourceLabel: "Andy Hertzfeld · Folklore",
+    credit: "Artwork supplied for Within",
+    shortName: "Steve",
+    field: "Technology",
+    accent: "#8257ef",
+  },
+  {
+    id: "sinead",
+    name: "Sinéad O’Connor",
+    shortName: "Sinéad",
+    field: "Music & advocacy",
+    theme: "Conviction / being heard",
+    accent: "#da5f78",
+    image: "/images/sinead.jpg",
+    credit: "Bryan Ledgard",
+    licenseLabel: "CC BY 2.0",
+    license: "https://creativecommons.org/licenses/by/2.0",
+    photoSource:
+      "https://commons.wikimedia.org/wiki/File:Sinead%20O'Connor%20(14828633401)%20(cropped).jpg",
+    alt: "Sinéad O’Connor performing on stage",
+    headline: "More than the backlash.",
+    text: "Already an internationally known singer, O’Connor faced fierce backlash for her 1992 protest against clergy abuse. Later revelations led people to reconsider the warning they had dismissed.",
+    reflection:
+      "Before judging the way someone speaks, consider what they are trying to tell you.",
+    source:
+      "https://news.harvard.edu/gazette/story/2023/08/taking-a-second-look-at-sinead-oconnor/",
+    sourceLabel: "Harvard Gazette",
+  },
+  {
+    id: "temple",
+    name: "Temple Grandin",
+    shortName: "Temple",
+    field: "Animal science",
+    theme: "Difference / possibility",
+    accent: "#247e73",
+    image: "/images/temple.jpg",
+    credit: "TaurusEmerald",
+    licenseLabel: "CC BY-SA 4.0",
+    license: "https://creativecommons.org/licenses/by-sa/4.0",
+    photoSource:
+      "https://commons.wikimedia.org/wiki/File:Temple%20Grandin%202015.jpg",
+    alt: "Portrait of Temple Grandin",
+    headline: "More than others expected.",
+    text: "As a child, Grandin faced expectations of institutionalisation. Her mother pursued education and opportunity for her. She went on to pioneer improvements in livestock handling and become an influential autism advocate.",
+    reflection:
+      "Understanding how someone experiences the world can reveal possibilities that assumptions hide.",
+    source: "https://archives.colostate.edu/repositories/2/resources/447",
+    sourceLabel: "Colorado State University",
+  },
+  {
+    id: "nash",
+    name: "John Nash",
+    shortName: "John",
+    field: "Mathematics",
+    theme: "Struggle / contribution",
+    accent: "#5175ca",
+    image: "/images/nash.png",
+    credit: "User:Videesha",
+    licenseLabel: "Public domain",
+    photoSource:
+      "https://commons.wikimedia.org/wiki/File:John%20Nash%20headshot.png",
+    alt: "Portrait of mathematician John Nash",
+    headline: "More than one chapter of his life.",
+    text: "Nash spoke openly about his mental illness and recovery. His foundational work in game theory earned the 1994 economics Nobel. His achievements and his difficulties belong to the same life; neither tells its whole story.",
+    reflection:
+      "A difficult period does not erase someone’s abilities, relationships or contributions.",
+    source: "https://www.nobelprize.org/prizes/economic-sciences/1994/nash/",
+    sourceLabel: "Nobel Prize",
+  },
+  {
+    id: "kafka",
+    name: "Franz Kafka",
+    shortName: "Franz",
+    field: "Literature",
+    theme: "Self-doubt / expression",
+    accent: "#b6753c",
+    image: "/images/kafka.jpg",
+    credit: "Unknown photographer",
+    licenseLabel: "Public domain",
+    photoSource:
+      "https://commons.wikimedia.org/wiki/File:Franz%20Kafka%2C%201923.jpg",
+    alt: "Portrait of Franz Kafka in 1923",
+    headline: "More than his own doubts.",
+    text: "Kafka struggled with doubt about his writing and asked Max Brod to destroy his remaining manuscripts. Brod preserved them. Works including The Trial and The Castle went on to shape literature far beyond Kafka’s lifetime.",
+    reflection: "Your doubts are not the final measure of what you create.",
+    source:
+      "https://visit.bodleian.ox.ac.uk/franz-kafka-and-the-bodleian-libraries",
+    sourceLabel: "Bodleian Libraries",
+    extraSource:
+      "https://boldtendencies.com/wp/wp-content/uploads/2024/08/3-JULY-KAFKA-DEEP-CUTS.pdf",
+    extraSourceLabel: "Kafka · Oxford-supported programme",
+  },
+];
