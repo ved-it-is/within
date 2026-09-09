@@ -26,7 +26,7 @@ export function createCloudStore({ userId, remote, local, onStatus }) {
   };
   async function flush() {
     if (running) return running;
-    if (closed || conflict) return;
+    if (closed || conflict) return false;
     running = (async () => {
       while (pending.size && !closed) {
         const [key, value] = pending.entries().next().value;
@@ -46,13 +46,14 @@ export function createCloudStore({ userId, remote, local, onStatus }) {
               ? "Progress changed on another device. Your local work is preserved; reload to use the cloud version."
               : "Unable to sync. Your work is saved on this device. Retry when connected.",
           );
-          return;
+          return false;
         }
       }
       if (!closed) onStatus("Progress synced");
+      return !closed && pending.size === 0;
     })();
     try {
-      await running;
+      return await running;
     } finally {
       running = null;
     }

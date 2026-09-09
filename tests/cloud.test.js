@@ -1,7 +1,72 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createCloudStore } from "../src/lib/progressStorage.js";
+import { introductionComplete } from "../src/data/progress.js";
+import { questions } from "../src/data/questions.js";
 const key = "within-learning-v2";
+test("five completed situations survive account reload, but do not unlock a new account", async () => {
+  const rows = new Map();
+  const local = memory();
+  const open = async (userId) => {
+    const store = createCloudStore({
+      userId,
+      local,
+      onStatus: () => {},
+      remote: {
+        load: async () => rows.get(userId) || [],
+        save: async (key, data, revision) => {
+          rows.set(userId, [{ key, data, revision: revision + 1 }]);
+          return revision + 1;
+        },
+      },
+    });
+    await store.load();
+    return store;
+  };
+  const first = await open("returning");
+  const introduction = Object.fromEntries(
+    questions.map((q) => [q.id, "unknown"]),
+  );
+  first.setItem(key, JSON.stringify({ introduction }));
+  assert.equal(await first.flush(), true);
+  first.close();
+  const returning = await open("returning");
+  assert.equal(
+    introductionComplete(JSON.parse(returning.getItem(key)).introduction),
+    true,
+  );
+  returning.close();
+  const newcomer = await open("new");
+  assert.equal(
+    introductionComplete(
+      JSON.parse(newcomer.getItem(key) || "{}").introduction,
+    ),
+    false,
+  );
+  newcomer.close();
+});
+
+test("flush reports unsuccessful writes so sign-out can protect unsynced progress", async () => {
+  let online = false;
+  const store = createCloudStore({
+    userId: "me",
+    local: memory(),
+    onStatus: () => {},
+    remote: {
+      load: async () => [],
+      save: async () => {
+        if (!online) throw new Error("offline");
+        return 1;
+      },
+    },
+  });
+  await store.load();
+  store.setItem(key, '{"introduction":{}}');
+  assert.equal(await store.flush(), false);
+  online = true;
+  assert.equal(await store.flush(), true);
+  store.close();
+});
 function memory() {
   const data = new Map();
   return {

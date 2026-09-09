@@ -30,20 +30,24 @@ export default function ArcadePage() {
       <div className="learning-wrap">
         <header className="chapter-browser-heading">
           <span className="kicker">Arcade · Endless practice</span>
-          <h1>One moment at a time.</h1>
+          <h1>Small choices. Fresh perspectives.</h1>
           <p>
-            A random mix of all seven topics. Stay for one question or keep
-            going.
+            Real-life moments, a little curiosity, and room to try again. Where
+            will the next question take you?
           </p>
         </header>
         {question ? (
-          <article className="lesson-card">
+          <article className="lesson-card arcade-play">
             <span className="kicker">
               {
                 arcade.domains.find((d) => d.questionIds.includes(question.id))
                   ?.label
               }
             </span>
+            <div className="arcade-moment">
+              <span aria-hidden="true">✦</span> A moment to explore{" "}
+              <small>{score.seen} / 700 encountered</small>
+            </div>
             <h2 ref={heading} tabIndex={-1}>
               {question.situation}
             </h2>
@@ -63,7 +67,10 @@ export default function ArcadePage() {
                     setProgress((current) => submitArcadeAnswer(current, index))
                   }
                 >
-                  {choice}
+                  <span className="arcade-letter" aria-hidden="true">
+                    {String.fromCharCode(65 + index)}
+                  </span>
+                  <span>{choice}</span>
                 </button>
               ))}
               <button
@@ -75,7 +82,7 @@ export default function ArcadePage() {
                   )
                 }
               >
-                I don’t know
+                I don’t know · Show me a perspective
               </button>
             </div>
             {feedback && (
@@ -99,7 +106,7 @@ export default function ArcadePage() {
                       : ""}
                 </p>
                 <button className="primary" onClick={next}>
-                  Next question →
+                  Another moment →
                 </button>
               </div>
             )}

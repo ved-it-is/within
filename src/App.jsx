@@ -28,6 +28,31 @@ function getRoute() {
 }
 
 function WithinApp() {
+  const [collapsed, setCollapsed] = useState(() => {
+    if (window.matchMedia("(max-width: 820px)").matches) return true;
+    try {
+      return localStorage.getItem("within-sidebar-collapsed") === "true";
+    } catch {
+      return false;
+    }
+  });
+  function toggleSidebar() {
+    setCollapsed((value) => {
+      try {
+        localStorage.setItem("within-sidebar-collapsed", String(!value));
+      } catch {
+        /* Optional preference. */
+      }
+      return !value;
+    });
+  }
+  useEffect(() => {
+    const close = (event) => {
+      if (event.key === "Escape") setCollapsed(true);
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
   const [progress, setProgress] = useState(readProgress);
   const [storageAvailable, setStorageAvailable] = useState(true);
   const [route, setRoute] = useState(getRoute);
@@ -74,8 +99,26 @@ function WithinApp() {
   }
 
   return (
-    <div className="app">
-      <Sidebar unlocked={unlocked} page={route.page} />
+    <div
+      className={`app ${collapsed ? "sidebar-collapsed" : "sidebar-expanded"}`}
+    >
+      <Sidebar
+        unlocked={unlocked}
+        page={route.page}
+        collapsed={collapsed}
+        onToggle={toggleSidebar}
+        onNavigate={() => {
+          if (window.matchMedia("(max-width: 820px)").matches)
+            setCollapsed(true);
+        }}
+      />
+      {!collapsed && (
+        <button
+          className="sidebar-backdrop"
+          aria-label="Minimize sidebar"
+          onClick={() => setCollapsed(true)}
+        />
+      )}
       <main>
         {route.page !== "home" ? (
           unlocked ? (

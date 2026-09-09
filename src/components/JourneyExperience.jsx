@@ -15,7 +15,7 @@ const REPLY_DELAY = 1000;
 const RESULTS_DELAY = 1400;
 
 export default function JourneyExperience({ onUnlock, completed, onRestart }) {
-  const [stage, setStage] = useState("hello");
+  const [stage, setStage] = useState(completed ? "results" : "hello");
   const [feeling, setFeeling] = useState("");
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -67,13 +67,16 @@ export default function JourneyExperience({ onUnlock, completed, onRestart }) {
       <div className="wrap">
         <header>
           <span className="kicker">Your starting point</span>
-          <h2>Begin with a simple conversation.</h2>
+          <h2>
+            {completed
+              ? "Your journey continues."
+              : "Begin with a simple conversation."}
+          </h2>
         </header>
         {completed && (
           <div className="intro-completion">
             <span>
-              Introduction complete · Explore and Arcade are unlocked on this
-              browser.
+              Introduction complete · Explore and Arcade are unlocked.
             </span>
             <button onClick={onRestart}>Restart introduction</button>
           </div>

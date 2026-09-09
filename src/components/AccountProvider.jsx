@@ -1,3 +1,4 @@
+import AuthPage from "./AuthPage";
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
 import { createCloudStore, setProgressStore } from "../lib/progressStorage";
@@ -7,8 +8,14 @@ export default function AccountProvider({ children }) {
   const [ready, setReady] = useState(!supabase);
   const [loadError, setLoadError] = useState("");
   const [status, setStatus] = useState("");
-  const [open, setOpen] = useState(false);
-  const [email, setEmail] = useState("");
+  const [authRoute, setAuthRoute] = useState(() =>
+    window.location.hash.slice(1),
+  );
+  useEffect(() => {
+    const route = () => setAuthRoute(window.location.hash.slice(1));
+    window.addEventListener("hashchange", route);
+    return () => window.removeEventListener("hashchange", route);
+  }, []);
   const [message, setMessage] = useState("");
   const [sending, setSending] = useState(false);
   const [reload, setReload] = useState(0);
@@ -122,31 +129,15 @@ export default function AccountProvider({ children }) {
     return () => window.removeEventListener("online", retry);
   }, []);
 
-  async function signIn(event) {
-    event.preventDefault();
-    if (sending) return;
-    setSending(true);
-    setMessage("");
-    try {
-      const { error } = await supabase.auth.signInWithOtp({
-        email: email.trim(),
-        options: { emailRedirectTo: window.location.origin + "/" },
-      });
-      setMessage(
-        error
-          ? "We couldn’t send the sign-in link. Please try again shortly."
-          : "Check your email for a sign-in link. Open it in this browser to finish signing in.",
-      );
-    } catch {
-      setMessage("Unable to connect. Check your connection and try again.");
-    } finally {
-      setSending(false);
-    }
-  }
   async function signOut() {
     setSending(true);
     try {
-      await storeRef.current?.flush();
+      if (storeRef.current && !(await storeRef.current.flush())) {
+        setMessage(
+          "Your latest progress hasn’t synced yet. Reconnect and retry before signing out so it’s ready on your next visit.",
+        );
+        return;
+      }
       const { error } = await supabase.auth.signOut({ scope: "local" });
       if (error) setMessage("Unable to sign out. Please try again.");
     } catch {
@@ -157,7 +148,7 @@ export default function AccountProvider({ children }) {
   }
   return (
     <>
-      {supabase && (
+      {
         <div className="account-bar">
           <span>
             {session
@@ -176,46 +167,14 @@ export default function AccountProvider({ children }) {
                 </button>
               </>
             ) : (
-              <button
-                aria-expanded={open}
-                onClick={() => {
-                  setOpen((v) => !v);
-                  setMessage("");
-                }}
-              >
-                Sign in to save progress
-              </button>
+              <>
+                <a href="#login">Sign in</a>
+                <a href="#signup">Create account</a>
+              </>
             )}
           </div>
         </div>
-      )}
-      {supabase && open && !session && (
-        <section className="account-panel" aria-label="Sign in">
-          <h2>Pick up where you left off.</h2>
-          <p>
-            Sign in with an email link to save your introduction, chapters and
-            Arcade progress across devices. Guest progress stays separate on
-            this browser.
-          </p>
-          <form onSubmit={signIn}>
-            <label htmlFor="account-email">Email address</label>
-            <input
-              id="account-email"
-              type="email"
-              autoComplete="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <button className="primary" disabled={sending}>
-              {sending ? "Sending…" : "Email me a sign-in link"}
-            </button>
-          </form>
-          <button className="account-guest" onClick={() => setOpen(false)}>
-            Continue as a guest
-          </button>
-        </section>
-      )}
+      }
       {message && (
         <p className="account-message" role="status">
           {message}
@@ -237,7 +196,13 @@ export default function AccountProvider({ children }) {
           )}
         </section>
       ) : (
-        <div key={scope}>{children}</div>
+        <div key={scope}>
+          {["login", "signup", "link"].includes(authRoute) && !session ? (
+            <AuthPage key={authRoute} mode={authRoute} />
+          ) : (
+            children
+          )}
+        </div>
       )}
     </>
   );
