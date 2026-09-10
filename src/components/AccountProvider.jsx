@@ -1,4 +1,4 @@
-import AccountMenu from "./AccountMenu";
+import { AccountContext } from "./AccountContext";
 import AuthPage from "./AuthPage";
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
@@ -160,36 +160,7 @@ export default function AccountProvider({ children }) {
     }
   }
   return (
-    <>
-      {
-        <div className="account-bar">
-          <span>
-            {session ? "Your space to grow." : "Your learning, at your pace."}
-          </span>
-          <div>
-            {session ? (
-              <>
-                {status === "pending" && (
-                  <span className="save-notice" role="status">
-                    Recent progress hasn’t reached your account yet. We’ll try
-                    again automatically.
-                  </span>
-                )}
-                <AccountMenu
-                  email={session.user.email}
-                  sending={sending}
-                  onSignOut={signOut}
-                />
-              </>
-            ) : (
-              <>
-                <a href="#login">Sign in</a>
-                <a href="#signup">Create account</a>
-              </>
-            )}
-          </div>
-        </div>
-      }
+    <AccountContext.Provider value={{ session, sending, signOut, status }}>
       {message && (
         <p className="account-message" role="status">
           {message}
@@ -212,13 +183,17 @@ export default function AccountProvider({ children }) {
         </section>
       ) : (
         <div key={`${scope}:${progressVersion}`}>
-          {["login", "signup", "link"].includes(authRoute) && !session ? (
-            <AuthPage key={authRoute} mode={authRoute} />
+          {(["login", "signup", "link"].includes(authRoute) && !session) ||
+          (authRoute === "password" && session) ? (
+            <AuthPage
+              key={authRoute}
+              mode={authRoute === "link" ? "login" : authRoute}
+            />
           ) : (
             children
           )}
         </div>
       )}
-    </>
+    </AccountContext.Provider>
   );
 }

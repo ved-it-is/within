@@ -73,10 +73,9 @@ The 700-question database is currently bundled with the client. Vite reports a l
 All questions are educational drafts with editorial answer keys, not independent expert validation. Qualified content review and user testing remain necessary before making effectiveness claims. Framework references do not imply endorsement. The Steve Jobs photo is served locally from `public/images/steve-jobs.jpg`, credited to Matthew Yohe (crop by Nagae Iku), CC BY-SA 3.0, with source and license links displayed beside the story.
 
 
-### Account and navigation updates
-- `#login` and `#signup` provide email/password sign-in and account creation. Existing email-link users can use `#link` without setting a password.
-- Email confirmation and allowed redirect URLs are controlled by the existing Supabase project. The production site URL must be allowed there.
-- Each signed-in account loads its own progress before rendering the app. All five introductory responses unlock Explore and Arcade; returning accounts resume without repeating the introduction. Guest progress stays separate.
-- Sign-out is independent of progress saving. Pending progress is cached per account and recovered on the next sign-in on the same browser; background retries require an active session.
-- Navigation stays on the left on mobile and desktop. The menu button expands or minimizes it; Escape closes it. Desktop preference is saved locally.
-- `npm test` includes completion round-trip, account isolation and unsuccessful-save and conflict recovery checks. Email delivery and the deployed database still require a real-account smoke test.
+### Account and navigation
+- Sign-in and registration use email and password only. In Supabase, Email must be enabled and Confirm email must be off. The client checks this before registration to avoid starting a confirmation-email flow.
+- Existing signed-in users can set a password from the sidebar. Passwords are handled by Supabase Auth; they are not stored in learning-progress records.
+- Account links and sign-out live inside the expanded sidebar. Collapsing hides the entire sidebar except the four-line menu button.
+- Account progress loads before learning screens render. Five introductory responses unlock Explore and Arcade; returning accounts resume. Guest progress stays separate.
+- Pending progress is cached per account and retried automatically. Saving never blocks sign-out.

@@ -3,9 +3,9 @@
 ## Supabase
 
 1. Create a Supabase project. Run `supabase/migrations/202609090001_progress.sql` in its SQL editor.
-2. Enable the Email authentication provider. The app uses passwordless email links with PKCE.
+2. Enable the Email authentication provider and disable Confirm email. The app uses email/password registration and sign-in with immediate sessions.
 3. Set Authentication → URL Configuration → Site URL to the final HTTPS Vercel domain. Add the same origin followed by `/` to allowed redirect URLs. Add `http://127.0.0.1:5173/` only for local testing.
-4. Configure a production SMTP provider before opening registration to the public. Supabase's built-in email service is restricted and is not a general public-launch mail service.
+4. Registration does not send email. No email-link sign-in or email-recovery flow is exposed. Existing signed-in users can set a password from the sidebar.
 5. Copy the project URL and **publishable** key into Vercel's environment settings as `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`. Never put a service-role or secret key in a `VITE_` variable.
 6. For local development, copy `.env.example` to `.env.local`, fill these same public values, and restart Vite.
 
@@ -28,7 +28,7 @@ Deploy the `within-react` directory. Framework: Vite. Build: `npm run build`. Ou
 ## Verify before public launch
 
 - `npm test` and `npm run build`.
-- Confirm email delivery using the configured SMTP service and the final redirect origin.
+- Confirm new email/password registrations return a session immediately, with no confirmation email.
 - Verify two separate users cannot access each other's rows, and that an anonymous request cannot read them.
 - Complete the five introduction questions, sign out, and verify another account starts locked.
 - On another device, sign in as the same user and verify progress restores.

@@ -1,51 +1,51 @@
 import { useState } from "react";
-import { supabase } from "../lib/supabase";
+import { supabase, passwordSignupReady } from "../lib/supabase";
 
 export default function AuthPage({ mode }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [sending, setSending] = useState(false);
   const [message, setMessage] = useState("");
   const signup = mode === "signup";
-  const link = mode === "link";
+  const settingPassword = mode === "password";
   async function submit(event) {
     event.preventDefault();
     if (!supabase || sending) return;
     setSending(true);
     setMessage("");
     try {
+      if (signup && !(await passwordSignupReady())) {
+        setMessage("Registration is being updated. Please try again shortly.");
+        return;
+      }
       const credentials = { email: email.trim(), password };
-      const result = link
-        ? await supabase.auth.signInWithOtp({
-            email: email.trim(),
-            options: {
-              shouldCreateUser: false,
-              emailRedirectTo: window.location.origin + "/",
-            },
-          })
+      const result = settingPassword
+        ? await supabase.auth.updateUser({ password })
         : signup
-          ? await supabase.auth.signUp({
-              ...credentials,
-              options: { emailRedirectTo: window.location.origin + "/" },
-            })
+          ? await supabase.auth.signUp(credentials)
           : await supabase.auth.signInWithPassword(credentials);
       if (result.error) {
+        const code = result.error.code;
         setMessage(
-          signup
-            ? "We couldn’t create your account. Check your details or try signing in if you already have an account."
-            : "We couldn’t sign you in. Check your details or use an email sign-in link.",
+          code === "invalid_credentials"
+            ? "The email or password doesn’t match. Please check both and try again."
+            : code === "user_already_exists"
+              ? "An account already exists for this email. Please sign in."
+              : code === "weak_password"
+                ? "Choose a stronger password with at least 8 characters."
+                : result.error.status === 429
+                  ? "A few too many attempts. Please wait a moment and try again."
+                  : "We couldn’t complete that request. Please check your details and try again.",
         );
-      } else if (link) {
-        setMessage(
-          "If an account exists for this email, a sign-in link is on its way. Open it in this browser.",
-        );
+      } else if (settingPassword) {
+        setPassword("");
+        setMessage("Password saved. You can use it the next time you sign in.");
       } else if (signup && !result.data.session) {
         setMessage(
-          "Check your email to confirm your account, then come back to sign in.",
+          "We couldn’t start your session. Try signing in if you already have an account.",
         );
-      } else {
-        window.location.hash = "home";
-      }
+      } else window.location.hash = signup ? "journey" : "home";
     } catch {
       setMessage(
         "Unable to connect. Please check your connection and try again.",
@@ -55,74 +55,76 @@ export default function AuthPage({ mode }) {
     }
   }
   return (
-    <main className="auth-page">
+    <main className="auth-page auth-simple">
       <a className="auth-back" href="#home">
         ← Back to Within
       </a>
       <section className="auth-card">
-        <span className="auth-symbol" aria-hidden="true">
-          ✧
-        </span>
-        <span className="kicker">Your space to grow</span>
+        <span className="kicker">Within</span>
         <h1>
-          {signup
-            ? "A little more you."
-            : link
-              ? "Let your inbox open the door."
+          {settingPassword
+            ? "Set your password."
+            : signup
+              ? "Create your account."
               : "Welcome back."}
         </h1>
         <p>
-          {signup
-            ? "Start with five small situations. Your chapters, Arcade and progress will be waiting whenever you return."
-            : "Sign in to pick up your journey where you left it."}
+          {settingPassword
+            ? "Use a password to sign in to your existing account."
+            : signup
+              ? "A few details, then your journey begins."
+              : "Your progress is right where you left it."}
         </p>
-        <nav className="auth-tabs" aria-label="Account">
-          <a href="#login" aria-current={!signup ? "page" : undefined}>
-            Sign in
-          </a>
-          <a href="#signup" aria-current={signup ? "page" : undefined}>
-            Create account
-          </a>
-        </nav>
         {!supabase && (
-          <p className="notice" role="status">
-            Account sign-in is not configured on this version yet. You can
-            continue as a guest.
+          <p className="notice">
+            Account access is unavailable on this version.
           </p>
         )}
         <form onSubmit={submit}>
-          <label htmlFor="auth-email">Email address</label>
-          <input
-            id="auth-email"
-            type="email"
-            autoComplete="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          {!link && (
+          {!settingPassword && (
             <>
-              <label htmlFor="auth-password">Password</label>
+              <label htmlFor="auth-email">Email</label>
               <input
-                id="auth-password"
-                type="password"
-                autoComplete={signup ? "new-password" : "current-password"}
-                minLength={signup ? 8 : undefined}
+                id="auth-email"
+                type="email"
+                autoComplete="email"
                 required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              {signup && <small>Use at least 8 characters.</small>}
             </>
           )}
+          <label htmlFor="auth-password">
+            {settingPassword ? "New password" : "Password"}
+          </label>
+          <input
+            id="auth-password"
+            type={showPassword ? "text" : "password"}
+            autoComplete={
+              signup || settingPassword ? "new-password" : "current-password"
+            }
+            minLength={signup || settingPassword ? 8 : undefined}
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {(signup || settingPassword) && <small>At least 8 characters.</small>}
+          <label className="show-password">
+            <input
+              type="checkbox"
+              checked={showPassword}
+              onChange={(e) => setShowPassword(e.target.checked)}
+            />{" "}
+            Show password
+          </label>
           <button className="primary" disabled={sending || !supabase}>
             {sending
               ? "One moment…"
-              : signup
-                ? "Create my account →"
-                : link
-                  ? "Send a sign-in link →"
-                  : "Sign in →"}
+              : settingPassword
+                ? "Save password"
+                : signup
+                  ? "Create account"
+                  : "Sign in"}
           </button>
         </form>
         {message && (
@@ -130,20 +132,17 @@ export default function AuthPage({ mode }) {
             {message}
           </p>
         )}
-        {!signup && (
-          <a className="auth-alternative" href={link ? "#login" : "#link"}>
-            {link
-              ? "Use a password instead"
-              : "Forgot your password? Sign in with an email link"}
-          </a>
+        {!settingPassword && (
+          <p className="auth-switch">
+            {signup ? "Already have an account?" : "New to Within?"}{" "}
+            <a href={signup ? "#login" : "#signup"}>
+              {signup ? "Sign in" : "Create account"}
+            </a>
+          </p>
         )}
         <a className="auth-guest" href="#home">
-          Continue as a guest
+          {settingPassword ? "Back to my journey" : "Explore as a guest"}
         </a>
-        <small className="auth-note">
-          Guest progress stays separate from your account. Within is a learning
-          space, not a clinical assessment.
-        </small>
       </section>
     </main>
   );

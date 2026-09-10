@@ -1,3 +1,4 @@
+import { useAccount } from "./AccountContext";
 export default function Sidebar({
   unlocked,
   page,
@@ -5,6 +6,7 @@ export default function Sidebar({
   onToggle,
   onNavigate,
 }) {
+  const { session, sending, signOut, status } = useAccount();
   return (
     <aside className="side">
       <button
@@ -14,7 +16,12 @@ export default function Sidebar({
         aria-controls="sidebar-navigation"
         aria-label={collapsed ? "Expand sidebar" : "Minimize sidebar"}
       >
-        <span aria-hidden="true">{collapsed ? "☰" : "‹"}</span>
+        <span className="menu-lines" aria-hidden="true">
+          <i />
+          <i />
+          <i />
+          <i />
+        </span>
       </button>
       <a className="brand" href="#home" onClick={onNavigate}>
         w
@@ -76,11 +83,40 @@ export default function Sidebar({
           </button>
         )}
       </nav>
-      <p className="side-note sidebar-label" id="explore-lock-note">
-        {unlocked
-          ? "31 small chapters. Your own pace. A little more understanding."
-          : "Complete five situations to unlock your emotional-intelligence journey."}
-      </p>
+      <div className="sidebar-footer">
+        <p id="explore-lock-note">
+          {unlocked
+            ? "Your pace. Your journey."
+            : "Complete five situations to unlock Explore and Arcade."}
+        </p>
+        {session ? (
+          <div className="sidebar-account">
+            <span className="sidebar-account-label">My account</span>
+            <small>{session.user.email}</small>
+            <a href="#password" onClick={onNavigate}>
+              Set password
+            </a>
+            <button disabled={sending} onClick={signOut}>
+              {sending ? "Signing out…" : "Sign out"}
+            </button>
+            {status === "pending" && (
+              <small role="status">
+                Recent progress is waiting to be saved. We’ll retry
+                automatically.
+              </small>
+            )}
+          </div>
+        ) : (
+          <div className="sidebar-account">
+            <a href="#login" onClick={onNavigate}>
+              Sign in
+            </a>
+            <a href="#signup" onClick={onNavigate}>
+              Create account
+            </a>
+          </div>
+        )}
+      </div>
     </aside>
   );
 }
