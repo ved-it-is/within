@@ -53,7 +53,7 @@ export default function PeopleCarousel() {
       <div className="wrap">
         <header className="people-heading">
           <span className="kicker">
-            Five lives. More than first impressions.
+            Two lives. More than first impressions.
           </span>
           <h2>
             Beyond the <em>label.</em>
@@ -71,7 +71,10 @@ export default function PeopleCarousel() {
             <img src={person.image} alt={person.alt} />
             <span className="people-field">{person.field}</span>
             <div className="people-identity">
-              <span>{String(index + 1).padStart(2, "0")} / 05</span>
+              <span>
+                {String(index + 1).padStart(2, "0")} /{" "}
+                {String(people.length).padStart(2, "0")}
+              </span>
               <h3>{person.name}</h3>
             </div>
           </div>
