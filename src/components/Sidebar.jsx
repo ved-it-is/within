@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useAccount } from "./AccountContext";
 export default function Sidebar({
   unlocked,
@@ -7,8 +8,15 @@ export default function Sidebar({
   onNavigate,
 }) {
   const { session, sending, signOut, status } = useAccount();
+  const [scrolled, setScrolled] = useState(() => window.scrollY > 40);
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+    return () => window.removeEventListener("scroll", update);
+  }, []);
   return (
-    <aside className="side">
+    <aside className={`side ${scrolled ? "is-scrolled" : ""}`}>
       <button
         className="sidebar-toggle"
         onClick={onToggle}

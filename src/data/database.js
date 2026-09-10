@@ -1,5 +1,3 @@
-// Single source of truth for Within chapters, question banks, answer keys, and content dictionary.
-// User responses live separately. All items are editorial drafts, not psychometrically validated.
 export const database = {
   schemaVersion: 1,
   contentVersion: "within-content-2",
@@ -39,6 +37,8 @@ export const database = {
       "Seven practice categories, each with 100 items. These are curriculum categories, not a validated seven-factor EQ model.",
     "arcade.scoring":
       "Accuracy = first answers matching the key / first answers attempted, excluding unknown. Show coverage and unknown counts alongside it. Lifetime points count each question once.",
+    "questions.contentRevision":
+      "Editorial revision of question wording and choices. Stable IDs and keyed answer positions preserve existing practice records; explanations are shown after a choice.",
   },
   skills: [
     {
@@ -1232,8 +1232,7 @@ export const database = {
       kind: "action",
       situation:
         "A plan you were looking forward to gets cancelled. You put your phone down and feel unsettled.",
-      prompt:
-        "Which response best helps you notice your own feeling before deciding what to do?",
+      prompt: "What would you do next?",
       choices: [
         "Keep occupied so there is no room to notice anything.",
         "Tell myself I should not feel anything about this.",
@@ -1259,8 +1258,7 @@ export const database = {
       id: "1-action-2",
       kind: "action",
       situation: "You finish a busy day and feel unexpectedly quiet.",
-      prompt:
-        "Which response best helps you notice your own feeling before deciding what to do?",
+      prompt: "What would you do next?",
       choices: [
         "Tell myself I should not feel anything about this.",
         "Decide immediately what the other person intended.",
@@ -1287,8 +1285,7 @@ export const database = {
       kind: "action",
       situation:
         "Someone praises your work and you quickly change the subject.",
-      prompt:
-        "Which response best helps you notice your own feeling before deciding what to do?",
+      prompt: "What would you do next?",
       choices: [
         "Decide immediately what the other person intended.",
         "Notice what receiving the praise feels like before moving on.",
@@ -1314,8 +1311,7 @@ export const database = {
       id: "1-action-4",
       kind: "action",
       situation: "A friend arrives late and you feel a sudden urge to leave.",
-      prompt:
-        "Which response best helps you notice your own feeling before deciding what to do?",
+      prompt: "What would you do next?",
       choices: [
         "Notice the feeling behind the urge before deciding whether to leave.",
         "Keep occupied so there is no room to notice anything.",
@@ -1341,8 +1337,7 @@ export const database = {
       id: "1-action-5",
       kind: "action",
       situation: "You leave a gathering with a vague sense of unease.",
-      prompt:
-        "Which response best helps you notice your own feeling before deciding what to do?",
+      prompt: "What would you do next?",
       choices: [
         "Keep occupied so there is no room to notice anything.",
         "Tell myself I should not feel anything about this.",
@@ -1366,16 +1361,15 @@ export const database = {
     },
     {
       id: "1-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A plan you were looking forward to gets cancelled. You put your phone down and feel unsettled.",
-      prompt:
-        "Consider this response: “Pause and ask myself what I notice.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Knowing another person’s intention is the same as noticing my feeling.",
-        "A short check-in gives you information before you decide what to do. You do not need an exact word yet.",
-        "Awareness means making the feeling disappear.",
-        "A feeling is worth noticing only when it seems reasonable.",
+        "Decide immediately what the other person intended.",
+        "Pause and ask myself what I notice.",
+        "Keep occupied so there is no room to notice anything.",
+        "Tell myself I should not feel anything about this.",
       ],
       correctIndex: 1,
       explanation:
@@ -1391,18 +1385,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "1-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "You finish a busy day and feel unexpectedly quiet.",
-      prompt:
-        "Consider this response: “Pause and ask what I notice in myself right now.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A check-in notices your current experience without needing an immediate explanation.",
-        "Awareness means making the feeling disappear.",
-        "A feeling is worth noticing only when it seems reasonable.",
-        "Knowing another person’s intention is the same as noticing my feeling.",
+        "Pause and ask what I notice in myself right now.",
+        "Keep occupied so there is no room to notice anything.",
+        "Tell myself I should not feel anything about this.",
+        "Decide immediately what the other person intended.",
       ],
       correctIndex: 0,
       explanation:
@@ -1418,19 +1412,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "1-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Someone praises your work and you quickly change the subject.",
-      prompt:
-        "Consider this response: “Notice what receiving the praise feels like before moving on.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Awareness means making the feeling disappear.",
-        "A feeling is worth noticing only when it seems reasonable.",
-        "Knowing another person’s intention is the same as noticing my feeling.",
-        "Awareness can include comfortable or unfamiliar feelings, not just distress.",
+        "Keep occupied so there is no room to notice anything.",
+        "Tell myself I should not feel anything about this.",
+        "Decide immediately what the other person intended.",
+        "Notice what receiving the praise feels like before moving on.",
       ],
       correctIndex: 3,
       explanation:
@@ -1446,18 +1440,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "1-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend arrives late and you feel a sudden urge to leave.",
-      prompt:
-        "Consider this response: “Notice the feeling behind the urge before deciding whether to leave.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A feeling is worth noticing only when it seems reasonable.",
-        "Knowing another person’s intention is the same as noticing my feeling.",
-        "A feeling and the action it suggests are separate things to notice.",
-        "Awareness means making the feeling disappear.",
+        "Tell myself I should not feel anything about this.",
+        "Decide immediately what the other person intended.",
+        "Notice the feeling behind the urge before deciding whether to leave.",
+        "Keep occupied so there is no room to notice anything.",
       ],
       correctIndex: 2,
       explanation:
@@ -1473,18 +1467,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "1-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "You leave a gathering with a vague sense of unease.",
-      prompt:
-        "Consider this response: “Give the unease a moment of attention, even without an exact label.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Knowing another person’s intention is the same as noticing my feeling.",
-        "Uncertainty about the label does not prevent noticing that something feels different.",
-        "Awareness means making the feeling disappear.",
-        "A feeling is worth noticing only when it seems reasonable.",
+        "Decide immediately what the other person intended.",
+        "Give the unease a moment of attention, even without an exact label.",
+        "Keep occupied so there is no room to notice anything.",
+        "Tell myself I should not feel anything about this.",
       ],
       correctIndex: 1,
       explanation:
@@ -1500,14 +1494,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "2-action-1",
       kind: "action",
       situation:
         "Your idea is passed over in a group discussion. Someone asks how you feel.",
-      prompt:
-        "Which response best helps you find specific words for your emotional experience?",
+      prompt: "What would you do next?",
       choices: [
         "Choose the feeling I think I ought to have.",
         "Describe only what someone else did.",
@@ -1534,8 +1528,7 @@ export const database = {
       kind: "action",
       situation:
         "A friend announces an opportunity. You are pleased for them and uneasy about your own plans.",
-      prompt:
-        "Which response best helps you find specific words for your emotional experience?",
+      prompt: "What would you do next?",
       choices: [
         "Describe only what someone else did.",
         "Try “happy for them, and uncertain about myself.”",
@@ -1562,8 +1555,7 @@ export const database = {
       kind: "action",
       situation:
         "You say you are upset after waiting for a call that never came.",
-      prompt:
-        "Which response best helps you find specific words for your emotional experience?",
+      prompt: "What would you do next?",
       choices: [
         "Ask whether disappointed, worried, or overlooked fits more closely.",
         "Use “fine” and stop exploring, even though it does not fit.",
@@ -1590,8 +1582,7 @@ export const database = {
       kind: "action",
       situation:
         "Before a performance, “stressed” seems too broad for what you feel.",
-      prompt:
-        "Which response best helps you find specific words for your emotional experience?",
+      prompt: "What would you do next?",
       choices: [
         "Use “fine” and stop exploring, even though it does not fit.",
         "Choose the feeling I think I ought to have.",
@@ -1617,8 +1608,7 @@ export const database = {
       id: "2-action-5",
       kind: "action",
       situation: "You feel uncomfortable after forgetting a promise.",
-      prompt:
-        "Which response best helps you find specific words for your emotional experience?",
+      prompt: "What would you do next?",
       choices: [
         "Choose the feeling I think I ought to have.",
         "Describe only what someone else did.",
@@ -1642,16 +1632,15 @@ export const database = {
     },
     {
       id: "2-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Your idea is passed over in a group discussion. Someone asks how you feel.",
-      prompt:
-        "Consider this response: ““Disappointed, and a little overlooked.”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "More detail can clarify what matters: perhaps recognition, inclusion, or a chance to contribute.",
-        "One broad word always captures every part of an experience.",
-        "The most socially acceptable label is necessarily the most accurate.",
-        "Describing an event automatically names my emotional response.",
+        "“Disappointed, and a little overlooked.”",
+        "Use “fine” and stop exploring, even though it does not fit.",
+        "Choose the feeling I think I ought to have.",
+        "Describe only what someone else did.",
       ],
       correctIndex: 0,
       explanation:
@@ -1667,19 +1656,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "2-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A friend announces an opportunity. You are pleased for them and uneasy about your own plans.",
-      prompt:
-        "Consider this response: “Try “happy for them, and uncertain about myself.”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "One broad word always captures every part of an experience.",
-        "The most socially acceptable label is necessarily the most accurate.",
-        "Describing an event automatically names my emotional response.",
-        "Specific words can describe more than one part of your experience.",
+        "Use “fine” and stop exploring, even though it does not fit.",
+        "Choose the feeling I think I ought to have.",
+        "Describe only what someone else did.",
+        "Try “happy for them, and uncertain about myself.”",
       ],
       correctIndex: 3,
       explanation:
@@ -1695,19 +1684,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "2-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You say you are upset after waiting for a call that never came.",
-      prompt:
-        "Consider this response: “Ask whether disappointed, worried, or overlooked fits more closely.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "The most socially acceptable label is necessarily the most accurate.",
-        "Describing an event automatically names my emotional response.",
-        "Comparing possible labels helps you find a word that fits rather than assume one.",
-        "One broad word always captures every part of an experience.",
+        "Choose the feeling I think I ought to have.",
+        "Describe only what someone else did.",
+        "Ask whether disappointed, worried, or overlooked fits more closely.",
+        "Use “fine” and stop exploring, even though it does not fit.",
       ],
       correctIndex: 2,
       explanation:
@@ -1723,19 +1712,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "2-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Before a performance, “stressed” seems too broad for what you feel.",
-      prompt:
-        "Consider this response: “Consider whether excited, apprehensive, or both describes it.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Describing an event automatically names my emotional response.",
-        "A more precise label can distinguish different experiences within a broad term.",
-        "One broad word always captures every part of an experience.",
-        "The most socially acceptable label is necessarily the most accurate.",
+        "Describe only what someone else did.",
+        "Consider whether excited, apprehensive, or both describes it.",
+        "Use “fine” and stop exploring, even though it does not fit.",
+        "Choose the feeling I think I ought to have.",
       ],
       correctIndex: 1,
       explanation:
@@ -1751,18 +1740,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "2-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "You feel uncomfortable after forgetting a promise.",
-      prompt:
-        "Consider this response: “Try a word such as regretful and check whether it fits.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A label is a tentative description you can revise, not a permanent identity.",
-        "One broad word always captures every part of an experience.",
-        "The most socially acceptable label is necessarily the most accurate.",
-        "Describing an event automatically names my emotional response.",
+        "Try a word such as regretful and check whether it fits.",
+        "Use “fine” and stop exploring, even though it does not fit.",
+        "Choose the feeling I think I ought to have.",
+        "Describe only what someone else did.",
       ],
       correctIndex: 0,
       explanation:
@@ -1778,14 +1767,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "3-action-1",
       kind: "action",
       situation:
         "Before a conversation, your shoulders tighten and your hands feel restless.",
-      prompt:
-        "Which response best helps you notice a body signal without treating it as proof of one emotion?",
+      prompt: "What would you do next?",
       choices: [
         "Assume the sensation proves what someone else thinks of me.",
         "Notice the tension and loosen my shoulders.",
@@ -1811,8 +1800,7 @@ export const database = {
       id: "3-action-2",
       kind: "action",
       situation: "Your feet keep moving while you wait for news.",
-      prompt:
-        "Which response best helps you notice a body signal without treating it as proof of one emotion?",
+      prompt: "What would you do next?",
       choices: [
         "Notice the movement and the waiting, without deciding what either predicts.",
         "Treat the sensation as proof that something will go poorly.",
@@ -1838,8 +1826,7 @@ export const database = {
       id: "3-action-3",
       kind: "action",
       situation: "Your heart feels faster before a welcome reunion.",
-      prompt:
-        "Which response best helps you notice a body signal without treating it as proof of one emotion?",
+      prompt: "What would you do next?",
       choices: [
         "Treat the sensation as proof that something will go poorly.",
         "Assign the same emotional meaning to this sensation every time.",
@@ -1865,8 +1852,7 @@ export const database = {
       id: "3-action-4",
       kind: "action",
       situation: "Your jaw feels tense during a long group discussion.",
-      prompt:
-        "Which response best helps you notice a body signal without treating it as proof of one emotion?",
+      prompt: "What would you do next?",
       choices: [
         "Assign the same emotional meaning to this sensation every time.",
         "Assume the sensation proves what someone else thinks of me.",
@@ -1892,8 +1878,7 @@ export const database = {
       id: "3-action-5",
       kind: "action",
       situation: "Your hands feel restless before a new activity.",
-      prompt:
-        "Which response best helps you notice a body signal without treating it as proof of one emotion?",
+      prompt: "What would you do next?",
       choices: [
         "Assume the sensation proves what someone else thinks of me.",
         "Describe the restlessness before deciding what it means.",
@@ -1917,16 +1902,15 @@ export const database = {
     },
     {
       id: "3-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Before a conversation, your shoulders tighten and your hands feel restless.",
-      prompt:
-        "Consider this response: “Notice the tension and loosen my shoulders.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A physical sensation predicts the outcome of a situation.",
-        "Everyone’s body signals have one universal emotional meaning.",
-        "My physical state tells me another person’s private thoughts.",
-        "Observing and making a small adjustment may help you feel more comfortable. See what works for you.",
+        "Treat the sensation as proof that something will go poorly.",
+        "Assign the same emotional meaning to this sensation every time.",
+        "Assume the sensation proves what someone else thinks of me.",
+        "Notice the tension and loosen my shoulders.",
       ],
       correctIndex: 3,
       explanation:
@@ -1942,18 +1926,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "3-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "Your feet keep moving while you wait for news.",
-      prompt:
-        "Consider this response: “Notice the movement and the waiting, without deciding what either predicts.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Everyone’s body signals have one universal emotional meaning.",
-        "My physical state tells me another person’s private thoughts.",
-        "Describing a signal and its context keeps observation separate from prediction.",
-        "A physical sensation predicts the outcome of a situation.",
+        "Assign the same emotional meaning to this sensation every time.",
+        "Assume the sensation proves what someone else thinks of me.",
+        "Notice the movement and the waiting, without deciding what either predicts.",
+        "Treat the sensation as proof that something will go poorly.",
       ],
       correctIndex: 2,
       explanation:
@@ -1969,18 +1953,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "3-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "Your heart feels faster before a welcome reunion.",
-      prompt:
-        "Consider this response: “Notice the change and consider the excitement of the context.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "My physical state tells me another person’s private thoughts.",
-        "Similar sensations can accompany different emotions in different situations.",
-        "A physical sensation predicts the outcome of a situation.",
-        "Everyone’s body signals have one universal emotional meaning.",
+        "Assume the sensation proves what someone else thinks of me.",
+        "Notice the change and consider the excitement of the context.",
+        "Treat the sensation as proof that something will go poorly.",
+        "Assign the same emotional meaning to this sensation every time.",
       ],
       correctIndex: 1,
       explanation:
@@ -1996,18 +1980,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "3-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "Your jaw feels tense during a long group discussion.",
-      prompt:
-        "Consider this response: “Notice the tension and consider fatigue or frustration as possibilities.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A body signal is a clue to explore, not certainty about one cause.",
-        "A physical sensation predicts the outcome of a situation.",
-        "Everyone’s body signals have one universal emotional meaning.",
-        "My physical state tells me another person’s private thoughts.",
+        "Notice the tension and consider fatigue or frustration as possibilities.",
+        "Treat the sensation as proof that something will go poorly.",
+        "Assign the same emotional meaning to this sensation every time.",
+        "Assume the sensation proves what someone else thinks of me.",
       ],
       correctIndex: 0,
       explanation:
@@ -2023,18 +2007,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "3-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "Your hands feel restless before a new activity.",
-      prompt:
-        "Consider this response: “Describe the restlessness before deciding what it means.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A physical sensation predicts the outcome of a situation.",
-        "Everyone’s body signals have one universal emotional meaning.",
-        "My physical state tells me another person’s private thoughts.",
-        "Observation does not require committing to an emotional interpretation.",
+        "Treat the sensation as proof that something will go poorly.",
+        "Assign the same emotional meaning to this sensation every time.",
+        "Assume the sensation proves what someone else thinks of me.",
+        "Describe the restlessness before deciding what it means.",
       ],
       correctIndex: 3,
       explanation:
@@ -2050,14 +2034,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "4-action-1",
       kind: "action",
       situation:
         "You are offered a new opportunity that means spending less time with people you love.",
-      prompt:
-        "Which response best helps you acknowledge two feelings that coexist?",
+      prompt: "What would you do next?",
       choices: [
         "Admit I feel excited and sad.",
         "Choose only the feeling that seems more acceptable.",
@@ -2083,8 +2067,7 @@ export const database = {
       id: "4-action-2",
       kind: "action",
       situation: "A friend moves away for an opportunity they wanted.",
-      prompt:
-        "Which response best helps you acknowledge two feelings that coexist?",
+      prompt: "What would you do next?",
       choices: [
         "Choose only the feeling that seems more acceptable.",
         "Use the uncomfortable feeling to cancel out the pleasant one.",
@@ -2110,8 +2093,7 @@ export const database = {
       id: "4-action-3",
       kind: "action",
       situation: "You finish a demanding course and miss its familiar routine.",
-      prompt:
-        "Which response best helps you acknowledge two feelings that coexist?",
+      prompt: "What would you do next?",
       choices: [
         "Use the uncomfortable feeling to cancel out the pleasant one.",
         "Tell myself mixed feelings mean I cannot make a decision.",
@@ -2138,8 +2120,7 @@ export const database = {
       kind: "action",
       situation:
         "You look forward to hosting family but worry about the work involved.",
-      prompt:
-        "Which response best helps you acknowledge two feelings that coexist?",
+      prompt: "What would you do next?",
       choices: [
         "Tell myself mixed feelings mean I cannot make a decision.",
         "Name both anticipation and worry.",
@@ -2166,8 +2147,7 @@ export const database = {
       kind: "action",
       situation:
         "You feel proud of a new responsibility and nervous about handling it.",
-      prompt:
-        "Which response best helps you acknowledge two feelings that coexist?",
+      prompt: "What would you do next?",
       choices: [
         "Allow pride and nervousness to be present together.",
         "Choose only the feeling that seems more acceptable.",
@@ -2191,16 +2171,15 @@ export const database = {
     },
     {
       id: "4-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You are offered a new opportunity that means spending less time with people you love.",
-      prompt:
-        "Consider this response: “Admit I feel excited and sad.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "An uncomfortable feeling makes a pleasant one insincere.",
-        "Mixed feelings prove that a decision is impossible.",
-        "Naming both can help you consider the opportunity and the connections you want to preserve.",
-        "Only one feeling can be real at a time.",
+        "Use the uncomfortable feeling to cancel out the pleasant one.",
+        "Tell myself mixed feelings mean I cannot make a decision.",
+        "Admit I feel excited and sad.",
+        "Choose only the feeling that seems more acceptable.",
       ],
       correctIndex: 2,
       explanation:
@@ -2216,18 +2195,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "4-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend moves away for an opportunity they wanted.",
-      prompt:
-        "Consider this response: “Acknowledge being happy for them and sad about the distance.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Mixed feelings prove that a decision is impossible.",
-        "Different feelings can reflect different things you value in the same event.",
-        "Only one feeling can be real at a time.",
-        "An uncomfortable feeling makes a pleasant one insincere.",
+        "Tell myself mixed feelings mean I cannot make a decision.",
+        "Acknowledge being happy for them and sad about the distance.",
+        "Choose only the feeling that seems more acceptable.",
+        "Use the uncomfortable feeling to cancel out the pleasant one.",
       ],
       correctIndex: 1,
       explanation:
@@ -2243,18 +2222,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "4-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "You finish a demanding course and miss its familiar routine.",
-      prompt:
-        "Consider this response: “Notice relief and sadness together.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Finishing something can bring a sense of release and loss at the same time.",
-        "Only one feeling can be real at a time.",
-        "An uncomfortable feeling makes a pleasant one insincere.",
-        "Mixed feelings prove that a decision is impossible.",
+        "Notice relief and sadness together.",
+        "Choose only the feeling that seems more acceptable.",
+        "Use the uncomfortable feeling to cancel out the pleasant one.",
+        "Tell myself mixed feelings mean I cannot make a decision.",
       ],
       correctIndex: 0,
       explanation:
@@ -2270,19 +2249,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "4-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You look forward to hosting family but worry about the work involved.",
-      prompt:
-        "Consider this response: “Name both anticipation and worry.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Only one feeling can be real at a time.",
-        "An uncomfortable feeling makes a pleasant one insincere.",
-        "Mixed feelings prove that a decision is impossible.",
-        "Acknowledging both feelings helps you consider connection and practical needs.",
+        "Choose only the feeling that seems more acceptable.",
+        "Use the uncomfortable feeling to cancel out the pleasant one.",
+        "Tell myself mixed feelings mean I cannot make a decision.",
+        "Name both anticipation and worry.",
       ],
       correctIndex: 3,
       explanation:
@@ -2298,19 +2277,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "4-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You feel proud of a new responsibility and nervous about handling it.",
-      prompt:
-        "Consider this response: “Allow pride and nervousness to be present together.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "An uncomfortable feeling makes a pleasant one insincere.",
-        "Mixed feelings prove that a decision is impossible.",
-        "Nervousness does not erase pride or determine your ability to begin.",
-        "Only one feeling can be real at a time.",
+        "Use the uncomfortable feeling to cancel out the pleasant one.",
+        "Tell myself mixed feelings mean I cannot make a decision.",
+        "Allow pride and nervousness to be present together.",
+        "Choose only the feeling that seems more acceptable.",
       ],
       correctIndex: 2,
       explanation:
@@ -2326,14 +2305,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "5-action-1",
       kind: "action",
       situation:
         "A friend changes a shared plan without checking with you. The change itself is small, but it bothers you.",
-      prompt:
-        "Which response best helps you connect your feeling to a possible need or value?",
+      prompt: "What would you do next?",
       choices: [
         "Decide the feeling proves someone intended to disrespect me.",
         "Focus only on how to make the feeling vanish.",
@@ -2359,8 +2338,7 @@ export const database = {
       id: "5-action-2",
       kind: "action",
       situation: "A group starts late and you feel frustrated.",
-      prompt:
-        "Which response best helps you connect your feeling to a possible need or value?",
+      prompt: "What would you do next?",
       choices: [
         "Focus only on how to make the feeling vanish.",
         "Treat having a need as a guarantee that everyone must meet it.",
@@ -2385,8 +2363,7 @@ export const database = {
       id: "5-action-3",
       kind: "action",
       situation: "You feel uneasy when a shared decision is made without you.",
-      prompt:
-        "Which response best helps you connect your feeling to a possible need or value?",
+      prompt: "What would you do next?",
       choices: [
         "Treat having a need as a guarantee that everyone must meet it.",
         "Ask whether participation and being consulted matter here.",
@@ -2413,8 +2390,7 @@ export const database = {
       kind: "action",
       situation:
         "A noisy room leaves you irritable while you are trying to work.",
-      prompt:
-        "Which response best helps you connect your feeling to a possible need or value?",
+      prompt: "What would you do next?",
       choices: [
         "Consider whether I need quiet or a different workspace.",
         "Decide the feeling proves someone intended to disrespect me.",
@@ -2441,8 +2417,7 @@ export const database = {
       kind: "action",
       situation:
         "You feel disappointed when your contribution is not mentioned.",
-      prompt:
-        "Which response best helps you connect your feeling to a possible need or value?",
+      prompt: "What would you do next?",
       choices: [
         "Decide the feeling proves someone intended to disrespect me.",
         "Focus only on how to make the feeling vanish.",
@@ -2466,16 +2441,15 @@ export const database = {
     },
     {
       id: "5-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A friend changes a shared plan without checking with you. The change itself is small, but it bothers you.",
-      prompt:
-        "Consider this response: “Ask myself why having a say mattered.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Identifying my need removes other people’s needs and choices.",
-        "You might notice a need for consideration, predictability, or participation. That gives you something concrete to discuss.",
-        "A feeling establishes another person’s intention.",
-        "Understanding a need requires getting rid of the feeling first.",
+        "Treat having a need as a guarantee that everyone must meet it.",
+        "Ask myself why having a say mattered.",
+        "Decide the feeling proves someone intended to disrespect me.",
+        "Focus only on how to make the feeling vanish.",
       ],
       correctIndex: 1,
       explanation:
@@ -2491,18 +2465,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "5-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "A group starts late and you feel frustrated.",
-      prompt:
-        "Consider this response: “Consider whether reliability or enough time together matters to me.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A feeling can point toward a value you can then discuss.",
-        "A feeling establishes another person’s intention.",
-        "Understanding a need requires getting rid of the feeling first.",
-        "Identifying my need removes other people’s needs and choices.",
+        "Consider whether reliability or enough time together matters to me.",
+        "Decide the feeling proves someone intended to disrespect me.",
+        "Focus only on how to make the feeling vanish.",
+        "Treat having a need as a guarantee that everyone must meet it.",
       ],
       correctIndex: 0,
       explanation: "A feeling can point toward a value you can then discuss.",
@@ -2517,18 +2491,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "5-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "You feel uneasy when a shared decision is made without you.",
-      prompt:
-        "Consider this response: “Ask whether participation and being consulted matter here.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A feeling establishes another person’s intention.",
-        "Understanding a need requires getting rid of the feeling first.",
-        "Identifying my need removes other people’s needs and choices.",
-        "Identifying the need makes the concern more specific than guessing motives.",
+        "Decide the feeling proves someone intended to disrespect me.",
+        "Focus only on how to make the feeling vanish.",
+        "Treat having a need as a guarantee that everyone must meet it.",
+        "Ask whether participation and being consulted matter here.",
       ],
       correctIndex: 3,
       explanation:
@@ -2544,19 +2518,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "5-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A noisy room leaves you irritable while you are trying to work.",
-      prompt:
-        "Consider this response: “Consider whether I need quiet or a different workspace.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Understanding a need requires getting rid of the feeling first.",
-        "Identifying my need removes other people’s needs and choices.",
-        "Understanding a practical need can guide a workable next step.",
-        "A feeling establishes another person’s intention.",
+        "Focus only on how to make the feeling vanish.",
+        "Treat having a need as a guarantee that everyone must meet it.",
+        "Consider whether I need quiet or a different workspace.",
+        "Decide the feeling proves someone intended to disrespect me.",
       ],
       correctIndex: 2,
       explanation:
@@ -2572,19 +2546,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "5-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You feel disappointed when your contribution is not mentioned.",
-      prompt:
-        "Consider this response: “Explore whether recognition matters to me in this moment.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Identifying my need removes other people’s needs and choices.",
-        "A possible value offers information without proving anyone meant to overlook you.",
-        "A feeling establishes another person’s intention.",
-        "Understanding a need requires getting rid of the feeling first.",
+        "Treat having a need as a guarantee that everyone must meet it.",
+        "Explore whether recognition matters to me in this moment.",
+        "Decide the feeling proves someone intended to disrespect me.",
+        "Focus only on how to make the feeling vanish.",
       ],
       correctIndex: 1,
       explanation:
@@ -2600,14 +2574,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "6-action-1",
       kind: "action",
       situation:
         "Someone interrupts you twice. You notice yourself preparing a sharp reply.",
-      prompt:
-        "Which response best helps you recognise an early sign of a familiar reaction?",
+      prompt: "What would you do next?",
       choices: [
         "Treat my usual reaction as an unchangeable part of me.",
         "Focus entirely on blaming the situation.",
@@ -2634,8 +2608,7 @@ export const database = {
       kind: "action",
       situation:
         "A last-minute request arrives when you are tired, and you start typing “yes” automatically.",
-      prompt:
-        "Which response best helps you recognise an early sign of a familiar reaction?",
+      prompt: "What would you do next?",
       choices: [
         "Focus entirely on blaming the situation.",
         "Notice the urge to agree before committing.",
@@ -2662,8 +2635,7 @@ export const database = {
       kind: "action",
       situation:
         "You hear a familiar criticism and notice your voice getting louder.",
-      prompt:
-        "Which response best helps you recognise an early sign of a familiar reaction?",
+      prompt: "What would you do next?",
       choices: [
         "Recognise the change in my voice as an early cue.",
         "Wait until my reaction is at its most intense before noticing it.",
@@ -2690,8 +2662,7 @@ export const database = {
       kind: "action",
       situation:
         "A plan changes and you begin listing everything that might go differently.",
-      prompt:
-        "Which response best helps you recognise an early sign of a familiar reaction?",
+      prompt: "What would you do next?",
       choices: [
         "Wait until my reaction is at its most intense before noticing it.",
         "Treat my usual reaction as an unchangeable part of me.",
@@ -2718,8 +2689,7 @@ export const database = {
       kind: "action",
       situation:
         "During a disagreement, you feel an urge to stop replying altogether.",
-      prompt:
-        "Which response best helps you recognise an early sign of a familiar reaction?",
+      prompt: "What would you do next?",
       choices: [
         "Treat my usual reaction as an unchangeable part of me.",
         "Focus entirely on blaming the situation.",
@@ -2743,16 +2713,15 @@ export const database = {
     },
     {
       id: "6-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Someone interrupts you twice. You notice yourself preparing a sharp reply.",
-      prompt:
-        "Consider this response: “Notice that interruption is a sensitive moment for me.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Recognising the pattern can create room to choose a response before the intensity grows.",
-        "A pattern becomes useful only after it has fully played out.",
-        "Recognising a pattern means accepting it as permanent.",
-        "An external cause means there is nothing to notice in my own response.",
+        "Notice that interruption is a sensitive moment for me.",
+        "Wait until my reaction is at its most intense before noticing it.",
+        "Treat my usual reaction as an unchangeable part of me.",
+        "Focus entirely on blaming the situation.",
       ],
       correctIndex: 0,
       explanation:
@@ -2768,19 +2737,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "6-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A last-minute request arrives when you are tired, and you start typing “yes” automatically.",
-      prompt:
-        "Consider this response: “Notice the urge to agree before committing.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A pattern becomes useful only after it has fully played out.",
-        "Recognising a pattern means accepting it as permanent.",
-        "An external cause means there is nothing to notice in my own response.",
-        "Catching an automatic response early gives you a chance to check your capacity.",
+        "Wait until my reaction is at its most intense before noticing it.",
+        "Treat my usual reaction as an unchangeable part of me.",
+        "Focus entirely on blaming the situation.",
+        "Notice the urge to agree before committing.",
       ],
       correctIndex: 3,
       explanation:
@@ -2796,19 +2765,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "6-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You hear a familiar criticism and notice your voice getting louder.",
-      prompt:
-        "Consider this response: “Recognise the change in my voice as an early cue.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Recognising a pattern means accepting it as permanent.",
-        "An external cause means there is nothing to notice in my own response.",
-        "An observable early signal can help you interrupt a familiar escalation.",
-        "A pattern becomes useful only after it has fully played out.",
+        "Treat my usual reaction as an unchangeable part of me.",
+        "Focus entirely on blaming the situation.",
+        "Recognise the change in my voice as an early cue.",
+        "Wait until my reaction is at its most intense before noticing it.",
       ],
       correctIndex: 2,
       explanation:
@@ -2824,19 +2793,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "6-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A plan changes and you begin listing everything that might go differently.",
-      prompt:
-        "Consider this response: “Notice that rapid planning is my usual response to uncertainty.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "An external cause means there is nothing to notice in my own response.",
-        "Recognising the sequence creates a possible point for a different response.",
-        "A pattern becomes useful only after it has fully played out.",
-        "Recognising a pattern means accepting it as permanent.",
+        "Focus entirely on blaming the situation.",
+        "Notice that rapid planning is my usual response to uncertainty.",
+        "Wait until my reaction is at its most intense before noticing it.",
+        "Treat my usual reaction as an unchangeable part of me.",
       ],
       correctIndex: 1,
       explanation:
@@ -2852,19 +2821,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "6-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation:
         "During a disagreement, you feel an urge to stop replying altogether.",
-      prompt:
-        "Consider this response: “Recognise withdrawal as a pattern before deciding on a pause.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Noticing a tendency lets you choose whether and how to act on it.",
-        "A pattern becomes useful only after it has fully played out.",
-        "Recognising a pattern means accepting it as permanent.",
-        "An external cause means there is nothing to notice in my own response.",
+        "Recognise withdrawal as a pattern before deciding on a pause.",
+        "Wait until my reaction is at its most intense before noticing it.",
+        "Treat my usual reaction as an unchangeable part of me.",
+        "Focus entirely on blaming the situation.",
       ],
       correctIndex: 0,
       explanation:
@@ -2880,14 +2849,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "7-action-1",
       kind: "action",
       situation:
         "A message sounds dismissive. You have already started typing a heated response.",
-      prompt:
-        "Which response best helps you create a brief pause before responding?",
+      prompt: "What would you do next?",
       choices: [
         "Require myself to become perfectly calm before ever returning.",
         "Save a draft and step away briefly.",
@@ -2913,8 +2882,7 @@ export const database = {
       id: "7-action-2",
       kind: "action",
       situation: "Someone asks a difficult question in person.",
-      prompt:
-        "Which response best helps you create a brief pause before responding?",
+      prompt: "What would you do next?",
       choices: [
         "Say, “Let me think for a moment before I answer.”",
         "Respond immediately because the first impulse must be the clearest.",
@@ -2940,8 +2908,7 @@ export const database = {
       id: "7-action-3",
       kind: "action",
       situation: "You are about to post a sharp comment online.",
-      prompt:
-        "Which response best helps you create a brief pause before responding?",
+      prompt: "What would you do next?",
       choices: [
         "Respond immediately because the first impulse must be the clearest.",
         "Avoid the issue indefinitely without saying anything.",
@@ -2967,8 +2934,7 @@ export const database = {
       id: "7-action-4",
       kind: "action",
       situation: "An unexpected request makes you feel pressured to agree.",
-      prompt:
-        "Which response best helps you create a brief pause before responding?",
+      prompt: "What would you do next?",
       choices: [
         "Avoid the issue indefinitely without saying anything.",
         "Require myself to become perfectly calm before ever returning.",
@@ -2994,8 +2960,7 @@ export const database = {
       id: "7-action-5",
       kind: "action",
       situation: "A discussion becomes too heated for you to follow clearly.",
-      prompt:
-        "Which response best helps you create a brief pause before responding?",
+      prompt: "What would you do next?",
       choices: [
         "Require myself to become perfectly calm before ever returning.",
         "Ask for a break and suggest a time to return.",
@@ -3019,16 +2984,15 @@ export const database = {
     },
     {
       id: "7-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A message sounds dismissive. You have already started typing a heated response.",
-      prompt:
-        "Consider this response: “Save a draft and step away briefly.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "The first impulse is always the most considered response.",
-        "A pause and permanently abandoning a conversation are the same.",
-        "A useful response requires the complete absence of emotion.",
-        "A pause allows you to review both the message and your purpose before responding.",
+        "Respond immediately because the first impulse must be the clearest.",
+        "Avoid the issue indefinitely without saying anything.",
+        "Require myself to become perfectly calm before ever returning.",
+        "Save a draft and step away briefly.",
       ],
       correctIndex: 3,
       explanation:
@@ -3044,18 +3008,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "7-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone asks a difficult question in person.",
-      prompt:
-        "Consider this response: “Say, “Let me think for a moment before I answer.”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A pause and permanently abandoning a conversation are the same.",
-        "A useful response requires the complete absence of emotion.",
-        "A clear request for time creates a pause without ending the conversation.",
-        "The first impulse is always the most considered response.",
+        "Avoid the issue indefinitely without saying anything.",
+        "Require myself to become perfectly calm before ever returning.",
+        "Say, “Let me think for a moment before I answer.”",
+        "Respond immediately because the first impulse must be the clearest.",
       ],
       correctIndex: 2,
       explanation:
@@ -3071,18 +3035,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "7-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "You are about to post a sharp comment online.",
-      prompt:
-        "Consider this response: “Leave it as a draft and reread it after a short break.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A useful response requires the complete absence of emotion.",
-        "A pause allows you to consider your purpose before making a public response.",
-        "The first impulse is always the most considered response.",
-        "A pause and permanently abandoning a conversation are the same.",
+        "Require myself to become perfectly calm before ever returning.",
+        "Leave it as a draft and reread it after a short break.",
+        "Respond immediately because the first impulse must be the clearest.",
+        "Avoid the issue indefinitely without saying anything.",
       ],
       correctIndex: 1,
       explanation:
@@ -3098,18 +3062,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "7-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "An unexpected request makes you feel pressured to agree.",
-      prompt:
-        "Consider this response: “Say I need a little time to check my availability.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A brief delay can help you respond from capacity rather than pressure.",
-        "The first impulse is always the most considered response.",
-        "A pause and permanently abandoning a conversation are the same.",
-        "A useful response requires the complete absence of emotion.",
+        "Say I need a little time to check my availability.",
+        "Respond immediately because the first impulse must be the clearest.",
+        "Avoid the issue indefinitely without saying anything.",
+        "Require myself to become perfectly calm before ever returning.",
       ],
       correctIndex: 0,
       explanation:
@@ -3125,18 +3089,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "7-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "A discussion becomes too heated for you to follow clearly.",
-      prompt:
-        "Consider this response: “Ask for a break and suggest a time to return.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "The first impulse is always the most considered response.",
-        "A pause and permanently abandoning a conversation are the same.",
-        "A useful response requires the complete absence of emotion.",
-        "Giving a return time distinguishes a deliberate pause from disappearing.",
+        "Respond immediately because the first impulse must be the clearest.",
+        "Avoid the issue indefinitely without saying anything.",
+        "Require myself to become perfectly calm before ever returning.",
+        "Ask for a break and suggest a time to return.",
       ],
       correctIndex: 3,
       explanation:
@@ -3152,14 +3116,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "8-action-1",
       kind: "action",
       situation:
         "After a busy afternoon, you feel too wound up to begin another task.",
-      prompt:
-        "Which response best helps you try a comfortable settling strategy and check whether it helps?",
+      prompt: "What would you do next?",
       choices: [
         "Take a short walk or stretch.",
         "Force the same technique even when it feels uncomfortable.",
@@ -3185,8 +3149,7 @@ export const database = {
       id: "8-action-2",
       kind: "action",
       situation: "You feel wound up in a waiting area and cannot leave.",
-      prompt:
-        "Which response best helps you try a comfortable settling strategy and check whether it helps?",
+      prompt: "What would you do next?",
       choices: [
         "Force the same technique even when it feels uncomfortable.",
         "Expect one short exercise to remove every feeling.",
@@ -3212,8 +3175,7 @@ export const database = {
       id: "8-action-3",
       kind: "action",
       situation: "A breathing exercise feels uncomfortable today.",
-      prompt:
-        "Which response best helps you try a comfortable settling strategy and check whether it helps?",
+      prompt: "What would you do next?",
       choices: [
         "Expect one short exercise to remove every feeling.",
         "Keep pushing without checking what I need.",
@@ -3239,8 +3201,7 @@ export const database = {
       id: "8-action-4",
       kind: "action",
       situation: "You feel restless after sitting through several tasks.",
-      prompt:
-        "Which response best helps you try a comfortable settling strategy and check whether it helps?",
+      prompt: "What would you do next?",
       choices: [
         "Keep pushing without checking what I need.",
         "Try a brief stretch and check how I feel afterward.",
@@ -3266,8 +3227,7 @@ export const database = {
       id: "8-action-5",
       kind: "action",
       situation: "A noisy room makes it hard to settle before a conversation.",
-      prompt:
-        "Which response best helps you try a comfortable settling strategy and check whether it helps?",
+      prompt: "What would you do next?",
       choices: [
         "Try a quieter spot if available and notice the difference.",
         "Force the same technique even when it feels uncomfortable.",
@@ -3291,16 +3251,15 @@ export const database = {
     },
     {
       id: "8-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "After a busy afternoon, you feel too wound up to begin another task.",
-      prompt:
-        "Consider this response: “Take a short walk or stretch.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A settling strategy is useful only if all emotion disappears.",
-        "Noticing whether a strategy helps is unnecessary.",
-        "Movement is one option to experiment with. Notice how you feel rather than expecting a particular result.",
-        "One technique must work for everyone in every situation.",
+        "Expect one short exercise to remove every feeling.",
+        "Keep pushing without checking what I need.",
+        "Take a short walk or stretch.",
+        "Force the same technique even when it feels uncomfortable.",
       ],
       correctIndex: 2,
       explanation:
@@ -3316,18 +3275,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "8-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "You feel wound up in a waiting area and cannot leave.",
-      prompt:
-        "Consider this response: “Try focusing on a neutral object and notice whether that feels helpful.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Noticing whether a strategy helps is unnecessary.",
-        "A small available strategy can be tested without requiring a specific result.",
-        "One technique must work for everyone in every situation.",
-        "A settling strategy is useful only if all emotion disappears.",
+        "Keep pushing without checking what I need.",
+        "Try focusing on a neutral object and notice whether that feels helpful.",
+        "Force the same technique even when it feels uncomfortable.",
+        "Expect one short exercise to remove every feeling.",
       ],
       correctIndex: 1,
       explanation:
@@ -3343,18 +3302,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "8-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "A breathing exercise feels uncomfortable today.",
-      prompt:
-        "Consider this response: “Stop and try a different option, such as looking around the room.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "You can switch strategies based on comfort rather than forcing one approach.",
-        "One technique must work for everyone in every situation.",
-        "A settling strategy is useful only if all emotion disappears.",
-        "Noticing whether a strategy helps is unnecessary.",
+        "Stop and try a different option, such as looking around the room.",
+        "Force the same technique even when it feels uncomfortable.",
+        "Expect one short exercise to remove every feeling.",
+        "Keep pushing without checking what I need.",
       ],
       correctIndex: 0,
       explanation:
@@ -3370,18 +3329,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "8-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "You feel restless after sitting through several tasks.",
-      prompt:
-        "Consider this response: “Try a brief stretch and check how I feel afterward.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "One technique must work for everyone in every situation.",
-        "A settling strategy is useful only if all emotion disappears.",
-        "Noticing whether a strategy helps is unnecessary.",
-        "Experimenting and checking the effect helps you learn what suits the moment.",
+        "Force the same technique even when it feels uncomfortable.",
+        "Expect one short exercise to remove every feeling.",
+        "Keep pushing without checking what I need.",
+        "Try a brief stretch and check how I feel afterward.",
       ],
       correctIndex: 3,
       explanation:
@@ -3397,18 +3356,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "8-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "A noisy room makes it hard to settle before a conversation.",
-      prompt:
-        "Consider this response: “Try a quieter spot if available and notice the difference.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A settling strategy is useful only if all emotion disappears.",
-        "Noticing whether a strategy helps is unnecessary.",
-        "Changing the setting is one possible way to support yourself.",
-        "One technique must work for everyone in every situation.",
+        "Expect one short exercise to remove every feeling.",
+        "Keep pushing without checking what I need.",
+        "Try a quieter spot if available and notice the difference.",
+        "Force the same technique even when it feels uncomfortable.",
       ],
       correctIndex: 2,
       explanation:
@@ -3424,14 +3383,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "9-action-1",
       kind: "action",
       situation:
         "You feel jealous when a friend gets attention you had hoped for.",
-      prompt:
-        "Which response best helps you allow a feeling while choosing a considerate action?",
+      prompt: "What would you do next?",
       choices: [
         "Follow the strongest impulse immediately.",
         "Insist that I must not have this feeling at all.",
@@ -3458,8 +3417,7 @@ export const database = {
       kind: "action",
       situation:
         "A delay makes you angry, and the person beside you did not cause it.",
-      prompt:
-        "Which response best helps you allow a feeling while choosing a considerate action?",
+      prompt: "What would you do next?",
       choices: [
         "Insist that I must not have this feeling at all.",
         "Treat the feeling as permission to hurt someone.",
@@ -3486,8 +3444,7 @@ export const database = {
       kind: "action",
       situation:
         "You feel embarrassed after a small mistake and want to insult yourself.",
-      prompt:
-        "Which response best helps you allow a feeling while choosing a considerate action?",
+      prompt: "What would you do next?",
       choices: [
         "Treat the feeling as permission to hurt someone.",
         "Notice the embarrassment and choose a specific next step.",
@@ -3513,8 +3470,7 @@ export const database = {
       id: "9-action-4",
       kind: "action",
       situation: "A friend receives something you wanted and you feel envious.",
-      prompt:
-        "Which response best helps you allow a feeling while choosing a considerate action?",
+      prompt: "What would you do next?",
       choices: [
         "Let myself notice envy while choosing a respectful reply.",
         "Follow the strongest impulse immediately.",
@@ -3541,8 +3497,7 @@ export const database = {
       kind: "action",
       situation:
         "You are disappointed by a change and want to send a harsh message.",
-      prompt:
-        "Which response best helps you allow a feeling while choosing a considerate action?",
+      prompt: "What would you do next?",
       choices: [
         "Follow the strongest impulse immediately.",
         "Insist that I must not have this feeling at all.",
@@ -3566,16 +3521,15 @@ export const database = {
     },
     {
       id: "9-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You feel jealous when a friend gets attention you had hoped for.",
-      prompt:
-        "Consider this response: “Acknowledge it privately and choose how to respond.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A strong feeling removes responsibility for my actions.",
-        "Making room for the feeling leaves you free to act in line with your values.",
-        "Feeling an impulse means I must act on it.",
-        "Choosing my behaviour requires forbidding the feeling.",
+        "Treat the feeling as permission to hurt someone.",
+        "Acknowledge it privately and choose how to respond.",
+        "Follow the strongest impulse immediately.",
+        "Insist that I must not have this feeling at all.",
       ],
       correctIndex: 1,
       explanation:
@@ -3591,19 +3545,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "9-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A delay makes you angry, and the person beside you did not cause it.",
-      prompt:
-        "Consider this response: “Acknowledge my frustration without directing it at them.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "The feeling is real, while how you treat another person remains a choice.",
-        "Feeling an impulse means I must act on it.",
-        "Choosing my behaviour requires forbidding the feeling.",
-        "A strong feeling removes responsibility for my actions.",
+        "Acknowledge my frustration without directing it at them.",
+        "Follow the strongest impulse immediately.",
+        "Insist that I must not have this feeling at all.",
+        "Treat the feeling as permission to hurt someone.",
       ],
       correctIndex: 0,
       explanation:
@@ -3619,19 +3573,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "9-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You feel embarrassed after a small mistake and want to insult yourself.",
-      prompt:
-        "Consider this response: “Notice the embarrassment and choose a specific next step.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Feeling an impulse means I must act on it.",
-        "Choosing my behaviour requires forbidding the feeling.",
-        "A strong feeling removes responsibility for my actions.",
-        "You can experience embarrassment without turning it into a broad self-attack.",
+        "Follow the strongest impulse immediately.",
+        "Insist that I must not have this feeling at all.",
+        "Treat the feeling as permission to hurt someone.",
+        "Notice the embarrassment and choose a specific next step.",
       ],
       correctIndex: 3,
       explanation:
@@ -3647,18 +3601,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "9-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend receives something you wanted and you feel envious.",
-      prompt:
-        "Consider this response: “Let myself notice envy while choosing a respectful reply.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Choosing my behaviour requires forbidding the feeling.",
-        "A strong feeling removes responsibility for my actions.",
-        "An uncomfortable feeling does not require an unkind action.",
-        "Feeling an impulse means I must act on it.",
+        "Insist that I must not have this feeling at all.",
+        "Treat the feeling as permission to hurt someone.",
+        "Let myself notice envy while choosing a respectful reply.",
+        "Follow the strongest impulse immediately.",
       ],
       correctIndex: 2,
       explanation:
@@ -3674,19 +3628,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "9-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You are disappointed by a change and want to send a harsh message.",
-      prompt:
-        "Consider this response: “Acknowledge disappointment and choose words that describe the impact.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A strong feeling removes responsibility for my actions.",
-        "Accepting the feeling and expressing it carefully can happen together.",
-        "Feeling an impulse means I must act on it.",
-        "Choosing my behaviour requires forbidding the feeling.",
+        "Treat the feeling as permission to hurt someone.",
+        "Acknowledge disappointment and choose words that describe the impact.",
+        "Follow the strongest impulse immediately.",
+        "Insist that I must not have this feeling at all.",
       ],
       correctIndex: 1,
       explanation:
@@ -3702,14 +3656,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "10-action-1",
       kind: "action",
       situation:
         "A group keeps changing a deadline, and you are feeling overwhelmed.",
-      prompt:
-        "Which response best helps you choose an action that addresses the actual situation?",
+      prompt: "What would you do next?",
       choices: [
         "Act before checking what is within my control.",
         "Expect the feeling to solve the practical problem by itself.",
@@ -3736,8 +3690,7 @@ export const database = {
       kind: "action",
       situation:
         "A recurring household task is taking more time than you can manage.",
-      prompt:
-        "Which response best helps you choose an action that addresses the actual situation?",
+      prompt: "What would you do next?",
       choices: [
         "Expect the feeling to solve the practical problem by itself.",
         "Discuss sharing or simplifying the task.",
@@ -3763,8 +3716,7 @@ export const database = {
       id: "10-action-3",
       kind: "action",
       situation: "Two commitments overlap and you cannot attend both.",
-      prompt:
-        "Which response best helps you choose an action that addresses the actual situation?",
+      prompt: "What would you do next?",
       choices: [
         "Clarify priorities and communicate a realistic choice.",
         "Assume staying calm is the only thing I can do.",
@@ -3790,8 +3742,7 @@ export const database = {
       id: "10-action-4",
       kind: "action",
       situation: "You feel uncertain because instructions are incomplete.",
-      prompt:
-        "Which response best helps you choose an action that addresses the actual situation?",
+      prompt: "What would you do next?",
       choices: [
         "Assume staying calm is the only thing I can do.",
         "Act before checking what is within my control.",
@@ -3816,8 +3767,7 @@ export const database = {
       id: "10-action-5",
       kind: "action",
       situation: "A task is beyond your current experience and you feel stuck.",
-      prompt:
-        "Which response best helps you choose an action that addresses the actual situation?",
+      prompt: "What would you do next?",
       choices: [
         "Act before checking what is within my control.",
         "Expect the feeling to solve the practical problem by itself.",
@@ -3841,16 +3791,15 @@ export const database = {
     },
     {
       id: "10-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A group keeps changing a deadline, and you are feeling overwhelmed.",
-      prompt:
-        "Consider this response: “Ask for a clear deadline and priorities.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Changing the conditions can be more useful than trying to tolerate unlimited uncertainty.",
-        "Regulating emotion means tolerating every condition without changing it.",
-        "Any immediate action is better than understanding the options.",
-        "Noticing a feeling automatically changes the external situation.",
+        "Ask for a clear deadline and priorities.",
+        "Assume staying calm is the only thing I can do.",
+        "Act before checking what is within my control.",
+        "Expect the feeling to solve the practical problem by itself.",
       ],
       correctIndex: 0,
       explanation:
@@ -3866,19 +3815,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "10-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A recurring household task is taking more time than you can manage.",
-      prompt:
-        "Consider this response: “Discuss sharing or simplifying the task.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Regulating emotion means tolerating every condition without changing it.",
-        "Any immediate action is better than understanding the options.",
-        "Noticing a feeling automatically changes the external situation.",
-        "Changing the arrangement can address a practical source of strain.",
+        "Assume staying calm is the only thing I can do.",
+        "Act before checking what is within my control.",
+        "Expect the feeling to solve the practical problem by itself.",
+        "Discuss sharing or simplifying the task.",
       ],
       correctIndex: 3,
       explanation:
@@ -3894,18 +3843,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "10-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "Two commitments overlap and you cannot attend both.",
-      prompt:
-        "Consider this response: “Clarify priorities and communicate a realistic choice.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Any immediate action is better than understanding the options.",
-        "Noticing a feeling automatically changes the external situation.",
-        "The next step needs to address the conflict in availability, not just the feeling.",
-        "Regulating emotion means tolerating every condition without changing it.",
+        "Act before checking what is within my control.",
+        "Expect the feeling to solve the practical problem by itself.",
+        "Clarify priorities and communicate a realistic choice.",
+        "Assume staying calm is the only thing I can do.",
       ],
       correctIndex: 2,
       explanation:
@@ -3921,18 +3870,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "10-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "You feel uncertain because instructions are incomplete.",
-      prompt:
-        "Consider this response: “Ask for the missing information before guessing.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Noticing a feeling automatically changes the external situation.",
-        "Clarification addresses an uncertainty you can influence.",
-        "Regulating emotion means tolerating every condition without changing it.",
-        "Any immediate action is better than understanding the options.",
+        "Expect the feeling to solve the practical problem by itself.",
+        "Ask for the missing information before guessing.",
+        "Assume staying calm is the only thing I can do.",
+        "Act before checking what is within my control.",
       ],
       correctIndex: 1,
       explanation: "Clarification addresses an uncertainty you can influence.",
@@ -3947,18 +3896,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "10-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "A task is beyond your current experience and you feel stuck.",
-      prompt:
-        "Consider this response: “Seek relevant help with the part I do not understand.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Support can be an appropriate action when information or skills are missing.",
-        "Regulating emotion means tolerating every condition without changing it.",
-        "Any immediate action is better than understanding the options.",
-        "Noticing a feeling automatically changes the external situation.",
+        "Seek relevant help with the part I do not understand.",
+        "Assume staying calm is the only thing I can do.",
+        "Act before checking what is within my control.",
+        "Expect the feeling to solve the practical problem by itself.",
       ],
       correctIndex: 0,
       explanation:
@@ -3974,13 +3923,13 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "11-action-1",
       kind: "action",
       situation: "Your friend has seen your message but has not replied.",
-      prompt:
-        "Which response best helps you separate an observation from an interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Use my feeling as proof of what another person intended.",
         "They have seen it; I don’t know why they haven’t replied.",
@@ -4006,8 +3955,7 @@ export const database = {
       id: "11-action-2",
       kind: "action",
       situation: "A colleague walks past without greeting you.",
-      prompt:
-        "Which response best helps you separate an observation from an interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Separate “They walked past” from “They dislike me.”",
         "Treat my first explanation as a confirmed fact.",
@@ -4033,8 +3981,7 @@ export const database = {
       id: "11-action-3",
       kind: "action",
       situation: "An invitation receives a short “Can’t make it.”",
-      prompt:
-        "Which response best helps you separate an observation from an interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Treat my first explanation as a confirmed fact.",
         "Replace my first guess with a reassuring guess and call it certain.",
@@ -4060,8 +4007,7 @@ export const database = {
       id: "11-action-4",
       kind: "action",
       situation: "A friend looks at their phone while you speak.",
-      prompt:
-        "Which response best helps you separate an observation from an interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Replace my first guess with a reassuring guess and call it certain.",
         "Use my feeling as proof of what another person intended.",
@@ -4087,8 +4033,7 @@ export const database = {
       id: "11-action-5",
       kind: "action",
       situation: "Your suggestion is not selected in a group.",
-      prompt:
-        "Which response best helps you separate an observation from an interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Use my feeling as proof of what another person intended.",
         "Distinguish the decision from “My ideas never matter.”",
@@ -4112,15 +4057,14 @@ export const database = {
     },
     {
       id: "11-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation: "Your friend has seen your message but has not replied.",
-      prompt:
-        "Consider this response: “They have seen it; I don’t know why they haven’t replied.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A convincing interpretation is automatically an observation.",
-        "A positive explanation needs no evidence.",
-        "Feeling affected proves the other person’s motive.",
-        "Separating the observation from the explanation keeps room for more information.",
+        "Treat my first explanation as a confirmed fact.",
+        "Replace my first guess with a reassuring guess and call it certain.",
+        "Use my feeling as proof of what another person intended.",
+        "They have seen it; I don’t know why they haven’t replied.",
       ],
       correctIndex: 3,
       explanation:
@@ -4136,18 +4080,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "11-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "A colleague walks past without greeting you.",
-      prompt:
-        "Consider this response: “Separate “They walked past” from “They dislike me.”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A positive explanation needs no evidence.",
-        "Feeling affected proves the other person’s motive.",
-        "The action is observable; the explanation of their feelings is not established.",
-        "A convincing interpretation is automatically an observation.",
+        "Replace my first guess with a reassuring guess and call it certain.",
+        "Use my feeling as proof of what another person intended.",
+        "Separate “They walked past” from “They dislike me.”",
+        "Treat my first explanation as a confirmed fact.",
       ],
       correctIndex: 2,
       explanation:
@@ -4163,18 +4107,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "11-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "An invitation receives a short “Can’t make it.”",
-      prompt:
-        "Consider this response: “Notice the declined invitation without deciding why it was declined.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Feeling affected proves the other person’s motive.",
-        "The message tells you their answer, not the full reason behind it.",
-        "A convincing interpretation is automatically an observation.",
-        "A positive explanation needs no evidence.",
+        "Use my feeling as proof of what another person intended.",
+        "Notice the declined invitation without deciding why it was declined.",
+        "Treat my first explanation as a confirmed fact.",
+        "Replace my first guess with a reassuring guess and call it certain.",
       ],
       correctIndex: 1,
       explanation:
@@ -4190,18 +4134,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "11-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend looks at their phone while you speak.",
-      prompt:
-        "Consider this response: “Describe the phone use separately from my assumption about their interest.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Separating the two lets you check the meaning rather than assume it.",
-        "A convincing interpretation is automatically an observation.",
-        "A positive explanation needs no evidence.",
-        "Feeling affected proves the other person’s motive.",
+        "Describe the phone use separately from my assumption about their interest.",
+        "Treat my first explanation as a confirmed fact.",
+        "Replace my first guess with a reassuring guess and call it certain.",
+        "Use my feeling as proof of what another person intended.",
       ],
       correctIndex: 0,
       explanation:
@@ -4217,18 +4161,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "11-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "Your suggestion is not selected in a group.",
-      prompt:
-        "Consider this response: “Distinguish the decision from “My ideas never matter.”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A convincing interpretation is automatically an observation.",
-        "A positive explanation needs no evidence.",
-        "Feeling affected proves the other person’s motive.",
-        "One decision does not establish a broad conclusion about your value.",
+        "Treat my first explanation as a confirmed fact.",
+        "Replace my first guess with a reassuring guess and call it certain.",
+        "Use my feeling as proof of what another person intended.",
+        "Distinguish the decision from “My ideas never matter.”",
       ],
       correctIndex: 3,
       explanation:
@@ -4244,13 +4188,13 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "12-action-1",
       kind: "action",
       situation: "Someone gives a very short answer when you ask for help.",
-      prompt:
-        "Which response best helps you consider more than one plausible explanation?",
+      prompt: "What would you do next?",
       choices: [
         "Maybe they are rushed; I can ask about timing.",
         "Settle on the most upsetting explanation without checking.",
@@ -4276,8 +4220,7 @@ export const database = {
       id: "12-action-2",
       kind: "action",
       situation: "A friend declines two invitations.",
-      prompt:
-        "Which response best helps you consider more than one plausible explanation?",
+      prompt: "What would you do next?",
       choices: [
         "Settle on the most upsetting explanation without checking.",
         "Insist the explanation must be positive.",
@@ -4303,8 +4246,7 @@ export const database = {
       id: "12-action-3",
       kind: "action",
       situation: "Someone gives unusually brief replies today.",
-      prompt:
-        "Which response best helps you consider more than one plausible explanation?",
+      prompt: "What would you do next?",
       choices: [
         "Insist the explanation must be positive.",
         "Invent certainty instead of seeking more information.",
@@ -4329,8 +4271,7 @@ export const database = {
       id: "12-action-4",
       kind: "action",
       situation: "A group has not responded to your proposal.",
-      prompt:
-        "Which response best helps you consider more than one plausible explanation?",
+      prompt: "What would you do next?",
       choices: [
         "Invent certainty instead of seeking more information.",
         "Consider whether they need time or information before deciding it was dismissed.",
@@ -4356,8 +4297,7 @@ export const database = {
       id: "12-action-5",
       kind: "action",
       situation: "Someone arrives late to a planned call.",
-      prompt:
-        "Which response best helps you consider more than one plausible explanation?",
+      prompt: "What would you do next?",
       choices: [
         "Consider a scheduling mix-up or delay while still noting the impact on me.",
         "Settle on the most upsetting explanation without checking.",
@@ -4381,15 +4321,14 @@ export const database = {
     },
     {
       id: "12-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone gives a very short answer when you ask for help.",
-      prompt:
-        "Consider this response: “Maybe they are rushed; I can ask about timing.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Considering alternatives means dismissing every genuine concern.",
-        "A plausible alternative becomes true as soon as I think of it.",
-        "A possible explanation plus a clarifying question gives you a way to find out more.",
-        "The explanation that feels strongest must be the only possibility.",
+        "Insist the explanation must be positive.",
+        "Invent certainty instead of seeking more information.",
+        "Maybe they are rushed; I can ask about timing.",
+        "Settle on the most upsetting explanation without checking.",
       ],
       correctIndex: 2,
       explanation:
@@ -4405,18 +4344,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "12-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend declines two invitations.",
-      prompt:
-        "Consider this response: “Consider timing, energy, or the activity, then ask what would suit them.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A plausible alternative becomes true as soon as I think of it.",
-        "Alternative possibilities can guide a question rather than become new certainties.",
-        "The explanation that feels strongest must be the only possibility.",
-        "Considering alternatives means dismissing every genuine concern.",
+        "Invent certainty instead of seeking more information.",
+        "Consider timing, energy, or the activity, then ask what would suit them.",
+        "Settle on the most upsetting explanation without checking.",
+        "Insist the explanation must be positive.",
       ],
       correctIndex: 1,
       explanation:
@@ -4432,18 +4371,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "12-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone gives unusually brief replies today.",
-      prompt:
-        "Consider this response: “Consider whether they are busy or distracted as well as upset.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "The same behaviour can fit several explanations.",
-        "The explanation that feels strongest must be the only possibility.",
-        "Considering alternatives means dismissing every genuine concern.",
-        "A plausible alternative becomes true as soon as I think of it.",
+        "Consider whether they are busy or distracted as well as upset.",
+        "Settle on the most upsetting explanation without checking.",
+        "Insist the explanation must be positive.",
+        "Invent certainty instead of seeking more information.",
       ],
       correctIndex: 0,
       explanation: "The same behaviour can fit several explanations.",
@@ -4458,18 +4397,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "12-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "A group has not responded to your proposal.",
-      prompt:
-        "Consider this response: “Consider whether they need time or information before deciding it was dismissed.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "The explanation that feels strongest must be the only possibility.",
-        "Considering alternatives means dismissing every genuine concern.",
-        "A plausible alternative becomes true as soon as I think of it.",
-        "Leaving room for context can prevent an early assumption becoming a conclusion.",
+        "Settle on the most upsetting explanation without checking.",
+        "Insist the explanation must be positive.",
+        "Invent certainty instead of seeking more information.",
+        "Consider whether they need time or information before deciding it was dismissed.",
       ],
       correctIndex: 3,
       explanation:
@@ -4485,18 +4424,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "12-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone arrives late to a planned call.",
-      prompt:
-        "Consider this response: “Consider a scheduling mix-up or delay while still noting the impact on me.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Considering alternatives means dismissing every genuine concern.",
-        "A plausible alternative becomes true as soon as I think of it.",
-        "Curiosity about causes does not require ignoring how the event affected you.",
-        "The explanation that feels strongest must be the only possibility.",
+        "Insist the explanation must be positive.",
+        "Invent certainty instead of seeking more information.",
+        "Consider a scheduling mix-up or delay while still noting the impact on me.",
+        "Settle on the most upsetting explanation without checking.",
       ],
       correctIndex: 2,
       explanation:
@@ -4512,14 +4451,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "13-action-1",
       kind: "action",
       situation:
         "A teammate says, “Interesting choice,” about your work. You cannot tell what they mean.",
-      prompt:
-        "Which response best helps you ask a neutral question to clarify meaning?",
+      prompt: "What would you do next?",
       choices: [
         "Ask a question that already accuses them of a motive.",
         "Ask someone else to guess instead of checking with the speaker.",
@@ -4545,8 +4484,7 @@ export const database = {
       id: "13-action-2",
       kind: "action",
       situation: "A family member says you seem different lately.",
-      prompt:
-        "Which response best helps you ask a neutral question to clarify meaning?",
+      prompt: "What would you do next?",
       choices: [
         "Ask someone else to guess instead of checking with the speaker.",
         "Respond to an interpretation I have not checked.",
@@ -4572,8 +4510,7 @@ export const database = {
       id: "13-action-3",
       kind: "action",
       situation: "A teammate calls your idea “unusual.”",
-      prompt:
-        "Which response best helps you ask a neutral question to clarify meaning?",
+      prompt: "What would you do next?",
       choices: [
         "Respond to an interpretation I have not checked.",
         "Ask, “What do you mean by unusual here?”",
@@ -4600,8 +4537,7 @@ export const database = {
       kind: "action",
       situation:
         "A friend says, “Do whatever you want,” and you are unsure of the tone.",
-      prompt:
-        "Which response best helps you ask a neutral question to clarify meaning?",
+      prompt: "What would you do next?",
       choices: [
         "Ask, “Are you comfortable with the plan, or would you prefer something else?”",
         "Ask a question that already accuses them of a motive.",
@@ -4627,8 +4563,7 @@ export const database = {
       id: "13-action-5",
       kind: "action",
       situation: "Someone says your explanation could be clearer.",
-      prompt:
-        "Which response best helps you ask a neutral question to clarify meaning?",
+      prompt: "What would you do next?",
       choices: [
         "Ask a question that already accuses them of a motive.",
         "Ask someone else to guess instead of checking with the speaker.",
@@ -4652,16 +4587,15 @@ export const database = {
     },
     {
       id: "13-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A teammate says, “Interesting choice,” about your work. You cannot tell what they mean.",
-      prompt:
-        "Consider this response: ““What stood out to you?”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Clarification is unnecessary when my first impression feels clear.",
-        "An open question allows them to explain without requiring you to guess their intent.",
-        "A question checks meaning even when it assumes the answer.",
-        "A third person’s guess confirms what the speaker intended.",
+        "Respond to an interpretation I have not checked.",
+        "“What stood out to you?”",
+        "Ask a question that already accuses them of a motive.",
+        "Ask someone else to guess instead of checking with the speaker.",
       ],
       correctIndex: 1,
       explanation:
@@ -4677,18 +4611,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "13-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "A family member says you seem different lately.",
-      prompt:
-        "Consider this response: “Ask, “What have you noticed?”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "An open question invites observations before you decide how to respond.",
-        "A question checks meaning even when it assumes the answer.",
-        "A third person’s guess confirms what the speaker intended.",
-        "Clarification is unnecessary when my first impression feels clear.",
+        "Ask, “What have you noticed?”",
+        "Ask a question that already accuses them of a motive.",
+        "Ask someone else to guess instead of checking with the speaker.",
+        "Respond to an interpretation I have not checked.",
       ],
       correctIndex: 0,
       explanation:
@@ -4704,18 +4638,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "13-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "A teammate calls your idea “unusual.”",
-      prompt:
-        "Consider this response: “Ask, “What do you mean by unusual here?”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A question checks meaning even when it assumes the answer.",
-        "A third person’s guess confirms what the speaker intended.",
-        "Clarification is unnecessary when my first impression feels clear.",
-        "Checking the word’s meaning is more direct than assuming praise or criticism.",
+        "Ask a question that already accuses them of a motive.",
+        "Ask someone else to guess instead of checking with the speaker.",
+        "Respond to an interpretation I have not checked.",
+        "Ask, “What do you mean by unusual here?”",
       ],
       correctIndex: 3,
       explanation:
@@ -4731,19 +4665,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "13-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A friend says, “Do whatever you want,” and you are unsure of the tone.",
-      prompt:
-        "Consider this response: “Ask, “Are you comfortable with the plan, or would you prefer something else?”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A third person’s guess confirms what the speaker intended.",
-        "Clarification is unnecessary when my first impression feels clear.",
-        "A clarifying question makes room for their actual preference.",
-        "A question checks meaning even when it assumes the answer.",
+        "Ask someone else to guess instead of checking with the speaker.",
+        "Respond to an interpretation I have not checked.",
+        "Ask, “Are you comfortable with the plan, or would you prefer something else?”",
+        "Ask a question that already accuses them of a motive.",
       ],
       correctIndex: 2,
       explanation:
@@ -4759,18 +4693,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "13-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone says your explanation could be clearer.",
-      prompt:
-        "Consider this response: “Ask which part they would like explained differently.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Clarification is unnecessary when my first impression feels clear.",
-        "Requesting specifics clarifies the comment and a possible next step.",
-        "A question checks meaning even when it assumes the answer.",
-        "A third person’s guess confirms what the speaker intended.",
+        "Respond to an interpretation I have not checked.",
+        "Ask which part they would like explained differently.",
+        "Ask a question that already accuses them of a motive.",
+        "Ask someone else to guess instead of checking with the speaker.",
       ],
       correctIndex: 1,
       explanation:
@@ -4786,14 +4720,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "14-action-1",
       kind: "action",
       situation:
         "A friend jokes about something personal and then says they meant to cheer you up.",
-      prompt:
-        "Which response best helps you acknowledge impact without claiming certainty about intention?",
+      prompt: "What would you do next?",
       choices: [
         "Treat a painful impact as proof of a hostile intention.",
         "Debate motives without addressing what happened.",
@@ -4819,8 +4753,7 @@ export const database = {
       id: "14-action-2",
       kind: "action",
       situation: "Your advice lands as criticism, though you wanted to help.",
-      prompt:
-        "Which response best helps you acknowledge impact without claiming certainty about intention?",
+      prompt: "What would you do next?",
       choices: [
         "Debate motives without addressing what happened.",
         "Acknowledge how it landed before explaining what I meant.",
@@ -4847,8 +4780,7 @@ export const database = {
       kind: "action",
       situation:
         "A relative shares personal news about you while trying to celebrate.",
-      prompt:
-        "Which response best helps you acknowledge impact without claiming certainty about intention?",
+      prompt: "What would you do next?",
       choices: [
         "Recognise their excitement and explain that I wanted to share the news myself.",
         "Dismiss the impact because the intention may have been caring.",
@@ -4874,8 +4806,7 @@ export const database = {
       id: "14-action-4",
       kind: "action",
       situation: "A friend’s surprise plan leaves you feeling pressured.",
-      prompt:
-        "Which response best helps you acknowledge impact without claiming certainty about intention?",
+      prompt: "What would you do next?",
       choices: [
         "Dismiss the impact because the intention may have been caring.",
         "Treat a painful impact as proof of a hostile intention.",
@@ -4901,8 +4832,7 @@ export const database = {
       id: "14-action-5",
       kind: "action",
       situation: "A joke you made leaves someone uncomfortable.",
-      prompt:
-        "Which response best helps you acknowledge impact without claiming certainty about intention?",
+      prompt: "What would you do next?",
       choices: [
         "Treat a painful impact as proof of a hostile intention.",
         "Debate motives without addressing what happened.",
@@ -4925,16 +4855,15 @@ export const database = {
     },
     {
       id: "14-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A friend jokes about something personal and then says they meant to cheer you up.",
-      prompt:
-        "Consider this response: ““I know you meant to help. That topic feels personal to me.”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "This acknowledges their account while making the impact and a possible boundary clear.",
-        "A caring intention makes a painful impact impossible.",
-        "Impact alone reveals exactly what the other person meant.",
-        "Agreeing on a motive is the only way to discuss an impact.",
+        "“I know you meant to help. That topic feels personal to me.”",
+        "Dismiss the impact because the intention may have been caring.",
+        "Treat a painful impact as proof of a hostile intention.",
+        "Debate motives without addressing what happened.",
       ],
       correctIndex: 0,
       explanation:
@@ -4950,18 +4879,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "14-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "Your advice lands as criticism, though you wanted to help.",
-      prompt:
-        "Consider this response: “Acknowledge how it landed before explaining what I meant.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A caring intention makes a painful impact impossible.",
-        "Impact alone reveals exactly what the other person meant.",
-        "Agreeing on a motive is the only way to discuss an impact.",
-        "Taking the impact seriously does not require pretending your intention was different.",
+        "Dismiss the impact because the intention may have been caring.",
+        "Treat a painful impact as proof of a hostile intention.",
+        "Debate motives without addressing what happened.",
+        "Acknowledge how it landed before explaining what I meant.",
       ],
       correctIndex: 3,
       explanation:
@@ -4977,19 +4906,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "14-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A relative shares personal news about you while trying to celebrate.",
-      prompt:
-        "Consider this response: “Recognise their excitement and explain that I wanted to share the news myself.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Impact alone reveals exactly what the other person meant.",
-        "Agreeing on a motive is the only way to discuss an impact.",
-        "You can acknowledge their intention and still describe a boundary.",
-        "A caring intention makes a painful impact impossible.",
+        "Treat a painful impact as proof of a hostile intention.",
+        "Debate motives without addressing what happened.",
+        "Recognise their excitement and explain that I wanted to share the news myself.",
+        "Dismiss the impact because the intention may have been caring.",
       ],
       correctIndex: 2,
       explanation:
@@ -5005,18 +4934,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "14-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend’s surprise plan leaves you feeling pressured.",
-      prompt:
-        "Consider this response: “Explain the pressure while acknowledging the thought they put into it.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Agreeing on a motive is the only way to discuss an impact.",
-        "Appreciation and an uncomfortable impact can both be part of the conversation.",
-        "A caring intention makes a painful impact impossible.",
-        "Impact alone reveals exactly what the other person meant.",
+        "Debate motives without addressing what happened.",
+        "Explain the pressure while acknowledging the thought they put into it.",
+        "Dismiss the impact because the intention may have been caring.",
+        "Treat a painful impact as proof of a hostile intention.",
       ],
       correctIndex: 1,
       explanation:
@@ -5032,18 +4961,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "14-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "A joke you made leaves someone uncomfortable.",
-      prompt:
-        "Consider this response: “Acknowledge the discomfort and avoid repeating that joke with them.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Addressing impact includes considering what changes next.",
-        "A caring intention makes a painful impact impossible.",
-        "Impact alone reveals exactly what the other person meant.",
-        "Agreeing on a motive is the only way to discuss an impact.",
+        "Acknowledge the discomfort and avoid repeating that joke with them.",
+        "Dismiss the impact because the intention may have been caring.",
+        "Treat a painful impact as proof of a hostile intention.",
+        "Debate motives without addressing what happened.",
       ],
       correctIndex: 0,
       explanation: "Addressing impact includes considering what changes next.",
@@ -5058,14 +4987,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "15-action-1",
       kind: "action",
       situation:
         "You like detailed plans. A friend prefers deciding on the day.",
-      prompt:
-        "Which response best helps you understand differing preferences without erasing either person’s needs?",
+      prompt: "What would you do next?",
       choices: [
         "Assume their background tells me everything about their preference.",
         "Ask what flexibility gives them and explain what planning gives me.",
@@ -5090,8 +5019,7 @@ export const database = {
       id: "15-action-2",
       kind: "action",
       situation: "You prefer text while a friend prefers calls.",
-      prompt:
-        "Which response best helps you understand differing preferences without erasing either person’s needs?",
+      prompt: "What would you do next?",
       choices: [
         "Ask what each format makes easier and agree on a workable option.",
         "Treat their preference as a character flaw.",
@@ -5117,8 +5045,7 @@ export const database = {
       id: "15-action-3",
       kind: "action",
       situation: "You like quiet breaks while a teammate likes chatting.",
-      prompt:
-        "Which response best helps you understand differing preferences without erasing either person’s needs?",
+      prompt: "What would you do next?",
       choices: [
         "Treat their preference as a character flaw.",
         "Abandon my preference without discussing it.",
@@ -5145,8 +5072,7 @@ export const database = {
       kind: "action",
       situation:
         "You want detailed plans while your sibling wants flexibility.",
-      prompt:
-        "Which response best helps you understand differing preferences without erasing either person’s needs?",
+      prompt: "What would you do next?",
       choices: [
         "Abandon my preference without discussing it.",
         "Assume their background tells me everything about their preference.",
@@ -5172,8 +5098,7 @@ export const database = {
       id: "15-action-5",
       kind: "action",
       situation: "Someone wants more thinking time than you in a discussion.",
-      prompt:
-        "Which response best helps you understand differing preferences without erasing either person’s needs?",
+      prompt: "What would you do next?",
       choices: [
         "Assume their background tells me everything about their preference.",
         "Ask about a pace that allows both of us to contribute.",
@@ -5197,16 +5122,15 @@ export const database = {
     },
     {
       id: "15-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You like detailed plans. A friend prefers deciding on the day.",
-      prompt:
-        "Consider this response: “Ask what flexibility gives them and explain what planning gives me.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A preference different from mine is inherently unreasonable.",
-        "Understanding another person means my needs no longer count.",
-        "Group identity tells me exactly what an individual needs.",
-        "Exploring both needs can reveal a workable middle ground.",
+        "Treat their preference as a character flaw.",
+        "Abandon my preference without discussing it.",
+        "Assume their background tells me everything about their preference.",
+        "Ask what flexibility gives them and explain what planning gives me.",
       ],
       correctIndex: 3,
       explanation: "Exploring both needs can reveal a workable middle ground.",
@@ -5221,18 +5145,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "15-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "You prefer text while a friend prefers calls.",
-      prompt:
-        "Consider this response: “Ask what each format makes easier and agree on a workable option.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Understanding another person means my needs no longer count.",
-        "Group identity tells me exactly what an individual needs.",
-        "Understanding the needs behind preferences can reveal a practical compromise.",
-        "A preference different from mine is inherently unreasonable.",
+        "Abandon my preference without discussing it.",
+        "Assume their background tells me everything about their preference.",
+        "Ask what each format makes easier and agree on a workable option.",
+        "Treat their preference as a character flaw.",
       ],
       correctIndex: 2,
       explanation:
@@ -5248,18 +5172,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "15-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "You like quiet breaks while a teammate likes chatting.",
-      prompt:
-        "Consider this response: “Explain what rest means for me and ask what they prefer.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Group identity tells me exactly what an individual needs.",
-        "Different ways of resting need not imply rejection or inconsideration.",
-        "A preference different from mine is inherently unreasonable.",
-        "Understanding another person means my needs no longer count.",
+        "Assume their background tells me everything about their preference.",
+        "Explain what rest means for me and ask what they prefer.",
+        "Treat their preference as a character flaw.",
+        "Abandon my preference without discussing it.",
       ],
       correctIndex: 1,
       explanation:
@@ -5275,19 +5199,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "15-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You want detailed plans while your sibling wants flexibility.",
-      prompt:
-        "Consider this response: “Discuss which details need fixing and which can stay open.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A workable arrangement can preserve important parts of both preferences.",
-        "A preference different from mine is inherently unreasonable.",
-        "Understanding another person means my needs no longer count.",
-        "Group identity tells me exactly what an individual needs.",
+        "Discuss which details need fixing and which can stay open.",
+        "Treat their preference as a character flaw.",
+        "Abandon my preference without discussing it.",
+        "Assume their background tells me everything about their preference.",
       ],
       correctIndex: 0,
       explanation:
@@ -5303,18 +5227,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "15-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone wants more thinking time than you in a discussion.",
-      prompt:
-        "Consider this response: “Ask about a pace that allows both of us to contribute.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A preference different from mine is inherently unreasonable.",
-        "Understanding another person means my needs no longer count.",
-        "Group identity tells me exactly what an individual needs.",
-        "Different communication rhythms can be accommodated rather than judged.",
+        "Treat their preference as a character flaw.",
+        "Abandon my preference without discussing it.",
+        "Assume their background tells me everything about their preference.",
+        "Ask about a pace that allows both of us to contribute.",
       ],
       correctIndex: 3,
       explanation:
@@ -5330,14 +5254,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "16-action-1",
       kind: "action",
       situation:
         "A friend starts describing a difficult day. You remember a very similar experience.",
-      prompt:
-        "Which response best helps you listen and check understanding before adding your own view?",
+      prompt: "What would you do next?",
       choices: [
         "Wait, then reflect what I heard.",
         "Interrupt with my own related story.",
@@ -5363,8 +5287,7 @@ export const database = {
       id: "16-action-2",
       kind: "action",
       situation: "Someone says they feel left out of a group.",
-      prompt:
-        "Which response best helps you listen and check understanding before adding your own view?",
+      prompt: "What would you do next?",
       choices: [
         "Interrupt with my own related story.",
         "Offer a solution before hearing the full concern.",
@@ -5390,8 +5313,7 @@ export const database = {
       id: "16-action-3",
       kind: "action",
       situation: "A friend describes a tiring day and pauses to find words.",
-      prompt:
-        "Which response best helps you listen and check understanding before adding your own view?",
+      prompt: "What would you do next?",
       choices: [
         "Offer a solution before hearing the full concern.",
         "Stay silent while planning my response instead of attending.",
@@ -5417,8 +5339,7 @@ export const database = {
       id: "16-action-4",
       kind: "action",
       situation: "A teammate explains why a task was difficult.",
-      prompt:
-        "Which response best helps you listen and check understanding before adding your own view?",
+      prompt: "What would you do next?",
       choices: [
         "Stay silent while planning my response instead of attending.",
         "Summarise the difficulty before offering suggestions.",
@@ -5445,8 +5366,7 @@ export const database = {
       kind: "action",
       situation:
         "A relative tells a story you have heard before but seems affected today.",
-      prompt:
-        "Which response best helps you listen and check understanding before adding your own view?",
+      prompt: "What would you do next?",
       choices: [
         "Listen to what matters to them today and check my understanding.",
         "Interrupt with my own related story.",
@@ -5470,16 +5390,15 @@ export const database = {
     },
     {
       id: "16-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A friend starts describing a difficult day. You remember a very similar experience.",
-      prompt:
-        "Consider this response: “Wait, then reflect what I heard.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "The quickest solution always demonstrates the best listening.",
-        "Silence alone guarantees that I understand the speaker.",
-        "A brief summary gives them a chance to confirm or correct your understanding.",
-        "Having a similar experience means I already know theirs.",
+        "Offer a solution before hearing the full concern.",
+        "Stay silent while planning my response instead of attending.",
+        "Wait, then reflect what I heard.",
+        "Interrupt with my own related story.",
       ],
       correctIndex: 2,
       explanation:
@@ -5495,18 +5414,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "16-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone says they feel left out of a group.",
-      prompt:
-        "Consider this response: “Reflect that they wanted to be included and ask if I understood.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Silence alone guarantees that I understand the speaker.",
-        "A tentative summary checks understanding before introducing your own interpretation.",
-        "Having a similar experience means I already know theirs.",
-        "The quickest solution always demonstrates the best listening.",
+        "Stay silent while planning my response instead of attending.",
+        "Reflect that they wanted to be included and ask if I understood.",
+        "Interrupt with my own related story.",
+        "Offer a solution before hearing the full concern.",
       ],
       correctIndex: 1,
       explanation:
@@ -5522,18 +5441,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "16-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend describes a tiring day and pauses to find words.",
-      prompt:
-        "Consider this response: “Give them time to finish before sharing my experience.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Allowing a pause keeps their experience at the centre of the conversation.",
-        "Having a similar experience means I already know theirs.",
-        "The quickest solution always demonstrates the best listening.",
-        "Silence alone guarantees that I understand the speaker.",
+        "Give them time to finish before sharing my experience.",
+        "Interrupt with my own related story.",
+        "Offer a solution before hearing the full concern.",
+        "Stay silent while planning my response instead of attending.",
       ],
       correctIndex: 0,
       explanation:
@@ -5549,18 +5468,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "16-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "A teammate explains why a task was difficult.",
-      prompt:
-        "Consider this response: “Summarise the difficulty before offering suggestions.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Having a similar experience means I already know theirs.",
-        "The quickest solution always demonstrates the best listening.",
-        "Silence alone guarantees that I understand the speaker.",
-        "Understanding the actual difficulty helps any later response fit the situation.",
+        "Interrupt with my own related story.",
+        "Offer a solution before hearing the full concern.",
+        "Stay silent while planning my response instead of attending.",
+        "Summarise the difficulty before offering suggestions.",
       ],
       correctIndex: 3,
       explanation:
@@ -5576,19 +5495,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "16-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A relative tells a story you have heard before but seems affected today.",
-      prompt:
-        "Consider this response: “Listen to what matters to them today and check my understanding.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "The quickest solution always demonstrates the best listening.",
-        "Silence alone guarantees that I understand the speaker.",
-        "Familiar facts do not mean you already know the person’s current experience.",
-        "Having a similar experience means I already know theirs.",
+        "Offer a solution before hearing the full concern.",
+        "Stay silent while planning my response instead of attending.",
+        "Listen to what matters to them today and check my understanding.",
+        "Interrupt with my own related story.",
       ],
       correctIndex: 2,
       explanation:
@@ -5604,13 +5523,13 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "17-action-1",
       kind: "action",
       situation: "Someone is quieter than usual at a gathering.",
-      prompt:
-        "Which response best helps you check emotional clues rather than assume you can read someone’s mind?",
+      prompt: "What would you do next?",
       choices: [
         "Tell them exactly what they must be feeling.",
         "Assume their behaviour has the same meaning for every person.",
@@ -5636,8 +5555,7 @@ export const database = {
       id: "17-action-2",
       kind: "action",
       situation: "A teammate sounds abrupt on a call.",
-      prompt:
-        "Which response best helps you check emotional clues rather than assume you can read someone’s mind?",
+      prompt: "What would you do next?",
       choices: [
         "Assume their behaviour has the same meaning for every person.",
         "Insist they disclose a feeling they have not offered to share.",
@@ -5663,8 +5581,7 @@ export const database = {
       id: "17-action-3",
       kind: "action",
       situation: "A friend is quieter than usual over lunch.",
-      prompt:
-        "Which response best helps you check emotional clues rather than assume you can read someone’s mind?",
+      prompt: "What would you do next?",
       choices: [
         "Insist they disclose a feeling they have not offered to share.",
         "Ask how they are finding the day and let them choose how much to share.",
@@ -5690,8 +5607,7 @@ export const database = {
       id: "17-action-4",
       kind: "action",
       situation: "Someone smiles while describing a difficult event.",
-      prompt:
-        "Which response best helps you check emotional clues rather than assume you can read someone’s mind?",
+      prompt: "What would you do next?",
       choices: [
         "Listen to their words rather than assume the smile means happiness.",
         "Tell them exactly what they must be feeling.",
@@ -5717,8 +5633,7 @@ export const database = {
       id: "17-action-5",
       kind: "action",
       situation: "A family member avoids eye contact during a discussion.",
-      prompt:
-        "Which response best helps you check emotional clues rather than assume you can read someone’s mind?",
+      prompt: "What would you do next?",
       choices: [
         "Tell them exactly what they must be feeling.",
         "Assume their behaviour has the same meaning for every person.",
@@ -5742,15 +5657,14 @@ export const database = {
     },
     {
       id: "17-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone is quieter than usual at a gathering.",
-      prompt:
-        "Consider this response: “Ask privately how they are finding the evening.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Noticing a clue entitles me to a personal explanation.",
-        "A low-pressure question lets them describe their experience in their own words.",
-        "An expression or tone proves a specific emotion.",
-        "Emotional expression is identical across people and contexts.",
+        "Insist they disclose a feeling they have not offered to share.",
+        "Ask privately how they are finding the evening.",
+        "Tell them exactly what they must be feeling.",
+        "Assume their behaviour has the same meaning for every person.",
       ],
       correctIndex: 1,
       explanation:
@@ -5766,18 +5680,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "17-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "A teammate sounds abrupt on a call.",
-      prompt:
-        "Consider this response: “Ask whether now is still a good time to talk.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A low-pressure check leaves room for context without assigning an emotion.",
-        "An expression or tone proves a specific emotion.",
-        "Emotional expression is identical across people and contexts.",
-        "Noticing a clue entitles me to a personal explanation.",
+        "Ask whether now is still a good time to talk.",
+        "Tell them exactly what they must be feeling.",
+        "Assume their behaviour has the same meaning for every person.",
+        "Insist they disclose a feeling they have not offered to share.",
       ],
       correctIndex: 0,
       explanation:
@@ -5793,18 +5707,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "17-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend is quieter than usual over lunch.",
-      prompt:
-        "Consider this response: “Ask how they are finding the day and let them choose how much to share.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "An expression or tone proves a specific emotion.",
-        "Emotional expression is identical across people and contexts.",
-        "Noticing a clue entitles me to a personal explanation.",
-        "Curiosity and choice are more reliable than assigning a feeling from quietness.",
+        "Tell them exactly what they must be feeling.",
+        "Assume their behaviour has the same meaning for every person.",
+        "Insist they disclose a feeling they have not offered to share.",
+        "Ask how they are finding the day and let them choose how much to share.",
       ],
       correctIndex: 3,
       explanation:
@@ -5820,18 +5734,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "17-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone smiles while describing a difficult event.",
-      prompt:
-        "Consider this response: “Listen to their words rather than assume the smile means happiness.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Emotional expression is identical across people and contexts.",
-        "Noticing a clue entitles me to a personal explanation.",
-        "A visible expression does not fully explain an internal experience.",
-        "An expression or tone proves a specific emotion.",
+        "Assume their behaviour has the same meaning for every person.",
+        "Insist they disclose a feeling they have not offered to share.",
+        "Listen to their words rather than assume the smile means happiness.",
+        "Tell them exactly what they must be feeling.",
       ],
       correctIndex: 2,
       explanation:
@@ -5847,18 +5761,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "17-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "A family member avoids eye contact during a discussion.",
-      prompt:
-        "Consider this response: “Check how the conversation feels for them without deciding what the eye contact means.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Noticing a clue entitles me to a personal explanation.",
-        "The meaning of a behaviour can vary, so checking is more useful than certainty.",
-        "An expression or tone proves a specific emotion.",
-        "Emotional expression is identical across people and contexts.",
+        "Insist they disclose a feeling they have not offered to share.",
+        "Check how the conversation feels for them without deciding what the eye contact means.",
+        "Tell them exactly what they must be feeling.",
+        "Assume their behaviour has the same meaning for every person.",
       ],
       correctIndex: 1,
       explanation:
@@ -5874,14 +5788,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "18-action-1",
       kind: "action",
       situation:
         "A friend is hurt about not being invited to an event you consider small.",
-      prompt:
-        "Which response best helps you acknowledge a feeling without endorsing every interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Agree with every accusation to show I care.",
         "Immediately replace the feeling with cheerful reassurance.",
@@ -5908,8 +5822,7 @@ export const database = {
       kind: "action",
       situation:
         "A friend feels disappointed by feedback you consider reasonable.",
-      prompt:
-        "Which response best helps you acknowledge a feeling without endorsing every interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Immediately replace the feeling with cheerful reassurance.",
         "Acknowledge that the feedback was disappointing to hear.",
@@ -5935,8 +5848,7 @@ export const database = {
       id: "18-action-3",
       kind: "action",
       situation: "Someone feels overlooked after a group decision.",
-      prompt:
-        "Which response best helps you acknowledge a feeling without endorsing every interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Say it sounds painful to feel that their contribution was missed.",
         "Tell them the event is too small to feel anything about.",
@@ -5962,8 +5874,7 @@ export const database = {
       id: "18-action-4",
       kind: "action",
       situation: "A relative is worried about an unfamiliar responsibility.",
-      prompt:
-        "Which response best helps you acknowledge a feeling without endorsing every interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Tell them the event is too small to feel anything about.",
         "Agree with every accusation to show I care.",
@@ -5990,8 +5901,7 @@ export const database = {
       kind: "action",
       situation:
         "A friend is sad about the end of an activity you never enjoyed.",
-      prompt:
-        "Which response best helps you acknowledge a feeling without endorsing every interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Agree with every accusation to show I care.",
         "Immediately replace the feeling with cheerful reassurance.",
@@ -6015,16 +5925,15 @@ export const database = {
     },
     {
       id: "18-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A friend is hurt about not being invited to an event you consider small.",
-      prompt:
-        "Consider this response: ““It sounds painful to feel left out.”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "This recognises the emotional experience without deciding who is responsible.",
-        "A feeling needs my approval before it deserves acknowledgement.",
-        "Acknowledging a feeling requires agreeing with every conclusion.",
-        "Support means removing an uncomfortable feeling as quickly as possible.",
+        "“It sounds painful to feel left out.”",
+        "Tell them the event is too small to feel anything about.",
+        "Agree with every accusation to show I care.",
+        "Immediately replace the feeling with cheerful reassurance.",
       ],
       correctIndex: 0,
       explanation:
@@ -6040,19 +5949,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "18-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A friend feels disappointed by feedback you consider reasonable.",
-      prompt:
-        "Consider this response: “Acknowledge that the feedback was disappointing to hear.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A feeling needs my approval before it deserves acknowledgement.",
-        "Acknowledging a feeling requires agreeing with every conclusion.",
-        "Support means removing an uncomfortable feeling as quickly as possible.",
-        "You can recognise the feeling without deciding the feedback was unfair.",
+        "Tell them the event is too small to feel anything about.",
+        "Agree with every accusation to show I care.",
+        "Immediately replace the feeling with cheerful reassurance.",
+        "Acknowledge that the feedback was disappointing to hear.",
       ],
       correctIndex: 3,
       explanation:
@@ -6068,18 +5977,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "18-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone feels overlooked after a group decision.",
-      prompt:
-        "Consider this response: “Say it sounds painful to feel that their contribution was missed.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Acknowledging a feeling requires agreeing with every conclusion.",
-        "Support means removing an uncomfortable feeling as quickly as possible.",
-        "Acknowledgement focuses on their experience rather than proving others’ motives.",
-        "A feeling needs my approval before it deserves acknowledgement.",
+        "Agree with every accusation to show I care.",
+        "Immediately replace the feeling with cheerful reassurance.",
+        "Say it sounds painful to feel that their contribution was missed.",
+        "Tell them the event is too small to feel anything about.",
       ],
       correctIndex: 2,
       explanation:
@@ -6095,18 +6004,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "18-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "A relative is worried about an unfamiliar responsibility.",
-      prompt:
-        "Consider this response: “Recognise that taking on something unfamiliar can feel daunting.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Support means removing an uncomfortable feeling as quickly as possible.",
-        "Naming the concern can make space for them before advice or reassurance.",
-        "A feeling needs my approval before it deserves acknowledgement.",
-        "Acknowledging a feeling requires agreeing with every conclusion.",
+        "Immediately replace the feeling with cheerful reassurance.",
+        "Recognise that taking on something unfamiliar can feel daunting.",
+        "Tell them the event is too small to feel anything about.",
+        "Agree with every accusation to show I care.",
       ],
       correctIndex: 1,
       explanation:
@@ -6122,19 +6031,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "18-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A friend is sad about the end of an activity you never enjoyed.",
-      prompt:
-        "Consider this response: “Acknowledge that the activity mattered to them.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "An experience can matter to someone even when you would feel differently.",
-        "A feeling needs my approval before it deserves acknowledgement.",
-        "Acknowledging a feeling requires agreeing with every conclusion.",
-        "Support means removing an uncomfortable feeling as quickly as possible.",
+        "Acknowledge that the activity mattered to them.",
+        "Tell them the event is too small to feel anything about.",
+        "Agree with every accusation to show I care.",
+        "Immediately replace the feeling with cheerful reassurance.",
       ],
       correctIndex: 0,
       explanation:
@@ -6150,13 +6059,13 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "19-action-1",
       kind: "action",
       situation: "A friend tells you they are overwhelmed by a decision.",
-      prompt:
-        "Which response best helps you ask what kind of support someone wants before taking over?",
+      prompt: "What would you do next?",
       choices: [
         "Offer nothing because I cannot solve the whole problem.",
         "Ask whether they want listening, ideas, or practical help.",
@@ -6182,8 +6091,7 @@ export const database = {
       id: "19-action-2",
       kind: "action",
       situation: "A relative is worried about a new responsibility.",
-      prompt:
-        "Which response best helps you ask what kind of support someone wants before taking over?",
+      prompt: "What would you do next?",
       choices: [
         "Ask whether listening, ideas, or practical help would be useful.",
         "Decide for them because I want to help.",
@@ -6209,8 +6117,7 @@ export const database = {
       id: "19-action-3",
       kind: "action",
       situation: "A friend is frustrated with a project.",
-      prompt:
-        "Which response best helps you ask what kind of support someone wants before taking over?",
+      prompt: "What would you do next?",
       choices: [
         "Decide for them because I want to help.",
         "Give advice without checking whether they want it.",
@@ -6237,8 +6144,7 @@ export const database = {
       kind: "action",
       situation:
         "Someone tells you about a difficult choice but has not asked for advice.",
-      prompt:
-        "Which response best helps you ask what kind of support someone wants before taking over?",
+      prompt: "What would you do next?",
       choices: [
         "Give advice without checking whether they want it.",
         "Offer nothing because I cannot solve the whole problem.",
@@ -6264,8 +6170,7 @@ export const database = {
       id: "19-action-5",
       kind: "action",
       situation: "A teammate is struggling with several tasks.",
-      prompt:
-        "Which response best helps you ask what kind of support someone wants before taking over?",
+      prompt: "What would you do next?",
       choices: [
         "Offer nothing because I cannot solve the whole problem.",
         "Ask which specific task they would welcome help with.",
@@ -6289,15 +6194,14 @@ export const database = {
     },
     {
       id: "19-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend tells you they are overwhelmed by a decision.",
-      prompt:
-        "Consider this response: “Ask whether they want listening, ideas, or practical help.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Caring gives me permission to take control of their decision.",
-        "Advice is always the form of support a person needs.",
-        "Support counts only when I can provide a complete solution.",
-        "Offering options makes it easier for them to request the support they want.",
+        "Decide for them because I want to help.",
+        "Give advice without checking whether they want it.",
+        "Offer nothing because I cannot solve the whole problem.",
+        "Ask whether they want listening, ideas, or practical help.",
       ],
       correctIndex: 3,
       explanation:
@@ -6313,18 +6217,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "19-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "A relative is worried about a new responsibility.",
-      prompt:
-        "Consider this response: “Ask whether listening, ideas, or practical help would be useful.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Advice is always the form of support a person needs.",
-        "Support counts only when I can provide a complete solution.",
-        "Asking lets them name the support that fits their current need.",
-        "Caring gives me permission to take control of their decision.",
+        "Give advice without checking whether they want it.",
+        "Offer nothing because I cannot solve the whole problem.",
+        "Ask whether listening, ideas, or practical help would be useful.",
+        "Decide for them because I want to help.",
       ],
       correctIndex: 2,
       explanation:
@@ -6340,18 +6244,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "19-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend is frustrated with a project.",
-      prompt:
-        "Consider this response: “Check if they want to talk it through or brainstorm options.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Support counts only when I can provide a complete solution.",
-        "The same frustration may call for different kinds of support at different times.",
-        "Caring gives me permission to take control of their decision.",
-        "Advice is always the form of support a person needs.",
+        "Offer nothing because I cannot solve the whole problem.",
+        "Check if they want to talk it through or brainstorm options.",
+        "Decide for them because I want to help.",
+        "Give advice without checking whether they want it.",
       ],
       correctIndex: 1,
       explanation:
@@ -6367,19 +6271,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "19-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Someone tells you about a difficult choice but has not asked for advice.",
-      prompt:
-        "Consider this response: “Ask before offering my recommendation.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Permission keeps the person’s agency central to the conversation.",
-        "Caring gives me permission to take control of their decision.",
-        "Advice is always the form of support a person needs.",
-        "Support counts only when I can provide a complete solution.",
+        "Ask before offering my recommendation.",
+        "Decide for them because I want to help.",
+        "Give advice without checking whether they want it.",
+        "Offer nothing because I cannot solve the whole problem.",
       ],
       correctIndex: 0,
       explanation:
@@ -6395,18 +6299,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "19-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "A teammate is struggling with several tasks.",
-      prompt:
-        "Consider this response: “Ask which specific task they would welcome help with.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Caring gives me permission to take control of their decision.",
-        "Advice is always the form of support a person needs.",
-        "Support counts only when I can provide a complete solution.",
-        "A concrete, agreed offer helps without automatically taking over.",
+        "Decide for them because I want to help.",
+        "Give advice without checking whether they want it.",
+        "Offer nothing because I cannot solve the whole problem.",
+        "Ask which specific task they would welcome help with.",
       ],
       correctIndex: 3,
       explanation:
@@ -6422,14 +6326,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "20-action-1",
       kind: "action",
       situation:
         "A friend wants a long late-night conversation, but you need rest.",
-      prompt:
-        "Which response best helps you offer care within an honest limit?",
+      prompt: "What would you do next?",
       choices: [
         "Offer a short check-in and a time tomorrow.",
         "Promise unlimited availability regardless of my capacity.",
@@ -6455,8 +6359,7 @@ export const database = {
       id: "20-action-2",
       kind: "action",
       situation: "A friend asks for more help than you can give this week.",
-      prompt:
-        "Which response best helps you offer care within an honest limit?",
+      prompt: "What would you do next?",
       choices: [
         "Promise unlimited availability regardless of my capacity.",
         "Take responsibility for making every feeling disappear.",
@@ -6482,8 +6385,7 @@ export const database = {
       kind: "action",
       situation:
         "Someone wants a long conversation just before your appointment.",
-      prompt:
-        "Which response best helps you offer care within an honest limit?",
+      prompt: "What would you do next?",
       choices: [
         "Take responsibility for making every feeling disappear.",
         "Hide my limit and hope they guess it.",
@@ -6510,8 +6412,7 @@ export const database = {
       kind: "action",
       situation:
         "A relative expects daily help with something you can only do weekly.",
-      prompt:
-        "Which response best helps you offer care within an honest limit?",
+      prompt: "What would you do next?",
       choices: [
         "Hide my limit and hope they guess it.",
         "Explain my weekly availability without promising daily help.",
@@ -6538,8 +6439,7 @@ export const database = {
       kind: "action",
       situation:
         "You are becoming the only person a friend contacts for every difficulty.",
-      prompt:
-        "Which response best helps you offer care within an honest limit?",
+      prompt: "What would you do next?",
       choices: [
         "Share my limits and encourage them to build other sources of support.",
         "Promise unlimited availability regardless of my capacity.",
@@ -6563,16 +6463,15 @@ export const database = {
     },
     {
       id: "20-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A friend wants a long late-night conversation, but you need rest.",
-      prompt:
-        "Consider this response: “Offer a short check-in and a time tomorrow.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Supporting someone makes me responsible for their whole emotional state.",
-        "An unspoken limit is as clear as a communicated one.",
-        "A specific limit can express care and protect your need for rest.",
-        "Caring requires being available at every moment.",
+        "Take responsibility for making every feeling disappear.",
+        "Hide my limit and hope they guess it.",
+        "Offer a short check-in and a time tomorrow.",
+        "Promise unlimited availability regardless of my capacity.",
       ],
       correctIndex: 2,
       explanation:
@@ -6588,18 +6487,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "20-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend asks for more help than you can give this week.",
-      prompt:
-        "Consider this response: “Name one small thing I can offer and what I cannot take on.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "An unspoken limit is as clear as a communicated one.",
-        "A specific offer makes your care and your capacity clear.",
-        "Caring requires being available at every moment.",
-        "Supporting someone makes me responsible for their whole emotional state.",
+        "Hide my limit and hope they guess it.",
+        "Name one small thing I can offer and what I cannot take on.",
+        "Promise unlimited availability regardless of my capacity.",
+        "Take responsibility for making every feeling disappear.",
       ],
       correctIndex: 1,
       explanation: "A specific offer makes your care and your capacity clear.",
@@ -6614,19 +6513,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "20-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Someone wants a long conversation just before your appointment.",
-      prompt:
-        "Consider this response: “Offer a brief check-in or another time when I can listen.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Honest timing makes support more realistic than agreeing without capacity.",
-        "Caring requires being available at every moment.",
-        "Supporting someone makes me responsible for their whole emotional state.",
-        "An unspoken limit is as clear as a communicated one.",
+        "Offer a brief check-in or another time when I can listen.",
+        "Promise unlimited availability regardless of my capacity.",
+        "Take responsibility for making every feeling disappear.",
+        "Hide my limit and hope they guess it.",
       ],
       correctIndex: 0,
       explanation:
@@ -6642,19 +6541,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "20-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A relative expects daily help with something you can only do weekly.",
-      prompt:
-        "Consider this response: “Explain my weekly availability without promising daily help.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Caring requires being available at every moment.",
-        "Supporting someone makes me responsible for their whole emotional state.",
-        "An unspoken limit is as clear as a communicated one.",
-        "A sustainable limit can support a more reliable arrangement.",
+        "Promise unlimited availability regardless of my capacity.",
+        "Take responsibility for making every feeling disappear.",
+        "Hide my limit and hope they guess it.",
+        "Explain my weekly availability without promising daily help.",
       ],
       correctIndex: 3,
       explanation:
@@ -6670,19 +6569,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "20-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You are becoming the only person a friend contacts for every difficulty.",
-      prompt:
-        "Consider this response: “Share my limits and encourage them to build other sources of support.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Supporting someone makes me responsible for their whole emotional state.",
-        "An unspoken limit is as clear as a communicated one.",
-        "Care does not require becoming another person’s sole source of help.",
-        "Caring requires being available at every moment.",
+        "Take responsibility for making every feeling disappear.",
+        "Hide my limit and hope they guess it.",
+        "Share my limits and encourage them to build other sources of support.",
+        "Promise unlimited availability regardless of my capacity.",
       ],
       correctIndex: 2,
       explanation:
@@ -6698,13 +6597,13 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "21-action-1",
       kind: "action",
       situation: "A housemate leaves a shared task unfinished again.",
-      prompt:
-        "Which response best helps you describe your experience without making a broad accusation?",
+      prompt: "What would you do next?",
       choices: [
         "Describe them with a sweeping character judgment.",
         "Hint through sarcasm instead of naming the impact.",
@@ -6730,8 +6629,7 @@ export const database = {
       id: "21-action-2",
       kind: "action",
       situation: "Someone repeatedly starts a meeting late.",
-      prompt:
-        "Which response best helps you describe your experience without making a broad accusation?",
+      prompt: "What would you do next?",
       choices: [
         "Hint through sarcasm instead of naming the impact.",
         "Use “I feel” before a claim about their motives.",
@@ -6757,8 +6655,7 @@ export const database = {
       id: "21-action-3",
       kind: "action",
       situation: "A friend changes a plan without telling you.",
-      prompt:
-        "Which response best helps you describe your experience without making a broad accusation?",
+      prompt: "What would you do next?",
       choices: [
         "Use “I feel” before a claim about their motives.",
         "Describe the change and how the lack of notice affected me.",
@@ -6784,8 +6681,7 @@ export const database = {
       id: "21-action-4",
       kind: "action",
       situation: "You are interrupted while explaining something important.",
-      prompt:
-        "Which response best helps you describe your experience without making a broad accusation?",
+      prompt: "What would you do next?",
       choices: [
         "Say I feel frustrated when I cannot finish my point.",
         "Describe them with a sweeping character judgment.",
@@ -6811,8 +6707,7 @@ export const database = {
       id: "21-action-5",
       kind: "action",
       situation: "A shared task is left for you unexpectedly.",
-      prompt:
-        "Which response best helps you describe your experience without making a broad accusation?",
+      prompt: "What would you do next?",
       choices: [
         "Describe them with a sweeping character judgment.",
         "Hint through sarcasm instead of naming the impact.",
@@ -6836,15 +6731,14 @@ export const database = {
     },
     {
       id: "21-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation: "A housemate leaves a shared task unfinished again.",
-      prompt:
-        "Consider this response: ““When the task is left, I feel stretched because I need help sharing it.”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Putting “I feel” before an accusation turns it into an emotion.",
-        "A concrete observation and impact give the conversation a clearer starting point.",
-        "A strong accusation is the clearest way to describe my own experience.",
-        "The other person should infer my needs from indirect remarks.",
+        "Use “I feel” before a claim about their motives.",
+        "“When the task is left, I feel stretched because I need help sharing it.”",
+        "Describe them with a sweeping character judgment.",
+        "Hint through sarcasm instead of naming the impact.",
       ],
       correctIndex: 1,
       explanation:
@@ -6860,18 +6754,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "21-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone repeatedly starts a meeting late.",
-      prompt:
-        "Consider this response: “Say the late start leaves me rushed because of my next commitment.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A specific impact is easier to discuss than a claim about their character.",
-        "A strong accusation is the clearest way to describe my own experience.",
-        "The other person should infer my needs from indirect remarks.",
-        "Putting “I feel” before an accusation turns it into an emotion.",
+        "Say the late start leaves me rushed because of my next commitment.",
+        "Describe them with a sweeping character judgment.",
+        "Hint through sarcasm instead of naming the impact.",
+        "Use “I feel” before a claim about their motives.",
       ],
       correctIndex: 0,
       explanation:
@@ -6887,18 +6781,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "21-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend changes a plan without telling you.",
-      prompt:
-        "Consider this response: “Describe the change and how the lack of notice affected me.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A strong accusation is the clearest way to describe my own experience.",
-        "The other person should infer my needs from indirect remarks.",
-        "Putting “I feel” before an accusation turns it into an emotion.",
-        "Observation and personal impact avoid assuming why they acted.",
+        "Describe them with a sweeping character judgment.",
+        "Hint through sarcasm instead of naming the impact.",
+        "Use “I feel” before a claim about their motives.",
+        "Describe the change and how the lack of notice affected me.",
       ],
       correctIndex: 3,
       explanation:
@@ -6914,18 +6808,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "21-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "You are interrupted while explaining something important.",
-      prompt:
-        "Consider this response: “Say I feel frustrated when I cannot finish my point.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "The other person should infer my needs from indirect remarks.",
-        "Putting “I feel” before an accusation turns it into an emotion.",
-        "Naming your experience gives the conversation a clear focus.",
-        "A strong accusation is the clearest way to describe my own experience.",
+        "Hint through sarcasm instead of naming the impact.",
+        "Use “I feel” before a claim about their motives.",
+        "Say I feel frustrated when I cannot finish my point.",
+        "Describe them with a sweeping character judgment.",
       ],
       correctIndex: 2,
       explanation:
@@ -6941,18 +6835,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "21-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "A shared task is left for you unexpectedly.",
-      prompt:
-        "Consider this response: “Explain that I feel stretched because I had planned my time differently.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Putting “I feel” before an accusation turns it into an emotion.",
-        "A concrete account communicates the effect without judging the whole person.",
-        "A strong accusation is the clearest way to describe my own experience.",
-        "The other person should infer my needs from indirect remarks.",
+        "Use “I feel” before a claim about their motives.",
+        "Explain that I feel stretched because I had planned my time differently.",
+        "Describe them with a sweeping character judgment.",
+        "Hint through sarcasm instead of naming the impact.",
       ],
       correctIndex: 1,
       explanation:
@@ -6968,14 +6862,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "22-action-1",
       kind: "action",
       situation:
         "You want a friend to check with you before inviting extra people to your plans.",
-      prompt:
-        "Which response best helps you make a specific request the other person can respond to?",
+      prompt: "What would you do next?",
       choices: [
         "Hint and expect them to infer the request.",
         "Demand agreement without allowing a response.",
@@ -7000,8 +6894,7 @@ export const database = {
       id: "22-action-2",
       kind: "action",
       situation: "You need quiet at home from six to seven.",
-      prompt:
-        "Which response best helps you make a specific request the other person can respond to?",
+      prompt: "What would you do next?",
       choices: [
         "Demand agreement without allowing a response.",
         "Ask whether the music can be kept low during that hour.",
@@ -7027,8 +6920,7 @@ export const database = {
       id: "22-action-3",
       kind: "action",
       situation: "You need an update before making a shared booking.",
-      prompt:
-        "Which response best helps you make a specific request the other person can respond to?",
+      prompt: "What would you do next?",
       choices: [
         "Ask for a reply by a specific time that leaves room to book.",
         "Ask them to “be better” without specifying an action.",
@@ -7054,8 +6946,7 @@ export const database = {
       id: "22-action-4",
       kind: "action",
       situation: "You would like more notice before visits.",
-      prompt:
-        "Which response best helps you make a specific request the other person can respond to?",
+      prompt: "What would you do next?",
       choices: [
         "Ask them to “be better” without specifying an action.",
         "Hint and expect them to infer the request.",
@@ -7081,8 +6972,7 @@ export const database = {
       id: "22-action-5",
       kind: "action",
       situation: "You need help carrying something this afternoon.",
-      prompt:
-        "Which response best helps you make a specific request the other person can respond to?",
+      prompt: "What would you do next?",
       choices: [
         "Hint and expect them to infer the request.",
         "Demand agreement without allowing a response.",
@@ -7106,16 +6996,15 @@ export const database = {
     },
     {
       id: "22-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You want a friend to check with you before inviting extra people to your plans.",
-      prompt:
-        "Consider this response: ““Please check with me before inviting someone else next time.”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "The request names a specific action and when it matters.",
-        "A vague wish tells someone exactly what to do.",
-        "A request is clear even when the action is never stated.",
-        "Making a request means the other person has no choice.",
+        "“Please check with me before inviting someone else next time.”",
+        "Ask them to “be better” without specifying an action.",
+        "Hint and expect them to infer the request.",
+        "Demand agreement without allowing a response.",
       ],
       correctIndex: 0,
       explanation: "The request names a specific action and when it matters.",
@@ -7130,18 +7019,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "22-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "You need quiet at home from six to seven.",
-      prompt:
-        "Consider this response: “Ask whether the music can be kept low during that hour.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A vague wish tells someone exactly what to do.",
-        "A request is clear even when the action is never stated.",
-        "Making a request means the other person has no choice.",
-        "An action and a time make the request concrete enough to discuss.",
+        "Ask them to “be better” without specifying an action.",
+        "Hint and expect them to infer the request.",
+        "Demand agreement without allowing a response.",
+        "Ask whether the music can be kept low during that hour.",
       ],
       correctIndex: 3,
       explanation:
@@ -7157,18 +7046,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "22-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "You need an update before making a shared booking.",
-      prompt:
-        "Consider this response: “Ask for a reply by a specific time that leaves room to book.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A request is clear even when the action is never stated.",
-        "Making a request means the other person has no choice.",
-        "A clear timeframe explains when the action would be helpful.",
-        "A vague wish tells someone exactly what to do.",
+        "Hint and expect them to infer the request.",
+        "Demand agreement without allowing a response.",
+        "Ask for a reply by a specific time that leaves room to book.",
+        "Ask them to “be better” without specifying an action.",
       ],
       correctIndex: 2,
       explanation:
@@ -7184,18 +7073,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "22-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "You would like more notice before visits.",
-      prompt:
-        "Consider this response: “Ask them to check with me before coming over.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Making a request means the other person has no choice.",
-        "Naming the desired action is clearer than a general complaint about consideration.",
-        "A vague wish tells someone exactly what to do.",
-        "A request is clear even when the action is never stated.",
+        "Demand agreement without allowing a response.",
+        "Ask them to check with me before coming over.",
+        "Ask them to “be better” without specifying an action.",
+        "Hint and expect them to infer the request.",
       ],
       correctIndex: 1,
       explanation:
@@ -7211,18 +7100,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "22-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "You need help carrying something this afternoon.",
-      prompt:
-        "Consider this response: “Ask whether they can help with that task at an agreed time.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A specific, feasible request allows an informed yes, no, or alternative.",
-        "A vague wish tells someone exactly what to do.",
-        "A request is clear even when the action is never stated.",
-        "Making a request means the other person has no choice.",
+        "Ask whether they can help with that task at an agreed time.",
+        "Ask them to “be better” without specifying an action.",
+        "Hint and expect them to infer the request.",
+        "Demand agreement without allowing a response.",
       ],
       correctIndex: 0,
       explanation:
@@ -7238,13 +7127,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "23-action-1",
       kind: "action",
       situation:
         "Someone asks you to take on an extra task when your week is already full.",
-      prompt: "Which response best helps you state a clear, respectful limit?",
+      prompt: "What would you do next?",
       choices: [
         "Blame their character instead of stating my availability.",
         "“I can’t take this on this week.”",
@@ -7271,7 +7161,7 @@ export const database = {
       kind: "action",
       situation:
         "A friend asks to borrow something you are not comfortable lending.",
-      prompt: "Which response best helps you state a clear, respectful limit?",
+      prompt: "What would you do next?",
       choices: [
         "Say, “I’m not comfortable lending that out.”",
         "Agree even though I already know I cannot manage it.",
@@ -7297,7 +7187,7 @@ export const database = {
       id: "23-action-3",
       kind: "action",
       situation: "You are invited to an event on a day you need to rest.",
-      prompt: "Which response best helps you state a clear, respectful limit?",
+      prompt: "What would you do next?",
       choices: [
         "Agree even though I already know I cannot manage it.",
         "Keep explaining until they approve my limit.",
@@ -7323,7 +7213,7 @@ export const database = {
       id: "23-action-4",
       kind: "action",
       situation: "Someone asks for personal details you do not want to share.",
-      prompt: "Which response best helps you state a clear, respectful limit?",
+      prompt: "What would you do next?",
       choices: [
         "Keep explaining until they approve my limit.",
         "Blame their character instead of stating my availability.",
@@ -7349,7 +7239,7 @@ export const database = {
       id: "23-action-5",
       kind: "action",
       situation: "You are asked to stay longer after an agreed finishing time.",
-      prompt: "Which response best helps you state a clear, respectful limit?",
+      prompt: "What would you do next?",
       choices: [
         "Blame their character instead of stating my availability.",
         "Say I need to leave at the time we agreed.",
@@ -7372,16 +7262,15 @@ export const database = {
     },
     {
       id: "23-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Someone asks you to take on an extra task when your week is already full.",
-      prompt:
-        "Consider this response: ““I can’t take this on this week.”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Avoiding immediate discomfort makes an unrealistic commitment sustainable.",
-        "A boundary counts only when the other person likes it.",
-        "Setting a limit requires criticising the person asking.",
-        "A brief, honest limit can be enough. You do not have to provide every personal detail.",
+        "Agree even though I already know I cannot manage it.",
+        "Keep explaining until they approve my limit.",
+        "Blame their character instead of stating my availability.",
+        "“I can’t take this on this week.”",
       ],
       correctIndex: 3,
       explanation:
@@ -7397,19 +7286,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "23-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A friend asks to borrow something you are not comfortable lending.",
-      prompt:
-        "Consider this response: “Say, “I’m not comfortable lending that out.”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A boundary counts only when the other person likes it.",
-        "Setting a limit requires criticising the person asking.",
-        "A brief limit can be clear without judging the request or the person.",
-        "Avoiding immediate discomfort makes an unrealistic commitment sustainable.",
+        "Keep explaining until they approve my limit.",
+        "Blame their character instead of stating my availability.",
+        "Say, “I’m not comfortable lending that out.”",
+        "Agree even though I already know I cannot manage it.",
       ],
       correctIndex: 2,
       explanation:
@@ -7425,18 +7314,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "23-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "You are invited to an event on a day you need to rest.",
-      prompt:
-        "Consider this response: “Say I cannot join this time.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Setting a limit requires criticising the person asking.",
-        "You can decline honestly without making a commitment you cannot sustain.",
-        "Avoiding immediate discomfort makes an unrealistic commitment sustainable.",
-        "A boundary counts only when the other person likes it.",
+        "Blame their character instead of stating my availability.",
+        "Say I cannot join this time.",
+        "Agree even though I already know I cannot manage it.",
+        "Keep explaining until they approve my limit.",
       ],
       correctIndex: 1,
       explanation:
@@ -7452,18 +7341,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "23-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone asks for personal details you do not want to share.",
-      prompt:
-        "Consider this response: “Say I would prefer to keep that private.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A privacy boundary can be stated without providing the information itself.",
-        "Avoiding immediate discomfort makes an unrealistic commitment sustainable.",
-        "A boundary counts only when the other person likes it.",
-        "Setting a limit requires criticising the person asking.",
+        "Say I would prefer to keep that private.",
+        "Agree even though I already know I cannot manage it.",
+        "Keep explaining until they approve my limit.",
+        "Blame their character instead of stating my availability.",
       ],
       correctIndex: 0,
       explanation:
@@ -7479,18 +7368,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "23-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "You are asked to stay longer after an agreed finishing time.",
-      prompt:
-        "Consider this response: “Say I need to leave at the time we agreed.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Avoiding immediate discomfort makes an unrealistic commitment sustainable.",
-        "A boundary counts only when the other person likes it.",
-        "Setting a limit requires criticising the person asking.",
-        "A concrete limit makes your availability explicit.",
+        "Agree even though I already know I cannot manage it.",
+        "Keep explaining until they approve my limit.",
+        "Blame their character instead of stating my availability.",
+        "Say I need to leave at the time we agreed.",
       ],
       correctIndex: 3,
       explanation: "A concrete limit makes your availability explicit.",
@@ -7505,14 +7394,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "24-action-1",
       kind: "action",
       situation:
         "You and a friend disagree about how to share a cost. The conversation is getting tense.",
-      prompt:
-        "Which response best helps you keep a safe disagreement focused and constructive?",
+      prompt: "What would you do next?",
       choices: [
         "Summarise their view, then explain mine.",
         "Bring in every previous disagreement at once.",
@@ -7538,8 +7427,7 @@ export const database = {
       id: "24-action-2",
       kind: "action",
       situation: "You want different plans for a shared weekend.",
-      prompt:
-        "Which response best helps you keep a safe disagreement focused and constructive?",
+      prompt: "What would you do next?",
       choices: [
         "Bring in every previous disagreement at once.",
         "Focus on winning rather than understanding the disagreement.",
@@ -7565,8 +7453,7 @@ export const database = {
       id: "24-action-3",
       kind: "action",
       situation: "You disagree about how to divide an ordinary shared task.",
-      prompt:
-        "Which response best helps you keep a safe disagreement focused and constructive?",
+      prompt: "What would you do next?",
       choices: [
         "Focus on winning rather than understanding the disagreement.",
         "Agree to anything just to make the tension stop.",
@@ -7593,8 +7480,7 @@ export const database = {
       kind: "action",
       situation:
         "A safe conversation is becoming too heated to follow clearly.",
-      prompt:
-        "Which response best helps you keep a safe disagreement focused and constructive?",
+      prompt: "What would you do next?",
       choices: [
         "Agree to anything just to make the tension stop.",
         "Suggest a pause and agree when to return.",
@@ -7620,8 +7506,7 @@ export const database = {
       id: "24-action-5",
       kind: "action",
       situation: "Someone restates a view you still disagree with.",
-      prompt:
-        "Which response best helps you keep a safe disagreement focused and constructive?",
+      prompt: "What would you do next?",
       choices: [
         "Summarise it fairly, then explain where my view differs.",
         "Bring in every previous disagreement at once.",
@@ -7645,16 +7530,15 @@ export const database = {
     },
     {
       id: "24-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You and a friend disagree about how to share a cost. The conversation is getting tense.",
-      prompt:
-        "Consider this response: “Summarise their view, then explain mine.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Understanding another view would mean giving up my own.",
-        "Any agreement is useful even if I cannot accept or follow it.",
-        "Checking understanding can reduce confusion without requiring you to surrender your position.",
-        "Adding every past issue makes the present issue easier to resolve.",
+        "Focus on winning rather than understanding the disagreement.",
+        "Agree to anything just to make the tension stop.",
+        "Summarise their view, then explain mine.",
+        "Bring in every previous disagreement at once.",
       ],
       correctIndex: 2,
       explanation:
@@ -7670,18 +7554,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "24-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "You want different plans for a shared weekend.",
-      prompt:
-        "Consider this response: “Ask what matters most to each of us before choosing a plan.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Any agreement is useful even if I cannot accept or follow it.",
-        "Understanding the needs behind positions may reveal workable options.",
-        "Adding every past issue makes the present issue easier to resolve.",
-        "Understanding another view would mean giving up my own.",
+        "Agree to anything just to make the tension stop.",
+        "Ask what matters most to each of us before choosing a plan.",
+        "Bring in every previous disagreement at once.",
+        "Focus on winning rather than understanding the disagreement.",
       ],
       correctIndex: 1,
       explanation:
@@ -7697,18 +7581,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "24-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "You disagree about how to divide an ordinary shared task.",
-      prompt:
-        "Consider this response: “Clarify each person’s concern and discuss this task specifically.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A focused discussion makes the immediate arrangement easier to address.",
-        "Adding every past issue makes the present issue easier to resolve.",
-        "Understanding another view would mean giving up my own.",
-        "Any agreement is useful even if I cannot accept or follow it.",
+        "Clarify each person’s concern and discuss this task specifically.",
+        "Bring in every previous disagreement at once.",
+        "Focus on winning rather than understanding the disagreement.",
+        "Agree to anything just to make the tension stop.",
       ],
       correctIndex: 0,
       explanation:
@@ -7724,19 +7608,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "24-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A safe conversation is becoming too heated to follow clearly.",
-      prompt:
-        "Consider this response: “Suggest a pause and agree when to return.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Adding every past issue makes the present issue easier to resolve.",
-        "Understanding another view would mean giving up my own.",
-        "Any agreement is useful even if I cannot accept or follow it.",
-        "A planned pause can protect the conversation when continuing is not productive.",
+        "Bring in every previous disagreement at once.",
+        "Focus on winning rather than understanding the disagreement.",
+        "Agree to anything just to make the tension stop.",
+        "Suggest a pause and agree when to return.",
       ],
       correctIndex: 3,
       explanation:
@@ -7752,18 +7636,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "24-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone restates a view you still disagree with.",
-      prompt:
-        "Consider this response: “Summarise it fairly, then explain where my view differs.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Understanding another view would mean giving up my own.",
-        "Any agreement is useful even if I cannot accept or follow it.",
-        "Accurate understanding can coexist with continued disagreement.",
-        "Adding every past issue makes the present issue easier to resolve.",
+        "Focus on winning rather than understanding the disagreement.",
+        "Agree to anything just to make the tension stop.",
+        "Summarise it fairly, then explain where my view differs.",
+        "Bring in every previous disagreement at once.",
       ],
       correctIndex: 2,
       explanation:
@@ -7779,14 +7663,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "25-action-1",
       kind: "action",
       situation:
         "You interrupted someone and dismissed their suggestion. Later, you wish you had handled it differently.",
-      prompt:
-        "Which response best helps you take responsibility for your part and offer a realistic repair?",
+      prompt: "What would you do next?",
       choices: [
         "Apologise only if they first admit their part.",
         "Explain my intentions without acknowledging my action.",
@@ -7812,8 +7696,7 @@ export const database = {
       id: "25-action-2",
       kind: "action",
       situation: "You forgot a commitment and someone covered for you.",
-      prompt:
-        "Which response best helps you take responsibility for your part and offer a realistic repair?",
+      prompt: "What would you do next?",
       choices: [
         "Explain my intentions without acknowledging my action.",
         "Expect immediate forgiveness because I apologised.",
@@ -7840,8 +7723,7 @@ export const database = {
       kind: "action",
       situation:
         "You spoke sharply to someone who had not caused your frustration.",
-      prompt:
-        "Which response best helps you take responsibility for your part and offer a realistic repair?",
+      prompt: "What would you do next?",
       choices: [
         "Expect immediate forgiveness because I apologised.",
         "Apologise specifically for the way I spoke.",
@@ -7867,8 +7749,7 @@ export const database = {
       id: "25-action-4",
       kind: "action",
       situation: "You shared something a friend expected you to keep private.",
-      prompt:
-        "Which response best helps you take responsibility for your part and offer a realistic repair?",
+      prompt: "What would you do next?",
       choices: [
         "Acknowledge the breach and discuss what I can do to limit further sharing.",
         "Apologise only if they first admit their part.",
@@ -7894,8 +7775,7 @@ export const database = {
       id: "25-action-5",
       kind: "action",
       situation: "You dismissed a suggestion before hearing it fully.",
-      prompt:
-        "Which response best helps you take responsibility for your part and offer a realistic repair?",
+      prompt: "What would you do next?",
       choices: [
         "Apologise only if they first admit their part.",
         "Explain my intentions without acknowledging my action.",
@@ -7919,16 +7799,15 @@ export const database = {
     },
     {
       id: "25-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You interrupted someone and dismissed their suggestion. Later, you wish you had handled it differently.",
-      prompt:
-        "Consider this response: ““I interrupted and dismissed your idea. I’m sorry. I’d like to hear it.”” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "An apology obliges the other person to feel differently immediately.",
-        "A specific acknowledgement and an offer to change address both the moment and what happens next.",
-        "My responsibility depends entirely on another person apologising first.",
-        "A caring intention removes the need to address an impact.",
+        "Expect immediate forgiveness because I apologised.",
+        "“I interrupted and dismissed your idea. I’m sorry. I’d like to hear it.”",
+        "Apologise only if they first admit their part.",
+        "Explain my intentions without acknowledging my action.",
       ],
       correctIndex: 1,
       explanation:
@@ -7944,18 +7823,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "25-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "You forgot a commitment and someone covered for you.",
-      prompt:
-        "Consider this response: “Acknowledge the missed commitment and offer a practical way to put it right.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A repair names the action and includes realistic follow-through.",
-        "My responsibility depends entirely on another person apologising first.",
-        "A caring intention removes the need to address an impact.",
-        "An apology obliges the other person to feel differently immediately.",
+        "Acknowledge the missed commitment and offer a practical way to put it right.",
+        "Apologise only if they first admit their part.",
+        "Explain my intentions without acknowledging my action.",
+        "Expect immediate forgiveness because I apologised.",
       ],
       correctIndex: 0,
       explanation:
@@ -7971,19 +7850,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "25-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You spoke sharply to someone who had not caused your frustration.",
-      prompt:
-        "Consider this response: “Apologise specifically for the way I spoke.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "My responsibility depends entirely on another person apologising first.",
-        "A caring intention removes the need to address an impact.",
-        "An apology obliges the other person to feel differently immediately.",
-        "Specific responsibility avoids making the other person carry your unrelated frustration.",
+        "Apologise only if they first admit their part.",
+        "Explain my intentions without acknowledging my action.",
+        "Expect immediate forgiveness because I apologised.",
+        "Apologise specifically for the way I spoke.",
       ],
       correctIndex: 3,
       explanation:
@@ -7999,18 +7878,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "25-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "You shared something a friend expected you to keep private.",
-      prompt:
-        "Consider this response: “Acknowledge the breach and discuss what I can do to limit further sharing.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A caring intention removes the need to address an impact.",
-        "An apology obliges the other person to feel differently immediately.",
-        "Repair includes addressing the actual impact, not just expressing regret.",
-        "My responsibility depends entirely on another person apologising first.",
+        "Explain my intentions without acknowledging my action.",
+        "Expect immediate forgiveness because I apologised.",
+        "Acknowledge the breach and discuss what I can do to limit further sharing.",
+        "Apologise only if they first admit their part.",
       ],
       correctIndex: 2,
       explanation:
@@ -8026,18 +7905,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "25-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "You dismissed a suggestion before hearing it fully.",
-      prompt:
-        "Consider this response: “Acknowledge that and invite them to finish if they want to.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "An apology obliges the other person to feel differently immediately.",
-        "An offer to change the behaviour gives the apology practical meaning.",
-        "My responsibility depends entirely on another person apologising first.",
-        "A caring intention removes the need to address an impact.",
+        "Expect immediate forgiveness because I apologised.",
+        "Acknowledge that and invite them to finish if they want to.",
+        "Apologise only if they first admit their part.",
+        "Explain my intentions without acknowledging my action.",
       ],
       correctIndex: 1,
       explanation:
@@ -8053,13 +7932,13 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "26-action-1",
       kind: "action",
       situation: "You put effort into an opportunity and are not selected.",
-      prompt:
-        "Which response best helps you acknowledge a setback without turning it into a judgment of your whole self?",
+      prompt: "What would you do next?",
       choices: [
         "Insist it never mattered to me.",
         "Demand that I recover immediately before taking any time.",
@@ -8085,8 +7964,7 @@ export const database = {
       id: "26-action-2",
       kind: "action",
       situation: "A project you cared about receives little attention.",
-      prompt:
-        "Which response best helps you acknowledge a setback without turning it into a judgment of your whole self?",
+      prompt: "What would you do next?",
       choices: [
         "Demand that I recover immediately before taking any time.",
         "Acknowledge disappointment without concluding my work can never matter.",
@@ -8112,8 +7990,7 @@ export const database = {
       id: "26-action-3",
       kind: "action",
       situation: "You do not reach a goal by the date you hoped.",
-      prompt:
-        "Which response best helps you acknowledge a setback without turning it into a judgment of your whole self?",
+      prompt: "What would you do next?",
       choices: [
         "Describe the missed target and consider what is realistic next.",
         "Use one outcome to define everything about my ability.",
@@ -8139,8 +8016,7 @@ export const database = {
       id: "26-action-4",
       kind: "action",
       situation: "An application is declined.",
-      prompt:
-        "Which response best helps you acknowledge a setback without turning it into a judgment of your whole self?",
+      prompt: "What would you do next?",
       choices: [
         "Use one outcome to define everything about my ability.",
         "Insist it never mattered to me.",
@@ -8166,8 +8042,7 @@ export const database = {
       id: "26-action-5",
       kind: "action",
       situation: "A plan you invested in does not work out.",
-      prompt:
-        "Which response best helps you acknowledge a setback without turning it into a judgment of your whole self?",
+      prompt: "What would you do next?",
       choices: [
         "Insist it never mattered to me.",
         "Demand that I recover immediately before taking any time.",
@@ -8191,15 +8066,14 @@ export const database = {
     },
     {
       id: "26-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation: "You put effort into an opportunity and are not selected.",
-      prompt:
-        "Consider this response: “Admit I’m disappointed and give myself time.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Making room for disappointment can coexist with a later decision about feedback or another attempt.",
-        "One setback provides a complete measure of a person.",
-        "Moving forward requires pretending disappointment does not exist.",
-        "There is one required timetable for responding to disappointment.",
+        "Admit I’m disappointed and give myself time.",
+        "Use one outcome to define everything about my ability.",
+        "Insist it never mattered to me.",
+        "Demand that I recover immediately before taking any time.",
       ],
       correctIndex: 0,
       explanation:
@@ -8215,18 +8089,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "26-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "A project you cared about receives little attention.",
-      prompt:
-        "Consider this response: “Acknowledge disappointment without concluding my work can never matter.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "One setback provides a complete measure of a person.",
-        "Moving forward requires pretending disappointment does not exist.",
-        "There is one required timetable for responding to disappointment.",
-        "A specific event can hurt without becoming a total judgment of your ability.",
+        "Use one outcome to define everything about my ability.",
+        "Insist it never mattered to me.",
+        "Demand that I recover immediately before taking any time.",
+        "Acknowledge disappointment without concluding my work can never matter.",
       ],
       correctIndex: 3,
       explanation:
@@ -8242,18 +8116,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "26-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "You do not reach a goal by the date you hoped.",
-      prompt:
-        "Consider this response: “Describe the missed target and consider what is realistic next.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Moving forward requires pretending disappointment does not exist.",
-        "There is one required timetable for responding to disappointment.",
-        "Separating the event from identity leaves room for learning or adjustment.",
-        "One setback provides a complete measure of a person.",
+        "Insist it never mattered to me.",
+        "Demand that I recover immediately before taking any time.",
+        "Describe the missed target and consider what is realistic next.",
+        "Use one outcome to define everything about my ability.",
       ],
       correctIndex: 2,
       explanation:
@@ -8269,18 +8143,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "26-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "An application is declined.",
-      prompt:
-        "Consider this response: “Let myself feel disappointed and decide later whether to seek feedback.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "There is one required timetable for responding to disappointment.",
-        "Acknowledging the feeling can coexist with choosing a later next step.",
-        "One setback provides a complete measure of a person.",
-        "Moving forward requires pretending disappointment does not exist.",
+        "Demand that I recover immediately before taking any time.",
+        "Let myself feel disappointed and decide later whether to seek feedback.",
+        "Use one outcome to define everything about my ability.",
+        "Insist it never mattered to me.",
       ],
       correctIndex: 1,
       explanation:
@@ -8296,18 +8170,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "26-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation: "A plan you invested in does not work out.",
-      prompt:
-        "Consider this response: “Recognise that it mattered and that this outcome is one part of my experience.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Care for the disappointment does not require treating it as your whole story.",
-        "One setback provides a complete measure of a person.",
-        "Moving forward requires pretending disappointment does not exist.",
-        "There is one required timetable for responding to disappointment.",
+        "Recognise that it mattered and that this outcome is one part of my experience.",
+        "Use one outcome to define everything about my ability.",
+        "Insist it never mattered to me.",
+        "Demand that I recover immediately before taking any time.",
       ],
       correctIndex: 0,
       explanation:
@@ -8323,14 +8197,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "27-action-1",
       kind: "action",
       situation:
         "Someone says your presentation was confusing, in a tone that feels dismissive.",
-      prompt:
-        "Which response best helps you find specific, useful information in feedback?",
+      prompt: "What would you do next?",
       choices: [
         "Make a large change without clarifying vague feedback.",
         "Ask which part was difficult to follow.",
@@ -8356,8 +8230,7 @@ export const database = {
       id: "27-action-2",
       kind: "action",
       situation: "Someone says you should “communicate better.”",
-      prompt:
-        "Which response best helps you find specific, useful information in feedback?",
+      prompt: "What would you do next?",
       choices: [
         "Ask for an example and what information would have helped.",
         "Accept every comment as a complete judgment of me.",
@@ -8383,8 +8256,7 @@ export const database = {
       id: "27-action-3",
       kind: "action",
       situation: "A friend says your explanation was hard to follow.",
-      prompt:
-        "Which response best helps you find specific, useful information in feedback?",
+      prompt: "What would you do next?",
       choices: [
         "Accept every comment as a complete judgment of me.",
         "Reject all content solely because I dislike the delivery.",
@@ -8409,8 +8281,7 @@ export const database = {
       id: "27-action-4",
       kind: "action",
       situation: "You receive conflicting suggestions about a piece of work.",
-      prompt:
-        "Which response best helps you find specific, useful information in feedback?",
+      prompt: "What would you do next?",
       choices: [
         "Reject all content solely because I dislike the delivery.",
         "Make a large change without clarifying vague feedback.",
@@ -8436,18 +8307,17 @@ export const database = {
       id: "27-action-5",
       kind: "action",
       situation:
-        "A comment contains both an actionable point and a personal insult.",
-      prompt:
-        "Which response best helps you find specific, useful information in feedback?",
+        "After you present a group project, a teammate says, “Your slides need clearer examples. You clearly didn’t think this through.” You agree about the examples, but the last sentence stings.",
+      prompt: "What would you do next?",
       choices: [
-        "Make a large change without clarifying vague feedback.",
-        "Consider the actionable point while setting a limit around insults.",
-        "Accept every comment as a complete judgment of me.",
-        "Reject all content solely because I dislike the delivery.",
+        "Redo the whole presentation tonight without asking which examples were unclear.",
+        "Say, “I can improve the examples. Please keep the feedback about the work, not about me.”",
+        "Apologise for being useless and accept everything they said.",
+        "Dismiss all their feedback and leave the slides as they are.",
       ],
       correctIndex: 1,
       explanation:
-        "You can learn from relevant content without accepting personal attacks.",
+        "You can use the specific suggestion and still set a boundary around the personal remark. Asking for respectful feedback keeps the conversation about improving the work, rather than your worth.",
       mode: "practice",
       chapterId: 27,
       skillIds: ["resilience"],
@@ -8462,16 +8332,15 @@ export const database = {
     },
     {
       id: "27-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Someone says your presentation was confusing, in a tone that feels dismissive.",
-      prompt:
-        "Consider this response: “Ask which part was difficult to follow.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Feedback from one person defines my whole ability.",
-        "An unhelpful tone means no part of the content can be useful.",
-        "Vague feedback is already specific enough to act on accurately.",
-        "A concrete example makes it easier to evaluate the feedback and choose a useful change.",
+        "Accept every comment as a complete judgment of me.",
+        "Reject all content solely because I dislike the delivery.",
+        "Make a large change without clarifying vague feedback.",
+        "Ask which part was difficult to follow.",
       ],
       correctIndex: 3,
       explanation:
@@ -8487,18 +8356,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "27-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "Someone says you should “communicate better.”",
-      prompt:
-        "Consider this response: “Ask for an example and what information would have helped.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "An unhelpful tone means no part of the content can be useful.",
-        "Vague feedback is already specific enough to act on accurately.",
-        "Specific examples turn a broad comment into something you can assess.",
-        "Feedback from one person defines my whole ability.",
+        "Reject all content solely because I dislike the delivery.",
+        "Make a large change without clarifying vague feedback.",
+        "Ask for an example and what information would have helped.",
+        "Accept every comment as a complete judgment of me.",
       ],
       correctIndex: 2,
       explanation:
@@ -8514,18 +8383,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "27-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend says your explanation was hard to follow.",
-      prompt:
-        "Consider this response: “Ask which part needed more detail.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Vague feedback is already specific enough to act on accurately.",
-        "Clarifying the difficulty supports a focused improvement.",
-        "Feedback from one person defines my whole ability.",
-        "An unhelpful tone means no part of the content can be useful.",
+        "Make a large change without clarifying vague feedback.",
+        "Ask which part needed more detail.",
+        "Accept every comment as a complete judgment of me.",
+        "Reject all content solely because I dislike the delivery.",
       ],
       correctIndex: 1,
       explanation: "Clarifying the difficulty supports a focused improvement.",
@@ -8540,18 +8409,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "27-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "You receive conflicting suggestions about a piece of work.",
-      prompt:
-        "Consider this response: “Compare the examples and decide which fits the purpose of the work.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Feedback is information to evaluate, not an obligation to follow every suggestion.",
-        "Feedback from one person defines my whole ability.",
-        "An unhelpful tone means no part of the content can be useful.",
-        "Vague feedback is already specific enough to act on accurately.",
+        "Compare the examples and decide which fits the purpose of the work.",
+        "Accept every comment as a complete judgment of me.",
+        "Reject all content solely because I dislike the delivery.",
+        "Make a large change without clarifying vague feedback.",
       ],
       correctIndex: 0,
       explanation:
@@ -8567,23 +8436,23 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "27-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation:
-        "A comment contains both an actionable point and a personal insult.",
-      prompt:
-        "Consider this response: “Consider the actionable point while setting a limit around insults.” Why does it fit the skill being practised?",
+        "You share a draft with a colleague. They reply, “Add examples so the main point is clearer. This looks like you barely tried.” The suggestion could help, but you feel hurt by the assumption.",
+      prompt: "What would you do next?",
       choices: [
-        "Feedback from one person defines my whole ability.",
-        "An unhelpful tone means no part of the content can be useful.",
-        "Vague feedback is already specific enough to act on accurately.",
-        "You can learn from relevant content without accepting personal attacks.",
+        "Apologise for being useless and accept everything they said.",
+        "Dismiss all their feedback and leave the slides as they are.",
+        "Redo the whole presentation tonight without asking which examples were unclear.",
+        "Say, “I can improve the examples. Please keep the feedback about the work, not about me.”",
       ],
       correctIndex: 3,
       explanation:
-        "You can learn from relevant content without accepting personal attacks.",
+        "You can use the specific suggestion and still set a boundary around the personal remark. Asking for respectful feedback keeps the conversation about improving the work, rather than your worth.",
       mode: "practice",
       chapterId: 27,
       skillIds: ["resilience"],
@@ -8595,14 +8464,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "28-action-1",
       kind: "action",
       situation:
         "You see someone your age celebrating a milestone online and feel behind.",
-      prompt:
-        "Which response best helps you return from comparison to your own values and circumstances?",
+      prompt: "What would you do next?",
       choices: [
         "Step away and choose one action toward my own priorities.",
         "Use their milestone as a deadline for my life.",
@@ -8628,8 +8497,7 @@ export const database = {
       id: "28-action-2",
       kind: "action",
       situation: "A friend reaches a goal faster than you.",
-      prompt:
-        "Which response best helps you return from comparison to your own values and circumstances?",
+      prompt: "What would you do next?",
       choices: [
         "Use their milestone as a deadline for my life.",
         "Criticise their achievement to feel ahead.",
@@ -8655,8 +8523,7 @@ export const database = {
       id: "28-action-3",
       kind: "action",
       situation: "You see a milestone online that you had never wanted before.",
-      prompt:
-        "Which response best helps you return from comparison to your own values and circumstances?",
+      prompt: "What would you do next?",
       choices: [
         "Criticise their achievement to feel ahead.",
         "Assume a public update shows their whole life.",
@@ -8683,8 +8550,7 @@ export const database = {
       kind: "action",
       situation:
         "A peer appears to be progressing more quickly in a shared activity.",
-      prompt:
-        "Which response best helps you return from comparison to your own values and circumstances?",
+      prompt: "What would you do next?",
       choices: [
         "Assume a public update shows their whole life.",
         "Choose one useful step for my own practice.",
@@ -8711,8 +8577,7 @@ export const database = {
       kind: "action",
       situation:
         "Several people announce achievements while your progress feels quiet.",
-      prompt:
-        "Which response best helps you return from comparison to your own values and circumstances?",
+      prompt: "What would you do next?",
       choices: [
         "Recognise a meaningful step in my own circumstances.",
         "Use their milestone as a deadline for my life.",
@@ -8736,16 +8601,15 @@ export const database = {
     },
     {
       id: "28-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You see someone your age celebrating a milestone online and feel behind.",
-      prompt:
-        "Consider this response: “Step away and choose one action toward my own priorities.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Diminishing their achievement clarifies my own priorities.",
-        "A selected glimpse provides all the context needed for comparison.",
-        "Returning to a personally meaningful step can make the comparison less central.",
-        "Someone else’s timeline is the required timetable for mine.",
+        "Criticise their achievement to feel ahead.",
+        "Assume a public update shows their whole life.",
+        "Step away and choose one action toward my own priorities.",
+        "Use their milestone as a deadline for my life.",
       ],
       correctIndex: 2,
       explanation:
@@ -8761,18 +8625,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "28-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend reaches a goal faster than you.",
-      prompt:
-        "Consider this response: “Ask what matters about my goal and what is realistic for me now.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A selected glimpse provides all the context needed for comparison.",
-        "Your own values and circumstances provide a more useful basis for a next step.",
-        "Someone else’s timeline is the required timetable for mine.",
-        "Diminishing their achievement clarifies my own priorities.",
+        "Assume a public update shows their whole life.",
+        "Ask what matters about my goal and what is realistic for me now.",
+        "Use their milestone as a deadline for my life.",
+        "Criticise their achievement to feel ahead.",
       ],
       correctIndex: 1,
       explanation:
@@ -8788,18 +8652,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "28-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "You see a milestone online that you had never wanted before.",
-      prompt:
-        "Consider this response: “Check whether I want it or feel expected to want it.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Comparison can introduce pressure that is different from a personally held goal.",
-        "Someone else’s timeline is the required timetable for mine.",
-        "Diminishing their achievement clarifies my own priorities.",
-        "A selected glimpse provides all the context needed for comparison.",
+        "Check whether I want it or feel expected to want it.",
+        "Use their milestone as a deadline for my life.",
+        "Criticise their achievement to feel ahead.",
+        "Assume a public update shows their whole life.",
       ],
       correctIndex: 0,
       explanation:
@@ -8815,19 +8679,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "28-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A peer appears to be progressing more quickly in a shared activity.",
-      prompt:
-        "Consider this response: “Choose one useful step for my own practice.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Someone else’s timeline is the required timetable for mine.",
-        "Diminishing their achievement clarifies my own priorities.",
-        "A selected glimpse provides all the context needed for comparison.",
-        "A personal action shifts attention from ranking to what you can influence.",
+        "Use their milestone as a deadline for my life.",
+        "Criticise their achievement to feel ahead.",
+        "Assume a public update shows their whole life.",
+        "Choose one useful step for my own practice.",
       ],
       correctIndex: 3,
       explanation:
@@ -8843,19 +8707,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "28-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Several people announce achievements while your progress feels quiet.",
-      prompt:
-        "Consider this response: “Recognise a meaningful step in my own circumstances.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Diminishing their achievement clarifies my own priorities.",
-        "A selected glimpse provides all the context needed for comparison.",
-        "Visible milestones are not the only form of personally meaningful progress.",
-        "Someone else’s timeline is the required timetable for mine.",
+        "Criticise their achievement to feel ahead.",
+        "Assume a public update shows their whole life.",
+        "Recognise a meaningful step in my own circumstances.",
+        "Use their milestone as a deadline for my life.",
       ],
       correctIndex: 2,
       explanation:
@@ -8871,13 +8735,13 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "29-action-1",
       kind: "action",
       situation: "You are waiting for a decision that could change your plans.",
-      prompt:
-        "Which response best helps you choose a manageable action while allowing uncertainty to remain?",
+      prompt: "What would you do next?",
       choices: [
         "Wait for total certainty before doing anything at all.",
         "Plan endlessly for every imaginable possibility.",
@@ -8903,8 +8767,7 @@ export const database = {
       id: "29-action-2",
       kind: "action",
       situation: "An outdoor plan depends on an unclear forecast.",
-      prompt:
-        "Which response best helps you choose a manageable action while allowing uncertainty to remain?",
+      prompt: "What would you do next?",
       choices: [
         "Plan endlessly for every imaginable possibility.",
         "Keep checking for updates without considering whether it helps.",
@@ -8930,8 +8793,7 @@ export const database = {
       id: "29-action-3",
       kind: "action",
       situation: "You await a decision and cannot influence its timing.",
-      prompt:
-        "Which response best helps you choose a manageable action while allowing uncertainty to remain?",
+      prompt: "What would you do next?",
       choices: [
         "Keep checking for updates without considering whether it helps.",
         "Pick one useful task for today and a reasonable time to check.",
@@ -8957,8 +8819,7 @@ export const database = {
       id: "29-action-4",
       kind: "action",
       situation: "A shared project has one unresolved detail.",
-      prompt:
-        "Which response best helps you choose a manageable action while allowing uncertainty to remain?",
+      prompt: "What would you do next?",
       choices: [
         "Identify what can proceed and ask when the detail will be clarified.",
         "Wait for total certainty before doing anything at all.",
@@ -8985,8 +8846,7 @@ export const database = {
       kind: "action",
       situation:
         "You are starting an activity without knowing how quickly you will learn.",
-      prompt:
-        "Which response best helps you choose a manageable action while allowing uncertainty to remain?",
+      prompt: "What would you do next?",
       choices: [
         "Wait for total certainty before doing anything at all.",
         "Plan endlessly for every imaginable possibility.",
@@ -9010,15 +8870,14 @@ export const database = {
     },
     {
       id: "29-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation: "You are waiting for a decision that could change your plans.",
-      prompt:
-        "Consider this response: “List what I can influence today.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Repeated checking controls when an external decision arrives.",
-        "A small controllable action can offer direction without pretending the uncertainty is gone.",
-        "Every useful action requires knowing the final outcome.",
-        "More planning always produces certainty.",
+        "Keep checking for updates without considering whether it helps.",
+        "List what I can influence today.",
+        "Wait for total certainty before doing anything at all.",
+        "Plan endlessly for every imaginable possibility.",
       ],
       correctIndex: 1,
       explanation:
@@ -9034,18 +8893,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "29-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "An outdoor plan depends on an unclear forecast.",
-      prompt:
-        "Consider this response: “Choose a simple alternative and a time to decide.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A manageable plan can account for uncertainty without predicting everything.",
-        "Every useful action requires knowing the final outcome.",
-        "More planning always produces certainty.",
-        "Repeated checking controls when an external decision arrives.",
+        "Choose a simple alternative and a time to decide.",
+        "Wait for total certainty before doing anything at all.",
+        "Plan endlessly for every imaginable possibility.",
+        "Keep checking for updates without considering whether it helps.",
       ],
       correctIndex: 0,
       explanation:
@@ -9061,18 +8920,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "29-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "You await a decision and cannot influence its timing.",
-      prompt:
-        "Consider this response: “Pick one useful task for today and a reasonable time to check.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Every useful action requires knowing the final outcome.",
-        "More planning always produces certainty.",
-        "Repeated checking controls when an external decision arrives.",
-        "You can influence your day without controlling the external decision.",
+        "Wait for total certainty before doing anything at all.",
+        "Plan endlessly for every imaginable possibility.",
+        "Keep checking for updates without considering whether it helps.",
+        "Pick one useful task for today and a reasonable time to check.",
       ],
       correctIndex: 3,
       explanation:
@@ -9088,18 +8947,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "29-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "A shared project has one unresolved detail.",
-      prompt:
-        "Consider this response: “Identify what can proceed and ask when the detail will be clarified.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "More planning always produces certainty.",
-        "Repeated checking controls when an external decision arrives.",
-        "Separating known and unknown parts supports a limited next step.",
-        "Every useful action requires knowing the final outcome.",
+        "Plan endlessly for every imaginable possibility.",
+        "Keep checking for updates without considering whether it helps.",
+        "Identify what can proceed and ask when the detail will be clarified.",
+        "Wait for total certainty before doing anything at all.",
       ],
       correctIndex: 2,
       explanation:
@@ -9115,19 +8974,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "29-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation:
         "You are starting an activity without knowing how quickly you will learn.",
-      prompt:
-        "Consider this response: “Choose a first practice session rather than predict the whole process.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Repeated checking controls when an external decision arrives.",
-        "A small action does not require certainty about the eventual outcome.",
-        "Every useful action requires knowing the final outcome.",
-        "More planning always produces certainty.",
+        "Keep checking for updates without considering whether it helps.",
+        "Choose a first practice session rather than predict the whole process.",
+        "Wait for total certainty before doing anything at all.",
+        "Plan endlessly for every imaginable possibility.",
       ],
       correctIndex: 1,
       explanation:
@@ -9143,14 +9002,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "30-action-1",
       kind: "action",
       situation:
         "Several responsibilities are piling up, and handling everything alone is becoming difficult.",
-      prompt:
-        "Which response best helps you match a request for support to the actual need?",
+      prompt: "What would you do next?",
       choices: [
         "Ask one person to solve every kind of difficulty.",
         "Treat seeking help as proof I should stop trying.",
@@ -9176,8 +9035,7 @@ export const database = {
       id: "30-action-2",
       kind: "action",
       situation: "You need help preparing for an unfamiliar practical task.",
-      prompt:
-        "Which response best helps you match a request for support to the actual need?",
+      prompt: "What would you do next?",
       choices: [
         "Treat seeking help as proof I should stop trying.",
         "Ask someone with relevant experience for guidance on that task.",
@@ -9203,8 +9061,7 @@ export const database = {
       id: "30-action-3",
       kind: "action",
       situation: "You need company more than advice after a tiring day.",
-      prompt:
-        "Which response best helps you match a request for support to the actual need?",
+      prompt: "What would you do next?",
       choices: [
         "Ask a trusted person whether they have time to listen.",
         "Wait for someone to infer exactly what I need.",
@@ -9230,8 +9087,7 @@ export const database = {
       id: "30-action-4",
       kind: "action",
       situation: "A workload contains one task you can realistically share.",
-      prompt:
-        "Which response best helps you match a request for support to the actual need?",
+      prompt: "What would you do next?",
       choices: [
         "Wait for someone to infer exactly what I need.",
         "Ask one person to solve every kind of difficulty.",
@@ -9258,8 +9114,7 @@ export const database = {
       kind: "action",
       situation:
         "Distress keeps affecting daily life and informal chats are not enough.",
-      prompt:
-        "Which response best helps you match a request for support to the actual need?",
+      prompt: "What would you do next?",
       choices: [
         "Ask one person to solve every kind of difficulty.",
         "Treat seeking help as proof I should stop trying.",
@@ -9283,16 +9138,15 @@ export const database = {
     },
     {
       id: "30-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Several responsibilities are piling up, and handling everything alone is becoming difficult.",
-      prompt:
-        "Consider this response: “Ask a trusted person for help with one task.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A concrete request can make support easier to offer and accept.",
-        "People who care automatically know the support I need.",
-        "One support person must be able to meet every need.",
-        "Accepting support and taking an active role cannot coexist.",
+        "Ask a trusted person for help with one task.",
+        "Wait for someone to infer exactly what I need.",
+        "Ask one person to solve every kind of difficulty.",
+        "Treat seeking help as proof I should stop trying.",
       ],
       correctIndex: 0,
       explanation:
@@ -9308,18 +9162,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "30-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation: "You need help preparing for an unfamiliar practical task.",
-      prompt:
-        "Consider this response: “Ask someone with relevant experience for guidance on that task.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "People who care automatically know the support I need.",
-        "One support person must be able to meet every need.",
-        "Accepting support and taking an active role cannot coexist.",
-        "Matching experience to the need makes the request more useful.",
+        "Wait for someone to infer exactly what I need.",
+        "Ask one person to solve every kind of difficulty.",
+        "Treat seeking help as proof I should stop trying.",
+        "Ask someone with relevant experience for guidance on that task.",
       ],
       correctIndex: 3,
       explanation:
@@ -9335,18 +9189,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "30-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation: "You need company more than advice after a tiring day.",
-      prompt:
-        "Consider this response: “Ask a trusted person whether they have time to listen.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "One support person must be able to meet every need.",
-        "Accepting support and taking an active role cannot coexist.",
-        "Naming the kind of support helps another person respond appropriately.",
-        "People who care automatically know the support I need.",
+        "Ask one person to solve every kind of difficulty.",
+        "Treat seeking help as proof I should stop trying.",
+        "Ask a trusted person whether they have time to listen.",
+        "Wait for someone to infer exactly what I need.",
       ],
       correctIndex: 2,
       explanation:
@@ -9362,18 +9216,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "30-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "A workload contains one task you can realistically share.",
-      prompt:
-        "Consider this response: “Ask for help with that specific task.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Accepting support and taking an active role cannot coexist.",
-        "A manageable request can make it easier to offer and receive support.",
-        "People who care automatically know the support I need.",
-        "One support person must be able to meet every need.",
+        "Treat seeking help as proof I should stop trying.",
+        "Ask for help with that specific task.",
+        "Wait for someone to infer exactly what I need.",
+        "Ask one person to solve every kind of difficulty.",
       ],
       correctIndex: 1,
       explanation:
@@ -9389,19 +9243,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "30-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Distress keeps affecting daily life and informal chats are not enough.",
-      prompt:
-        "Consider this response: “Consider support from a qualified professional.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Different needs call for different support; an educational exercise cannot replace professional care.",
-        "People who care automatically know the support I need.",
-        "One support person must be able to meet every need.",
-        "Accepting support and taking an active role cannot coexist.",
+        "Consider support from a qualified professional.",
+        "Wait for someone to infer exactly what I need.",
+        "Ask one person to solve every kind of difficulty.",
+        "Treat seeking help as proof I should stop trying.",
       ],
       correctIndex: 0,
       explanation:
@@ -9417,14 +9271,14 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "31-action-1",
       kind: "action",
       situation:
         "A friend cancels an important plan, sounds defensive when you ask about it, and says they are overwhelmed. You feel hurt and concerned.",
-      prompt:
-        "Which response best helps you combine awareness, a pause, and a clear next step?",
+      prompt: "What would you do next?",
       choices: [
         "Use the same response in every situation without checking context.",
         "Pause, acknowledge both feelings, then ask to find a time to talk.",
@@ -9458,8 +9312,7 @@ export const database = {
       kind: "action",
       situation:
         "A shared task is missed, and you feel both frustrated and concerned about the person involved.",
-      prompt:
-        "Which response best helps you combine awareness, a pause, and a clear next step?",
+      prompt: "What would you do next?",
       choices: [
         "Notice both feelings, pause, and ask what happened before discussing the task.",
         "Follow my first impulse without considering its effect.",
@@ -9493,8 +9346,7 @@ export const database = {
       kind: "action",
       situation:
         "Feedback upsets you and you feel ready to send a defensive reply.",
-      prompt:
-        "Which response best helps you combine awareness, a pause, and a clear next step?",
+      prompt: "What would you do next?",
       choices: [
         "Follow my first impulse without considering its effect.",
         "Focus on one person’s needs and erase the other’s.",
@@ -9527,8 +9379,7 @@ export const database = {
       id: "31-action-4",
       kind: "action",
       situation: "A friend needs support while your own schedule is full.",
-      prompt:
-        "Which response best helps you combine awareness, a pause, and a clear next step?",
+      prompt: "What would you do next?",
       choices: [
         "Focus on one person’s needs and erase the other’s.",
         "Use the same response in every situation without checking context.",
@@ -9562,8 +9413,7 @@ export const database = {
       kind: "action",
       situation:
         "An unexpected change brings worry and a disagreement about what to do.",
-      prompt:
-        "Which response best helps you combine awareness, a pause, and a clear next step?",
+      prompt: "What would you do next?",
       choices: [
         "Use the same response in every situation without checking context.",
         "Acknowledge the worry, slow the conversation, and identify one option together.",
@@ -9594,16 +9444,15 @@ export const database = {
     },
     {
       id: "31-understanding-1",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A friend cancels an important plan, sounds defensive when you ask about it, and says they are overwhelmed. You feel hurt and concerned.",
-      prompt:
-        "Consider this response: “Pause, acknowledge both feelings, then ask to find a time to talk.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Strong feelings make a pause unnecessary.",
-        "Only one person’s experience can matter in a difficult moment.",
-        "An emotional toolkit is one fixed script for all circumstances.",
-        "This combines awareness, space to choose, care, and a concrete next step. It is one possible approach, not a required script.",
+        "Follow my first impulse without considering its effect.",
+        "Focus on one person’s needs and erase the other’s.",
+        "Use the same response in every situation without checking context.",
+        "Pause, acknowledge both feelings, then ask to find a time to talk.",
       ],
       correctIndex: 3,
       explanation:
@@ -9626,19 +9475,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "31-understanding-2",
-      kind: "understanding",
+      kind: "action",
       situation:
         "A shared task is missed, and you feel both frustrated and concerned about the person involved.",
-      prompt:
-        "Consider this response: “Notice both feelings, pause, and ask what happened before discussing the task.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Only one person’s experience can matter in a difficult moment.",
-        "An emotional toolkit is one fixed script for all circumstances.",
-        "Combining the skills leaves room for your needs and information about their circumstances.",
-        "Strong feelings make a pause unnecessary.",
+        "Focus on one person’s needs and erase the other’s.",
+        "Use the same response in every situation without checking context.",
+        "Notice both feelings, pause, and ask what happened before discussing the task.",
+        "Follow my first impulse without considering its effect.",
       ],
       correctIndex: 2,
       explanation:
@@ -9661,19 +9510,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "31-understanding-3",
-      kind: "understanding",
+      kind: "action",
       situation:
         "Feedback upsets you and you feel ready to send a defensive reply.",
-      prompt:
-        "Consider this response: “Name the reaction, take time, and ask for a specific example when ready.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "An emotional toolkit is one fixed script for all circumstances.",
-        "Awareness and a pause can make a clarifying next step more deliberate.",
-        "Strong feelings make a pause unnecessary.",
-        "Only one person’s experience can matter in a difficult moment.",
+        "Use the same response in every situation without checking context.",
+        "Name the reaction, take time, and ask for a specific example when ready.",
+        "Follow my first impulse without considering its effect.",
+        "Focus on one person’s needs and erase the other’s.",
       ],
       correctIndex: 1,
       explanation:
@@ -9696,18 +9545,18 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "31-understanding-4",
-      kind: "understanding",
+      kind: "action",
       situation: "A friend needs support while your own schedule is full.",
-      prompt:
-        "Consider this response: “Notice my capacity, pause before promising, and offer a realistic form of help.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "A toolkit can combine care for another person with an honest boundary.",
-        "Strong feelings make a pause unnecessary.",
-        "Only one person’s experience can matter in a difficult moment.",
-        "An emotional toolkit is one fixed script for all circumstances.",
+        "Notice my capacity, pause before promising, and offer a realistic form of help.",
+        "Follow my first impulse without considering its effect.",
+        "Focus on one person’s needs and erase the other’s.",
+        "Use the same response in every situation without checking context.",
       ],
       correctIndex: 0,
       explanation:
@@ -9730,19 +9579,19 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       id: "31-understanding-5",
-      kind: "understanding",
+      kind: "action",
       situation:
         "An unexpected change brings worry and a disagreement about what to do.",
-      prompt:
-        "Consider this response: “Acknowledge the worry, slow the conversation, and identify one option together.” Why does it fit the skill being practised?",
+      prompt: "What would you do next?",
       choices: [
-        "Strong feelings make a pause unnecessary.",
-        "Only one person’s experience can matter in a difficult moment.",
-        "An emotional toolkit is one fixed script for all circumstances.",
-        "The skills can work together to support a manageable response without requiring certainty.",
+        "Follow my first impulse without considering its effect.",
+        "Focus on one person’s needs and erase the other’s.",
+        "Use the same response in every situation without checking context.",
+        "Acknowledge the worry, slow the conversation, and identify one option together.",
       ],
       correctIndex: 3,
       explanation:
@@ -9765,6 +9614,7 @@ export const database = {
       },
       reviewStatus: "editorial-draft",
       sourceIds: ["framework-1", "framework-2"],
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -9784,8 +9634,7 @@ export const database = {
       },
       id: "arcade-1-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you notice your own feeling before deciding what to do?",
+      prompt: "What would you do next?",
       choices: [
         "Keep occupied so there is no room to notice anything.",
         "Tell myself I should not feel anything about this.",
@@ -9811,16 +9660,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-1-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Pause to notice the relief or extra energy before starting something else.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A feeling is worth noticing only when it seems reasonable.",
-        "Emotional awareness includes noticing welcome shifts, not only difficult ones.",
-        "Knowing another person’s intention is the same as noticing my feeling.",
-        "Awareness means making the feeling disappear.",
+        "Decide immediately what the other person intended.",
+        "Pause to notice the relief or extra energy before starting something else.",
+        "Keep occupied so there is no room to notice anything.",
+        "Tell myself I should not feel anything about this.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -9840,8 +9689,7 @@ export const database = {
       },
       id: "arcade-1-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you notice your own feeling before deciding what to do?",
+      prompt: "What would you do next?",
       choices: [
         "Tell myself I should not feel anything about this.",
         "Decide immediately what the other person intended.",
@@ -9867,16 +9715,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-1-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check what comes up in me before deciding how to reply.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Noticing your response can precede interpreting the message or choosing an action.",
-        "Knowing another person’s intention is the same as noticing my feeling.",
-        "Awareness means making the feeling disappear.",
-        "A feeling is worth noticing only when it seems reasonable.",
+        "Check what comes up in me before deciding how to reply.",
+        "Keep occupied so there is no room to notice anything.",
+        "Tell myself I should not feel anything about this.",
+        "Decide immediately what the other person intended.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -9895,8 +9743,7 @@ export const database = {
       },
       id: "arcade-1-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you notice your own feeling before deciding what to do?",
+      prompt: "What would you do next?",
       choices: [
         "Decide immediately what the other person intended.",
         "Ask what I am feeling now without immediately judging the agreement.",
@@ -9921,16 +9768,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-1-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask what I am feeling now without immediately judging the agreement.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Knowing another person’s intention is the same as noticing my feeling.",
-        "Awareness means making the feeling disappear.",
-        "A feeling is worth noticing only when it seems reasonable.",
-        "A later feeling can provide information worth exploring before your next step.",
+        "Keep occupied so there is no room to notice anything.",
+        "Tell myself I should not feel anything about this.",
+        "Decide immediately what the other person intended.",
+        "Ask what I am feeling now without immediately judging the agreement.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -9949,8 +9796,7 @@ export const database = {
       },
       id: "arcade-1-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you notice your own feeling before deciding what to do?",
+      prompt: "What would you do next?",
       choices: [
         "Notice how my energy or mood has changed.",
         "Keep occupied so there is no room to notice anything.",
@@ -9975,16 +9821,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-1-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice how my energy or mood has changed.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Awareness means making the feeling disappear.",
-        "A feeling is worth noticing only when it seems reasonable.",
-        "Comparing your current experience with an earlier moment can support awareness.",
-        "Knowing another person’s intention is the same as noticing my feeling.",
+        "Tell myself I should not feel anything about this.",
+        "Decide immediately what the other person intended.",
+        "Notice how my energy or mood has changed.",
+        "Keep occupied so there is no room to notice anything.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10004,8 +9850,7 @@ export const database = {
       },
       id: "arcade-1-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you notice your own feeling before deciding what to do?",
+      prompt: "What would you do next?",
       choices: [
         "Keep occupied so there is no room to notice anything.",
         "Tell myself I should not feel anything about this.",
@@ -10031,16 +9876,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-1-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice my own experience even if it differs from the group.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A feeling is worth noticing only when it seems reasonable.",
-        "Your emotional experience does not have to match other people’s visible reactions.",
-        "Knowing another person’s intention is the same as noticing my feeling.",
-        "Awareness means making the feeling disappear.",
+        "Decide immediately what the other person intended.",
+        "Notice my own experience even if it differs from the group.",
+        "Keep occupied so there is no room to notice anything.",
+        "Tell myself I should not feel anything about this.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10060,8 +9905,7 @@ export const database = {
       },
       id: "arcade-2-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you find specific words for your emotional experience?",
+      prompt: "What would you do next?",
       choices: [
         "Describe only what someone else did.",
         "Use “fine” and stop exploring, even though it does not fit.",
@@ -10087,16 +9931,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-2-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider whether relieved, satisfied, or proud fits.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "More precise words distinguish different kinds of pleasant experience.",
-        "One broad word always captures every part of an experience.",
-        "The most socially acceptable label is necessarily the most accurate.",
-        "Describing an event automatically names my emotional response.",
+        "Consider whether relieved, satisfied, or proud fits.",
+        "Choose the feeling I think I ought to have.",
+        "Describe only what someone else did.",
+        "Use “fine” and stop exploring, even though it does not fit.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10116,8 +9960,7 @@ export const database = {
       },
       id: "arcade-2-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you find specific words for your emotional experience?",
+      prompt: "What would you do next?",
       choices: [
         "Use “fine” and stop exploring, even though it does not fit.",
         "Check whether apprehensive, uncertain, or intimidated fits more closely.",
@@ -10143,16 +9986,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-2-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check whether apprehensive, uncertain, or intimidated fits more closely.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "One broad word always captures every part of an experience.",
-        "The most socially acceptable label is necessarily the most accurate.",
-        "Describing an event automatically names my emotional response.",
-        "Exploring related labels helps describe the particular experience.",
+        "Choose the feeling I think I ought to have.",
+        "Describe only what someone else did.",
+        "Use “fine” and stop exploring, even though it does not fit.",
+        "Check whether apprehensive, uncertain, or intimidated fits more closely.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10171,8 +10014,7 @@ export const database = {
       },
       id: "arcade-2-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you find specific words for your emotional experience?",
+      prompt: "What would you do next?",
       choices: [
         "Consider whether disappointed or worried captures it more accurately.",
         "Choose the feeling I think I ought to have.",
@@ -10197,16 +10039,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-2-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider whether disappointed or worried captures it more accurately.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The most socially acceptable label is necessarily the most accurate.",
-        "Describing an event automatically names my emotional response.",
-        "The same event can bring different emotions, so the label needs checking.",
-        "One broad word always captures every part of an experience.",
+        "Describe only what someone else did.",
+        "Use “fine” and stop exploring, even though it does not fit.",
+        "Consider whether disappointed or worried captures it more accurately.",
+        "Choose the feeling I think I ought to have.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10225,8 +10067,7 @@ export const database = {
       },
       id: "arcade-2-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you find specific words for your emotional experience?",
+      prompt: "What would you do next?",
       choices: [
         "Choose the feeling I think I ought to have.",
         "Describe only what someone else did.",
@@ -10251,16 +10092,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-2-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask whether peaceful, lonely, restless, or something else fits.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Describing an event automatically names my emotional response.",
-        "A neutral description such as strange can be a starting point for finer detail.",
-        "One broad word always captures every part of an experience.",
-        "The most socially acceptable label is necessarily the most accurate.",
+        "Use “fine” and stop exploring, even though it does not fit.",
+        "Ask whether peaceful, lonely, restless, or something else fits.",
+        "Choose the feeling I think I ought to have.",
+        "Describe only what someone else did.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10279,8 +10120,7 @@ export const database = {
       },
       id: "arcade-2-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you find specific words for your emotional experience?",
+      prompt: "What would you do next?",
       choices: [
         "Describe only what someone else did.",
         "Use “fine” and stop exploring, even though it does not fit.",
@@ -10305,16 +10145,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-2-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Try satisfied and impatient, then check whether both fit.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Specific labels can capture different parts of the same experience.",
-        "One broad word always captures every part of an experience.",
-        "The most socially acceptable label is necessarily the most accurate.",
-        "Describing an event automatically names my emotional response.",
+        "Try satisfied and impatient, then check whether both fit.",
+        "Choose the feeling I think I ought to have.",
+        "Describe only what someone else did.",
+        "Use “fine” and stop exploring, even though it does not fit.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10334,8 +10174,7 @@ export const database = {
       },
       id: "arcade-3-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you notice a body signal without treating it as proof of one emotion?",
+      prompt: "What would you do next?",
       choices: [
         "Assign the same emotional meaning to this sensation every time.",
         "Describe the tension and consider the situation without predicting the outcome.",
@@ -10361,16 +10200,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-3-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Describe the tension and consider the situation without predicting the outcome.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A physical sensation predicts the outcome of a situation.",
-        "Everyone’s body signals have one universal emotional meaning.",
-        "My physical state tells me another person’s private thoughts.",
-        "A body signal is an observation, not a forecast of how speaking will go.",
+        "Assume the sensation proves what someone else thinks of me.",
+        "Treat the sensation as proof that something will go poorly.",
+        "Assign the same emotional meaning to this sensation every time.",
+        "Describe the tension and consider the situation without predicting the outcome.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10389,8 +10228,7 @@ export const database = {
       },
       id: "arcade-3-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you notice a body signal without treating it as proof of one emotion?",
+      prompt: "What would you do next?",
       choices: [
         "Notice the sensation without assuming it has only one meaning.",
         "Assume the sensation proves what someone else thinks of me.",
@@ -10415,16 +10253,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-3-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice the sensation without assuming it has only one meaning.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Everyone’s body signals have one universal emotional meaning.",
-        "My physical state tells me another person’s private thoughts.",
-        "A sensation can accompany several feelings depending on the context.",
-        "A physical sensation predicts the outcome of a situation.",
+        "Treat the sensation as proof that something will go poorly.",
+        "Assign the same emotional meaning to this sensation every time.",
+        "Notice the sensation without assuming it has only one meaning.",
+        "Assume the sensation proves what someone else thinks of me.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10443,8 +10281,7 @@ export const database = {
       },
       id: "arcade-3-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you notice a body signal without treating it as proof of one emotion?",
+      prompt: "What would you do next?",
       choices: [
         "Assume the sensation proves what someone else thinks of me.",
         "Treat the sensation as proof that something will go poorly.",
@@ -10469,16 +10306,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-3-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check the tension and whether a small adjustment feels comfortable.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "My physical state tells me another person’s private thoughts.",
-        "Noticing a physical habit can inform a comfortable adjustment without diagnosing it.",
-        "A physical sensation predicts the outcome of a situation.",
-        "Everyone’s body signals have one universal emotional meaning.",
+        "Assign the same emotional meaning to this sensation every time.",
+        "Check the tension and whether a small adjustment feels comfortable.",
+        "Assume the sensation proves what someone else thinks of me.",
+        "Treat the sensation as proof that something will go poorly.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10497,8 +10334,7 @@ export const database = {
       },
       id: "arcade-3-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you notice a body signal without treating it as proof of one emotion?",
+      prompt: "What would you do next?",
       choices: [
         "Treat the sensation as proof that something will go poorly.",
         "Assign the same emotional meaning to this sensation every time.",
@@ -10523,16 +10359,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-3-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice the change and consider tiredness as one possibility.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Context helps you explore a signal without treating one explanation as certain.",
-        "A physical sensation predicts the outcome of a situation.",
-        "Everyone’s body signals have one universal emotional meaning.",
-        "My physical state tells me another person’s private thoughts.",
+        "Notice the change and consider tiredness as one possibility.",
+        "Assume the sensation proves what someone else thinks of me.",
+        "Treat the sensation as proof that something will go poorly.",
+        "Assign the same emotional meaning to this sensation every time.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10551,8 +10387,7 @@ export const database = {
       },
       id: "arcade-3-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you notice a body signal without treating it as proof of one emotion?",
+      prompt: "What would you do next?",
       choices: [
         "Assign the same emotional meaning to this sensation every time.",
         "Describe the sensation without assuming everyone judged me.",
@@ -10577,16 +10412,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-3-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Describe the sensation without assuming everyone judged me.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A physical sensation predicts the outcome of a situation.",
-        "Everyone’s body signals have one universal emotional meaning.",
-        "My physical state tells me another person’s private thoughts.",
-        "Your physical experience does not establish other people’s private opinions.",
+        "Assume the sensation proves what someone else thinks of me.",
+        "Treat the sensation as proof that something will go poorly.",
+        "Assign the same emotional meaning to this sensation every time.",
+        "Describe the sensation without assuming everyone judged me.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10605,8 +10440,7 @@ export const database = {
       },
       id: "arcade-4-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge two feelings that coexist?",
+      prompt: "What would you do next?",
       choices: [
         "Acknowledge hope about the change and sadness about leaving.",
         "Choose only the feeling that seems more acceptable.",
@@ -10631,16 +10465,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-4-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge hope about the change and sadness about leaving.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Mixed feelings prove that a decision is impossible.",
-        "Only one feeling can be real at a time.",
-        "A wanted change can still involve losing something meaningful.",
-        "An uncomfortable feeling makes a pleasant one insincere.",
+        "Use the uncomfortable feeling to cancel out the pleasant one.",
+        "Tell myself mixed feelings mean I cannot make a decision.",
+        "Acknowledge hope about the change and sadness about leaving.",
+        "Choose only the feeling that seems more acceptable.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10659,8 +10493,7 @@ export const database = {
       },
       id: "arcade-4-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge two feelings that coexist?",
+      prompt: "What would you do next?",
       choices: [
         "Choose only the feeling that seems more acceptable.",
         "Use the uncomfortable feeling to cancel out the pleasant one.",
@@ -10685,16 +10518,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-4-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Allow happiness for them and disappointment for myself.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Only one feeling can be real at a time.",
-        "Care for another person can coexist with an unmet wish of your own.",
-        "An uncomfortable feeling makes a pleasant one insincere.",
-        "Mixed feelings prove that a decision is impossible.",
+        "Tell myself mixed feelings mean I cannot make a decision.",
+        "Allow happiness for them and disappointment for myself.",
+        "Choose only the feeling that seems more acceptable.",
+        "Use the uncomfortable feeling to cancel out the pleasant one.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10713,8 +10546,7 @@ export const database = {
       },
       id: "arcade-4-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge two feelings that coexist?",
+      prompt: "What would you do next?",
       choices: [
         "Use the uncomfortable feeling to cancel out the pleasant one.",
         "Tell myself mixed feelings mean I cannot make a decision.",
@@ -10739,16 +10571,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-4-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Recognise relief and discomfort together.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Discomfort does not erase the relief or prove the boundary was unnecessary.",
-        "An uncomfortable feeling makes a pleasant one insincere.",
-        "Mixed feelings prove that a decision is impossible.",
-        "Only one feeling can be real at a time.",
+        "Recognise relief and discomfort together.",
+        "Choose only the feeling that seems more acceptable.",
+        "Use the uncomfortable feeling to cancel out the pleasant one.",
+        "Tell myself mixed feelings mean I cannot make a decision.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10767,8 +10599,7 @@ export const database = {
       },
       id: "arcade-4-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge two feelings that coexist?",
+      prompt: "What would you do next?",
       choices: [
         "Tell myself mixed feelings mean I cannot make a decision.",
         "Consider satisfaction alongside tiredness or sadness that it is over.",
@@ -10793,16 +10624,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-4-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider satisfaction alongside tiredness or sadness that it is over.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An uncomfortable feeling makes a pleasant one insincere.",
-        "Mixed feelings prove that a decision is impossible.",
-        "Only one feeling can be real at a time.",
-        "The end of an event can bring several emotional responses.",
+        "Choose only the feeling that seems more acceptable.",
+        "Use the uncomfortable feeling to cancel out the pleasant one.",
+        "Tell myself mixed feelings mean I cannot make a decision.",
+        "Consider satisfaction alongside tiredness or sadness that it is over.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10822,8 +10653,7 @@ export const database = {
       },
       id: "arcade-4-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge two feelings that coexist?",
+      prompt: "What would you do next?",
       choices: [
         "Name anticipation and apprehension together.",
         "Choose only the feeling that seems more acceptable.",
@@ -10849,16 +10679,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-4-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Name anticipation and apprehension together.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Mixed feelings prove that a decision is impossible.",
-        "Only one feeling can be real at a time.",
-        "Mixed emotions may reflect both interest and unfamiliarity.",
-        "An uncomfortable feeling makes a pleasant one insincere.",
+        "Use the uncomfortable feeling to cancel out the pleasant one.",
+        "Tell myself mixed feelings mean I cannot make a decision.",
+        "Name anticipation and apprehension together.",
+        "Choose only the feeling that seems more acceptable.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10878,8 +10708,7 @@ export const database = {
       },
       id: "arcade-5-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you connect your feeling to a possible need or value?",
+      prompt: "What would you do next?",
       choices: [
         "Decide the feeling proves someone intended to disrespect me.",
         "Focus only on how to make the feeling vanish.",
@@ -10905,16 +10734,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-5-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider whether having a say matters to me.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Understanding a need requires getting rid of the feeling first.",
-        "Naming a possible need makes it easier to discuss the specific concern.",
-        "Identifying my need removes other people’s needs and choices.",
-        "A feeling establishes another person’s intention.",
+        "Treat having a need as a guarantee that everyone must meet it.",
+        "Consider whether having a say matters to me.",
+        "Decide the feeling proves someone intended to disrespect me.",
+        "Focus only on how to make the feeling vanish.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10934,8 +10763,7 @@ export const database = {
       },
       id: "arcade-5-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you connect your feeling to a possible need or value?",
+      prompt: "What would you do next?",
       choices: [
         "Focus only on how to make the feeling vanish.",
         "Treat having a need as a guarantee that everyone must meet it.",
@@ -10961,16 +10789,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-5-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Explore whether focused connection is what I was hoping for.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A feeling can point toward the quality of connection you value.",
-        "Identifying my need removes other people’s needs and choices.",
-        "A feeling establishes another person’s intention.",
-        "Understanding a need requires getting rid of the feeling first.",
+        "Explore whether focused connection is what I was hoping for.",
+        "Decide the feeling proves someone intended to disrespect me.",
+        "Focus only on how to make the feeling vanish.",
+        "Treat having a need as a guarantee that everyone must meet it.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -10989,8 +10817,7 @@ export const database = {
       },
       id: "arcade-5-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you connect your feeling to a possible need or value?",
+      prompt: "What would you do next?",
       choices: [
         "Treat having a need as a guarantee that everyone must meet it.",
         "Consider whether I need more choice or information.",
@@ -11015,16 +10842,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-5-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider whether I need more choice or information.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Identifying my need removes other people’s needs and choices.",
-        "A feeling establishes another person’s intention.",
-        "Understanding a need requires getting rid of the feeling first.",
-        "Understanding the need can guide a more informed next conversation.",
+        "Decide the feeling proves someone intended to disrespect me.",
+        "Focus only on how to make the feeling vanish.",
+        "Treat having a need as a guarantee that everyone must meet it.",
+        "Consider whether I need more choice or information.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11044,8 +10871,7 @@ export const database = {
       },
       id: "arcade-5-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you connect your feeling to a possible need or value?",
+      prompt: "What would you do next?",
       choices: [
         "Ask whether clarity or predictability matters here.",
         "Decide the feeling proves someone intended to disrespect me.",
@@ -11071,16 +10897,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-5-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask whether clarity or predictability matters here.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A feeling establishes another person’s intention.",
-        "Understanding a need requires getting rid of the feeling first.",
-        "A possible need can explain the impact without assuming deliberate inconsideration.",
-        "Identifying my need removes other people’s needs and choices.",
+        "Focus only on how to make the feeling vanish.",
+        "Treat having a need as a guarantee that everyone must meet it.",
+        "Ask whether clarity or predictability matters here.",
+        "Decide the feeling proves someone intended to disrespect me.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11098,8 +10924,7 @@ export const database = {
       },
       id: "arcade-5-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you connect your feeling to a possible need or value?",
+      prompt: "What would you do next?",
       choices: [
         "Decide the feeling proves someone intended to disrespect me.",
         "Focus only on how to make the feeling vanish.",
@@ -11123,16 +10948,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-5-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice whether contribution or inclusion matters to me.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Understanding a need requires getting rid of the feeling first.",
-        "Pleasant feelings can also point toward values and needs.",
-        "Identifying my need removes other people’s needs and choices.",
-        "A feeling establishes another person’s intention.",
+        "Treat having a need as a guarantee that everyone must meet it.",
+        "Notice whether contribution or inclusion matters to me.",
+        "Decide the feeling proves someone intended to disrespect me.",
+        "Focus only on how to make the feeling vanish.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11152,8 +10977,7 @@ export const database = {
       },
       id: "arcade-6-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you recognise an early sign of a familiar reaction?",
+      prompt: "What would you do next?",
       choices: [
         "Focus entirely on blaming the situation.",
         "Wait until my reaction is at its most intense before noticing it.",
@@ -11179,16 +11003,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-6-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice the urge to defend as an early cue.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Catching the urge early allows you to keep listening before choosing a reply.",
-        "A pattern becomes useful only after it has fully played out.",
-        "Recognising a pattern means accepting it as permanent.",
-        "An external cause means there is nothing to notice in my own response.",
+        "Notice the urge to defend as an early cue.",
+        "Treat my usual reaction as an unchangeable part of me.",
+        "Focus entirely on blaming the situation.",
+        "Wait until my reaction is at its most intense before noticing it.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11208,8 +11032,7 @@ export const database = {
       },
       id: "arcade-6-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you recognise an early sign of a familiar reaction?",
+      prompt: "What would you do next?",
       choices: [
         "Wait until my reaction is at its most intense before noticing it.",
         "Recognise the automatic agreement before committing.",
@@ -11235,16 +11058,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-6-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Recognise the automatic agreement before committing.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A pattern becomes useful only after it has fully played out.",
-        "Recognising a pattern means accepting it as permanent.",
-        "An external cause means there is nothing to notice in my own response.",
-        "An early pattern can reveal where a pause would support choice.",
+        "Treat my usual reaction as an unchangeable part of me.",
+        "Focus entirely on blaming the situation.",
+        "Wait until my reaction is at its most intense before noticing it.",
+        "Recognise the automatic agreement before committing.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11264,8 +11087,7 @@ export const database = {
       },
       id: "arcade-6-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you recognise an early sign of a familiar reaction?",
+      prompt: "What would you do next?",
       choices: [
         "Notice the urge to check as part of my usual response.",
         "Treat my usual reaction as an unchangeable part of me.",
@@ -11291,16 +11113,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-6-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice the urge to check as part of my usual response.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Recognising a pattern means accepting it as permanent.",
-        "An external cause means there is nothing to notice in my own response.",
-        "Recognising a recurring sequence helps you choose how often to act on it.",
-        "A pattern becomes useful only after it has fully played out.",
+        "Focus entirely on blaming the situation.",
+        "Wait until my reaction is at its most intense before noticing it.",
+        "Notice the urge to check as part of my usual response.",
+        "Treat my usual reaction as an unchangeable part of me.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11320,8 +11142,7 @@ export const database = {
       },
       id: "arcade-6-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you recognise an early sign of a familiar reaction?",
+      prompt: "What would you do next?",
       choices: [
         "Treat my usual reaction as an unchangeable part of me.",
         "Focus entirely on blaming the situation.",
@@ -11347,16 +11168,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-6-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice the shift away from the current issue.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An external cause means there is nothing to notice in my own response.",
-        "An early sign can be a change in what you start bringing into a conversation.",
-        "A pattern becomes useful only after it has fully played out.",
-        "Recognising a pattern means accepting it as permanent.",
+        "Wait until my reaction is at its most intense before noticing it.",
+        "Notice the shift away from the current issue.",
+        "Treat my usual reaction as an unchangeable part of me.",
+        "Focus entirely on blaming the situation.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11376,8 +11197,7 @@ export const database = {
       },
       id: "arcade-6-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you recognise an early sign of a familiar reaction?",
+      prompt: "What would you do next?",
       choices: [
         "Focus entirely on blaming the situation.",
         "Wait until my reaction is at its most intense before noticing it.",
@@ -11403,16 +11223,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-6-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice the automatic joke before deciding whether to use it.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Awareness of a familiar response creates room for a deliberate alternative.",
-        "A pattern becomes useful only after it has fully played out.",
-        "Recognising a pattern means accepting it as permanent.",
-        "An external cause means there is nothing to notice in my own response.",
+        "Notice the automatic joke before deciding whether to use it.",
+        "Treat my usual reaction as an unchangeable part of me.",
+        "Focus entirely on blaming the situation.",
+        "Wait until my reaction is at its most intense before noticing it.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11431,8 +11251,7 @@ export const database = {
       },
       id: "arcade-7-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you create a brief pause before responding?",
+      prompt: "What would you do next?",
       choices: [
         "Avoid the issue indefinitely without saying anything.",
         "Ask for a moment to check before answering.",
@@ -11457,16 +11276,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-7-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask for a moment to check before answering.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The first impulse is always the most considered response.",
-        "A pause and permanently abandoning a conversation are the same.",
-        "A useful response requires the complete absence of emotion.",
-        "A short pause can improve the fit between your answer and what you can do.",
+        "Require myself to become perfectly calm before ever returning.",
+        "Respond immediately because the first impulse must be the clearest.",
+        "Avoid the issue indefinitely without saying anything.",
+        "Ask for a moment to check before answering.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11485,8 +11304,7 @@ export const database = {
       },
       id: "arcade-7-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you create a brief pause before responding?",
+      prompt: "What would you do next?",
       choices: [
         "Say I will respond after checking my plans.",
         "Require myself to become perfectly calm before ever returning.",
@@ -11511,16 +11329,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-7-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Say I will respond after checking my plans.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A pause and permanently abandoning a conversation are the same.",
-        "A useful response requires the complete absence of emotion.",
-        "A clear return point creates thinking time without leaving the request indefinite.",
-        "The first impulse is always the most considered response.",
+        "Respond immediately because the first impulse must be the clearest.",
+        "Avoid the issue indefinitely without saying anything.",
+        "Say I will respond after checking my plans.",
+        "Require myself to become perfectly calm before ever returning.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11540,8 +11358,7 @@ export const database = {
       },
       id: "arcade-7-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you create a brief pause before responding?",
+      prompt: "What would you do next?",
       choices: [
         "Require myself to become perfectly calm before ever returning.",
         "Respond immediately because the first impulse must be the clearest.",
@@ -11567,16 +11384,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-7-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Stop drafting briefly and review my purpose before sending.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A useful response requires the complete absence of emotion.",
-        "Pausing lets you consider the effect of a response before it becomes public.",
-        "The first impulse is always the most considered response.",
-        "A pause and permanently abandoning a conversation are the same.",
+        "Avoid the issue indefinitely without saying anything.",
+        "Stop drafting briefly and review my purpose before sending.",
+        "Require myself to become perfectly calm before ever returning.",
+        "Respond immediately because the first impulse must be the clearest.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11595,8 +11412,7 @@ export const database = {
       },
       id: "arcade-7-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you create a brief pause before responding?",
+      prompt: "What would you do next?",
       choices: [
         "Respond immediately because the first impulse must be the clearest.",
         "Avoid the issue indefinitely without saying anything.",
@@ -11621,16 +11437,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-7-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Take a moment before asking to clarify.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A brief pause can make clarification more deliberate.",
-        "The first impulse is always the most considered response.",
-        "A pause and permanently abandoning a conversation are the same.",
-        "A useful response requires the complete absence of emotion.",
+        "Take a moment before asking to clarify.",
+        "Require myself to become perfectly calm before ever returning.",
+        "Respond immediately because the first impulse must be the clearest.",
+        "Avoid the issue indefinitely without saying anything.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11650,8 +11466,7 @@ export const database = {
       },
       id: "arcade-7-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you create a brief pause before responding?",
+      prompt: "What would you do next?",
       choices: [
         "Avoid the issue indefinitely without saying anything.",
         "Ask to revisit the decision at an agreed time.",
@@ -11677,16 +11492,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-7-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask to revisit the decision at an agreed time.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The first impulse is always the most considered response.",
-        "A pause and permanently abandoning a conversation are the same.",
-        "A useful response requires the complete absence of emotion.",
-        "A planned pause gives space for thought while keeping the decision on the agenda.",
+        "Require myself to become perfectly calm before ever returning.",
+        "Respond immediately because the first impulse must be the clearest.",
+        "Avoid the issue indefinitely without saying anything.",
+        "Ask to revisit the decision at an agreed time.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11705,8 +11520,7 @@ export const database = {
       },
       id: "arcade-8-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you try a comfortable settling strategy and check whether it helps?",
+      prompt: "What would you do next?",
       choices: [
         "Try a quieter place briefly and check whether it helps.",
         "Force the same technique even when it feels uncomfortable.",
@@ -11731,16 +11545,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-8-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Try a quieter place briefly and check whether it helps.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Noticing whether a strategy helps is unnecessary.",
-        "One technique must work for everyone in every situation.",
-        "A change in surroundings is an option to test, not a guaranteed fix.",
-        "A settling strategy is useful only if all emotion disappears.",
+        "Expect one short exercise to remove every feeling.",
+        "Keep pushing without checking what I need.",
+        "Try a quieter place briefly and check whether it helps.",
+        "Force the same technique even when it feels uncomfortable.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11759,8 +11573,7 @@ export const database = {
       },
       id: "arcade-8-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you try a comfortable settling strategy and check whether it helps?",
+      prompt: "What would you do next?",
       choices: [
         "Force the same technique even when it feels uncomfortable.",
         "Expect one short exercise to remove every feeling.",
@@ -11785,16 +11598,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-8-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Try a different comfortable option rather than force it.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "One technique must work for everyone in every situation.",
-        "Different moments can call for different settling strategies.",
-        "A settling strategy is useful only if all emotion disappears.",
-        "Noticing whether a strategy helps is unnecessary.",
+        "Keep pushing without checking what I need.",
+        "Try a different comfortable option rather than force it.",
+        "Force the same technique even when it feels uncomfortable.",
+        "Expect one short exercise to remove every feeling.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11813,8 +11626,7 @@ export const database = {
       },
       id: "arcade-8-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you try a comfortable settling strategy and check whether it helps?",
+      prompt: "What would you do next?",
       choices: [
         "Expect one short exercise to remove every feeling.",
         "Keep pushing without checking what I need.",
@@ -11839,16 +11651,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-8-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice a few neutral things around me and see how that feels.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An available small strategy can be useful when movement is not an option.",
-        "A settling strategy is useful only if all emotion disappears.",
-        "Noticing whether a strategy helps is unnecessary.",
-        "One technique must work for everyone in every situation.",
+        "Notice a few neutral things around me and see how that feels.",
+        "Force the same technique even when it feels uncomfortable.",
+        "Expect one short exercise to remove every feeling.",
+        "Keep pushing without checking what I need.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11867,8 +11679,7 @@ export const database = {
       },
       id: "arcade-8-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you try a comfortable settling strategy and check whether it helps?",
+      prompt: "What would you do next?",
       choices: [
         "Keep pushing without checking what I need.",
         "Try a brief stretch or transition and notice the effect.",
@@ -11893,16 +11704,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-8-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Try a brief stretch or transition and notice the effect.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A settling strategy is useful only if all emotion disappears.",
-        "Noticing whether a strategy helps is unnecessary.",
-        "One technique must work for everyone in every situation.",
-        "A small experiment can help you learn what supports transitions.",
+        "Force the same technique even when it feels uncomfortable.",
+        "Expect one short exercise to remove every feeling.",
+        "Keep pushing without checking what I need.",
+        "Try a brief stretch or transition and notice the effect.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11921,8 +11732,7 @@ export const database = {
       },
       id: "arcade-8-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you try a comfortable settling strategy and check whether it helps?",
+      prompt: "What would you do next?",
       choices: [
         "Stop and choose another way to take a break.",
         "Force the same technique even when it feels uncomfortable.",
@@ -11947,16 +11757,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-8-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Stop and choose another way to take a break.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Noticing whether a strategy helps is unnecessary.",
-        "One technique must work for everyone in every situation.",
-        "Comfort and fit matter more than forcing a particular technique.",
-        "A settling strategy is useful only if all emotion disappears.",
+        "Expect one short exercise to remove every feeling.",
+        "Keep pushing without checking what I need.",
+        "Stop and choose another way to take a break.",
+        "Force the same technique even when it feels uncomfortable.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -11975,8 +11785,7 @@ export const database = {
       },
       id: "arcade-9-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you allow a feeling while choosing a considerate action?",
+      prompt: "What would you do next?",
       choices: [
         "Follow the strongest impulse immediately.",
         "Insist that I must not have this feeling at all.",
@@ -12001,16 +11810,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-9-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice impatience while choosing a respectful explanation.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Choosing my behaviour requires forbidding the feeling.",
-        "A feeling can be present without determining how you treat the learner.",
-        "A strong feeling removes responsibility for my actions.",
-        "Feeling an impulse means I must act on it.",
+        "Treat the feeling as permission to hurt someone.",
+        "Notice impatience while choosing a respectful explanation.",
+        "Follow the strongest impulse immediately.",
+        "Insist that I must not have this feeling at all.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12030,8 +11839,7 @@ export const database = {
       },
       id: "arcade-9-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you allow a feeling while choosing a considerate action?",
+      prompt: "What would you do next?",
       choices: [
         "Insist that I must not have this feeling at all.",
         "Treat the feeling as permission to hurt someone.",
@@ -12057,16 +11865,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-9-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge the disappointment before deciding about the commitment.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The action deserves its own choice rather than automatically following the feeling.",
-        "A strong feeling removes responsibility for my actions.",
-        "Feeling an impulse means I must act on it.",
-        "Choosing my behaviour requires forbidding the feeling.",
+        "Acknowledge the disappointment before deciding about the commitment.",
+        "Follow the strongest impulse immediately.",
+        "Insist that I must not have this feeling at all.",
+        "Treat the feeling as permission to hurt someone.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12086,8 +11894,7 @@ export const database = {
       },
       id: "arcade-9-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you allow a feeling while choosing a considerate action?",
+      prompt: "What would you do next?",
       choices: [
         "Treat the feeling as permission to hurt someone.",
         "Allow the embarrassment while acknowledging my part.",
@@ -12113,16 +11920,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-9-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Allow the embarrassment while acknowledging my part.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A strong feeling removes responsibility for my actions.",
-        "Feeling an impulse means I must act on it.",
-        "Choosing my behaviour requires forbidding the feeling.",
-        "An uncomfortable feeling does not require shifting responsibility.",
+        "Follow the strongest impulse immediately.",
+        "Insist that I must not have this feeling at all.",
+        "Treat the feeling as permission to hurt someone.",
+        "Allow the embarrassment while acknowledging my part.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12141,8 +11948,7 @@ export const database = {
       },
       id: "arcade-9-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you allow a feeling while choosing a considerate action?",
+      prompt: "What would you do next?",
       choices: [
         "Notice annoyance without turning it into ridicule.",
         "Follow the strongest impulse immediately.",
@@ -12167,16 +11973,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-9-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice annoyance without turning it into ridicule.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Feeling an impulse means I must act on it.",
-        "Choosing my behaviour requires forbidding the feeling.",
-        "You can recognise a reaction while declining an impulse that might hurt someone.",
-        "A strong feeling removes responsibility for my actions.",
+        "Insist that I must not have this feeling at all.",
+        "Treat the feeling as permission to hurt someone.",
+        "Notice annoyance without turning it into ridicule.",
+        "Follow the strongest impulse immediately.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12195,8 +12001,7 @@ export const database = {
       },
       id: "arcade-9-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you allow a feeling while choosing a considerate action?",
+      prompt: "What would you do next?",
       choices: [
         "Follow the strongest impulse immediately.",
         "Insist that I must not have this feeling at all.",
@@ -12221,16 +12026,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-9-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Name the hurt and choose a specific question or request.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Choosing my behaviour requires forbidding the feeling.",
-        "A clear response can express the feeling without following every impulse it brings.",
-        "A strong feeling removes responsibility for my actions.",
-        "Feeling an impulse means I must act on it.",
+        "Treat the feeling as permission to hurt someone.",
+        "Name the hurt and choose a specific question or request.",
+        "Follow the strongest impulse immediately.",
+        "Insist that I must not have this feeling at all.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12249,8 +12054,7 @@ export const database = {
       },
       id: "arcade-10-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose an action that addresses the actual situation?",
+      prompt: "What would you do next?",
       choices: [
         "Expect the feeling to solve the practical problem by itself.",
         "Assume staying calm is the only thing I can do.",
@@ -12275,16 +12079,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-10-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Discuss priorities or a realistic change in timing.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The practical overlap needs attention in addition to how you feel about it.",
-        "Regulating emotion means tolerating every condition without changing it.",
-        "Any immediate action is better than understanding the options.",
-        "Noticing a feeling automatically changes the external situation.",
+        "Discuss priorities or a realistic change in timing.",
+        "Act before checking what is within my control.",
+        "Expect the feeling to solve the practical problem by itself.",
+        "Assume staying calm is the only thing I can do.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12304,8 +12108,7 @@ export const database = {
       },
       id: "arcade-10-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose an action that addresses the actual situation?",
+      prompt: "What would you do next?",
       choices: [
         "Assume staying calm is the only thing I can do.",
         "Ask for a short uninterrupted period if possible.",
@@ -12331,16 +12134,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-10-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask for a short uninterrupted period if possible.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Regulating emotion means tolerating every condition without changing it.",
-        "Any immediate action is better than understanding the options.",
-        "Noticing a feeling automatically changes the external situation.",
-        "Changing a condition can address a source of strain you can influence.",
+        "Act before checking what is within my control.",
+        "Expect the feeling to solve the practical problem by itself.",
+        "Assume staying calm is the only thing I can do.",
+        "Ask for a short uninterrupted period if possible.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12358,8 +12161,7 @@ export const database = {
       },
       id: "arcade-10-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose an action that addresses the actual situation?",
+      prompt: "What would you do next?",
       choices: [
         "Ask for the missing detail.",
         "Act before checking what is within my control.",
@@ -12383,16 +12185,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-10-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask for the missing detail.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Any immediate action is better than understanding the options.",
-        "Noticing a feeling automatically changes the external situation.",
-        "Clarification addresses the actual information gap.",
-        "Regulating emotion means tolerating every condition without changing it.",
+        "Expect the feeling to solve the practical problem by itself.",
+        "Assume staying calm is the only thing I can do.",
+        "Ask for the missing detail.",
+        "Act before checking what is within my control.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12411,8 +12213,7 @@ export const database = {
       },
       id: "arcade-10-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose an action that addresses the actual situation?",
+      prompt: "What would you do next?",
       choices: [
         "Act before checking what is within my control.",
         "Expect the feeling to solve the practical problem by itself.",
@@ -12437,16 +12238,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-10-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask the group to clarify who will handle which part.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Noticing a feeling automatically changes the external situation.",
-        "A clear arrangement can address uncertainty at its source.",
-        "Regulating emotion means tolerating every condition without changing it.",
-        "Any immediate action is better than understanding the options.",
+        "Assume staying calm is the only thing I can do.",
+        "Ask the group to clarify who will handle which part.",
+        "Act before checking what is within my control.",
+        "Expect the feeling to solve the practical problem by itself.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12465,8 +12266,7 @@ export const database = {
       },
       id: "arcade-10-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose an action that addresses the actual situation?",
+      prompt: "What would you do next?",
       choices: [
         "Expect the feeling to solve the practical problem by itself.",
         "Assume staying calm is the only thing I can do.",
@@ -12491,16 +12291,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-10-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Choose a useful activity while leaving the external decision open.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "When the outcome is outside your control, you can still choose how to use your time.",
-        "Regulating emotion means tolerating every condition without changing it.",
-        "Any immediate action is better than understanding the options.",
-        "Noticing a feeling automatically changes the external situation.",
+        "Choose a useful activity while leaving the external decision open.",
+        "Act before checking what is within my control.",
+        "Expect the feeling to solve the practical problem by itself.",
+        "Assume staying calm is the only thing I can do.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12518,8 +12318,7 @@ export const database = {
       },
       id: "arcade-11-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you separate an observation from an interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Replace my first guess with a reassuring guess and call it certain.",
         "Separate the early ending from my guess about their interest.",
@@ -12543,16 +12342,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-11-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Separate the early ending from my guess about their interest.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A convincing interpretation is automatically an observation.",
-        "A positive explanation needs no evidence.",
-        "Feeling affected proves the other person’s motive.",
-        "The timing is observable; their reason remains uncertain.",
+        "Use my feeling as proof of what another person intended.",
+        "Treat my first explanation as a confirmed fact.",
+        "Replace my first guess with a reassuring guess and call it certain.",
+        "Separate the early ending from my guess about their interest.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12571,8 +12370,7 @@ export const database = {
       },
       id: "arcade-11-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you separate an observation from an interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Notice the lack of a reaction without concluding everyone disliked it.",
         "Use my feeling as proof of what another person intended.",
@@ -12597,16 +12395,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-11-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Notice the lack of a reaction without concluding everyone disliked it.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A positive explanation needs no evidence.",
-        "Feeling affected proves the other person’s motive.",
-        "A missing response does not establish a group’s private opinions.",
-        "A convincing interpretation is automatically an observation.",
+        "Treat my first explanation as a confirmed fact.",
+        "Replace my first guess with a reassuring guess and call it certain.",
+        "Notice the lack of a reaction without concluding everyone disliked it.",
+        "Use my feeling as proof of what another person intended.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12624,8 +12422,7 @@ export const database = {
       },
       id: "arcade-11-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you separate an observation from an interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Use my feeling as proof of what another person intended.",
         "Treat my first explanation as a confirmed fact.",
@@ -12649,16 +12446,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-11-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Describe the seat change separately from my interpretation of it.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Feeling affected proves the other person’s motive.",
-        "An observed action can have several explanations.",
-        "A convincing interpretation is automatically an observation.",
-        "A positive explanation needs no evidence.",
+        "Replace my first guess with a reassuring guess and call it certain.",
+        "Describe the seat change separately from my interpretation of it.",
+        "Use my feeling as proof of what another person intended.",
+        "Treat my first explanation as a confirmed fact.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12677,8 +12474,7 @@ export const database = {
       },
       id: "arcade-11-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you separate an observation from an interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Treat my first explanation as a confirmed fact.",
         "Replace my first guess with a reassuring guess and call it certain.",
@@ -12703,16 +12499,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-11-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Separate whom they asked from what I assume it says about me.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "One request does not establish a judgment about your ability.",
-        "A convincing interpretation is automatically an observation.",
-        "A positive explanation needs no evidence.",
-        "Feeling affected proves the other person’s motive.",
+        "Separate whom they asked from what I assume it says about me.",
+        "Use my feeling as proof of what another person intended.",
+        "Treat my first explanation as a confirmed fact.",
+        "Replace my first guess with a reassuring guess and call it certain.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12731,8 +12527,7 @@ export const database = {
       },
       id: "arcade-11-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you separate an observation from an interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Replace my first guess with a reassuring guess and call it certain.",
         "Distinguish the questions from my assumption that the idea was rejected.",
@@ -12757,16 +12552,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-11-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Distinguish the questions from my assumption that the idea was rejected.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A convincing interpretation is automatically an observation.",
-        "A positive explanation needs no evidence.",
-        "Feeling affected proves the other person’s motive.",
-        "Seeking clarification and rejecting an idea are different observable actions.",
+        "Use my feeling as proof of what another person intended.",
+        "Treat my first explanation as a confirmed fact.",
+        "Replace my first guess with a reassuring guess and call it certain.",
+        "Distinguish the questions from my assumption that the idea was rejected.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12785,8 +12580,7 @@ export const database = {
       },
       id: "arcade-12-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider more than one plausible explanation?",
+      prompt: "What would you do next?",
       choices: [
         "Consider tiredness, distraction, or a wish to listen before deciding.",
         "Settle on the most upsetting explanation without checking.",
@@ -12811,16 +12605,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-12-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider tiredness, distraction, or a wish to listen before deciding.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A plausible alternative becomes true as soon as I think of it.",
-        "The explanation that feels strongest must be the only possibility.",
-        "Several possibilities can fit the same change in behaviour.",
-        "Considering alternatives means dismissing every genuine concern.",
+        "Insist the explanation must be positive.",
+        "Invent certainty instead of seeking more information.",
+        "Consider tiredness, distraction, or a wish to listen before deciding.",
+        "Settle on the most upsetting explanation without checking.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12839,8 +12633,7 @@ export const database = {
       },
       id: "arcade-12-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider more than one plausible explanation?",
+      prompt: "What would you do next?",
       choices: [
         "Settle on the most upsetting explanation without checking.",
         "Insist the explanation must be positive.",
@@ -12865,16 +12658,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-12-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider scheduling demands as one possibility and check.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The explanation that feels strongest must be the only possibility.",
-        "A plausible alternative can guide a question without becoming certainty.",
-        "Considering alternatives means dismissing every genuine concern.",
-        "A plausible alternative becomes true as soon as I think of it.",
+        "Invent certainty instead of seeking more information.",
+        "Consider scheduling demands as one possibility and check.",
+        "Settle on the most upsetting explanation without checking.",
+        "Insist the explanation must be positive.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12892,8 +12685,7 @@ export const database = {
       },
       id: "arcade-12-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider more than one plausible explanation?",
+      prompt: "What would you do next?",
       choices: [
         "Insist the explanation must be positive.",
         "Invent certainty instead of seeking more information.",
@@ -12917,16 +12709,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-12-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider whether the person has seen it or has time to respond.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The delay alone does not explain the reason for it.",
-        "Considering alternatives means dismissing every genuine concern.",
-        "A plausible alternative becomes true as soon as I think of it.",
-        "The explanation that feels strongest must be the only possibility.",
+        "Consider whether the person has seen it or has time to respond.",
+        "Settle on the most upsetting explanation without checking.",
+        "Insist the explanation must be positive.",
+        "Invent certainty instead of seeking more information.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12945,8 +12737,7 @@ export const database = {
       },
       id: "arcade-12-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider more than one plausible explanation?",
+      prompt: "What would you do next?",
       choices: [
         "Invent certainty instead of seeking more information.",
         "Consider whether they need context rather than assume disagreement.",
@@ -12971,16 +12762,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-12-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider whether they need context rather than assume disagreement.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Considering alternatives means dismissing every genuine concern.",
-        "A plausible alternative becomes true as soon as I think of it.",
-        "The explanation that feels strongest must be the only possibility.",
-        "Different explanations point toward different useful follow-up questions.",
+        "Settle on the most upsetting explanation without checking.",
+        "Insist the explanation must be positive.",
+        "Invent certainty instead of seeking more information.",
+        "Consider whether they need context rather than assume disagreement.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -12999,8 +12790,7 @@ export const database = {
       },
       id: "arcade-12-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider more than one plausible explanation?",
+      prompt: "What would you do next?",
       choices: [
         "Consider differences in attention or perspective before assuming dishonesty.",
         "Settle on the most upsetting explanation without checking.",
@@ -13025,16 +12815,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-12-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider differences in attention or perspective before assuming dishonesty.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A plausible alternative becomes true as soon as I think of it.",
-        "The explanation that feels strongest must be the only possibility.",
-        "A difference in recollection can have more than one explanation.",
-        "Considering alternatives means dismissing every genuine concern.",
+        "Insist the explanation must be positive.",
+        "Invent certainty instead of seeking more information.",
+        "Consider differences in attention or perspective before assuming dishonesty.",
+        "Settle on the most upsetting explanation without checking.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13054,8 +12844,7 @@ export const database = {
       },
       id: "arcade-13-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you ask a neutral question to clarify meaning?",
+      prompt: "What would you do next?",
       choices: [
         "Ask a question that already accuses them of a motive.",
         "Ask someone else to guess instead of checking with the speaker.",
@@ -13081,16 +12870,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-13-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask which part feels ambitious to them.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A third person’s guess confirms what the speaker intended.",
-        "A specific question invites their meaning rather than supplying it for them.",
-        "Clarification is unnecessary when my first impression feels clear.",
-        "A question checks meaning even when it assumes the answer.",
+        "Respond to an interpretation I have not checked.",
+        "Ask which part feels ambitious to them.",
+        "Ask a question that already accuses them of a motive.",
+        "Ask someone else to guess instead of checking with the speaker.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13108,8 +12897,7 @@ export const database = {
       },
       id: "arcade-13-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you ask a neutral question to clarify meaning?",
+      prompt: "What would you do next?",
       choices: [
         "Ask someone else to guess instead of checking with the speaker.",
         "Respond to an interpretation I have not checked.",
@@ -13133,16 +12921,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-13-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask what change they would like to see.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Clarifying the requested action makes the comment usable.",
-        "Clarification is unnecessary when my first impression feels clear.",
-        "A question checks meaning even when it assumes the answer.",
-        "A third person’s guess confirms what the speaker intended.",
+        "Ask what change they would like to see.",
+        "Ask a question that already accuses them of a motive.",
+        "Ask someone else to guess instead of checking with the speaker.",
+        "Respond to an interpretation I have not checked.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13161,8 +12949,7 @@ export const database = {
       },
       id: "arcade-13-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you ask a neutral question to clarify meaning?",
+      prompt: "What would you do next?",
       choices: [
         "Respond to an interpretation I have not checked.",
         "Ask what timing would work better.",
@@ -13187,16 +12974,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-13-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask what timing would work better.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Clarification is unnecessary when my first impression feels clear.",
-        "A question checks meaning even when it assumes the answer.",
-        "A third person’s guess confirms what the speaker intended.",
-        "A neutral question seeks practical information without assigning a motive.",
+        "Ask a question that already accuses them of a motive.",
+        "Ask someone else to guess instead of checking with the speaker.",
+        "Respond to an interpretation I have not checked.",
+        "Ask what timing would work better.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13216,8 +13003,7 @@ export const database = {
       },
       id: "arcade-13-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you ask a neutral question to clarify meaning?",
+      prompt: "What would you do next?",
       choices: [
         "Ask what they had in mind.",
         "Ask a question that already accuses them of a motive.",
@@ -13243,16 +13029,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-13-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask what they had in mind.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A question checks meaning even when it assumes the answer.",
-        "A third person’s guess confirms what the speaker intended.",
-        "Understanding the expectation comes before deciding how to respond.",
-        "Clarification is unnecessary when my first impression feels clear.",
+        "Ask someone else to guess instead of checking with the speaker.",
+        "Respond to an interpretation I have not checked.",
+        "Ask what they had in mind.",
+        "Ask a question that already accuses them of a motive.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13271,8 +13057,7 @@ export const database = {
       },
       id: "arcade-13-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you ask a neutral question to clarify meaning?",
+      prompt: "What would you do next?",
       choices: [
         "Ask a question that already accuses them of a motive.",
         "Ask someone else to guess instead of checking with the speaker.",
@@ -13297,16 +13082,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-13-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask what stood out to them.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A third person’s guess confirms what the speaker intended.",
-        "An open question allows their account to differ from your first guess.",
-        "Clarification is unnecessary when my first impression feels clear.",
-        "A question checks meaning even when it assumes the answer.",
+        "Respond to an interpretation I have not checked.",
+        "Ask what stood out to them.",
+        "Ask a question that already accuses them of a motive.",
+        "Ask someone else to guess instead of checking with the speaker.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13325,8 +13110,7 @@ export const database = {
       },
       id: "arcade-14-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge impact without claiming certainty about intention?",
+      prompt: "What would you do next?",
       choices: [
         "Debate motives without addressing what happened.",
         "Dismiss the impact because the intention may have been caring.",
@@ -13351,16 +13135,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-14-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge the help they intended and explain my preference to be asked.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An appreciative intention can coexist with a need for a different approach.",
-        "A caring intention makes a painful impact impossible.",
-        "Impact alone reveals exactly what the other person meant.",
-        "Agreeing on a motive is the only way to discuss an impact.",
+        "Acknowledge the help they intended and explain my preference to be asked.",
+        "Treat a painful impact as proof of a hostile intention.",
+        "Debate motives without addressing what happened.",
+        "Dismiss the impact because the intention may have been caring.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13378,8 +13162,7 @@ export const database = {
       },
       id: "arcade-14-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge impact without claiming certainty about intention?",
+      prompt: "What would you do next?",
       choices: [
         "Dismiss the impact because the intention may have been caring.",
         "Acknowledge the interruption’s impact before explaining my purpose.",
@@ -13403,16 +13186,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-14-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge the interruption’s impact before explaining my purpose.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A caring intention makes a painful impact impossible.",
-        "Impact alone reveals exactly what the other person meant.",
-        "Agreeing on a motive is the only way to discuss an impact.",
-        "Your purpose does not erase the speaker’s experience.",
+        "Treat a painful impact as proof of a hostile intention.",
+        "Debate motives without addressing what happened.",
+        "Dismiss the impact because the intention may have been caring.",
+        "Acknowledge the interruption’s impact before explaining my purpose.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13432,8 +13215,7 @@ export const database = {
       },
       id: "arcade-14-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge impact without claiming certainty about intention?",
+      prompt: "What would you do next?",
       choices: [
         "Explain the uncomfortable attention while recognising the positive intent.",
         "Treat a painful impact as proof of a hostile intention.",
@@ -13459,16 +13241,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-14-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Explain the uncomfortable attention while recognising the positive intent.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Impact alone reveals exactly what the other person meant.",
-        "Agreeing on a motive is the only way to discuss an impact.",
-        "Impact and intention can be discussed separately without denying either.",
-        "A caring intention makes a painful impact impossible.",
+        "Debate motives without addressing what happened.",
+        "Dismiss the impact because the intention may have been caring.",
+        "Explain the uncomfortable attention while recognising the positive intent.",
+        "Treat a painful impact as proof of a hostile intention.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13486,8 +13268,7 @@ export const database = {
       },
       id: "arcade-14-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge impact without claiming certainty about intention?",
+      prompt: "What would you do next?",
       choices: [
         "Treat a painful impact as proof of a hostile intention.",
         "Debate motives without addressing what happened.",
@@ -13511,16 +13292,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-14-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Recognise the pressure they felt and discuss a better way to follow up.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Agreeing on a motive is the only way to discuss an impact.",
-        "Addressing impact can guide a concrete adjustment.",
-        "A caring intention makes a painful impact impossible.",
-        "Impact alone reveals exactly what the other person meant.",
+        "Dismiss the impact because the intention may have been caring.",
+        "Recognise the pressure they felt and discuss a better way to follow up.",
+        "Treat a painful impact as proof of a hostile intention.",
+        "Debate motives without addressing what happened.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13540,8 +13321,7 @@ export const database = {
       },
       id: "arcade-14-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge impact without claiming certainty about intention?",
+      prompt: "What would you do next?",
       choices: [
         "Debate motives without addressing what happened.",
         "Dismiss the impact because the intention may have been caring.",
@@ -13567,16 +13347,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-14-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge the praise and explain the privacy concern.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Positive intent does not remove the need to address an unwanted disclosure.",
-        "A caring intention makes a painful impact impossible.",
-        "Impact alone reveals exactly what the other person meant.",
-        "Agreeing on a motive is the only way to discuss an impact.",
+        "Acknowledge the praise and explain the privacy concern.",
+        "Treat a painful impact as proof of a hostile intention.",
+        "Debate motives without addressing what happened.",
+        "Dismiss the impact because the intention may have been caring.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13596,8 +13376,7 @@ export const database = {
       },
       id: "arcade-15-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you understand differing preferences without erasing either person’s needs?",
+      prompt: "What would you do next?",
       choices: [
         "Abandon my preference without discussing it.",
         "Discuss a balance between planned time and optional invitations.",
@@ -13623,16 +13402,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-15-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Discuss a balance between planned time and optional invitations.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A preference different from mine is inherently unreasonable.",
-        "Understanding another person means my needs no longer count.",
-        "Group identity tells me exactly what an individual needs.",
-        "An arrangement can make room for different needs without judging either preference.",
+        "Assume their background tells me everything about their preference.",
+        "Treat their preference as a character flaw.",
+        "Abandon my preference without discussing it.",
+        "Discuss a balance between planned time and optional invitations.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13652,8 +13431,7 @@ export const database = {
       },
       id: "arcade-15-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you understand differing preferences without erasing either person’s needs?",
+      prompt: "What would you do next?",
       choices: [
         "Ask what each format helps with and agree how to combine them.",
         "Assume their background tells me everything about their preference.",
@@ -13679,16 +13457,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-15-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask what each format helps with and agree how to combine them.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Understanding another person means my needs no longer count.",
-        "Group identity tells me exactly what an individual needs.",
-        "Preferences may reflect practical needs rather than resistance.",
-        "A preference different from mine is inherently unreasonable.",
+        "Treat their preference as a character flaw.",
+        "Abandon my preference without discussing it.",
+        "Ask what each format helps with and agree how to combine them.",
+        "Assume their background tells me everything about their preference.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13708,8 +13486,7 @@ export const database = {
       },
       id: "arcade-15-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you understand differing preferences without erasing either person’s needs?",
+      prompt: "What would you do next?",
       choices: [
         "Assume their background tells me everything about their preference.",
         "Treat their preference as a character flaw.",
@@ -13735,16 +13512,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-15-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Explore what makes each setting comfortable and choose a workable plan.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Group identity tells me exactly what an individual needs.",
-        "Understanding the context behind a preference supports respectful choices.",
-        "A preference different from mine is inherently unreasonable.",
-        "Understanding another person means my needs no longer count.",
+        "Abandon my preference without discussing it.",
+        "Explore what makes each setting comfortable and choose a workable plan.",
+        "Assume their background tells me everything about their preference.",
+        "Treat their preference as a character flaw.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13764,8 +13541,7 @@ export const database = {
       },
       id: "arcade-15-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you understand differing preferences without erasing either person’s needs?",
+      prompt: "What would you do next?",
       choices: [
         "Treat their preference as a character flaw.",
         "Abandon my preference without discussing it.",
@@ -13791,16 +13567,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-15-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Agree on a return time that gives them space and me clarity.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A practical agreement can respect different processing rhythms.",
-        "A preference different from mine is inherently unreasonable.",
-        "Understanding another person means my needs no longer count.",
-        "Group identity tells me exactly what an individual needs.",
+        "Agree on a return time that gives them space and me clarity.",
+        "Assume their background tells me everything about their preference.",
+        "Treat their preference as a character flaw.",
+        "Abandon my preference without discussing it.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13820,8 +13596,7 @@ export const database = {
       },
       id: "arcade-15-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you understand differing preferences without erasing either person’s needs?",
+      prompt: "What would you do next?",
       choices: [
         "Abandon my preference without discussing it.",
         "Clarify the timing needs rather than label either person.",
@@ -13847,16 +13622,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-15-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Clarify the timing needs rather than label either person.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A preference different from mine is inherently unreasonable.",
-        "Understanding another person means my needs no longer count.",
-        "Group identity tells me exactly what an individual needs.",
-        "Explicit expectations are more useful than assumptions about character.",
+        "Assume their background tells me everything about their preference.",
+        "Treat their preference as a character flaw.",
+        "Abandon my preference without discussing it.",
+        "Clarify the timing needs rather than label either person.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13875,8 +13650,7 @@ export const database = {
       },
       id: "arcade-16-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you listen and check understanding before adding your own view?",
+      prompt: "What would you do next?",
       choices: [
         "Let them finish, then check what I heard.",
         "Interrupt with my own related story.",
@@ -13901,16 +13675,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-16-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Let them finish, then check what I heard.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Silence alone guarantees that I understand the speaker.",
-        "Having a similar experience means I already know theirs.",
-        "A summary can confirm understanding before adding your own ideas.",
-        "The quickest solution always demonstrates the best listening.",
+        "Offer a solution before hearing the full concern.",
+        "Stay silent while planning my response instead of attending.",
+        "Let them finish, then check what I heard.",
+        "Interrupt with my own related story.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13930,8 +13704,7 @@ export const database = {
       },
       id: "arcade-16-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you listen and check understanding before adding your own view?",
+      prompt: "What would you do next?",
       choices: [
         "Interrupt with my own related story.",
         "Offer a solution before hearing the full concern.",
@@ -13957,16 +13730,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-16-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Keep listening before deciding whether my story would help.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Having a similar experience means I already know theirs.",
-        "A related memory does not replace attention to their current experience.",
-        "The quickest solution always demonstrates the best listening.",
-        "Silence alone guarantees that I understand the speaker.",
+        "Stay silent while planning my response instead of attending.",
+        "Keep listening before deciding whether my story would help.",
+        "Interrupt with my own related story.",
+        "Offer a solution before hearing the full concern.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -13984,8 +13757,7 @@ export const database = {
       },
       id: "arcade-16-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you listen and check understanding before adding your own view?",
+      prompt: "What would you do next?",
       choices: [
         "Offer a solution before hearing the full concern.",
         "Stay silent while planning my response instead of attending.",
@@ -14009,16 +13781,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-16-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Give them a little room to continue.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A pause in speech need not be an invitation to take over.",
-        "The quickest solution always demonstrates the best listening.",
-        "Silence alone guarantees that I understand the speaker.",
-        "Having a similar experience means I already know theirs.",
+        "Give them a little room to continue.",
+        "Interrupt with my own related story.",
+        "Offer a solution before hearing the full concern.",
+        "Stay silent while planning my response instead of attending.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14038,8 +13810,7 @@ export const database = {
       },
       id: "arcade-16-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you listen and check understanding before adding your own view?",
+      prompt: "What would you do next?",
       choices: [
         "Stay silent while planning my response instead of attending.",
         "Summarise my understanding and ask if it is accurate.",
@@ -14065,16 +13836,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-16-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Summarise my understanding and ask if it is accurate.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The quickest solution always demonstrates the best listening.",
-        "Silence alone guarantees that I understand the speaker.",
-        "Having a similar experience means I already know theirs.",
-        "Checking gives the speaker a chance to correct a misunderstanding.",
+        "Interrupt with my own related story.",
+        "Offer a solution before hearing the full concern.",
+        "Stay silent while planning my response instead of attending.",
+        "Summarise my understanding and ask if it is accurate.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14093,8 +13864,7 @@ export const database = {
       },
       id: "arcade-16-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you listen and check understanding before adding your own view?",
+      prompt: "What would you do next?",
       choices: [
         "Suggest a time when I can listen properly.",
         "Interrupt with my own related story.",
@@ -14119,16 +13889,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-16-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Suggest a time when I can listen properly.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Silence alone guarantees that I understand the speaker.",
-        "Having a similar experience means I already know theirs.",
-        "Honesty about attention can be more useful than silent distraction.",
-        "The quickest solution always demonstrates the best listening.",
+        "Offer a solution before hearing the full concern.",
+        "Stay silent while planning my response instead of attending.",
+        "Suggest a time when I can listen properly.",
+        "Interrupt with my own related story.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14147,8 +13917,7 @@ export const database = {
       },
       id: "arcade-17-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you check emotional clues rather than assume you can read someone’s mind?",
+      prompt: "What would you do next?",
       choices: [
         "Tell them exactly what they must be feeling.",
         "Assume their behaviour has the same meaning for every person.",
@@ -14173,16 +13942,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-17-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask how the experience was for them rather than infer it from the laugh.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Emotional expression is identical across people and contexts.",
-        "Visible behaviour alone cannot establish the person’s internal experience.",
-        "Noticing a clue entitles me to a personal explanation.",
-        "An expression or tone proves a specific emotion.",
+        "Insist they disclose a feeling they have not offered to share.",
+        "Ask how the experience was for them rather than infer it from the laugh.",
+        "Tell them exactly what they must be feeling.",
+        "Assume their behaviour has the same meaning for every person.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14201,8 +13970,7 @@ export const database = {
       },
       id: "arcade-17-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you check emotional clues rather than assume you can read someone’s mind?",
+      prompt: "What would you do next?",
       choices: [
         "Assume their behaviour has the same meaning for every person.",
         "Insist they disclose a feeling they have not offered to share.",
@@ -14227,16 +13995,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-17-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check whether they have time to continue.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A practical check leaves room for several reasons behind the change.",
-        "Noticing a clue entitles me to a personal explanation.",
-        "An expression or tone proves a specific emotion.",
-        "Emotional expression is identical across people and contexts.",
+        "Check whether they have time to continue.",
+        "Tell them exactly what they must be feeling.",
+        "Assume their behaviour has the same meaning for every person.",
+        "Insist they disclose a feeling they have not offered to share.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14255,8 +14023,7 @@ export const database = {
       },
       id: "arcade-17-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you check emotional clues rather than assume you can read someone’s mind?",
+      prompt: "What would you do next?",
       choices: [
         "Insist they disclose a feeling they have not offered to share.",
         "Let them describe their reaction if they want to.",
@@ -14281,16 +14048,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-17-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Let them describe their reaction if they want to.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Noticing a clue entitles me to a personal explanation.",
-        "An expression or tone proves a specific emotion.",
-        "Emotional expression is identical across people and contexts.",
-        "An expression need not have the meaning you would give it in yourself.",
+        "Tell them exactly what they must be feeling.",
+        "Assume their behaviour has the same meaning for every person.",
+        "Insist they disclose a feeling they have not offered to share.",
+        "Let them describe their reaction if they want to.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14308,8 +14075,7 @@ export const database = {
       },
       id: "arcade-17-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you check emotional clues rather than assume you can read someone’s mind?",
+      prompt: "What would you do next?",
       choices: [
         "Offer a gentle check-in without insisting on an explanation.",
         "Tell them exactly what they must be feeling.",
@@ -14333,16 +14099,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-17-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Offer a gentle check-in without insisting on an explanation.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An expression or tone proves a specific emotion.",
-        "Emotional expression is identical across people and contexts.",
-        "Curiosity can respect both uncertainty and privacy.",
-        "Noticing a clue entitles me to a personal explanation.",
+        "Assume their behaviour has the same meaning for every person.",
+        "Insist they disclose a feeling they have not offered to share.",
+        "Offer a gentle check-in without insisting on an explanation.",
+        "Tell them exactly what they must be feeling.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14360,8 +14126,7 @@ export const database = {
       },
       id: "arcade-17-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you check emotional clues rather than assume you can read someone’s mind?",
+      prompt: "What would you do next?",
       choices: [
         "Tell them exactly what they must be feeling.",
         "Assume their behaviour has the same meaning for every person.",
@@ -14385,16 +14150,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-17-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check what they want understood rather than assume they are angry.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Emotional expression is identical across people and contexts.",
-        "Pace is a clue that can vary across people and situations.",
-        "Noticing a clue entitles me to a personal explanation.",
-        "An expression or tone proves a specific emotion.",
+        "Insist they disclose a feeling they have not offered to share.",
+        "Check what they want understood rather than assume they are angry.",
+        "Tell them exactly what they must be feeling.",
+        "Assume their behaviour has the same meaning for every person.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14414,8 +14179,7 @@ export const database = {
       },
       id: "arcade-18-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge a feeling without endorsing every interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Immediately replace the feeling with cheerful reassurance.",
         "Tell them the event is too small to feel anything about.",
@@ -14441,16 +14205,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-18-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge that they had been looking forward to it.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The event can matter to them even if your own reaction would differ.",
-        "A feeling needs my approval before it deserves acknowledgement.",
-        "Acknowledging a feeling requires agreeing with every conclusion.",
-        "Support means removing an uncomfortable feeling as quickly as possible.",
+        "Acknowledge that they had been looking forward to it.",
+        "Agree with every accusation to show I care.",
+        "Immediately replace the feeling with cheerful reassurance.",
+        "Tell them the event is too small to feel anything about.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14469,8 +14233,7 @@ export const database = {
       },
       id: "arcade-18-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge a feeling without endorsing every interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Tell them the event is too small to feel anything about.",
         "Recognise the frustration before discussing the decision.",
@@ -14495,16 +14258,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-18-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Recognise the frustration before discussing the decision.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A feeling needs my approval before it deserves acknowledgement.",
-        "Acknowledging a feeling requires agreeing with every conclusion.",
-        "Support means removing an uncomfortable feeling as quickly as possible.",
-        "Acknowledging the feeling does not require agreeing about the decision.",
+        "Agree with every accusation to show I care.",
+        "Immediately replace the feeling with cheerful reassurance.",
+        "Tell them the event is too small to feel anything about.",
+        "Recognise the frustration before discussing the decision.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14523,8 +14286,7 @@ export const database = {
       },
       id: "arcade-18-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge a feeling without endorsing every interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Recognise that presenting feels daunting to them today.",
         "Agree with every accusation to show I care.",
@@ -14549,16 +14311,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-18-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Recognise that presenting feels daunting to them today.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Acknowledging a feeling requires agreeing with every conclusion.",
-        "Support means removing an uncomfortable feeling as quickly as possible.",
-        "Familiarity for you does not determine how the situation feels to them.",
-        "A feeling needs my approval before it deserves acknowledgement.",
+        "Immediately replace the feeling with cheerful reassurance.",
+        "Tell them the event is too small to feel anything about.",
+        "Recognise that presenting feels daunting to them today.",
+        "Agree with every accusation to show I care.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14577,8 +14339,7 @@ export const database = {
       },
       id: "arcade-18-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge a feeling without endorsing every interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Agree with every accusation to show I care.",
         "Immediately replace the feeling with cheerful reassurance.",
@@ -14603,16 +14364,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-18-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge that the routine was meaningful to them.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Support means removing an uncomfortable feeling as quickly as possible.",
-        "A feeling can be understood without arguing about whether the change is beneficial.",
-        "A feeling needs my approval before it deserves acknowledgement.",
-        "Acknowledging a feeling requires agreeing with every conclusion.",
+        "Tell them the event is too small to feel anything about.",
+        "Acknowledge that the routine was meaningful to them.",
+        "Agree with every accusation to show I care.",
+        "Immediately replace the feeling with cheerful reassurance.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14631,8 +14392,7 @@ export const database = {
       },
       id: "arcade-18-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge a feeling without endorsing every interpretation?",
+      prompt: "What would you do next?",
       choices: [
         "Immediately replace the feeling with cheerful reassurance.",
         "Tell them the event is too small to feel anything about.",
@@ -14657,16 +14417,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-18-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Recognise that the comment affected them.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Acknowledgement addresses the experience before judging the event’s importance.",
-        "A feeling needs my approval before it deserves acknowledgement.",
-        "Acknowledging a feeling requires agreeing with every conclusion.",
-        "Support means removing an uncomfortable feeling as quickly as possible.",
+        "Recognise that the comment affected them.",
+        "Agree with every accusation to show I care.",
+        "Immediately replace the feeling with cheerful reassurance.",
+        "Tell them the event is too small to feel anything about.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14686,8 +14446,7 @@ export const database = {
       },
       id: "arcade-19-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you ask what kind of support someone wants before taking over?",
+      prompt: "What would you do next?",
       choices: [
         "Give advice without checking whether they want it.",
         "Ask whether listening would be more useful now.",
@@ -14713,16 +14472,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-19-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask whether listening would be more useful now.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Caring gives me permission to take control of their decision.",
-        "Advice is always the form of support a person needs.",
-        "Support counts only when I can provide a complete solution.",
-        "Checking the desired support prevents offering more of what they do not need.",
+        "Offer nothing because I cannot solve the whole problem.",
+        "Decide for them because I want to help.",
+        "Give advice without checking whether they want it.",
+        "Ask whether listening would be more useful now.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14741,8 +14500,7 @@ export const database = {
       },
       id: "arcade-19-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you ask what kind of support someone wants before taking over?",
+      prompt: "What would you do next?",
       choices: [
         "Ask which part they would welcome help with.",
         "Offer nothing because I cannot solve the whole problem.",
@@ -14767,16 +14525,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-19-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask which part they would welcome help with.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Advice is always the form of support a person needs.",
-        "Support counts only when I can provide a complete solution.",
-        "A specific offer can support their plan without taking charge of it.",
-        "Caring gives me permission to take control of their decision.",
+        "Decide for them because I want to help.",
+        "Give advice without checking whether they want it.",
+        "Ask which part they would welcome help with.",
+        "Offer nothing because I cannot solve the whole problem.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14794,8 +14552,7 @@ export const database = {
       },
       id: "arcade-19-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you ask what kind of support someone wants before taking over?",
+      prompt: "What would you do next?",
       choices: [
         "Offer nothing because I cannot solve the whole problem.",
         "Decide for them because I want to help.",
@@ -14819,16 +14576,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-19-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask whether they want another perspective before giving mine.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Support counts only when I can provide a complete solution.",
-        "Permission keeps their decision-making central.",
-        "Caring gives me permission to take control of their decision.",
-        "Advice is always the form of support a person needs.",
+        "Give advice without checking whether they want it.",
+        "Ask whether they want another perspective before giving mine.",
+        "Offer nothing because I cannot solve the whole problem.",
+        "Decide for them because I want to help.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14846,8 +14603,7 @@ export const database = {
       },
       id: "arcade-19-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you ask what kind of support someone wants before taking over?",
+      prompt: "What would you do next?",
       choices: [
         "Decide for them because I want to help.",
         "Give advice without checking whether they want it.",
@@ -14871,16 +14627,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-19-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask if company or help with a task would be useful.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Different forms of support meet different needs.",
-        "Caring gives me permission to take control of their decision.",
-        "Advice is always the form of support a person needs.",
-        "Support counts only when I can provide a complete solution.",
+        "Ask if company or help with a task would be useful.",
+        "Offer nothing because I cannot solve the whole problem.",
+        "Decide for them because I want to help.",
+        "Give advice without checking whether they want it.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14900,8 +14656,7 @@ export const database = {
       },
       id: "arcade-19-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you ask what kind of support someone wants before taking over?",
+      prompt: "What would you do next?",
       choices: [
         "Give advice without checking whether they want it.",
         "Respect the choice and ask what support would help now.",
@@ -14927,16 +14682,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-19-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Respect the choice and ask what support would help now.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Caring gives me permission to take control of their decision.",
-        "Advice is always the form of support a person needs.",
-        "Support counts only when I can provide a complete solution.",
-        "Support does not depend on the person following your preferred option.",
+        "Offer nothing because I cannot solve the whole problem.",
+        "Decide for them because I want to help.",
+        "Give advice without checking whether they want it.",
+        "Respect the choice and ask what support would help now.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -14956,8 +14711,7 @@ export const database = {
       },
       id: "arcade-20-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you offer care within an honest limit?",
+      prompt: "What would you do next?",
       choices: [
         "Say how much time I can give and offer it honestly.",
         "Promise unlimited availability regardless of my capacity.",
@@ -14983,16 +14737,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-20-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Say how much time I can give and offer it honestly.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An unspoken limit is as clear as a communicated one.",
-        "Caring requires being available at every moment.",
-        "A clear limit allows the other person to understand the support available.",
-        "Supporting someone makes me responsible for their whole emotional state.",
+        "Take responsibility for making every feeling disappear.",
+        "Hide my limit and hope they guess it.",
+        "Say how much time I can give and offer it honestly.",
+        "Promise unlimited availability regardless of my capacity.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15012,8 +14766,7 @@ export const database = {
       },
       id: "arcade-20-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you offer care within an honest limit?",
+      prompt: "What would you do next?",
       choices: [
         "Promise unlimited availability regardless of my capacity.",
         "Take responsibility for making every feeling disappear.",
@@ -15039,16 +14792,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-20-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Explain my limit and help identify a more suitable source if I can.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Caring requires being available at every moment.",
-        "Caring does not require pretending to have expertise you lack.",
-        "Supporting someone makes me responsible for their whole emotional state.",
-        "An unspoken limit is as clear as a communicated one.",
+        "Hide my limit and hope they guess it.",
+        "Explain my limit and help identify a more suitable source if I can.",
+        "Promise unlimited availability regardless of my capacity.",
+        "Take responsibility for making every feeling disappear.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15066,8 +14819,7 @@ export const database = {
       },
       id: "arcade-20-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you offer care within an honest limit?",
+      prompt: "What would you do next?",
       choices: [
         "Take responsibility for making every feeling disappear.",
         "Hide my limit and hope they guess it.",
@@ -15091,16 +14843,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-20-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Offer help at a time I can realistically manage.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An honest offer respects both care and capacity.",
-        "Supporting someone makes me responsible for their whole emotional state.",
-        "An unspoken limit is as clear as a communicated one.",
-        "Caring requires being available at every moment.",
+        "Offer help at a time I can realistically manage.",
+        "Promise unlimited availability regardless of my capacity.",
+        "Take responsibility for making every feeling disappear.",
+        "Hide my limit and hope they guess it.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15119,8 +14871,7 @@ export const database = {
       },
       id: "arcade-20-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you offer care within an honest limit?",
+      prompt: "What would you do next?",
       choices: [
         "Hide my limit and hope they guess it.",
         "Discuss my availability and other people they could contact.",
@@ -15145,16 +14896,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-20-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Discuss my availability and other people they could contact.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Supporting someone makes me responsible for their whole emotional state.",
-        "An unspoken limit is as clear as a communicated one.",
-        "Caring requires being available at every moment.",
-        "Reliable support can include limits and a wider support network.",
+        "Promise unlimited availability regardless of my capacity.",
+        "Take responsibility for making every feeling disappear.",
+        "Hide my limit and hope they guess it.",
+        "Discuss my availability and other people they could contact.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15174,8 +14925,7 @@ export const database = {
       },
       id: "arcade-20-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you offer care within an honest limit?",
+      prompt: "What would you do next?",
       choices: [
         "Name a smaller sustainable offer rather than keep overpromising.",
         "Promise unlimited availability regardless of my capacity.",
@@ -15201,16 +14951,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-20-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Name a smaller sustainable offer rather than keep overpromising.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An unspoken limit is as clear as a communicated one.",
-        "Caring requires being available at every moment.",
-        "Adjusting an offer can make future support more dependable.",
-        "Supporting someone makes me responsible for their whole emotional state.",
+        "Take responsibility for making every feeling disappear.",
+        "Hide my limit and hope they guess it.",
+        "Name a smaller sustainable offer rather than keep overpromising.",
+        "Promise unlimited availability regardless of my capacity.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15228,8 +14978,7 @@ export const database = {
       },
       id: "arcade-21-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you describe your experience without making a broad accusation?",
+      prompt: "What would you do next?",
       choices: [
         "Describe them with a sweeping character judgment.",
         "Hint through sarcasm instead of naming the impact.",
@@ -15253,16 +15002,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-21-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Describe the change and how it affected my plans.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The other person should infer my needs from indirect remarks.",
-        "A concrete impact is clearer than assigning a motive.",
-        "Putting “I feel” before an accusation turns it into an emotion.",
-        "A strong accusation is the clearest way to describe my own experience.",
+        "Use “I feel” before a claim about their motives.",
+        "Describe the change and how it affected my plans.",
+        "Describe them with a sweeping character judgment.",
+        "Hint through sarcasm instead of naming the impact.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15282,8 +15031,7 @@ export const database = {
       },
       id: "arcade-21-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you describe your experience without making a broad accusation?",
+      prompt: "What would you do next?",
       choices: [
         "Hint through sarcasm instead of naming the impact.",
         "Use “I feel” before a claim about their motives.",
@@ -15309,16 +15057,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-21-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Say I feel frustrated when I cannot finish explaining.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Naming an experience gives others something specific to respond to.",
-        "Putting “I feel” before an accusation turns it into an emotion.",
-        "A strong accusation is the clearest way to describe my own experience.",
-        "The other person should infer my needs from indirect remarks.",
+        "Say I feel frustrated when I cannot finish explaining.",
+        "Describe them with a sweeping character judgment.",
+        "Hint through sarcasm instead of naming the impact.",
+        "Use “I feel” before a claim about their motives.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15337,8 +15085,7 @@ export const database = {
       },
       id: "arcade-21-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you describe your experience without making a broad accusation?",
+      prompt: "What would you do next?",
       choices: [
         "Use “I feel” before a claim about their motives.",
         "Explain the extra work and how it affected my time.",
@@ -15363,16 +15110,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-21-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Explain the extra work and how it affected my time.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Putting “I feel” before an accusation turns it into an emotion.",
-        "A strong accusation is the clearest way to describe my own experience.",
-        "The other person should infer my needs from indirect remarks.",
-        "Describing the effect keeps the conversation connected to an observable event.",
+        "Describe them with a sweeping character judgment.",
+        "Hint through sarcasm instead of naming the impact.",
+        "Use “I feel” before a claim about their motives.",
+        "Explain the extra work and how it affected my time.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15392,8 +15139,7 @@ export const database = {
       },
       id: "arcade-21-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you describe your experience without making a broad accusation?",
+      prompt: "What would you do next?",
       choices: [
         "Describe that moment and say I wanted the concern taken seriously.",
         "Describe them with a sweeping character judgment.",
@@ -15419,16 +15165,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-21-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Describe that moment and say I wanted the concern taken seriously.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A strong accusation is the clearest way to describe my own experience.",
-        "The other person should infer my needs from indirect remarks.",
-        "An observation and need communicate more clearly than a broad accusation.",
-        "Putting “I feel” before an accusation turns it into an emotion.",
+        "Hint through sarcasm instead of naming the impact.",
+        "Use “I feel” before a claim about their motives.",
+        "Describe that moment and say I wanted the concern taken seriously.",
+        "Describe them with a sweeping character judgment.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15448,8 +15194,7 @@ export const database = {
       },
       id: "arcade-21-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you describe your experience without making a broad accusation?",
+      prompt: "What would you do next?",
       choices: [
         "Describe them with a sweeping character judgment.",
         "Hint through sarcasm instead of naming the impact.",
@@ -15475,16 +15220,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-21-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Explain that I need more information to respond comfortably.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The other person should infer my needs from indirect remarks.",
-        "A specific experience and need can guide a practical next step.",
-        "Putting “I feel” before an accusation turns it into an emotion.",
-        "A strong accusation is the clearest way to describe my own experience.",
+        "Use “I feel” before a claim about their motives.",
+        "Explain that I need more information to respond comfortably.",
+        "Describe them with a sweeping character judgment.",
+        "Hint through sarcasm instead of naming the impact.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15502,8 +15247,7 @@ export const database = {
       },
       id: "arcade-22-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you make a specific request the other person can respond to?",
+      prompt: "What would you do next?",
       choices: [
         "Demand agreement without allowing a response.",
         "Ask them to “be better” without specifying an action.",
@@ -15527,16 +15271,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-22-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask whether it can be shared by an agreed time today.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A named action and timeframe make the request actionable.",
-        "A vague wish tells someone exactly what to do.",
-        "A request is clear even when the action is never stated.",
-        "Making a request means the other person has no choice.",
+        "Ask whether it can be shared by an agreed time today.",
+        "Hint and expect them to infer the request.",
+        "Demand agreement without allowing a response.",
+        "Ask them to “be better” without specifying an action.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15554,8 +15298,7 @@ export const database = {
       },
       id: "arcade-22-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you make a specific request the other person can respond to?",
+      prompt: "What would you do next?",
       choices: [
         "Ask them to “be better” without specifying an action.",
         "Ask for two uninterrupted minutes, then offer time for questions.",
@@ -15579,16 +15322,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-22-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask for two uninterrupted minutes, then offer time for questions.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A vague wish tells someone exactly what to do.",
-        "A request is clear even when the action is never stated.",
-        "Making a request means the other person has no choice.",
-        "A concrete request makes your desired arrangement clear.",
+        "Hint and expect them to infer the request.",
+        "Demand agreement without allowing a response.",
+        "Ask them to “be better” without specifying an action.",
+        "Ask for two uninterrupted minutes, then offer time for questions.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15607,8 +15350,7 @@ export const database = {
       },
       id: "arcade-22-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you make a specific request the other person can respond to?",
+      prompt: "What would you do next?",
       choices: [
         "Ask whether specific items can be moved before the activity starts.",
         "Hint and expect them to infer the request.",
@@ -15633,16 +15375,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-22-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask whether specific items can be moved before the activity starts.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A request is clear even when the action is never stated.",
-        "Making a request means the other person has no choice.",
-        "Specific actions are easier to discuss than a general wish for tidiness.",
-        "A vague wish tells someone exactly what to do.",
+        "Demand agreement without allowing a response.",
+        "Ask them to “be better” without specifying an action.",
+        "Ask whether specific items can be moved before the activity starts.",
+        "Hint and expect them to infer the request.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15661,8 +15403,7 @@ export const database = {
       },
       id: "arcade-22-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you make a specific request the other person can respond to?",
+      prompt: "What would you do next?",
       choices: [
         "Hint and expect them to infer the request.",
         "Demand agreement without allowing a response.",
@@ -15687,16 +15428,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-22-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask for a message as soon as a change is decided.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Making a request means the other person has no choice.",
-        "Naming the communication you want makes the expectation explicit.",
-        "A vague wish tells someone exactly what to do.",
-        "A request is clear even when the action is never stated.",
+        "Ask them to “be better” without specifying an action.",
+        "Ask for a message as soon as a change is decided.",
+        "Hint and expect them to infer the request.",
+        "Demand agreement without allowing a response.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15715,8 +15456,7 @@ export const database = {
       },
       id: "arcade-22-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you make a specific request the other person can respond to?",
+      prompt: "What would you do next?",
       choices: [
         "Demand agreement without allowing a response.",
         "Ask them to “be better” without specifying an action.",
@@ -15741,16 +15481,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-22-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask for an example of that particular part.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A focused request helps the other person know what information would help.",
-        "A vague wish tells someone exactly what to do.",
-        "A request is clear even when the action is never stated.",
-        "Making a request means the other person has no choice.",
+        "Ask for an example of that particular part.",
+        "Hint and expect them to infer the request.",
+        "Demand agreement without allowing a response.",
+        "Ask them to “be better” without specifying an action.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15769,7 +15509,7 @@ export const database = {
       },
       id: "arcade-23-case-1-action",
       kind: "action",
-      prompt: "Which response best helps you state a clear, respectful limit?",
+      prompt: "What would you do next?",
       choices: [
         "Keep explaining until they approve my limit.",
         "Say I am unavailable then and offer another time if I want to.",
@@ -15794,16 +15534,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-23-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Say I am unavailable then and offer another time if I want to.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Avoiding immediate discomfort makes an unrealistic commitment sustainable.",
-        "A boundary counts only when the other person likes it.",
-        "Setting a limit requires criticising the person asking.",
-        "A limit can be clear without criticising the request.",
+        "Blame their character instead of stating my availability.",
+        "Agree even though I already know I cannot manage it.",
+        "Keep explaining until they approve my limit.",
+        "Say I am unavailable then and offer another time if I want to.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15822,7 +15562,7 @@ export const database = {
       },
       id: "arcade-23-case-2-action",
       kind: "action",
-      prompt: "Which response best helps you state a clear, respectful limit?",
+      prompt: "What would you do next?",
       choices: [
         "State that I keep that item for my own use.",
         "Blame their character instead of stating my availability.",
@@ -15847,16 +15587,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-23-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “State that I keep that item for my own use.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A boundary counts only when the other person likes it.",
-        "Setting a limit requires criticising the person asking.",
-        "You can communicate a boundary without inventing a justification.",
-        "Avoiding immediate discomfort makes an unrealistic commitment sustainable.",
+        "Agree even though I already know I cannot manage it.",
+        "Keep explaining until they approve my limit.",
+        "State that I keep that item for my own use.",
+        "Blame their character instead of stating my availability.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15876,7 +15616,7 @@ export const database = {
       },
       id: "arcade-23-case-3-action",
       kind: "action",
-      prompt: "Which response best helps you state a clear, respectful limit?",
+      prompt: "What would you do next?",
       choices: [
         "Blame their character instead of stating my availability.",
         "Agree even though I already know I cannot manage it.",
@@ -15902,16 +15642,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-23-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Say I cannot organise this one.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Setting a limit requires criticising the person asking.",
-        "Honesty about capacity avoids making an unrealistic promise.",
-        "Avoiding immediate discomfort makes an unrealistic commitment sustainable.",
-        "A boundary counts only when the other person likes it.",
+        "Keep explaining until they approve my limit.",
+        "Say I cannot organise this one.",
+        "Blame their character instead of stating my availability.",
+        "Agree even though I already know I cannot manage it.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15930,7 +15670,7 @@ export const database = {
       },
       id: "arcade-23-case-4-action",
       kind: "action",
-      prompt: "Which response best helps you state a clear, respectful limit?",
+      prompt: "What would you do next?",
       choices: [
         "Agree even though I already know I cannot manage it.",
         "Keep explaining until they approve my limit.",
@@ -15955,16 +15695,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-23-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Say I do not want to discuss that topic.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A privacy limit does not require sharing the protected detail.",
-        "Avoiding immediate discomfort makes an unrealistic commitment sustainable.",
-        "A boundary counts only when the other person likes it.",
-        "Setting a limit requires criticising the person asking.",
+        "Say I do not want to discuss that topic.",
+        "Blame their character instead of stating my availability.",
+        "Agree even though I already know I cannot manage it.",
+        "Keep explaining until they approve my limit.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -15982,7 +15722,7 @@ export const database = {
       },
       id: "arcade-23-case-5-action",
       kind: "action",
-      prompt: "Which response best helps you state a clear, respectful limit?",
+      prompt: "What would you do next?",
       choices: [
         "Keep explaining until they approve my limit.",
         "Say I need to leave now as planned.",
@@ -16006,16 +15746,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-23-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Say I need to leave now as planned.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Avoiding immediate discomfort makes an unrealistic commitment sustainable.",
-        "A boundary counts only when the other person likes it.",
-        "Setting a limit requires criticising the person asking.",
-        "A specific statement makes the boundary understandable.",
+        "Blame their character instead of stating my availability.",
+        "Agree even though I already know I cannot manage it.",
+        "Keep explaining until they approve my limit.",
+        "Say I need to leave now as planned.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16034,8 +15774,7 @@ export const database = {
       },
       id: "arcade-24-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you keep a safe disagreement focused and constructive?",
+      prompt: "What would you do next?",
       choices: [
         "Clarify the reason behind each preference and focus on this decision.",
         "Bring in every previous disagreement at once.",
@@ -16060,16 +15799,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-24-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Clarify the reason behind each preference and focus on this decision.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Any agreement is useful even if I cannot accept or follow it.",
-        "Adding every past issue makes the present issue easier to resolve.",
-        "A focused exchange can reveal practical needs behind competing positions.",
-        "Understanding another view would mean giving up my own.",
+        "Focus on winning rather than understanding the disagreement.",
+        "Agree to anything just to make the tension stop.",
+        "Clarify the reason behind each preference and focus on this decision.",
+        "Bring in every previous disagreement at once.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16089,8 +15828,7 @@ export const database = {
       },
       id: "arcade-24-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you keep a safe disagreement focused and constructive?",
+      prompt: "What would you do next?",
       choices: [
         "Bring in every previous disagreement at once.",
         "Focus on winning rather than understanding the disagreement.",
@@ -16116,16 +15854,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-24-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Suggest returning to the one issue being decided now.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Adding every past issue makes the present issue easier to resolve.",
-        "Keeping one issue in focus can make the discussion more manageable.",
-        "Understanding another view would mean giving up my own.",
-        "Any agreement is useful even if I cannot accept or follow it.",
+        "Agree to anything just to make the tension stop.",
+        "Suggest returning to the one issue being decided now.",
+        "Bring in every previous disagreement at once.",
+        "Focus on winning rather than understanding the disagreement.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16143,8 +15881,7 @@ export const database = {
       },
       id: "arcade-24-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you keep a safe disagreement focused and constructive?",
+      prompt: "What would you do next?",
       choices: [
         "Focus on winning rather than understanding the disagreement.",
         "Agree to anything just to make the tension stop.",
@@ -16168,16 +15905,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-24-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge what I understand and explain my remaining concern.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Understanding and agreement are separate outcomes.",
-        "Understanding another view would mean giving up my own.",
-        "Any agreement is useful even if I cannot accept or follow it.",
-        "Adding every past issue makes the present issue easier to resolve.",
+        "Acknowledge what I understand and explain my remaining concern.",
+        "Bring in every previous disagreement at once.",
+        "Focus on winning rather than understanding the disagreement.",
+        "Agree to anything just to make the tension stop.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16197,8 +15934,7 @@ export const database = {
       },
       id: "arcade-24-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you keep a safe disagreement focused and constructive?",
+      prompt: "What would you do next?",
       choices: [
         "Agree to anything just to make the tension stop.",
         "Suggest a short pause and an agreed time to continue.",
@@ -16224,16 +15960,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-24-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Suggest a short pause and an agreed time to continue.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Understanding another view would mean giving up my own.",
-        "Any agreement is useful even if I cannot accept or follow it.",
-        "Adding every past issue makes the present issue easier to resolve.",
-        "A pause can interrupt an unproductive pattern without abandoning the issue.",
+        "Bring in every previous disagreement at once.",
+        "Focus on winning rather than understanding the disagreement.",
+        "Agree to anything just to make the tension stop.",
+        "Suggest a short pause and an agreed time to continue.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16252,8 +15988,7 @@ export const database = {
       },
       id: "arcade-24-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you keep a safe disagreement focused and constructive?",
+      prompt: "What would you do next?",
       choices: [
         "Ask which part matters most to each of us.",
         "Bring in every previous disagreement at once.",
@@ -16278,16 +16013,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-24-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask which part matters most to each of us.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Any agreement is useful even if I cannot accept or follow it.",
-        "Adding every past issue makes the present issue easier to resolve.",
-        "Identifying priorities can create options beyond the first two positions.",
-        "Understanding another view would mean giving up my own.",
+        "Focus on winning rather than understanding the disagreement.",
+        "Agree to anything just to make the tension stop.",
+        "Ask which part matters most to each of us.",
+        "Bring in every previous disagreement at once.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16306,8 +16041,7 @@ export const database = {
       },
       id: "arcade-25-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you take responsibility for your part and offer a realistic repair?",
+      prompt: "What would you do next?",
       choices: [
         "Apologise only if they first admit their part.",
         "Explain my intentions without acknowledging my action.",
@@ -16332,16 +16066,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-25-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge the wait and apologise for the delay.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A caring intention removes the need to address an impact.",
-        "A specific acknowledgement takes responsibility for the impact.",
-        "An apology obliges the other person to feel differently immediately.",
-        "My responsibility depends entirely on another person apologising first.",
+        "Expect immediate forgiveness because I apologised.",
+        "Acknowledge the wait and apologise for the delay.",
+        "Apologise only if they first admit their part.",
+        "Explain my intentions without acknowledging my action.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16361,8 +16095,7 @@ export const database = {
       },
       id: "arcade-25-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you take responsibility for your part and offer a realistic repair?",
+      prompt: "What would you do next?",
       choices: [
         "Explain my intentions without acknowledging my action.",
         "Expect immediate forgiveness because I apologised.",
@@ -16388,16 +16121,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-25-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge the omission and correct the summary.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A repair can include a concrete action that addresses what happened.",
-        "An apology obliges the other person to feel differently immediately.",
-        "My responsibility depends entirely on another person apologising first.",
-        "A caring intention removes the need to address an impact.",
+        "Acknowledge the omission and correct the summary.",
+        "Apologise only if they first admit their part.",
+        "Explain my intentions without acknowledging my action.",
+        "Expect immediate forgiveness because I apologised.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16417,8 +16150,7 @@ export const database = {
       },
       id: "arcade-25-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you take responsibility for your part and offer a realistic repair?",
+      prompt: "What would you do next?",
       choices: [
         "Expect immediate forgiveness because I apologised.",
         "Acknowledge that I dismissed it and ask if they want to discuss it again.",
@@ -16444,16 +16176,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-25-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge that I dismissed it and ask if they want to discuss it again.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An apology obliges the other person to feel differently immediately.",
-        "My responsibility depends entirely on another person apologising first.",
-        "A caring intention removes the need to address an impact.",
-        "An invitation to revisit gives practical meaning to the apology.",
+        "Apologise only if they first admit their part.",
+        "Explain my intentions without acknowledging my action.",
+        "Expect immediate forgiveness because I apologised.",
+        "Acknowledge that I dismissed it and ask if they want to discuss it again.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16472,8 +16204,7 @@ export const database = {
       },
       id: "arcade-25-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you take responsibility for your part and offer a realistic repair?",
+      prompt: "What would you do next?",
       choices: [
         "Apologise for missing the commitment and offer a realistic next step.",
         "Apologise only if they first admit their part.",
@@ -16498,16 +16229,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-25-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Apologise for missing the commitment and offer a realistic next step.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "My responsibility depends entirely on another person apologising first.",
-        "A caring intention removes the need to address an impact.",
-        "Responsibility includes being honest about what you can do now.",
-        "An apology obliges the other person to feel differently immediately.",
+        "Explain my intentions without acknowledging my action.",
+        "Expect immediate forgiveness because I apologised.",
+        "Apologise for missing the commitment and offer a realistic next step.",
+        "Apologise only if they first admit their part.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16526,8 +16257,7 @@ export const database = {
       },
       id: "arcade-25-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you take responsibility for your part and offer a realistic repair?",
+      prompt: "What would you do next?",
       choices: [
         "Apologise only if they first admit their part.",
         "Explain my intentions without acknowledging my action.",
@@ -16552,16 +16282,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-25-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge the interruption and give them room to finish.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A caring intention removes the need to address an impact.",
-        "Changing the immediate behaviour is part of a useful repair.",
-        "An apology obliges the other person to feel differently immediately.",
-        "My responsibility depends entirely on another person apologising first.",
+        "Expect immediate forgiveness because I apologised.",
+        "Acknowledge the interruption and give them room to finish.",
+        "Apologise only if they first admit their part.",
+        "Explain my intentions without acknowledging my action.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16580,8 +16310,7 @@ export const database = {
       },
       id: "arcade-26-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge a setback without turning it into a judgment of your whole self?",
+      prompt: "What would you do next?",
       choices: [
         "Demand that I recover immediately before taking any time.",
         "Use one outcome to define everything about my ability.",
@@ -16606,16 +16335,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-26-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Describe this attempt without making it a verdict on all my ability.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A single attempt gives limited information, not a complete personal judgment.",
-        "One setback provides a complete measure of a person.",
-        "Moving forward requires pretending disappointment does not exist.",
-        "There is one required timetable for responding to disappointment.",
+        "Describe this attempt without making it a verdict on all my ability.",
+        "Insist it never mattered to me.",
+        "Demand that I recover immediately before taking any time.",
+        "Use one outcome to define everything about my ability.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16633,8 +16362,7 @@ export const database = {
       },
       id: "arcade-26-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge a setback without turning it into a judgment of your whole self?",
+      prompt: "What would you do next?",
       choices: [
         "Use one outcome to define everything about my ability.",
         "Acknowledge the disappointment and take time before deciding what comes next.",
@@ -16658,16 +16386,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-26-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Acknowledge the disappointment and take time before deciding what comes next.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "One setback provides a complete measure of a person.",
-        "Moving forward requires pretending disappointment does not exist.",
-        "There is one required timetable for responding to disappointment.",
-        "Allowing disappointment does not prevent later action.",
+        "Insist it never mattered to me.",
+        "Demand that I recover immediately before taking any time.",
+        "Use one outcome to define everything about my ability.",
+        "Acknowledge the disappointment and take time before deciding what comes next.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16686,8 +16414,7 @@ export const database = {
       },
       id: "arcade-26-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge a setback without turning it into a judgment of your whole self?",
+      prompt: "What would you do next?",
       choices: [
         "Consider the specific outcome and the circumstances around it.",
         "Insist it never mattered to me.",
@@ -16712,16 +16439,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-26-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider the specific outcome and the circumstances around it.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Moving forward requires pretending disappointment does not exist.",
-        "There is one required timetable for responding to disappointment.",
-        "Context helps keep an event from becoming a sweeping identity claim.",
-        "One setback provides a complete measure of a person.",
+        "Demand that I recover immediately before taking any time.",
+        "Use one outcome to define everything about my ability.",
+        "Consider the specific outcome and the circumstances around it.",
+        "Insist it never mattered to me.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16739,8 +16466,7 @@ export const database = {
       },
       id: "arcade-26-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge a setback without turning it into a judgment of your whole self?",
+      prompt: "What would you do next?",
       choices: [
         "Insist it never mattered to me.",
         "Demand that I recover immediately before taking any time.",
@@ -16764,16 +16490,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-26-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Recognise that it mattered and consider one useful next step when ready.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "There is one required timetable for responding to disappointment.",
-        "Acknowledgement and future choices can coexist.",
-        "One setback provides a complete measure of a person.",
-        "Moving forward requires pretending disappointment does not exist.",
+        "Use one outcome to define everything about my ability.",
+        "Recognise that it mattered and consider one useful next step when ready.",
+        "Insist it never mattered to me.",
+        "Demand that I recover immediately before taking any time.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16791,8 +16517,7 @@ export const database = {
       },
       id: "arcade-26-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you acknowledge a setback without turning it into a judgment of your whole self?",
+      prompt: "What would you do next?",
       choices: [
         "Demand that I recover immediately before taking any time.",
         "Use one outcome to define everything about my ability.",
@@ -16816,16 +16541,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-26-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Allow disappointment without concluding that no future opportunity is possible.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "One outcome does not determine every later possibility.",
-        "One setback provides a complete measure of a person.",
-        "Moving forward requires pretending disappointment does not exist.",
-        "There is one required timetable for responding to disappointment.",
+        "Allow disappointment without concluding that no future opportunity is possible.",
+        "Insist it never mattered to me.",
+        "Demand that I recover immediately before taking any time.",
+        "Use one outcome to define everything about my ability.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16843,8 +16568,7 @@ export const database = {
       },
       id: "arcade-27-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you find specific, useful information in feedback?",
+      prompt: "What would you do next?",
       choices: [
         "Reject all content solely because I dislike the delivery.",
         "Ask which information would have made it useful.",
@@ -16868,16 +16592,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-27-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask which information would have made it useful.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Feedback from one person defines my whole ability.",
-        "An unhelpful tone means no part of the content can be useful.",
-        "Vague feedback is already specific enough to act on accurately.",
-        "Specific missing information can guide a focused change.",
+        "Make a large change without clarifying vague feedback.",
+        "Accept every comment as a complete judgment of me.",
+        "Reject all content solely because I dislike the delivery.",
+        "Ask which information would have made it useful.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16895,8 +16619,7 @@ export const database = {
       },
       id: "arcade-27-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you find specific, useful information in feedback?",
+      prompt: "What would you do next?",
       choices: [
         "Ask for an example of the concern.",
         "Make a large change without clarifying vague feedback.",
@@ -16920,16 +16643,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-27-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask for an example of the concern.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An unhelpful tone means no part of the content can be useful.",
-        "Vague feedback is already specific enough to act on accurately.",
-        "An example makes a general comment easier to evaluate.",
-        "Feedback from one person defines my whole ability.",
+        "Accept every comment as a complete judgment of me.",
+        "Reject all content solely because I dislike the delivery.",
+        "Ask for an example of the concern.",
+        "Make a large change without clarifying vague feedback.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -16948,8 +16671,7 @@ export const database = {
       },
       id: "arcade-27-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you find specific, useful information in feedback?",
+      prompt: "What would you do next?",
       choices: [
         "Make a large change without clarifying vague feedback.",
         "Accept every comment as a complete judgment of me.",
@@ -16974,16 +16696,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-27-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider their needs and what each found unclear.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Vague feedback is already specific enough to act on accurately.",
-        "Different feedback can reflect different audiences or purposes.",
-        "Feedback from one person defines my whole ability.",
-        "An unhelpful tone means no part of the content can be useful.",
+        "Reject all content solely because I dislike the delivery.",
+        "Consider their needs and what each found unclear.",
+        "Make a large change without clarifying vague feedback.",
+        "Accept every comment as a complete judgment of me.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17002,8 +16724,7 @@ export const database = {
       },
       id: "arcade-27-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you find specific, useful information in feedback?",
+      prompt: "What would you do next?",
       choices: [
         "Accept every comment as a complete judgment of me.",
         "Reject all content solely because I dislike the delivery.",
@@ -17028,16 +16749,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-27-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Separate the actionable point from how it was delivered.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "You can consider content while also addressing an unhelpful delivery.",
-        "Feedback from one person defines my whole ability.",
-        "An unhelpful tone means no part of the content can be useful.",
-        "Vague feedback is already specific enough to act on accurately.",
+        "Separate the actionable point from how it was delivered.",
+        "Make a large change without clarifying vague feedback.",
+        "Accept every comment as a complete judgment of me.",
+        "Reject all content solely because I dislike the delivery.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17056,8 +16777,7 @@ export const database = {
       },
       id: "arcade-27-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you find specific, useful information in feedback?",
+      prompt: "What would you do next?",
       choices: [
         "Reject all content solely because I dislike the delivery.",
         "Check the suggestion against the purpose before deciding.",
@@ -17082,16 +16802,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-27-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check the suggestion against the purpose before deciding.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Feedback from one person defines my whole ability.",
-        "An unhelpful tone means no part of the content can be useful.",
-        "Vague feedback is already specific enough to act on accurately.",
-        "Feedback is information to assess, not an automatic instruction.",
+        "Make a large change without clarifying vague feedback.",
+        "Accept every comment as a complete judgment of me.",
+        "Reject all content solely because I dislike the delivery.",
+        "Check the suggestion against the purpose before deciding.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17111,8 +16831,7 @@ export const database = {
       },
       id: "arcade-28-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you return from comparison to your own values and circumstances?",
+      prompt: "What would you do next?",
       choices: [
         "Return to one step that matters in my current circumstances.",
         "Use their milestone as a deadline for my life.",
@@ -17138,16 +16857,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-28-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Return to one step that matters in my current circumstances.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A selected glimpse provides all the context needed for comparison.",
-        "Someone else’s timeline is the required timetable for mine.",
-        "Your next action need not depend on matching others’ visible milestones.",
-        "Diminishing their achievement clarifies my own priorities.",
+        "Criticise their achievement to feel ahead.",
+        "Assume a public update shows their whole life.",
+        "Return to one step that matters in my current circumstances.",
+        "Use their milestone as a deadline for my life.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17167,8 +16886,7 @@ export const database = {
       },
       id: "arcade-28-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you return from comparison to your own values and circumstances?",
+      prompt: "What would you do next?",
       choices: [
         "Use their milestone as a deadline for my life.",
         "Criticise their achievement to feel ahead.",
@@ -17194,16 +16912,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-28-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask what I value about my own direction.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Someone else’s timeline is the required timetable for mine.",
-        "Personal values provide information that a comparison cannot supply.",
-        "Diminishing their achievement clarifies my own priorities.",
-        "A selected glimpse provides all the context needed for comparison.",
+        "Assume a public update shows their whole life.",
+        "Ask what I value about my own direction.",
+        "Use their milestone as a deadline for my life.",
+        "Criticise their achievement to feel ahead.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17222,8 +16940,7 @@ export const database = {
       },
       id: "arcade-28-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you return from comparison to your own values and circumstances?",
+      prompt: "What would you do next?",
       choices: [
         "Criticise their achievement to feel ahead.",
         "Assume a public update shows their whole life.",
@@ -17248,16 +16965,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-28-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Choose a useful practice goal for my own starting point.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A realistic personal goal is more actionable than ranking progress.",
-        "Diminishing their achievement clarifies my own priorities.",
-        "A selected glimpse provides all the context needed for comparison.",
-        "Someone else’s timeline is the required timetable for mine.",
+        "Choose a useful practice goal for my own starting point.",
+        "Use their milestone as a deadline for my life.",
+        "Criticise their achievement to feel ahead.",
+        "Assume a public update shows their whole life.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17275,8 +16992,7 @@ export const database = {
       },
       id: "arcade-28-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you return from comparison to your own values and circumstances?",
+      prompt: "What would you do next?",
       choices: [
         "Assume a public update shows their whole life.",
         "Check whether it is genuinely one of my priorities.",
@@ -17300,16 +17016,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-28-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check whether it is genuinely one of my priorities.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Diminishing their achievement clarifies my own priorities.",
-        "A selected glimpse provides all the context needed for comparison.",
-        "Someone else’s timeline is the required timetable for mine.",
-        "Social pressure and personal desire can be different.",
+        "Use their milestone as a deadline for my life.",
+        "Criticise their achievement to feel ahead.",
+        "Assume a public update shows their whole life.",
+        "Check whether it is genuinely one of my priorities.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17327,8 +17043,7 @@ export const database = {
       },
       id: "arcade-28-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you return from comparison to your own values and circumstances?",
+      prompt: "What would you do next?",
       choices: [
         "Remember that I am seeing a selected part of another life.",
         "Use their milestone as a deadline for my life.",
@@ -17352,16 +17067,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-28-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Remember that I am seeing a selected part of another life.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A selected glimpse provides all the context needed for comparison.",
-        "Someone else’s timeline is the required timetable for mine.",
-        "Limited context is a poor basis for a sweeping comparison.",
-        "Diminishing their achievement clarifies my own priorities.",
+        "Criticise their achievement to feel ahead.",
+        "Assume a public update shows their whole life.",
+        "Remember that I am seeing a selected part of another life.",
+        "Use their milestone as a deadline for my life.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17380,8 +17095,7 @@ export const database = {
       },
       id: "arcade-29-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose a manageable action while allowing uncertainty to remain?",
+      prompt: "What would you do next?",
       choices: [
         "Wait for total certainty before doing anything at all.",
         "Plan endlessly for every imaginable possibility.",
@@ -17406,16 +17120,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-29-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Choose a fallback and a time to check for news.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "More planning always produces certainty.",
-        "A limited plan can support action without requiring certainty.",
-        "Repeated checking controls when an external decision arrives.",
-        "Every useful action requires knowing the final outcome.",
+        "Keep checking for updates without considering whether it helps.",
+        "Choose a fallback and a time to check for news.",
+        "Wait for total certainty before doing anything at all.",
+        "Plan endlessly for every imaginable possibility.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17433,8 +17147,7 @@ export const database = {
       },
       id: "arcade-29-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose a manageable action while allowing uncertainty to remain?",
+      prompt: "What would you do next?",
       choices: [
         "Plan endlessly for every imaginable possibility.",
         "Keep checking for updates without considering whether it helps.",
@@ -17458,16 +17171,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-29-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Identify what I can do now and what needs to wait.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Separating the parts can reveal a manageable action.",
-        "Repeated checking controls when an external decision arrives.",
-        "Every useful action requires knowing the final outcome.",
-        "More planning always produces certainty.",
+        "Identify what I can do now and what needs to wait.",
+        "Wait for total certainty before doing anything at all.",
+        "Plan endlessly for every imaginable possibility.",
+        "Keep checking for updates without considering whether it helps.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17486,8 +17199,7 @@ export const database = {
       },
       id: "arcade-29-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose a manageable action while allowing uncertainty to remain?",
+      prompt: "What would you do next?",
       choices: [
         "Keep checking for updates without considering whether it helps.",
         "Prepare a clear explanation rather than predict everyone’s response.",
@@ -17512,16 +17224,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-29-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Prepare a clear explanation rather than predict everyone’s response.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Repeated checking controls when an external decision arrives.",
-        "Every useful action requires knowing the final outcome.",
-        "More planning always produces certainty.",
-        "Preparation is something you can influence; others’ reactions are not fully controllable.",
+        "Wait for total certainty before doing anything at all.",
+        "Plan endlessly for every imaginable possibility.",
+        "Keep checking for updates without considering whether it helps.",
+        "Prepare a clear explanation rather than predict everyone’s response.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17540,8 +17252,7 @@ export const database = {
       },
       id: "arcade-29-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose a manageable action while allowing uncertainty to remain?",
+      prompt: "What would you do next?",
       choices: [
         "Choose the next useful question rather than solve the whole future at once.",
         "Wait for total certainty before doing anything at all.",
@@ -17566,16 +17277,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-29-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Choose the next useful question rather than solve the whole future at once.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Every useful action requires knowing the final outcome.",
-        "More planning always produces certainty.",
-        "A manageable next step can reduce unnecessary planning without removing uncertainty.",
-        "Repeated checking controls when an external decision arrives.",
+        "Plan endlessly for every imaginable possibility.",
+        "Keep checking for updates without considering whether it helps.",
+        "Choose the next useful question rather than solve the whole future at once.",
+        "Wait for total certainty before doing anything at all.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17593,8 +17304,7 @@ export const database = {
       },
       id: "arcade-29-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose a manageable action while allowing uncertainty to remain?",
+      prompt: "What would you do next?",
       choices: [
         "Wait for total certainty before doing anything at all.",
         "Plan endlessly for every imaginable possibility.",
@@ -17618,16 +17328,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-29-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Decide when to check and turn to another useful part of my day.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "More planning always produces certainty.",
-        "Repeated checking does not control the decision’s timing.",
-        "Repeated checking controls when an external decision arrives.",
-        "Every useful action requires knowing the final outcome.",
+        "Keep checking for updates without considering whether it helps.",
+        "Decide when to check and turn to another useful part of my day.",
+        "Wait for total certainty before doing anything at all.",
+        "Plan endlessly for every imaginable possibility.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17645,8 +17355,7 @@ export const database = {
       },
       id: "arcade-30-case-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you match a request for support to the actual need?",
+      prompt: "What would you do next?",
       choices: [
         "Treat seeking help as proof I should stop trying.",
         "Wait for someone to infer exactly what I need.",
@@ -17670,16 +17379,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-30-case-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask someone with relevant experience for a specific explanation.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The support should match the kind of information needed.",
-        "People who care automatically know the support I need.",
-        "One support person must be able to meet every need.",
-        "Accepting support and taking an active role cannot coexist.",
+        "Ask someone with relevant experience for a specific explanation.",
+        "Ask one person to solve every kind of difficulty.",
+        "Treat seeking help as proof I should stop trying.",
+        "Wait for someone to infer exactly what I need.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17698,8 +17407,7 @@ export const database = {
       },
       id: "arcade-30-case-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you match a request for support to the actual need?",
+      prompt: "What would you do next?",
       choices: [
         "Wait for someone to infer exactly what I need.",
         "Ask a trusted person whether they have time to spend together.",
@@ -17724,16 +17432,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-30-case-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask a trusted person whether they have time to spend together.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "People who care automatically know the support I need.",
-        "One support person must be able to meet every need.",
-        "Accepting support and taking an active role cannot coexist.",
-        "Naming the need makes it easier for someone to offer a suitable response.",
+        "Ask one person to solve every kind of difficulty.",
+        "Treat seeking help as proof I should stop trying.",
+        "Wait for someone to infer exactly what I need.",
+        "Ask a trusted person whether they have time to spend together.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17753,8 +17461,7 @@ export const database = {
       },
       id: "arcade-30-case-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you match a request for support to the actual need?",
+      prompt: "What would you do next?",
       choices: [
         "Ask for help with one clearly defined part.",
         "Ask one person to solve every kind of difficulty.",
@@ -17780,16 +17487,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-30-case-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask for help with one clearly defined part.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "One support person must be able to meet every need.",
-        "Accepting support and taking an active role cannot coexist.",
-        "A concrete request is easier to respond to than an unstated need.",
-        "People who care automatically know the support I need.",
+        "Treat seeking help as proof I should stop trying.",
+        "Wait for someone to infer exactly what I need.",
+        "Ask for help with one clearly defined part.",
+        "Ask one person to solve every kind of difficulty.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17809,8 +17516,7 @@ export const database = {
       },
       id: "arcade-30-case-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you match a request for support to the actual need?",
+      prompt: "What would you do next?",
       choices: [
         "Ask one person to solve every kind of difficulty.",
         "Treat seeking help as proof I should stop trying.",
@@ -17836,16 +17542,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-30-case-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider a qualified professional suited to the concern.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Accepting support and taking an active role cannot coexist.",
-        "Different levels and types of need call for different support.",
-        "People who care automatically know the support I need.",
-        "One support person must be able to meet every need.",
+        "Wait for someone to infer exactly what I need.",
+        "Consider a qualified professional suited to the concern.",
+        "Ask one person to solve every kind of difficulty.",
+        "Treat seeking help as proof I should stop trying.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17864,8 +17570,7 @@ export const database = {
       },
       id: "arcade-30-case-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you match a request for support to the actual need?",
+      prompt: "What would you do next?",
       choices: [
         "Treat seeking help as proof I should stop trying.",
         "Wait for someone to infer exactly what I need.",
@@ -17890,16 +17595,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-30-case-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider another appropriate person or resource.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "One unavailable source does not mean support is unavailable everywhere.",
-        "People who care automatically know the support I need.",
-        "One support person must be able to meet every need.",
-        "Accepting support and taking an active role cannot coexist.",
+        "Consider another appropriate person or resource.",
+        "Ask one person to solve every kind of difficulty.",
+        "Treat seeking help as proof I should stop trying.",
+        "Wait for someone to infer exactly what I need.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17918,8 +17623,7 @@ export const database = {
       },
       id: "arcade-decisions-1-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you check relevant information before deciding?",
+      prompt: "What would you do next?",
       choices: [
         "Check availability before selecting the time.",
         "Choose before checking the missing information.",
@@ -17944,16 +17648,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-1-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check availability before selecting the time.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The first explanation is always the most accurate.",
-        "An option that suits one person automatically suits everyone.",
-        "The decision depends on information that is not yet known.",
-        "Feeling certain makes missing information irrelevant.",
+        "Treat my first guess as enough evidence.",
+        "Copy someone else’s decision without checking whether the situation matches.",
+        "Check availability before selecting the time.",
+        "Choose before checking the missing information.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -17971,8 +17675,7 @@ export const database = {
       },
       id: "arcade-decisions-1-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you check relevant information before deciding?",
+      prompt: "What would you do next?",
       choices: [
         "Choose before checking the missing information.",
         "Treat my first guess as enough evidence.",
@@ -17996,16 +17699,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-1-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask what the task involves before agreeing.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An option that suits one person automatically suits everyone.",
-        "Understanding the commitment supports a realistic choice.",
-        "Feeling certain makes missing information irrelevant.",
-        "The first explanation is always the most accurate.",
+        "Copy someone else’s decision without checking whether the situation matches.",
+        "Ask what the task involves before agreeing.",
+        "Choose before checking the missing information.",
+        "Treat my first guess as enough evidence.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18025,8 +17728,7 @@ export const database = {
       },
       id: "arcade-decisions-1-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you check relevant information before deciding?",
+      prompt: "What would you do next?",
       choices: [
         "Treat my first guess as enough evidence.",
         "Copy someone else’s decision without checking whether the situation matches.",
@@ -18052,16 +17754,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-1-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Clarify the agreed details before assigning responsibility.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Checking relevant facts avoids deciding from an incomplete account.",
-        "Feeling certain makes missing information irrelevant.",
-        "The first explanation is always the most accurate.",
-        "An option that suits one person automatically suits everyone.",
+        "Clarify the agreed details before assigning responsibility.",
+        "Choose before checking the missing information.",
+        "Treat my first guess as enough evidence.",
+        "Copy someone else’s decision without checking whether the situation matches.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18080,8 +17782,7 @@ export const database = {
       },
       id: "arcade-decisions-1-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you check relevant information before deciding?",
+      prompt: "What would you do next?",
       choices: [
         "Copy someone else’s decision without checking whether the situation matches.",
         "Ask when a decision is actually needed.",
@@ -18106,16 +17807,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-1-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask when a decision is actually needed.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Feeling certain makes missing information irrelevant.",
-        "The first explanation is always the most accurate.",
-        "An option that suits one person automatically suits everyone.",
-        "Checking urgency helps you decide how much time is available for thought.",
+        "Choose before checking the missing information.",
+        "Treat my first guess as enough evidence.",
+        "Copy someone else’s decision without checking whether the situation matches.",
+        "Ask when a decision is actually needed.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18135,8 +17836,7 @@ export const database = {
       },
       id: "arcade-decisions-1-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you check relevant information before deciding?",
+      prompt: "What would you do next?",
       choices: [
         "Ask what arrangements participants need.",
         "Choose before checking the missing information.",
@@ -18162,16 +17862,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-1-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask what arrangements participants need.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The first explanation is always the most accurate.",
-        "An option that suits one person automatically suits everyone.",
-        "Relevant needs should inform the choice rather than be guessed.",
-        "Feeling certain makes missing information irrelevant.",
+        "Treat my first guess as enough evidence.",
+        "Copy someone else’s decision without checking whether the situation matches.",
+        "Ask what arrangements participants need.",
+        "Choose before checking the missing information.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18190,8 +17890,7 @@ export const database = {
       },
       id: "arcade-decisions-2-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider who will be affected by a choice?",
+      prompt: "What would you do next?",
       choices: [
         "Consider only the easiest outcome for me.",
         "Assume people who are quiet have no needs.",
@@ -18216,16 +17915,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-2-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check how the change affects the other participants.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Effects on others do not matter until after the choice is final.",
-        "A shared decision can impose different costs on different people.",
-        "A convenient choice for me is automatically convenient for everyone.",
-        "Only the most vocal person is affected by a group decision.",
+        "Make the choice first and avoid asking about its impact.",
+        "Check how the change affects the other participants.",
+        "Consider only the easiest outcome for me.",
+        "Assume people who are quiet have no needs.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18245,8 +17944,7 @@ export const database = {
       },
       id: "arcade-decisions-2-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider who will be affected by a choice?",
+      prompt: "What would you do next?",
       choices: [
         "Assume people who are quiet have no needs.",
         "Make the choice first and avoid asking about its impact.",
@@ -18272,16 +17970,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-2-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask about preferences and practical needs before deciding.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "People may be affected in ways that are not obvious from your own preference.",
-        "A convenient choice for me is automatically convenient for everyone.",
-        "Only the most vocal person is affected by a group decision.",
-        "Effects on others do not matter until after the choice is final.",
+        "Ask about preferences and practical needs before deciding.",
+        "Consider only the easiest outcome for me.",
+        "Assume people who are quiet have no needs.",
+        "Make the choice first and avoid asking about its impact.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18300,8 +17998,7 @@ export const database = {
       },
       id: "arcade-decisions-2-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider who will be affected by a choice?",
+      prompt: "What would you do next?",
       choices: [
         "Make the choice first and avoid asking about its impact.",
         "Consider the extra burden before choosing that approach.",
@@ -18326,16 +18023,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-2-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider the extra burden before choosing that approach.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A convenient choice for me is automatically convenient for everyone.",
-        "Only the most vocal person is affected by a group decision.",
-        "Effects on others do not matter until after the choice is final.",
-        "Immediate convenience can shift costs to another person.",
+        "Consider only the easiest outcome for me.",
+        "Assume people who are quiet have no needs.",
+        "Make the choice first and avoid asking about its impact.",
+        "Consider the extra burden before choosing that approach.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18354,8 +18051,7 @@ export const database = {
       },
       id: "arcade-decisions-2-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider who will be affected by a choice?",
+      prompt: "What would you do next?",
       choices: [
         "Check how the arrangement works for the people using it.",
         "Consider only the easiest outcome for me.",
@@ -18380,16 +18076,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-2-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check how the arrangement works for the people using it.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Only the most vocal person is affected by a group decision.",
-        "Effects on others do not matter until after the choice is final.",
-        "Considering users’ needs improves the basis for a shared choice.",
-        "A convenient choice for me is automatically convenient for everyone.",
+        "Assume people who are quiet have no needs.",
+        "Make the choice first and avoid asking about its impact.",
+        "Check how the arrangement works for the people using it.",
+        "Consider only the easiest outcome for me.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18408,8 +18104,7 @@ export const database = {
       },
       id: "arcade-decisions-2-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider who will be affected by a choice?",
+      prompt: "What would you do next?",
       choices: [
         "Consider only the easiest outcome for me.",
         "Assume people who are quiet have no needs.",
@@ -18434,16 +18129,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-2-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Explore whether another arrangement could include them.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Effects on others do not matter until after the choice is final.",
-        "Noticing who is left out can reveal a more considerate option.",
-        "A convenient choice for me is automatically convenient for everyone.",
-        "Only the most vocal person is affected by a group decision.",
+        "Make the choice first and avoid asking about its impact.",
+        "Explore whether another arrangement could include them.",
+        "Consider only the easiest outcome for me.",
+        "Assume people who are quiet have no needs.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18462,8 +18157,7 @@ export const database = {
       },
       id: "arcade-decisions-3-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider immediate and later consequences?",
+      prompt: "What would you do next?",
       choices: [
         "Assume later effects will take care of themselves.",
         "Treat the most satisfying impulse as the whole decision.",
@@ -18488,16 +18182,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-3-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider both the immediate relief and the effect on the conversation.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A choice can have different short-term and later effects.",
-        "Immediate relief guarantees a useful long-term outcome.",
-        "Later consequences are unrelated to today’s choices.",
-        "A strong impulse provides all the information a decision needs.",
+        "Consider both the immediate relief and the effect on the conversation.",
+        "Choose only what removes discomfort immediately.",
+        "Assume later effects will take care of themselves.",
+        "Treat the most satisfying impulse as the whole decision.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18517,8 +18211,7 @@ export const database = {
       },
       id: "arcade-decisions-3-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider immediate and later consequences?",
+      prompt: "What would you do next?",
       choices: [
         "Treat the most satisfying impulse as the whole decision.",
         "Consider whether I can meet the commitment later.",
@@ -18544,16 +18237,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-3-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider whether I can meet the commitment later.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Immediate relief guarantees a useful long-term outcome.",
-        "Later consequences are unrelated to today’s choices.",
-        "A strong impulse provides all the information a decision needs.",
-        "Avoiding discomfort now can create an unmanageable promise.",
+        "Choose only what removes discomfort immediately.",
+        "Assume later effects will take care of themselves.",
+        "Treat the most satisfying impulse as the whole decision.",
+        "Consider whether I can meet the commitment later.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18573,8 +18266,7 @@ export const database = {
       },
       id: "arcade-decisions-3-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider immediate and later consequences?",
+      prompt: "What would you do next?",
       choices: [
         "Consider how the lack of notice affects others’ arrangements.",
         "Choose only what removes discomfort immediately.",
@@ -18600,16 +18292,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-3-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider how the lack of notice affects others’ arrangements.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Later consequences are unrelated to today’s choices.",
-        "A strong impulse provides all the information a decision needs.",
-        "The way you exit can create consequences beyond your immediate relief.",
-        "Immediate relief guarantees a useful long-term outcome.",
+        "Assume later effects will take care of themselves.",
+        "Treat the most satisfying impulse as the whole decision.",
+        "Consider how the lack of notice affects others’ arrangements.",
+        "Choose only what removes discomfort immediately.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18629,8 +18321,7 @@ export const database = {
       },
       id: "arcade-decisions-3-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider immediate and later consequences?",
+      prompt: "What would you do next?",
       choices: [
         "Choose only what removes discomfort immediately.",
         "Assume later effects will take care of themselves.",
@@ -18656,16 +18347,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-3-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider the handover before taking the shortcut.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A strong impulse provides all the information a decision needs.",
-        "Saving time in one step can create difficulties in the next.",
-        "Immediate relief guarantees a useful long-term outcome.",
-        "Later consequences are unrelated to today’s choices.",
+        "Treat the most satisfying impulse as the whole decision.",
+        "Consider the handover before taking the shortcut.",
+        "Choose only what removes discomfort immediately.",
+        "Assume later effects will take care of themselves.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18685,8 +18376,7 @@ export const database = {
       },
       id: "arcade-decisions-3-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you consider immediate and later consequences?",
+      prompt: "What would you do next?",
       choices: [
         "Assume later effects will take care of themselves.",
         "Treat the most satisfying impulse as the whole decision.",
@@ -18712,16 +18402,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-3-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider whether delay will make the issue easier or harder to address.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The consequences of waiting deserve attention as well as those of acting.",
-        "Immediate relief guarantees a useful long-term outcome.",
-        "Later consequences are unrelated to today’s choices.",
-        "A strong impulse provides all the information a decision needs.",
+        "Consider whether delay will make the issue easier or harder to address.",
+        "Choose only what removes discomfort immediately.",
+        "Assume later effects will take care of themselves.",
+        "Treat the most satisfying impulse as the whole decision.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18740,8 +18430,7 @@ export const database = {
       },
       id: "arcade-decisions-4-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose in line with a clearly identified value?",
+      prompt: "What would you do next?",
       choices: [
         "Assume every attractive option matters equally to me.",
         "Consider which choice fits my current priorities and capacity.",
@@ -18766,16 +18455,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-4-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider which choice fits my current priorities and capacity.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Other people’s approval is the only relevant value.",
-        "A value is useful only when everyone agrees with it.",
-        "An appealing option automatically fits my priorities.",
-        "A value-based choice considers what matters in your actual circumstances.",
+        "Choose whichever option gains approval fastest.",
+        "Let the loudest opinion replace my own priorities.",
+        "Assume every attractive option matters equally to me.",
+        "Consider which choice fits my current priorities and capacity.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18795,8 +18484,7 @@ export const database = {
       },
       id: "arcade-decisions-4-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose in line with a clearly identified value?",
+      prompt: "What would you do next?",
       choices: [
         "Consider the importance of the commitment before deciding.",
         "Choose whichever option gains approval fastest.",
@@ -18822,16 +18510,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-4-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider the importance of the commitment before deciding.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A value is useful only when everyone agrees with it.",
-        "An appealing option automatically fits my priorities.",
-        "Remembering a relevant value can clarify an otherwise pressured choice.",
-        "Other people’s approval is the only relevant value.",
+        "Let the loudest opinion replace my own priorities.",
+        "Assume every attractive option matters equally to me.",
+        "Consider the importance of the commitment before deciding.",
+        "Choose whichever option gains approval fastest.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18851,8 +18539,7 @@ export const database = {
       },
       id: "arcade-decisions-4-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose in line with a clearly identified value?",
+      prompt: "What would you do next?",
       choices: [
         "Choose whichever option gains approval fastest.",
         "Let the loudest opinion replace my own priorities.",
@@ -18878,16 +18565,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-4-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Compare the role with what I want to prioritise.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An appealing option automatically fits my priorities.",
-        "Visibility alone does not establish whether an opportunity fits your values.",
-        "Other people’s approval is the only relevant value.",
-        "A value is useful only when everyone agrees with it.",
+        "Assume every attractive option matters equally to me.",
+        "Compare the role with what I want to prioritise.",
+        "Choose whichever option gains approval fastest.",
+        "Let the loudest opinion replace my own priorities.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18906,8 +18593,7 @@ export const database = {
       },
       id: "arcade-decisions-4-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose in line with a clearly identified value?",
+      prompt: "What would you do next?",
       choices: [
         "Let the loudest opinion replace my own priorities.",
         "Assume every attractive option matters equally to me.",
@@ -18932,16 +18618,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-4-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Offer only the help I can realistically follow through on.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Values can guide the form of an offer rather than demand an unlimited yes.",
-        "Other people’s approval is the only relevant value.",
-        "A value is useful only when everyone agrees with it.",
-        "An appealing option automatically fits my priorities.",
+        "Offer only the help I can realistically follow through on.",
+        "Choose whichever option gains approval fastest.",
+        "Let the loudest opinion replace my own priorities.",
+        "Assume every attractive option matters equally to me.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -18960,8 +18646,7 @@ export const database = {
       },
       id: "arcade-decisions-4-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose in line with a clearly identified value?",
+      prompt: "What would you do next?",
       choices: [
         "Assume every attractive option matters equally to me.",
         "Identify the goal that matters most for this decision.",
@@ -18986,16 +18671,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-4-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Identify the goal that matters most for this decision.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Other people’s approval is the only relevant value.",
-        "A value is useful only when everyone agrees with it.",
-        "An appealing option automatically fits my priorities.",
-        "Clarifying a priority helps compare options that are attractive for different reasons.",
+        "Choose whichever option gains approval fastest.",
+        "Let the loudest opinion replace my own priorities.",
+        "Assume every attractive option matters equally to me.",
+        "Identify the goal that matters most for this decision.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19015,8 +18700,7 @@ export const database = {
       },
       id: "arcade-decisions-5-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you protect choice when social pressure is present?",
+      prompt: "What would you do next?",
       choices: [
         "Ask for clarification before deciding.",
         "Agree immediately to avoid being the only person unsure.",
@@ -19042,16 +18726,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-5-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask for clarification before deciding.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Confidence proves that an option suits me.",
-        "Popularity guarantees that a decision has no trade-offs.",
-        "Group momentum does not remove the need to understand your commitment.",
-        "A group preference removes the need for personal consent.",
+        "Let someone else’s confidence substitute for my agreement.",
+        "Assume a popular choice cannot have drawbacks.",
+        "Ask for clarification before deciding.",
+        "Agree immediately to avoid being the only person unsure.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19070,8 +18754,7 @@ export const database = {
       },
       id: "arcade-decisions-5-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you protect choice when social pressure is present?",
+      prompt: "What would you do next?",
       choices: [
         "Agree immediately to avoid being the only person unsure.",
         "Let someone else’s confidence substitute for my agreement.",
@@ -19096,16 +18779,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-5-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask for time to consider it.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Popularity guarantees that a decision has no trade-offs.",
-        "A deliberate pause can preserve your ability to choose.",
-        "A group preference removes the need for personal consent.",
-        "Confidence proves that an option suits me.",
+        "Assume a popular choice cannot have drawbacks.",
+        "Ask for time to consider it.",
+        "Agree immediately to avoid being the only person unsure.",
+        "Let someone else’s confidence substitute for my agreement.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19124,8 +18807,7 @@ export const database = {
       },
       id: "arcade-decisions-5-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you protect choice when social pressure is present?",
+      prompt: "What would you do next?",
       choices: [
         "Let someone else’s confidence substitute for my agreement.",
         "Assume a popular choice cannot have drawbacks.",
@@ -19150,16 +18832,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-5-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check my preference and respond honestly.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Discomfort with disagreeing does not determine whether you want to participate.",
-        "A group preference removes the need for personal consent.",
-        "Confidence proves that an option suits me.",
-        "Popularity guarantees that a decision has no trade-offs.",
+        "Check my preference and respond honestly.",
+        "Agree immediately to avoid being the only person unsure.",
+        "Let someone else’s confidence substitute for my agreement.",
+        "Assume a popular choice cannot have drawbacks.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19179,8 +18861,7 @@ export const database = {
       },
       id: "arcade-decisions-5-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you protect choice when social pressure is present?",
+      prompt: "What would you do next?",
       choices: [
         "Assume a popular choice cannot have drawbacks.",
         "Consider my own circumstances before answering.",
@@ -19206,16 +18887,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-5-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider my own circumstances before answering.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A group preference removes the need for personal consent.",
-        "Confidence proves that an option suits me.",
-        "Popularity guarantees that a decision has no trade-offs.",
-        "Another person’s choice may reflect different needs or constraints.",
+        "Agree immediately to avoid being the only person unsure.",
+        "Let someone else’s confidence substitute for my agreement.",
+        "Assume a popular choice cannot have drawbacks.",
+        "Consider my own circumstances before answering.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19233,8 +18914,7 @@ export const database = {
       },
       id: "arcade-decisions-5-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you protect choice when social pressure is present?",
+      prompt: "What would you do next?",
       choices: [
         "Explain the difficulty and ask about alternatives.",
         "Agree immediately to avoid being the only person unsure.",
@@ -19258,16 +18938,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-5-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Explain the difficulty and ask about alternatives.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Confidence proves that an option suits me.",
-        "Popularity guarantees that a decision has no trade-offs.",
-        "Naming a constraint can make space for an informed choice.",
-        "A group preference removes the need for personal consent.",
+        "Let someone else’s confidence substitute for my agreement.",
+        "Assume a popular choice cannot have drawbacks.",
+        "Explain the difficulty and ask about alternatives.",
+        "Agree immediately to avoid being the only person unsure.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19286,8 +18966,7 @@ export const database = {
       },
       id: "arcade-decisions-6-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you compare more than the first two apparent options?",
+      prompt: "What would you do next?",
       choices: [
         "Treat the first two options as the only possible ones.",
         "Choose quickly to avoid exploring an alternative.",
@@ -19312,16 +18991,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-6-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider whether a smaller event would meet the main need.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Any middle ground necessarily ignores both people’s needs.",
-        "A third option can preserve important parts of the goal.",
-        "The first options mentioned exhaust every possibility.",
-        "Considering alternatives prevents decisions from ever being made.",
+        "Assume compromise always means abandoning everything important.",
+        "Consider whether a smaller event would meet the main need.",
+        "Treat the first two options as the only possible ones.",
+        "Choose quickly to avoid exploring an alternative.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19340,8 +19019,7 @@ export const database = {
       },
       id: "arcade-decisions-6-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you compare more than the first two apparent options?",
+      prompt: "What would you do next?",
       choices: [
         "Choose quickly to avoid exploring an alternative.",
         "Assume compromise always means abandoning everything important.",
@@ -19366,16 +19044,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-6-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider a short check-in now and another time later.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A limited offer can be different from either an unlimited yes or no contact.",
-        "The first options mentioned exhaust every possibility.",
-        "Considering alternatives prevents decisions from ever being made.",
-        "Any middle ground necessarily ignores both people’s needs.",
+        "Consider a short check-in now and another time later.",
+        "Treat the first two options as the only possible ones.",
+        "Choose quickly to avoid exploring an alternative.",
+        "Assume compromise always means abandoning everything important.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19394,8 +19072,7 @@ export const database = {
       },
       id: "arcade-decisions-6-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you compare more than the first two apparent options?",
+      prompt: "What would you do next?",
       choices: [
         "Assume compromise always means abandoning everything important.",
         "Explore splitting the time or finding a shared priority.",
@@ -19420,16 +19097,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-6-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Explore splitting the time or finding a shared priority.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "The first options mentioned exhaust every possibility.",
-        "Considering alternatives prevents decisions from ever being made.",
-        "Any middle ground necessarily ignores both people’s needs.",
-        "Alternative arrangements may address the needs behind both positions.",
+        "Treat the first two options as the only possible ones.",
+        "Choose quickly to avoid exploring an alternative.",
+        "Assume compromise always means abandoning everything important.",
+        "Explore splitting the time or finding a shared priority.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19447,8 +19124,7 @@ export const database = {
       },
       id: "arcade-decisions-6-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you compare more than the first two apparent options?",
+      prompt: "What would you do next?",
       choices: [
         "Discuss a smaller useful part or a revised deadline.",
         "Treat the first two options as the only possible ones.",
@@ -19472,16 +19148,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-6-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Discuss a smaller useful part or a revised deadline.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Considering alternatives prevents decisions from ever being made.",
-        "Any middle ground necessarily ignores both people’s needs.",
-        "Changing scope or timing can reveal a feasible option.",
-        "The first options mentioned exhaust every possibility.",
+        "Choose quickly to avoid exploring an alternative.",
+        "Assume compromise always means abandoning everything important.",
+        "Discuss a smaller useful part or a revised deadline.",
+        "Treat the first two options as the only possible ones.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19501,8 +19177,7 @@ export const database = {
       },
       id: "arcade-decisions-6-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you compare more than the first two apparent options?",
+      prompt: "What would you do next?",
       choices: [
         "Treat the first two options as the only possible ones.",
         "Choose quickly to avoid exploring an alternative.",
@@ -19528,16 +19203,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-6-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Look for a different arrangement before accepting that trade-off.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Any middle ground necessarily ignores both people’s needs.",
-        "The first framing may omit options that respect more than one need.",
-        "The first options mentioned exhaust every possibility.",
-        "Considering alternatives prevents decisions from ever being made.",
+        "Assume compromise always means abandoning everything important.",
+        "Look for a different arrangement before accepting that trade-off.",
+        "Treat the first two options as the only possible ones.",
+        "Choose quickly to avoid exploring an alternative.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19556,8 +19231,7 @@ export const database = {
       },
       id: "arcade-decisions-7-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you seek agreement before acting on someone else’s behalf?",
+      prompt: "What would you do next?",
       choices: [
         "Assume silence means agreement.",
         "Treat my preferred solution as permission to proceed.",
@@ -19582,16 +19256,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-7-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask whether they want that help before making changes.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Support should respect the other person’s control over their own plans.",
-        "Helpful intentions automatically provide permission.",
-        "Silence always communicates informed agreement.",
-        "Knowing an option I like gives me authority to choose for someone else.",
+        "Ask whether they want that help before making changes.",
+        "Act first because my intention is helpful.",
+        "Assume silence means agreement.",
+        "Treat my preferred solution as permission to proceed.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19611,8 +19285,7 @@ export const database = {
       },
       id: "arcade-decisions-7-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you seek agreement before acting on someone else’s behalf?",
+      prompt: "What would you do next?",
       choices: [
         "Treat my preferred solution as permission to proceed.",
         "Check that person’s preference before sharing.",
@@ -19638,16 +19311,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-7-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check that person’s preference before sharing.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Helpful intentions automatically provide permission.",
-        "Silence always communicates informed agreement.",
-        "Knowing an option I like gives me authority to choose for someone else.",
-        "Participation in an event does not automatically settle a later sharing decision.",
+        "Act first because my intention is helpful.",
+        "Assume silence means agreement.",
+        "Treat my preferred solution as permission to proceed.",
+        "Check that person’s preference before sharing.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19666,8 +19339,7 @@ export const database = {
       },
       id: "arcade-decisions-7-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you seek agreement before acting on someone else’s behalf?",
+      prompt: "What would you do next?",
       choices: [
         "Invite them to decide rather than sign them up.",
         "Act first because my intention is helpful.",
@@ -19692,16 +19364,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-7-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Invite them to decide rather than sign them up.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Silence always communicates informed agreement.",
-        "Knowing an option I like gives me authority to choose for someone else.",
-        "Offering an option preserves their choice.",
-        "Helpful intentions automatically provide permission.",
+        "Assume silence means agreement.",
+        "Treat my preferred solution as permission to proceed.",
+        "Invite them to decide rather than sign them up.",
+        "Act first because my intention is helpful.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19721,8 +19393,7 @@ export const database = {
       },
       id: "arcade-decisions-7-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you seek agreement before acting on someone else’s behalf?",
+      prompt: "What would you do next?",
       choices: [
         "Act first because my intention is helpful.",
         "Assume silence means agreement.",
@@ -19748,16 +19419,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-7-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask the friend before sharing identifiable details.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Knowing an option I like gives me authority to choose for someone else.",
-        "A wish to help does not remove the person’s privacy interests.",
-        "Helpful intentions automatically provide permission.",
-        "Silence always communicates informed agreement.",
+        "Treat my preferred solution as permission to proceed.",
+        "Ask the friend before sharing identifiable details.",
+        "Act first because my intention is helpful.",
+        "Assume silence means agreement.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19777,8 +19448,7 @@ export const database = {
       },
       id: "arcade-decisions-7-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you seek agreement before acting on someone else’s behalf?",
+      prompt: "What would you do next?",
       choices: [
         "Assume silence means agreement.",
         "Treat my preferred solution as permission to proceed.",
@@ -19804,16 +19474,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-7-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Check with them before making the change.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "An arrangement that seems better to you may not fit their needs.",
-        "Helpful intentions automatically provide permission.",
-        "Silence always communicates informed agreement.",
-        "Knowing an option I like gives me authority to choose for someone else.",
+        "Check with them before making the change.",
+        "Act first because my intention is helpful.",
+        "Assume silence means agreement.",
+        "Treat my preferred solution as permission to proceed.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19833,8 +19503,7 @@ export const database = {
       },
       id: "arcade-decisions-8-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose a manageable, reversible next step when appropriate?",
+      prompt: "What would you do next?",
       choices: [
         "Assume changing a plan later always means the initial decision was useless.",
         "Suggest a short trial and a time to review it.",
@@ -19860,16 +19529,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-8-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Suggest a short trial and a time to review it.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A useful decision must commit to every later detail immediately.",
-        "A small next step requires complete certainty about the future.",
-        "Learning new information makes adapting a plan unacceptable.",
-        "A limited trial can provide information before a larger commitment.",
+        "Make the largest possible commitment before testing the idea.",
+        "Wait until every future outcome is certain.",
+        "Assume changing a plan later always means the initial decision was useless.",
+        "Suggest a short trial and a time to review it.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19889,8 +19558,7 @@ export const database = {
       },
       id: "arcade-decisions-8-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose a manageable, reversible next step when appropriate?",
+      prompt: "What would you do next?",
       choices: [
         "Start with one session and see how it fits.",
         "Make the largest possible commitment before testing the idea.",
@@ -19916,16 +19584,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-8-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Start with one session and see how it fits.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A small next step requires complete certainty about the future.",
-        "Learning new information makes adapting a plan unacceptable.",
-        "A manageable step can support learning without a large initial commitment.",
-        "A useful decision must commit to every later detail immediately.",
+        "Wait until every future outcome is certain.",
+        "Assume changing a plan later always means the initial decision was useless.",
+        "Start with one session and see how it fits.",
+        "Make the largest possible commitment before testing the idea.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19944,8 +19612,7 @@ export const database = {
       },
       id: "arcade-decisions-8-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose a manageable, reversible next step when appropriate?",
+      prompt: "What would you do next?",
       choices: [
         "Make the largest possible commitment before testing the idea.",
         "Wait until every future outcome is certain.",
@@ -19970,16 +19637,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-8-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Try a small adjustment with everyone’s agreement and review it.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Learning new information makes adapting a plan unacceptable.",
-        "A reversible change can make the effects easier to assess.",
-        "A useful decision must commit to every later detail immediately.",
-        "A small next step requires complete certainty about the future.",
+        "Assume changing a plan later always means the initial decision was useless.",
+        "Try a small adjustment with everyone’s agreement and review it.",
+        "Make the largest possible commitment before testing the idea.",
+        "Wait until every future outcome is certain.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -19998,8 +19665,7 @@ export const database = {
       },
       id: "arcade-decisions-8-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose a manageable, reversible next step when appropriate?",
+      prompt: "What would you do next?",
       choices: [
         "Wait until every future outcome is certain.",
         "Assume changing a plan later always means the initial decision was useless.",
@@ -20024,16 +19690,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-8-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Test a limited version before replacing the whole process.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A smaller test can reveal practical information with less disruption.",
-        "A useful decision must commit to every later detail immediately.",
-        "A small next step requires complete certainty about the future.",
-        "Learning new information makes adapting a plan unacceptable.",
+        "Test a limited version before replacing the whole process.",
+        "Make the largest possible commitment before testing the idea.",
+        "Wait until every future outcome is certain.",
+        "Assume changing a plan later always means the initial decision was useless.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -20051,8 +19717,7 @@ export const database = {
       },
       id: "arcade-decisions-8-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you choose a manageable, reversible next step when appropriate?",
+      prompt: "What would you do next?",
       choices: [
         "Assume changing a plan later always means the initial decision was useless.",
         "Choose an initial amount and reassess after experience.",
@@ -20076,16 +19741,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-8-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Choose an initial amount and reassess after experience.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A useful decision must commit to every later detail immediately.",
-        "A small next step requires complete certainty about the future.",
-        "Learning new information makes adapting a plan unacceptable.",
-        "A decision can include a planned opportunity to adapt.",
+        "Make the largest possible commitment before testing the idea.",
+        "Wait until every future outcome is certain.",
+        "Assume changing a plan later always means the initial decision was useless.",
+        "Choose an initial amount and reassess after experience.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -20104,8 +19769,7 @@ export const database = {
       },
       id: "arcade-decisions-9-1-action",
       kind: "action",
-      prompt:
-        "Which response best helps you review a decision using what happened rather than a global self-judgment?",
+      prompt: "What would you do next?",
       choices: [
         "Review what information I had and what I learned afterward.",
         "Use one outcome to judge every decision I make.",
@@ -20130,16 +19794,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-9-1-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Review what information I had and what I learned afterward.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Adapting to new evidence means the original decision must be defended instead.",
-        "A decision with an unwelcome outcome cannot teach anything useful.",
-        "Separating the process from the outcome helps identify useful adjustments.",
-        "One outcome defines a person’s entire judgment.",
+        "Ignore new information to protect my original choice.",
+        "Assume a disappointing outcome proves the process had no useful parts.",
+        "Review what information I had and what I learned afterward.",
+        "Use one outcome to judge every decision I make.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -20158,8 +19822,7 @@ export const database = {
       },
       id: "arcade-decisions-9-2-action",
       kind: "action",
-      prompt:
-        "Which response best helps you review a decision using what happened rather than a global self-judgment?",
+      prompt: "What would you do next?",
       choices: [
         "Use one outcome to judge every decision I make.",
         "Ignore new information to protect my original choice.",
@@ -20184,16 +19847,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-9-2-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Ask what worked and what needs changing.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A decision with an unwelcome outcome cannot teach anything useful.",
-        "Specific feedback can improve the arrangement without a sweeping judgment.",
-        "One outcome defines a person’s entire judgment.",
-        "Adapting to new evidence means the original decision must be defended instead.",
+        "Assume a disappointing outcome proves the process had no useful parts.",
+        "Ask what worked and what needs changing.",
+        "Use one outcome to judge every decision I make.",
+        "Ignore new information to protect my original choice.",
       ],
       correctIndex: 1,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -20212,8 +19875,7 @@ export const database = {
       },
       id: "arcade-decisions-9-3-action",
       kind: "action",
-      prompt:
-        "Which response best helps you review a decision using what happened rather than a global self-judgment?",
+      prompt: "What would you do next?",
       choices: [
         "Ignore new information to protect my original choice.",
         "Assume a disappointing outcome proves the process had no useful parts.",
@@ -20238,16 +19900,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-9-3-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Consider whether the new information calls for an adjustment.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "A thoughtful decision can change when its evidence changes.",
-        "One outcome defines a person’s entire judgment.",
-        "Adapting to new evidence means the original decision must be defended instead.",
-        "A decision with an unwelcome outcome cannot teach anything useful.",
+        "Consider whether the new information calls for an adjustment.",
+        "Use one outcome to judge every decision I make.",
+        "Ignore new information to protect my original choice.",
+        "Assume a disappointing outcome proves the process had no useful parts.",
       ],
       correctIndex: 0,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -20266,8 +19928,7 @@ export const database = {
       },
       id: "arcade-decisions-9-4-action",
       kind: "action",
-      prompt:
-        "Which response best helps you review a decision using what happened rather than a global self-judgment?",
+      prompt: "What would you do next?",
       choices: [
         "Assume a disappointing outcome proves the process had no useful parts.",
         "Compare the contexts before deciding what to reuse.",
@@ -20292,16 +19953,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-9-4-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Compare the contexts before deciding what to reuse.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "One outcome defines a person’s entire judgment.",
-        "Adapting to new evidence means the original decision must be defended instead.",
-        "A decision with an unwelcome outcome cannot teach anything useful.",
-        "An outcome in one context does not guarantee the same result elsewhere.",
+        "Use one outcome to judge every decision I make.",
+        "Ignore new information to protect my original choice.",
+        "Assume a disappointing outcome proves the process had no useful parts.",
+        "Compare the contexts before deciding what to reuse.",
       ],
       correctIndex: 3,
+      contentRevision: 2,
     },
     {
       mode: "arcade",
@@ -20320,8 +19981,7 @@ export const database = {
       },
       id: "arcade-decisions-9-5-action",
       kind: "action",
-      prompt:
-        "Which response best helps you review a decision using what happened rather than a global self-judgment?",
+      prompt: "What would you do next?",
       choices: [
         "Identify what I underestimated and revise future commitments.",
         "Use one outcome to judge every decision I make.",
@@ -20346,16 +20006,16 @@ export const database = {
         scope: "question-performance-only",
       },
       id: "arcade-decisions-9-5-understanding",
-      kind: "understanding",
-      prompt:
-        "Consider this response: “Identify what I underestimated and revise future commitments.” Why does it fit the skill being practised?",
+      kind: "action",
+      prompt: "What would you do next?",
       choices: [
-        "Adapting to new evidence means the original decision must be defended instead.",
-        "A decision with an unwelcome outcome cannot teach anything useful.",
-        "A specific lesson is more useful than treating the experience as a verdict on yourself.",
-        "One outcome defines a person’s entire judgment.",
+        "Ignore new information to protect my original choice.",
+        "Assume a disappointing outcome proves the process had no useful parts.",
+        "Identify what I underestimated and revise future commitments.",
+        "Use one outcome to judge every decision I make.",
       ],
       correctIndex: 2,
+      contentRevision: 2,
     },
   ],
   introductionSkillIds: [

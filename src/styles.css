@@ -2499,3 +2499,30 @@ a {
     padding-bottom: max(8px, env(safe-area-inset-bottom));
   }
 }
+
+.side,
+.side .sidebar-toggle {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+.side.is-scrolled,
+.sidebar-expanded .side.is-scrolled {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+.side.is-scrolled .sidebar-toggle {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .side,
+  .side .sidebar-toggle {
+    transition: none;
+  }
+}
+
+.sidebar-expanded .side.is-scrolled { background: rgba(252, 251, 255, 0.82); backdrop-filter: blur(18px); }
