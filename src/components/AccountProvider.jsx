@@ -1,3 +1,4 @@
+import AccountMenu from "./AccountMenu";
 import AuthPage from "./AuthPage";
 import { useEffect, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
@@ -163,9 +164,7 @@ export default function AccountProvider({ children }) {
       {
         <div className="account-bar">
           <span>
-            {session
-              ? `Signed in as ${session.user.email}`
-              : "Your learning, at your pace."}
+            {session ? "Your space to grow." : "Your learning, at your pace."}
           </span>
           <div>
             {session ? (
@@ -176,9 +175,11 @@ export default function AccountProvider({ children }) {
                     again automatically.
                   </span>
                 )}
-                <button disabled={sending} onClick={signOut}>
-                  {sending ? "Signing out…" : "Sign out"}
-                </button>
+                <AccountMenu
+                  email={session.user.email}
+                  sending={sending}
+                  onSignOut={signOut}
+                />
               </>
             ) : (
               <>

@@ -23,12 +23,42 @@ export default function JourneyExperience({ onUnlock, completed, onRestart }) {
   const [feedbackReady, setFeedbackReady] = useState(false);
   const [pending, setPending] = useState("");
   const timer = useRef(null);
+  const engaged = useRef(false);
+  const content = useRef(null);
+  const feedback = useRef(null);
+  const indicator = useRef(null);
+  useEffect(() => {
+    if (!engaged.current) return;
+    const frame = requestAnimationFrame(() => {
+      const target = pending
+        ? indicator.current
+        : feedbackReady && stage === "quiz"
+          ? feedback.current
+          : content.current;
+      if (!target) return;
+      const header =
+        document.querySelector(".account-bar")?.getBoundingClientRect()
+          .height || 0;
+      const top =
+        window.scrollY + target.getBoundingClientRect().top - header - 20;
+      const reduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      window.scrollTo({
+        top: Math.max(0, top),
+        behavior: reduced ? "instant" : "smooth",
+      });
+      if (!pending) target.focus({ preventScroll: true });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [stage, index, feedbackReady, pending]);
   const question = questions[index];
 
   useEffect(() => () => clearTimeout(timer.current), []);
 
   function replyAfter(callback, message, delay = REPLY_DELAY) {
     if (timer.current !== null) return;
+    engaged.current = true;
     setPending(message);
     timer.current = setTimeout(() => {
       timer.current = null;
@@ -86,7 +116,7 @@ export default function JourneyExperience({ onUnlock, completed, onRestart }) {
             <b>Within</b>
             <span>A private starting experience</span>
           </div>
-          <div className="chat-body">
+          <div className="chat-body" ref={content} tabIndex={-1}>
             {stage === "hello" && (
               <>
                 <div className="bubble bot">Hello. How are you today?</div>
@@ -166,7 +196,12 @@ export default function JourneyExperience({ onUnlock, completed, onRestart }) {
                 </div>
                 {feedbackReady && (
                   <>
-                    <div className="feedback" role="status">
+                    <div
+                      className="feedback"
+                      role="status"
+                      ref={feedback}
+                      tabIndex={-1}
+                    >
                       <b>A perspective worth noticing</b>
                       <br />
                       {picked === "unknown" &&
@@ -187,7 +222,7 @@ export default function JourneyExperience({ onUnlock, completed, onRestart }) {
               </div>
             )}
             {!!pending && (
-              <div className="reply-indicator" role="status">
+              <div className="reply-indicator" role="status" ref={indicator}>
                 <span className="reply-dots" aria-hidden="true">
                   <i />
                   <i />

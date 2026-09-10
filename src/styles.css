@@ -2303,3 +2303,70 @@ a {
     padding-left: 230px;
   }
 }
+
+/* Account details stay inside a small disclosure. */
+.account-menu {
+  position: relative;
+}
+.account-bar .account-trigger {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 12px 5px 5px;
+  border: 1px solid #e9e2f5;
+  background: white;
+  color: #443459;
+  border-radius: 24px;
+  min-height: 42px;
+}
+.account-avatar {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ece4ff;
+  color: #7750c8;
+  font-weight: 700;
+}
+.account-bar .account-popover {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  width: min(290px, calc(100vw - 84px));
+  padding: 20px;
+  background: white;
+  border: 1px solid #e9e2f5;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px #30204620;
+}
+.account-popover strong {
+  color: #29213c;
+}
+.account-popover p {
+  font-size: 13px;
+  color: #756d85;
+  overflow-wrap: anywhere;
+  margin: 8px 0 18px;
+}
+.account-popover button {
+  width: 100%;
+  text-align: left;
+}
+.chat-body:focus,
+.feedback:focus {
+  outline: none;
+}
+@media (max-width: 520px) {
+  .account-bar {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  .account-bar > span {
+    font-size: 11px;
+  }
+  .account-trigger {
+    white-space: nowrap;
+  }
+}
