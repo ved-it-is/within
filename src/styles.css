@@ -875,7 +875,7 @@ a {
   width: 100% !important;
   height: 100% !important;
   cursor: grab;
-  touch-action: none;
+  touch-action: pan-y;
 }
 
 .globe-webgl-stage canvas:active {
@@ -1328,59 +1328,200 @@ a {
 @media (max-width: 960px) {
   .atlas-stage-row {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
+    margin-top: 24px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .globe-canvas-col,
+  .atlas-inspector-col {
+    width: 100%;
+    min-width: 0;
   }
 
   .globe-viewport-box {
-    max-width: 480px;
+    max-width: 440px;
   }
 }
 
 @media (max-width: 640px) {
   .world-atlas-section {
-    padding: 60px 14px;
+    padding: 46px 14px 54px;
+  }
+
+  .world-atlas-header {
+    margin-bottom: 22px;
+  }
+
+  .atlas-title {
+    font-size: clamp(1.45rem, 5.2vw, 1.85rem);
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  .atlas-lead {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
   }
 
   .atlas-toggle {
+    display: flex;
     flex-direction: column;
-    border-radius: 20px;
+    border-radius: 16px;
     width: 100%;
     padding: 4px;
+    gap: 4px;
   }
 
   .atlas-toggle-btn {
-    border-radius: 14px;
+    border-radius: 12px;
     width: 100%;
+    padding: 8px 12px;
+    gap: 8px;
   }
 
+  .atlas-toggle-btn .toggle-icon {
+    font-size: 1.1rem;
+  }
+
+  .atlas-toggle-btn .toggle-text strong {
+    font-size: 0.86rem;
+  }
+
+  .atlas-toggle-btn .toggle-text small {
+    font-size: 0.7rem;
+  }
+
+  /* Well-proportioned mobile globe container */
   .globe-viewport-box {
     border-radius: 20px;
+    max-width: 350px;
+    width: 100%;
+    height: 310px;
+    aspect-ratio: auto;
+    box-shadow: 0 12px 35px rgba(23, 32, 61, 0.14);
+  }
+
+  .globe-hud-controls {
+    top: 8px;
+    left: 8px;
+    gap: 5px;
+  }
+
+  .hud-btn {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    border-radius: 12px;
+  }
+
+  .hud-zoom-btn {
+    padding: 4px 7px;
+    font-size: 0.76rem;
+  }
+
+  .globe-gesture-hint {
+    bottom: 8px;
+    padding: 3px 10px;
+    font-size: 0.68rem;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .city-pills-bar {
+    padding: 10px 2px 2px;
+    gap: 6px;
+    width: 100%;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .city-pill-btn {
+    padding: 6px 12px;
+    font-size: 0.76rem;
+    gap: 5px;
+  }
+
+  .city-pill-btn .pill-dot {
+    width: 6px;
+    height: 6px;
   }
 
   .inspector-card {
-    padding: 20px 16px;
+    padding: 18px 14px;
     border-radius: 20px;
+    gap: 14px;
   }
 
   .inspector-city-top {
     flex-direction: column;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 6px;
+    padding-bottom: 12px;
+  }
+
+  .city-title {
+    font-size: 1.25rem;
   }
 
   .metric-banner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    padding: 10px 14px;
+    gap: 10px;
+    border-radius: 12px;
   }
 
   .metric-score {
-    font-size: 2rem;
+    font-size: 1.85rem;
+  }
+
+  .metric-meta strong {
+    font-size: 0.92rem;
+  }
+
+  .inspector-simple-desc {
+    font-size: 0.86rem;
+  }
+
+  .inspector-quote-box {
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    border-radius: 10px;
+  }
+
+  .somatic-symptom-box {
+    padding: 10px 12px;
+  }
+
+  .somatic-symptom-box p {
+    font-size: 0.82rem;
+  }
+
+  .inspector-action-btn {
+    padding: 10px 14px;
+    font-size: 0.84rem;
   }
 
   .inspector-bottom-switch {
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px;
+    gap: 4px;
+    padding-top: 10px;
+  }
+
+  .atlas-invitation {
+    margin-top: 36px;
+  }
+
+  .invitation-lead {
+    font-size: 0.92rem;
+    margin-bottom: 16px;
+  }
+
+  .invitation-btn {
+    width: 100%;
+    padding: 10px 18px;
+    font-size: 0.86rem;
   }
 }
 

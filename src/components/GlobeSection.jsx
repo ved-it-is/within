@@ -171,6 +171,10 @@ export default function GlobeSection() {
       const width = Math.max(1, container.clientWidth);
       const height = Math.max(1, container.clientHeight);
       camera.aspect = width / height;
+      const isMobile = width < 480;
+      if (!userInteracting && !targetRotation) {
+        camera.position.z = isMobile ? 3.55 : 3.2;
+      }
       camera.updateProjectionMatrix();
       renderer.setSize(width, height, false);
     };
@@ -234,7 +238,8 @@ export default function GlobeSection() {
       },
       resetView: () => {
         targetRotation = { x: 0.25, y: 0 };
-        camera.position.z = 3.2;
+        const isMobile = container.clientWidth < 480;
+        camera.position.z = isMobile ? 3.55 : 3.2;
       },
       zoom: (direction) => {
         const delta = direction === "in" ? -0.3 : 0.3;
@@ -335,7 +340,11 @@ export default function GlobeSection() {
         dragStart = { x: event.clientX, y: event.clientY };
         lastPointer = { x: event.clientX, y: event.clientY };
         dragVelocity = { x: 0, y: 0 };
-        canvas.setPointerCapture(event.pointerId);
+        if (event.pointerType !== "touch") {
+          try {
+            canvas.setPointerCapture(event.pointerId);
+          } catch {}
+        }
       } else if (activePointers.size === 2) {
         initialPinchDistance = getPinchDistance();
       }
@@ -369,6 +378,11 @@ export default function GlobeSection() {
         Math.hypot(event.clientX - dragStart.x, event.clientY - dragStart.y) > 6
       ) {
         hasMovedSignificantly = true;
+        if (event.pointerType === "touch" && !canvas.hasPointerCapture(event.pointerId)) {
+          try {
+            canvas.setPointerCapture(event.pointerId);
+          } catch {}
+        }
       }
 
       // Free 3D Multi-Axis Orbit: Dragging horizontally turns yaw; dragging vertically turns pitch
@@ -599,7 +613,7 @@ export default function GlobeSection() {
 
               {/* Interactive Gesture Hint */}
               <div className="globe-gesture-hint">
-                <span>Drag 360° • Pinch / Scroll to Zoom • Tap any glowing beacon</span>
+                <span>Drag to rotate • Tap city to inspect</span>
               </div>
             </div>
 
