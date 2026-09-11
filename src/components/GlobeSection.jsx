@@ -504,12 +504,11 @@ export default function GlobeSection() {
         <div className="world-atlas-header">
           <span className="atlas-kicker">THE GLOBAL EMOTIONAL ATLAS</span>
           <h2 className="atlas-title">
-            The Dual Perspective: What The World Projects vs. What It Endures
+            The Two Worlds: What People Show vs. What They Truly Feel
           </h2>
           <p className="atlas-lead">
-            Spin the 3D globe. Toggle beneath the sparkling night lights to
-            discover the unspoken somatic struggles hidden behind global
-            high-functioning composure.
+            Spin the 3D globe. Toggle between what the world projects on the
+            surface, and the silent stress people carry inside.
           </p>
 
           {/* Perspective Toggle Control */}
@@ -527,7 +526,7 @@ export default function GlobeSection() {
               <span className="toggle-icon">🌟</span>
               <span className="toggle-text">
                 <strong>The Projected World</strong>
-                <small>Night City Lights &amp; Façade</small>
+                <small>Night City Lights • What People Show</small>
               </span>
             </button>
             <button
@@ -539,7 +538,7 @@ export default function GlobeSection() {
               <span className="toggle-icon">🌑</span>
               <span className="toggle-text">
                 <strong>The Within Reality</strong>
-                <small>Shadow Earth &amp; Somatic Truth</small>
+                <small>Quiet Earth • What People Truly Feel</small>
               </span>
             </button>
           </div>
@@ -639,7 +638,6 @@ export default function GlobeSection() {
                   <h3 className="city-title">
                     {selectedCity.name}, {selectedCity.country}
                   </h3>
-                  <span className="city-tagline">{selectedCity.tag}</span>
                 </div>
                 <div className="city-coords">
                   <code>
@@ -656,32 +654,21 @@ export default function GlobeSection() {
                   <div className="metric-banner gold-banner">
                     <div className="metric-score">{selectedCity.facade.metric}</div>
                     <div className="metric-meta">
-                      <span className="metric-type">PROJECTED FAÇADE SCORE</span>
+                      <span className="metric-type">WHAT PEOPLE SHOW</span>
                       <strong>{selectedCity.facade.metricLabel}</strong>
                     </div>
                   </div>
 
-                  <div className="inspector-section">
-                    <span className="inspector-label">THE CULTURAL EXPECTATION</span>
-                    <h4 className="inspector-subhead">{selectedCity.facade.headline}</h4>
-                    <p className="inspector-text">{selectedCity.facade.socialExpectation}</p>
-                  </div>
+                  <p className="inspector-simple-desc">{selectedCity.facade.description}</p>
 
                   <div className="inspector-quote-box gold-quote">
                     <p>{selectedCity.facade.quote}</p>
                   </div>
 
-                  <div className="inspector-tags-wrap">
-                    {selectedCity.facade.tags.map((tag) => (
-                      <span key={tag} className="inspector-tag tag-facade">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="inspector-summary-callout">
-                    <span className="callout-icon">💡</span>
-                    <p>{selectedCity.facade.summary}</p>
+                  <div className="inspector-cta-row">
+                    <a className="inspector-action-btn facade-action" href="#diagnostic">
+                      Check Your EQ Archetype →
+                    </a>
                   </div>
                 </div>
               ) : (
@@ -690,41 +677,28 @@ export default function GlobeSection() {
                   <div className="metric-banner shadow-banner">
                     <div className="metric-score pink-score">{selectedCity.within.metric}</div>
                     <div className="metric-meta">
-                      <span className="metric-type">INTERNAL SOMATIC LOAD</span>
+                      <span className="metric-type">WHAT PEOPLE TRULY FEEL</span>
                       <strong>{selectedCity.within.metricLabel}</strong>
                     </div>
                   </div>
 
-                  <div className="inspector-section">
-                    <span className="inspector-label reality-label">THE UNSPOKEN REALITY</span>
-                    <h4 className="inspector-subhead">{selectedCity.within.headline}</h4>
-                    <p className="inspector-text">{selectedCity.within.realStruggle}</p>
-                  </div>
+                  <p className="inspector-simple-desc">{selectedCity.within.description}</p>
 
                   <div className="somatic-symptom-box">
                     <div className="somatic-header">
                       <span className="somatic-icon">🫀</span>
-                      <strong>Where The Body Holds It:</strong>
+                      <strong>Where tension builds up:</strong>
                     </div>
-                    <p>{selectedCity.within.somaticCue}</p>
+                    <p>{selectedCity.within.bodyCue}</p>
                   </div>
 
                   <div className="inspector-quote-box violet-quote">
-                    <span className="quote-label">EMOTIONAL INTELLIGENCE INSIGHT</span>
-                    <p>“{selectedCity.within.eqInsight}”</p>
-                  </div>
-
-                  <div className="inspector-tags-wrap">
-                    {selectedCity.within.tags.map((tag) => (
-                      <span key={tag} className="inspector-tag tag-reality">
-                        {tag}
-                      </span>
-                    ))}
+                    <p>{selectedCity.within.quote}</p>
                   </div>
 
                   <div className="inspector-cta-row">
                     <a className="inspector-action-btn" href="#tracker">
-                      Log What You Feel In Tracker →
+                      Log How You Feel Today →
                     </a>
                   </div>
                 </div>
@@ -732,13 +706,15 @@ export default function GlobeSection() {
 
               {/* Bottom Contrast Bar */}
               <div className="inspector-bottom-switch">
-                <span>Currently Viewing:</span>
+                <span>View Mode:</span>
                 <button
                   type="button"
                   className="switch-inline-btn"
                   onClick={() => setView(isPersonal ? "reported" : "personal")}
                 >
-                  {isPersonal ? "Switch to Projected Surface (Night Lights) →" : "Flip to The Within Reality (Shadow Earth) →"}
+                  {isPersonal
+                    ? "See What People Show (Night Lights) →"
+                    : "See What People Truly Feel (Quiet Earth) →"}
                 </button>
               </div>
             </div>

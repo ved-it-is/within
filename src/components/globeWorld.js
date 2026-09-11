@@ -8,26 +8,18 @@ export const GLOBAL_CITIES = [
     lat: 35.6762,
     lon: 139.6503,
     region: "East Asia",
-    tag: "High Composure Hub",
     facade: {
-      headline: "Unshakeable Diligence & Polished Composure",
       metric: "93%",
-      metricLabel: "Projected Composure",
-      socialExpectation: "Tireless dedication ('Gambaru' ethic), polite deference, and uninterrupted public poise.",
-      quote: "“In packed rush-hour trains, nobody sighs. We put in earbuds, smile at our screens, and carry on. Showing emotional strain feels like burdening the group.”",
-      tags: ["Smiling Exhaustion", "Unspoken Grief", "Harmony Tax"],
-      summary: "93% display complete emotional regulation in public spaces, hiding anxiety behind spotless politeness."
+      metricLabel: "Show they are doing great",
+      description: "Polite smiles and long working hours are expected every day. Showing stress feels like letting people down.",
+      quote: "“On the crowded trains, nobody sighs or complains. Everyone smiles at their screens and acts like nothing is hard.”"
     },
     within: {
-      headline: "Suppressed Burnout & Isolated Longing",
       metric: "74%",
-      metricLabel: "Somatic Fatigue",
-      realStruggle: "Chronic cervical and shoulder tension from swallowing personal frustration. Constant fear of burdening coworkers or loved ones with vulnerability.",
-      somaticCue: "Throat tightness, rigid jaw clenching, and shallow rib breathing in crowded stations.",
-      eqInsight: "Harmonizing with others should never require disowning your own somatic reality.",
-      recommendedChapterId: 17,
-      tags: ["Throat Constriction", "Silent Burnout", "Relational Fear"],
-      summary: "74% experience silent somatic burnout, feeling unable to speak about their grief or exhaustion."
+      metricLabel: "Silently burnt out & stressed",
+      description: "Carrying heavy pressure alone, afraid that opening up will burden family, friends, or coworkers.",
+      bodyCue: "Tight throat, stiff shoulders, smiling when exhausted.",
+      quote: "“Trying to keep everyone happy shouldn't mean ignoring your own pain.”"
     }
   },
   {
@@ -37,26 +29,18 @@ export const GLOBAL_CITIES = [
     lat: 40.7128,
     lon: -74.006,
     region: "North America",
-    tag: "High Ambition Hub",
     facade: {
-      headline: "High-Octane Hustle & Bulletproof Ambition",
       metric: "89%",
-      metricLabel: "Projected Confidence",
-      socialExpectation: "Relentless career drive, unapologetic confidence, magnetic charisma, and an unstoppable winning aura.",
-      quote: "“Everyone on feeds is 'crushing it' and building empires. If you admit you're exhausted or second-guessing your path, you feel instantly disposable.”",
-      tags: ["Hustle Bravado", "Unstoppable Aura", "Status Defense"],
-      summary: "89% project fearless confidence and career mastery during daily social and professional interactions."
+      metricLabel: "Project unstoppable confidence",
+      description: "Everyone acts like they are winning and thriving. Admitting you're tired or confused feels like falling behind.",
+      quote: "“Everyone on feeds is 'crushing it'. If you admit you're exhausted or lost, you feel like a failure.”"
     },
     within: {
-      headline: "Imposter Dread & Somatic Depletion",
       metric: "69%",
-      metricLabel: "Internal Panic",
-      realStruggle: "Chronic sympathetic nervous system overdrive. Waking up at 3 AM with heart palpitations and the haunting terror that one misstep will expose inadequacy.",
-      somaticCue: "Mid-chest constriction, elevated resting pulse, and inability to take a full diaphragmatic exhale.",
-      eqInsight: "Confidence that demands constant performative dominance is fear in a sharp suit.",
-      recommendedChapterId: 13,
-      tags: ["Chest Tightness", "Imposter Dread", "Late-Night Panic"],
-      summary: "69% battle imposter terror and sympathetic overdrive behind their dynamic, outgoing exterior."
+      metricLabel: "Secretly dreading they aren't enough",
+      description: "Constantly worrying that one mistake will ruin everything. Waking up in the middle of the night with a racing heart.",
+      bodyCue: "Tight chest, shallow breathing, racing thoughts.",
+      quote: "“True confidence doesn't need you to pretend you never get tired.”"
     }
   },
   {
@@ -66,26 +50,18 @@ export const GLOBAL_CITIES = [
     lat: 51.5074,
     lon: -0.1278,
     region: "Western Europe",
-    tag: "Stoic Poise Hub",
     facade: {
-      headline: "The 'Stiff Upper Lip' & Unbothered Poise",
       metric: "86%",
-      metricLabel: "Projected Independence",
-      socialExpectation: "Ironclad emotional self-containment, dry self-deprecating wit, and casual 'I’m completely fine' independence.",
-      quote: "“The unspoken rule is: whatever falls apart, make a dry joke about the rain, say 'could be worse', and keep walking.”",
-      tags: ["Stoic Poise", "Detached Irony", "No Worries"],
-      summary: "86% maintain effortless composure and humorous detachment when confronting personal upheaval."
+      metricLabel: "Say 'I’m fine' with a witty joke",
+      description: "Staying quiet about hard times and laughing off worries so nobody thinks you are making a fuss.",
+      quote: "“Whatever falls apart, we make a joke about the rain, say 'could be worse', and carry on.”"
     },
     within: {
-      headline: "Internalized Numbness & Withheld Tenderness",
       metric: "64%",
-      metricLabel: "Suppression Index",
-      realStruggle: "Mistaking numbness for emotional strength. Profound hesitation to ask for warmth out of dread of seeming needy or overly dramatic.",
-      somaticCue: "Locked upper spine, teeth grinding at night, and persistent emotional freeze responses.",
-      eqInsight: "Containment is not regulation; it is merely holding an explosion inside the ribs.",
-      recommendedChapterId: 21,
-      tags: ["Jaw Clenching", "Masked Grief", "Isolation Behind Wit"],
-      summary: "64% confuse emotional numbness with resilience, locking grief inside the chest and spine."
+      metricLabel: "Feel numb & unable to ask for help",
+      description: "Holding feelings inside for so long that you stop feeling them. Afraid that asking for support will look weak.",
+      bodyCue: "Clenched jaw, stiff neck, feeling emotionally drained.",
+      quote: "“Holding everything inside isn't strength; it just locks the pain in your body.”"
     }
   },
   {
@@ -95,26 +71,18 @@ export const GLOBAL_CITIES = [
     lat: 19.076,
     lon: 72.8777,
     region: "South Asia",
-    tag: "Devoted Harmony Hub",
     facade: {
-      headline: "Warm Family Duty & Resilient Stamina",
       metric: "91%",
-      metricLabel: "Projected Solidarity",
-      socialExpectation: "Boundless sacrifice for family, vibrant celebratory spirit, and overcoming any obstacle without complaint.",
-      quote: "“Self-sacrifice is celebrated as the highest virtue. If you set a boundary or express individual hurt, it's mistaken for disrespect.”",
-      tags: ["Filial Devotion", "Endless Stamina", "Joyful Duty"],
-      summary: "91% project continuous warmth, family loyalty, and joyful accommodation under heavy demands."
+      metricLabel: "Always smiling & helping others",
+      description: "Always putting family and others first, showing boundless energy, and never complaining about responsibilities.",
+      quote: "“You are expected to make everyone else proud. Saying 'I need time for myself' feels selfish.”"
     },
     within: {
-      headline: "Guilt Burden & Relational Enmeshment",
       metric: "72%",
-      metricLabel: "Boundary Exhaustion",
-      realStruggle: "Intense visceral guilt whenever asserting self-care. Deep gut knot from carrying emotional responsibility for parents, relatives, and colleagues.",
-      somaticCue: "Persistent gut anxiety, stomach churning, and fatigue from suppressing personal boundaries.",
-      eqInsight: "Empathy without boundaries is self-destruction disguised as love.",
-      recommendedChapterId: 25,
-      tags: ["Gut Anxiety", "Guilt Reflex", "Boundary Erosion"],
-      summary: "72% carry chronic somatic gut tension and guilt whenever needing to say 'no'."
+      metricLabel: "Overwhelmed by guilt & pressure",
+      description: "Feeling a nervous knot in the stomach whenever you want to say no. Carrying everyone's hopes on your own shoulders.",
+      bodyCue: "Stomach churn, restless sleep, feeling guilty for resting.",
+      quote: "“Caring for others shouldn't mean leaving yourself behind.”"
     }
   },
   {
@@ -124,26 +92,18 @@ export const GLOBAL_CITIES = [
     lat: -23.5505,
     lon: -46.6333,
     region: "South America",
-    tag: "Radiant Warmth Hub",
     facade: {
-      headline: "Vibrant Warmth & Irresistible Joy",
       metric: "94%",
-      metricLabel: "Projected Joy",
-      socialExpectation: "Continuous social warmth, open hugs, infectious cheer, effortless optimism, and rhythmic vibrancy.",
-      quote: "“In a culture that celebrates pure joy, having a grey day feels almost rude to people around you. You put on music and dance through grief.”",
-      tags: ["Radiant Warmth", "Festive Energy", "Total Openness"],
-      summary: "94% feel compelled to project festive energy, humor, and open hugs regardless of internal state."
+      metricLabel: "Full of warmth, hugs & laughter",
+      description: "Warm hugs, loud laughs, and endless positive vibes. People expect you to bring sunshine into every room.",
+      quote: "“When everyone is dancing and laughing, having a sad day feels like you're ruining the mood for everyone.”"
     },
     within: {
-      headline: "Performative Cheer & Suppressed Grief",
       metric: "67%",
-      metricLabel: "Exhaustion of Joy",
-      realStruggle: "Solar plexus exhaustion from holding up everyone else's mood. Deep loneliness when sadness arrives because there is no social container for quiet sorrow.",
-      somaticCue: "Solar plexus clenching, tired facial muscles from forced smiling, and heavy nervous fatigue.",
-      eqInsight: "Allowing yourself to feel grief is the only way joy remains authentic rather than performative.",
-      recommendedChapterId: 8,
-      tags: ["Solar Plexus Ache", "Forced Smile Strain", "Unspoken Melancholy"],
-      summary: "67% suffer performative smile fatigue and feel invisible during quiet, solemn seasons."
+      metricLabel: "Tired of pretending to be cheerful",
+      description: "Facial muscles ache from forcing a smile. When quiet sadness hits, there's no safe place to just be down.",
+      bodyCue: "Heavy chest, tired face, exhaustion after social events.",
+      quote: "“Allowing yourself to feel sad is the only way real joy ever comes back.”"
     }
   },
   {
@@ -153,26 +113,18 @@ export const GLOBAL_CITIES = [
     lat: 48.8566,
     lon: 2.3522,
     region: "Western Europe",
-    tag: "Intellectual Poise Hub",
     facade: {
-      headline: "Intellectual Poise & Elegant Discernment",
       metric: "88%",
-      metricLabel: "Projected Poise",
-      socialExpectation: "Aesthetic composure, witty cynicism, intellectual detachment, and seamless cultural refinement.",
-      quote: "“To be taken seriously, one must analyze everything with irony. Raw vulnerability sounds unsophisticated or clumsy.”",
-      tags: ["Aesthetic Cool", "Intellectual Poise", "Ironclad Taste"],
-      summary: "88% present polished analytical composure, dissecting ideas while hiding vulnerable feelings."
+      metricLabel: "Cool, calm & intellectually poised",
+      description: "Discussing everything with clever wit and style. Always looking elegant and untouched by daily drama.",
+      quote: "“It's uncool to look fragile or needy. We use clever words and jokes so nobody sees our hurt.”"
     },
     within: {
-      headline: "Disconnection Through Analysis & Guarded Fear",
       metric: "65%",
-      metricLabel: "Intellectual Distance",
-      realStruggle: "Converting genuine emotional hurt into intellectual critique. Deep hunger for warm, uncritical acceptance while fiercely maintaining a defensive guard.",
-      somaticCue: "Tight throat, high diaphragm tension, and subtle avoidance of deep emotional eye contact.",
-      eqInsight: "You cannot think your way through an emotion that was meant to be felt.",
-      recommendedChapterId: 3,
-      tags: ["Throat Lock", "Intellectual Defense", "Hidden Loneliness"],
-      summary: "65% experience profound relational loneliness by intellectualizing their tender emotions."
+      metricLabel: "Guarding a lonely heart behind wit",
+      description: "Using clever sarcasm to keep people at a distance before they can hurt you, while secretly craving warmth.",
+      bodyCue: "Lump in the throat, guarded posture, avoiding honest talks.",
+      quote: "“You cannot think your way through an emotion that was meant to be felt.”"
     }
   },
   {
@@ -182,26 +134,18 @@ export const GLOBAL_CITIES = [
     lat: -33.8688,
     lon: 151.2093,
     region: "Oceania",
-    tag: "Casual Chill Hub",
     facade: {
-      headline: "'No Worries' Casual Optimism",
       metric: "90%",
-      metricLabel: "Projected Chill",
-      socialExpectation: "Effortless casual breeze, athletic vigor, sunlit optimism, and refusing to take life too seriously.",
-      quote: "“The motto is 'she'll be right mate'. But when your internal world is spiraling, saying anything sounds like whining.”",
-      tags: ["No Worries", "Sunlit Optimism", "Laid-Back Ease"],
-      summary: "90% project an easygoing, carefree attitude where nothing appears to ruffle their feathers."
+      metricLabel: "Easygoing 'No worries' chill",
+      description: "Sunny days, beach banter, and acting like nothing is a big deal. Laughing off tough times over drinks.",
+      quote: "“The motto is 'she'll be right mate'. But when your life feels upside down, you feel silly saying anything.”"
     },
     within: {
-      headline: "Silent Disconnect Behind the Mateship Smile",
       metric: "63%",
-      metricLabel: "Masked Disconnection",
-      realStruggle: "Feeling utterly isolated in social pubs and barbecues. Brushing off severe existential dread and anxiety under humor until burnout forces a collapse.",
-      somaticCue: "Neck stiffness, clenched teeth behind casual banter, and a hollow chest feeling.",
-      eqInsight: "True resilience acknowledges the storm instead of pretending the rain isn't wet.",
-      recommendedChapterId: 19,
-      tags: ["Clenched Teeth", "Masked Dread", "Mateship Isolation"],
-      summary: "63% endure quiet internal isolation, fearful that opening up will violate the casual code."
+      metricLabel: "Silent battles behind casual jokes",
+      description: "Smiling and making others laugh while quietly feeling completely disconnected, overwhelmed, and alone.",
+      bodyCue: "Grinding teeth at night, tight shoulders, empty feeling inside.",
+      quote: "“Real strength is saying 'I'm not alright' when the storm gets heavy.”"
     }
   },
   {
@@ -211,26 +155,18 @@ export const GLOBAL_CITIES = [
     lat: -1.2921,
     lon: 36.8219,
     region: "East Africa",
-    tag: "Communal Anchor Hub",
     facade: {
-      headline: "Communal Solidarity & Unwavering Hope",
       metric: "87%",
-      metricLabel: "Projected Fortitude",
-      socialExpectation: "The communal anchor, spiritual perseverance, and uplifting everyone around you with steadfast hope.",
-      quote: "“We are taught 'Harambee'—pulling together. But as the strong one, you have to be the pillar. Pillars aren't allowed to crack.”",
-      tags: ["Communal Pillar", "Steadfast Hope", "Tireless Anchor"],
-      summary: "87% represent steadfast community pillars who never let anyone see them falter or weep."
+      metricLabel: "The strong anchor everyone leans on",
+      description: "Standing tall, giving hope to everyone, and holding the community together without ever showing weakness.",
+      quote: "“Everyone leans on you because you're the strong one. But nobody asks: who is holding the pillar?”"
     },
     within: {
-      headline: "Invisible Caregiver Depletion",
       metric: "66%",
-      metricLabel: "Caregiver Burnout",
-      realStruggle: "Holding the financial, emotional, and spiritual burdens of extended networks without ever having a sanctuary to receive care in return.",
-      somaticCue: "Chronic lower back ache, systemic physical fatigue, and heavy heart weight.",
-      eqInsight: "A tree that feeds an entire village still needs deep root water for itself.",
-      recommendedChapterId: 23,
-      tags: ["Lower Back Ache", "Chronic Fatigue", "Unreciprocated Anchor"],
-      summary: "66% endure chronic caregiver depletion, holding up others with no one to hold them."
+      metricLabel: "Deeply drained from holding it all",
+      description: "Taking care of everyone else's needs while having no space, time, or energy left to take care of yourself.",
+      bodyCue: "Heavy body fatigue, lower back ache, feeling quietly overwhelmed.",
+      quote: "“A tree that gives shade to an entire village still needs water for its own roots.”"
     }
   }
 ];
@@ -533,7 +469,6 @@ export function drawEarthCanvas(canvas, mode = "reported", selectedCityId = null
   // 4. Mode-Specific Features
   if (isNightLights) {
     // --- MODE 1: Night City Lights (Façade & Surface Glitz) ---
-    // Render glittering urban light clusters across major global corridors
     for (const [lat, lon, radius, count] of URBAN_LIGHT_CENTERS) {
       const center = latLonToCanvas(lat, lon, width, height);
       
@@ -567,7 +502,6 @@ export function drawEarthCanvas(canvas, mode = "reported", selectedCityId = null
     }
   } else {
     // --- MODE 2: The Within Reality (Shadow Earth & Somatic Pulse Nodes) ---
-    // Dims external lights, reveals quiet somatic resonance lines connecting humanity
     ctx.save();
     ctx.strokeStyle = "rgba(236, 72, 153, 0.14)";
     ctx.lineWidth = 1.2;
