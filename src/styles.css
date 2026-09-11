@@ -1531,13 +1531,13 @@ a {
 }
 .explore-page,
 .lesson-page {
-  padding: 24px 0 64px;
+  padding: 20px 0 52px;
   background:
     radial-gradient(ellipse at 85% 0, #efe8ff, transparent 34%), #fafaff;
   min-height: 100vh;
 }
 .learning-wrap {
-  width: min(1000px, 92%);
+  width: min(980px, 92%);
   margin: auto;
 }
 
@@ -1592,29 +1592,29 @@ a {
   color: var(--muted);
 }
 .explore-header {
-  max-width: 800px;
-  margin-bottom: 38px;
+  max-width: 720px;
+  margin-bottom: 26px;
 }
 .explore-header h1,
 .lesson-header h1,
 .locked-page h1 {
   font:
-    600 clamp(2.4rem, 4.8vw, 4.6rem)/1.06 Manrope,
+    700 clamp(1.85rem, 3.6vw, 2.65rem)/1.18 Manrope,
     sans-serif;
-  letter-spacing: -0.055em;
-  margin: 16px 0 22px;
+  letter-spacing: -0.035em;
+  margin: 10px 0 14px;
 }
 .explore-header h1 strong {
   color: var(--purple);
-  font-weight: 600;
+  font-weight: 700;
 }
 .explore-header p,
 .lesson-header > p,
 .locked-page p {
-  max-width: 680px;
+  max-width: 620px;
   color: var(--muted);
-  line-height: 1.7;
-  font-size: 1.05rem;
+  line-height: 1.58;
+  font-size: 0.98rem;
 }
 .explore-header h1:focus,
 .lesson-header h1:focus {
@@ -1628,17 +1628,17 @@ a {
 .recommended-chapter {
   background: linear-gradient(120deg, #eee8ff, #fceffa);
   border: 1px solid #e7dff7;
-  padding: 32px;
-  border-radius: 26px;
+  padding: 22px 26px;
+  border-radius: 20px;
   position: relative;
   overflow: hidden;
 }
 .recommended-chapter h2 {
   font:
-    600 clamp(1.5rem, 2.6vw, 2.1rem)/1.2 Manrope,
+    700 clamp(1.25rem, 2.2vw, 1.65rem)/1.25 Manrope,
     sans-serif;
-  letter-spacing: -0.03em;
-  margin: 16px 0 12px;
+  letter-spacing: -0.025em;
+  margin: 12px 0 8px;
   max-width: 80%;
   position: relative;
   z-index: 1;
@@ -1911,7 +1911,7 @@ a {
   text-align: center;
 }
 .lesson-page .learning-wrap {
-  max-width: 850px;
+  max-width: 980px;
 }
 .text-link,
 .text-button {
@@ -2410,29 +2410,29 @@ a {
 .arcade-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-bottom: 22px;
+  gap: 14px;
+  margin-bottom: 18px;
 }
 .arcade-stats > div {
   background: white;
   border: 1px solid var(--line);
-  padding: 26px;
-  border-radius: 22px;
+  padding: 18px 20px;
+  border-radius: 18px;
 }
 .arcade-stats span,
 .arcade-stats small {
   display: block;
   color: var(--muted);
-  font-size: 0.82rem;
-  line-height: 1.5;
+  font-size: 0.78rem;
+  line-height: 1.45;
 }
 .arcade-stats strong {
   display: block;
   font:
-    600 clamp(2rem, 3vw, 3.1rem)/1.25 Manrope,
+    700 clamp(1.5rem, 2.4vw, 2.1rem)/1.15 Manrope,
     sans-serif;
-  letter-spacing: -0.05em;
-  margin: 14px 0 8px;
+  letter-spacing: -0.035em;
+  margin: 10px 0 4px;
 }
 .arcade-stats em {
   font:
@@ -3113,7 +3113,7 @@ a {
     radial-gradient(ellipse at 100% 35%, #f3e6ff, transparent 50%), #f8faff;
 }
 .arcade-endless .chapter-browser-heading h1 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(1.85rem, 3.6vw, 2.65rem);
 }
 .arcade-play {
   position: relative;
@@ -3552,15 +3552,15 @@ a {
 .arcade-display-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin: 24px 0 32px;
+  gap: 14px;
+  margin: 20px 0 26px;
 }
 
 .arcade-display-card {
   background: white;
   border: 1px solid var(--line, #e2e8f0);
-  border-radius: 20px;
-  padding: 22px 24px;
+  border-radius: 16px;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -3600,21 +3600,21 @@ a {
 
 .streak-number {
   display: block;
-  font: 700 clamp(2.4rem, 4vw, 3.4rem)/1.1 Manrope, sans-serif;
+  font: 700 clamp(1.7rem, 2.8vw, 2.3rem)/1.1 Manrope, sans-serif;
   color: #9a3412;
-  margin: 12px 0 6px;
-  letter-spacing: -0.04em;
+  margin: 8px 0 4px;
+  letter-spacing: -0.035em;
 }
 
 .streak-caption {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #9a3412;
   opacity: 0.9;
 }
 
 .stat-kicker {
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: var(--muted, #64748b);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -3622,9 +3622,9 @@ a {
 
 .stat-number {
   display: block;
-  font: 700 clamp(2rem, 3.5vw, 3rem)/1.1 Manrope, sans-serif;
-  margin: 12px 0 6px;
-  letter-spacing: -0.04em;
+  font: 700 clamp(1.6rem, 2.5vw, 2.1rem)/1.1 Manrope, sans-serif;
+  margin: 8px 0 4px;
+  letter-spacing: -0.035em;
 }
 
 .stat-caption {
@@ -3669,35 +3669,35 @@ a {
 
 /* Emotional Intelligence Page Styles */
 .eq-foundations-page {
-  padding-bottom: 90px;
+  padding-bottom: 56px;
 }
 
 .eq-nav-back {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .eq-header h1 {
-  font: 600 clamp(2.3rem, 5vw, 3.8rem)/1.15 Manrope, sans-serif;
-  letter-spacing: -0.04em;
-  margin: 12px 0 16px;
+  font: 700 clamp(1.85rem, 3.6vw, 2.65rem)/1.18 Manrope, sans-serif;
+  letter-spacing: -0.035em;
+  margin: 10px 0 12px;
 }
 
 .eq-lead {
-  font-size: clamp(1.05rem, 2vw, 1.22rem);
-  line-height: 1.6;
+  font-size: 0.98rem;
+  line-height: 1.58;
   color: var(--muted);
-  max-width: 780px;
+  max-width: 620px;
 }
 
 /* IQ vs EQ Contrast Card */
 .eq-contrast-card {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  gap: 28px;
+  gap: 20px;
   background: white;
   border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: clamp(24px, 4vw, 36px);
+  border-radius: 20px;
+  padding: clamp(20px, 3vw, 28px);
   margin: 36px 0 60px;
   align-items: center;
 }
@@ -4154,45 +4154,45 @@ a {
    ========================================================================== */
 
 .tracker-page {
-  padding-bottom: 90px;
+  padding-bottom: 56px;
 }
 
 .tracker-nav-back {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .tracker-header h1 {
-  font: 600 clamp(2.3rem, 5vw, 3.8rem)/1.15 Manrope, sans-serif;
-  letter-spacing: -0.04em;
-  margin: 12px 0 16px;
+  font: 700 clamp(1.85rem, 3.6vw, 2.65rem)/1.18 Manrope, sans-serif;
+  letter-spacing: -0.035em;
+  margin: 10px 0 12px;
 }
 
 .tracker-lead {
-  font-size: clamp(1.05rem, 2vw, 1.22rem);
-  line-height: 1.6;
+  font-size: 0.98rem;
+  line-height: 1.58;
   color: var(--muted);
-  max-width: 780px;
+  max-width: 620px;
 }
 
 /* Tracker Stats Bar */
 .tracker-stats-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin: 32px 0 44px;
+  gap: 14px;
+  margin: 20px 0 28px;
 }
 
 .tracker-stat-card {
   background: white;
   border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 22px 24px;
+  border-radius: 16px;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
 }
 
 .tracker-stat-card .stat-label {
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   font-weight: 700;
   color: var(--muted);
   text-transform: uppercase;
@@ -4201,9 +4201,9 @@ a {
 
 .tracker-stat-card .stat-value {
   display: block;
-  font: 700 clamp(1.8rem, 3vw, 2.6rem)/1.1 Manrope, sans-serif;
-  margin: 10px 0 6px;
-  letter-spacing: -0.04em;
+  font: 800 clamp(1.5rem, 2.4vw, 2.0rem)/1.1 Manrope, sans-serif;
+  margin: 8px 0 4px;
+  letter-spacing: -0.03em;
 }
 
 .tracker-stat-card .stat-value.truncate {
@@ -4704,40 +4704,40 @@ a {
    ========================================================================== */
 
 .diagnostic-page {
-  padding-bottom: 90px;
+  padding-bottom: 56px;
 }
 
 .diag-nav-back {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 /* Intro Card */
 .diagnostic-intro-card {
   background: white;
   border: 1.5px solid var(--line);
-  border-radius: 28px;
-  padding: clamp(28px, 5vw, 52px);
+  border-radius: 20px;
+  padding: clamp(20px, 3.5vw, 34px);
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
 }
 
 .diagnostic-intro-card h1 {
-  font: 600 clamp(2.3rem, 5vw, 3.8rem)/1.15 Manrope, sans-serif;
-  letter-spacing: -0.04em;
-  margin: 12px 0 16px;
+  font: 700 clamp(1.85rem, 3.6vw, 2.65rem)/1.18 Manrope, sans-serif;
+  letter-spacing: -0.035em;
+  margin: 10px 0 12px;
 }
 
 .diag-lead {
-  font-size: clamp(1.05rem, 2vw, 1.22rem);
-  line-height: 1.6;
+  font-size: 0.98rem;
+  line-height: 1.58;
   color: var(--muted);
-  max-width: 780px;
+  max-width: 620px;
 }
 
 .diag-perks-row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-  margin: 36px 0 40px;
+  gap: 14px;
+  margin: 22px 0 28px;
 }
 
 .diag-perk {
@@ -5196,10 +5196,10 @@ a {
 .profile-hero-card {
   background: white;
   border: 1px solid #ede7f6;
-  border-radius: 24px;
-  padding: 28px 32px;
+  border-radius: 20px;
+  padding: 22px 26px;
   box-shadow: 0 4px 20px rgba(118, 87, 255, 0.05);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   position: relative;
   overflow: hidden;
 }
@@ -5225,18 +5225,18 @@ a {
 
 .profile-hero-avatar {
   position: relative;
-  width: 68px;
-  height: 68px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background: linear-gradient(135deg, #7657ff, #b592ff);
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  box-shadow: 0 6px 20px rgba(118, 87, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(118, 87, 255, 0.25);
 }
 
 .avatar-letter {
-  font-size: 1.8rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: white;
   font-family: "Manrope", sans-serif;
