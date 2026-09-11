@@ -7,6 +7,7 @@ import JourneyExperience from "./components/JourneyExperience";
 import ExplorePage from "./components/ExplorePage";
 import ArcadePage from "./components/ArcadePage";
 import EmotionalIntelligencePage from "./components/EmotionalIntelligencePage";
+import EmotionTrackerPage from "./components/EmotionTrackerPage";
 import {
   readProgress,
   saveProgress,
@@ -15,6 +16,9 @@ import {
 
 function getRoute() {
   const hash = window.location.hash;
+  if (hash === "#tracker" || hash === "#mood") {
+    return { page: "tracker", chapterId: null };
+  }
   if (hash === "#emotional-intelligence" || hash === "#eq") {
     return { page: "emotional-intelligence", chapterId: null };
   }
@@ -124,7 +128,9 @@ function WithinApp() {
         />
       )}
       <main>
-        {route.page === "emotional-intelligence" ? (
+        {route.page === "tracker" ? (
+          <EmotionTrackerPage unlocked={unlocked} />
+        ) : route.page === "emotional-intelligence" ? (
           <EmotionalIntelligencePage unlocked={unlocked} />
         ) : route.page !== "home" ? (
           unlocked ? (
@@ -181,6 +187,9 @@ function WithinApp() {
                   </a>
                   <a className="secondary hero-eq-btn" href="#emotional-intelligence">
                     💡 What is Emotional Intelligence?
+                  </a>
+                  <a className="secondary hero-eq-btn" href="#tracker">
+                    📊 Daily Emotion Tracker
                   </a>
                 </div>
               </div>

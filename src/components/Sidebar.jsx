@@ -58,6 +58,16 @@ export default function Sidebar({
           <span aria-hidden="true">💡</span>
           <span className="sidebar-label">Emotional Intelligence</span>
         </a>
+        <a
+          className={`nav-link ${page === "tracker" ? "active" : ""}`}
+          href="#tracker"
+          onClick={onNavigate}
+          title="Emotion Tracker"
+          aria-current={page === "tracker" ? "page" : undefined}
+        >
+          <span aria-hidden="true">📊</span>
+          <span className="sidebar-label">Emotion Tracker</span>
+        </a>
         {unlocked ? (
           <a
             className={`nav-link ${page === "explore" ? "active" : ""}`}
