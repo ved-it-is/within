@@ -8,6 +8,7 @@ import ExplorePage from "./components/ExplorePage";
 import ArcadePage from "./components/ArcadePage";
 import EmotionalIntelligencePage from "./components/EmotionalIntelligencePage";
 import EmotionTrackerPage from "./components/EmotionTrackerPage";
+import DiagnosticPage from "./components/DiagnosticPage";
 import {
   readProgress,
   saveProgress,
@@ -16,6 +17,9 @@ import {
 
 function getRoute() {
   const hash = window.location.hash;
+  if (hash === "#diagnostic" || hash === "#assessment") {
+    return { page: "diagnostic", chapterId: null };
+  }
   if (hash === "#tracker" || hash === "#mood") {
     return { page: "tracker", chapterId: null };
   }
@@ -128,7 +132,9 @@ function WithinApp() {
         />
       )}
       <main>
-        {route.page === "tracker" ? (
+        {route.page === "diagnostic" ? (
+          <DiagnosticPage unlocked={unlocked} />
+        ) : route.page === "tracker" ? (
           <EmotionTrackerPage unlocked={unlocked} />
         ) : route.page === "emotional-intelligence" ? (
           <EmotionalIntelligencePage unlocked={unlocked} />
@@ -184,6 +190,9 @@ function WithinApp() {
                 <div className="hero-actions">
                   <a className="primary" href="#world">
                     See the world beneath the numbers ↓
+                  </a>
+                  <a className="secondary hero-eq-btn" href="#diagnostic">
+                    🧭 Find Your Baseline (3 Min)
                   </a>
                   <a className="secondary hero-eq-btn" href="#emotional-intelligence">
                     💡 What is Emotional Intelligence?
