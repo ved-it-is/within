@@ -65,6 +65,17 @@ function WithinApp() {
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
   }, []);
+
+  useEffect(() => {
+    if (!collapsed && window.matchMedia("(max-width: 820px)").matches) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [collapsed]);
   const [progress, setProgress] = useState(readProgress);
   const [storageAvailable, setStorageAvailable] = useState(true);
   const [route, setRoute] = useState(getRoute);
@@ -114,6 +125,24 @@ function WithinApp() {
     <div
       className={`app ${collapsed ? "sidebar-collapsed" : "sidebar-expanded"}`}
     >
+      <header className="mobile-top-bar">
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setCollapsed(false)}
+          aria-label="Open navigation menu"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        </button>
+        <a className="mobile-brand" href="#home">
+          <span className="mobile-brand-badge" aria-hidden="true">✦</span>
+          <span>with<b>in</b></span>
+        </a>
+        <div className="mobile-top-spacer" aria-hidden="true" />
+      </header>
       <Sidebar
         unlocked={unlocked}
         page={route.page}
