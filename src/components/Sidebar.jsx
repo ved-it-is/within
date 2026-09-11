@@ -130,7 +130,9 @@ export default function Sidebar({
         {session ? (
           <div className="sidebar-account">
             <span className="sidebar-account-label">My account</span>
-            <small>{session.user.email}</small>
+            <small className="sidebar-email" title={session.user.email}>
+              {session.user.email}
+            </small>
             <a href="#password" onClick={onNavigate}>
               Set password
             </a>

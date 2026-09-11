@@ -81,12 +81,14 @@ export default function EmotionTrackerPage({ unlocked }) {
   return (
     <section className="lesson-page tracker-page">
       <div className="learning-wrap">
-        {/* Navigation Breadcrumb */}
-        <nav className="tracker-nav-back" aria-label="Breadcrumb">
-          <a className="text-link" href="#home">
-            ← Return to Home
+        {/* Sleek Top Navigation Bar */}
+        <div className="page-top-bar">
+          <a className="back-pill-btn" href="#home">
+            <span className="back-pill-arrow" aria-hidden="true">←</span>
+            <span>Home</span>
           </a>
-        </nav>
+          <span className="page-breadcrumb-current">Daily Emotion Tracker</span>
+        </div>
 
         {/* Header */}
         <header className="tracker-header">

@@ -169,37 +169,40 @@ function WithinApp() {
         ) : (
           <>
             <section className="hero" id="home">
-              <div className="wrap">
+              <div className="wrap hero-wrap">
                 <span className="kicker">
                   Emotional intelligence through practice
                 </span>
-                <h1>
+                <h1 className="hero-title">
                   Understand what you feel.
                   <br />
                   <strong>Choose how you respond.</strong>
                 </h1>
-                <p className="lead">
-                  Explore real-life situations, discover your emotional patterns
-                  and strengthen the skills that shape your relationships,
-                  decisions and everyday well-being.
+                <p className="lead hero-lead">
+                  Explore real-life moments, uncover your emotional baseline,
+                  and strengthen the practical reflexes that shape your choices.
                 </p>
-                <blockquote>
-                  “One emotion can change a moment. One thoughtful response can
-                  change what follows.”
-                </blockquote>
-                <div className="hero-actions">
-                  <a className="primary" href="#world">
-                    See the world beneath the numbers ↓
+
+                <div className="hero-quote-chip">
+                  <span className="quote-spark" aria-hidden="true">✦</span>
+                  <span>“One emotion can change a moment. One thoughtful response can change what follows.”</span>
+                </div>
+
+                <div className="hero-cta-group">
+                  <a className="primary hero-primary-btn" href="#diagnostic">
+                    🧭 Take 3-Min EQ Baseline →
                   </a>
-                  <a className="secondary hero-eq-btn" href="#diagnostic">
-                    🧭 Find Your Baseline (3 Min)
-                  </a>
-                  <a className="secondary hero-eq-btn" href="#emotional-intelligence">
-                    💡 What is Emotional Intelligence?
-                  </a>
-                  <a className="secondary hero-eq-btn" href="#tracker">
-                    📊 Daily Emotion Tracker
-                  </a>
+                  <div className="hero-secondary-row">
+                    <a className="hero-pill-link" href="#tracker">
+                      📊 Daily Tracker
+                    </a>
+                    <a className="hero-pill-link" href="#emotional-intelligence">
+                      💡 What is EQ?
+                    </a>
+                    <a className="hero-pill-link text-subtle" href="#world">
+                      World View ↓
+                    </a>
+                  </div>
                 </div>
               </div>
             </section>

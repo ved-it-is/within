@@ -148,12 +148,14 @@ export default function EmotionalIntelligencePage({ unlocked }) {
   return (
     <section className="lesson-page eq-foundations-page">
       <div className="learning-wrap">
-        {/* Navigation Breadcrumb */}
-        <nav className="eq-nav-back" aria-label="Breadcrumb">
-          <a className="text-link" href="#home">
-            ← Return to Home
+        {/* Sleek Top Navigation Bar */}
+        <div className="page-top-bar">
+          <a className="back-pill-btn" href="#home">
+            <span className="back-pill-arrow" aria-hidden="true">←</span>
+            <span>Home</span>
           </a>
-        </nav>
+          <span className="page-breadcrumb-current">Principles of EQ</span>
+        </div>
 
         {/* Page Header */}
         <header className="eq-header">

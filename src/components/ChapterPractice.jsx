@@ -60,9 +60,13 @@ export default function ChapterPractice({
       }}
     >
       <div className="learning-wrap">
-        <a className="text-link" href="#explore">
-          ← All chapters
-        </a>
+        <div className="page-top-bar">
+          <a className="back-pill-btn" href="#explore">
+            <span className="back-pill-arrow" aria-hidden="true">←</span>
+            <span>All Chapters</span>
+          </a>
+          <span className="page-breadcrumb-current">Chapter {chapter.id}</span>
+        </div>
         <header className="lesson-header">
           <span className="kicker">
             Chapter {chapter.id} · {stage?.skill}
