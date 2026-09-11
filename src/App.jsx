@@ -6,6 +6,7 @@ import GlobeSection from "./components/GlobeSection";
 import JourneyExperience from "./components/JourneyExperience";
 import ExplorePage from "./components/ExplorePage";
 import ArcadePage from "./components/ArcadePage";
+import EmotionalIntelligencePage from "./components/EmotionalIntelligencePage";
 import {
   readProgress,
   saveProgress,
@@ -14,6 +15,9 @@ import {
 
 function getRoute() {
   const hash = window.location.hash;
+  if (hash === "#emotional-intelligence" || hash === "#eq") {
+    return { page: "emotional-intelligence", chapterId: null };
+  }
   if (hash === "#arcade") return { page: "arcade", setId: null };
   if (hash.startsWith("#arcade/")) {
     const match = /^#arcade\/set\/(\d+)$/.exec(hash);
@@ -120,7 +124,9 @@ function WithinApp() {
         />
       )}
       <main>
-        {route.page !== "home" ? (
+        {route.page === "emotional-intelligence" ? (
+          <EmotionalIntelligencePage unlocked={unlocked} />
+        ) : route.page !== "home" ? (
           unlocked ? (
             route.page === "arcade" ? (
               <ArcadePage setId={route.setId} />
@@ -169,9 +175,14 @@ function WithinApp() {
                   “One emotion can change a moment. One thoughtful response can
                   change what follows.”
                 </blockquote>
-                <a className="primary" href="#world">
-                  See the world beneath the numbers ↓
-                </a>
+                <div className="hero-actions">
+                  <a className="primary" href="#world">
+                    See the world beneath the numbers ↓
+                  </a>
+                  <a className="secondary hero-eq-btn" href="#emotional-intelligence">
+                    💡 What is Emotional Intelligence?
+                  </a>
+                </div>
               </div>
             </section>
             <GlobeSection />

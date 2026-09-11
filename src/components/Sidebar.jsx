@@ -48,6 +48,16 @@ export default function Sidebar({
           <span aria-hidden="true">⌂</span>
           <span className="sidebar-label">Home</span>
         </a>
+        <a
+          className={`nav-link ${page === "emotional-intelligence" ? "active" : ""}`}
+          href="#emotional-intelligence"
+          onClick={onNavigate}
+          title="Emotional Intelligence"
+          aria-current={page === "emotional-intelligence" ? "page" : undefined}
+        >
+          <span aria-hidden="true">💡</span>
+          <span className="sidebar-label">Emotional Intelligence</span>
+        </a>
         {unlocked ? (
           <a
             className={`nav-link ${page === "explore" ? "active" : ""}`}
