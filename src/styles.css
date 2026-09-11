@@ -28,9 +28,22 @@ a {
 }
 .app {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 260px minmax(0, 1fr);
   min-height: 100vh;
   width: 100%;
+}
+.app > .side {
+  grid-column: 1;
+  grid-row: 1;
+}
+.app > main {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  width: 100%;
+}
+.sidebar-backdrop {
+  display: none;
 }
 .side {
   position: sticky;
@@ -2602,6 +2615,9 @@ a {
 
   /* Frosted Backdrop */
   .sidebar-backdrop {
+    display: none;
+  }
+  .sidebar-expanded .sidebar-backdrop {
     display: block;
     position: fixed;
     inset: 0;

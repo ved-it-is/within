@@ -15,7 +15,12 @@ export function createCloudStore({
   onStatus,
   onReconcile = () => {},
 }) {
-  const keys = ["within-learning-v2", "within-arcade-v2"];
+  const keys = [
+    "within-learning-v2",
+    "within-arcade-v2",
+    "within-emotion-tracker-v1",
+    "within-eq-diagnostic-v1",
+  ];
   const revisions = new Map(),
     bases = new Map(),
     values = new Map(),
