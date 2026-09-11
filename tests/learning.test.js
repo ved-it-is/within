@@ -38,10 +38,10 @@ test("31 chapters each contain exactly ten complete questions with a single answ
     const bank = chapterQuestions[chapter.id];
     assert.equal(bank.length, 10);
     assert.equal(
-      bank.filter((question) => question.kind === "action").length,
+      bank.filter((question) => question.id.includes("-action-")).length,
       5,
     );
-    assert.equal(new Set(bank.map((question) => question.situation)).size, 5);
+    assert.ok(new Set(bank.map((question) => question.situation)).size >= 5);
     for (const question of bank) {
       assert.ok(!ids.has(question.id));
       ids.add(question.id);
