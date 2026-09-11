@@ -286,3 +286,89 @@ export function saveDiagnosticResult(result) {
     return false;
   }
 }
+
+export function getUserEqTitle(diagnosticResult, trackerEntries = []) {
+  if (!diagnosticResult || !diagnosticResult.scores) {
+    if (trackerEntries && trackerEntries.length >= 3) {
+      return {
+        title: "Somatic Explorer",
+        badge: "🌿",
+        subtitle: "Mindful Observer",
+        description: "Building daily somatic awareness and emotional clarity through consistent practice.",
+        superpower: "Early bodily detection of feeling states",
+        growthEdge: "Taking the 3-min baseline to unlock your complete EQ pillar breakdown",
+      };
+    }
+    return {
+      title: "Curious Seeker",
+      badge: "✨",
+      subtitle: "Inner Journey Begun",
+      description: "Taking your first conscious steps into deeper emotional intelligence and self-mastery.",
+      superpower: "Curiosity and openness to self-observation",
+      growthEdge: "Take the 3-minute diagnostic to reveal your primary archetype",
+    };
+  }
+
+  const scores = diagnosticResult.scores;
+  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  const [topPillar] = sorted[0];
+
+  if (topPillar === "empathy") {
+    return {
+      title: "Empathy King",
+      badge: "👑",
+      subtitle: "Master of Emotional Resonance",
+      description: "You sense subtle interpersonal currents and create deep psychological safety for others.",
+      superpower: "Deep empathy and relational intuition",
+      growthEdge: "Preserving your energy with kind, firm boundaries",
+    };
+  }
+  if (topPillar === "awareness") {
+    return {
+      title: "Somatic Sage",
+      badge: "🌿",
+      subtitle: "Guardian of Inner Clarity",
+      description: "You catch bodily cues and micro-shifts early, turning raw feelings into conscious insight.",
+      superpower: "Acute self-awareness and somatic radar",
+      growthEdge: "Translating inner reflection into decisive outward action",
+    };
+  }
+  if (topPillar === "regulation") {
+    return {
+      title: "Anchor of Calm",
+      badge: "⚓",
+      subtitle: "Center in the Storm",
+      description: "You pause before responding and prevent emotional contagion from throwing you off balance.",
+      superpower: "Composure and grounded emotional regulation",
+      growthEdge: "Expressing vulnerable feelings before retreating inward",
+    };
+  }
+  if (topPillar === "resilience") {
+    return {
+      title: "Phoenix of Resilience",
+      badge: "🔥",
+      subtitle: "Unshakable Core",
+      description: "You treat setbacks not as personal identity failures, but as valuable feedback and evolution.",
+      superpower: "Pragmatic recovery and constructive grit",
+      growthEdge: "Allowing yourself to feel sad or disappointed without rushing to fix it",
+    };
+  }
+  if (topPillar === "communication") {
+    return {
+      title: "Connection Catalyst",
+      badge: "💬",
+      subtitle: "Bridge Builder",
+      description: "You articulate hard truths with empathy, clarity, and constructive repair.",
+      superpower: "Clear nonviolent communication and boundary setting",
+      growthEdge: "Staying grounded when another person remains defensive",
+    };
+  }
+  return {
+    title: "Harmonious Navigator",
+    badge: "🧭",
+    subtitle: "Balanced Whole-Spectrum EQ",
+    description: "You demonstrate balanced emotional awareness, regulation, and relational connection across moments.",
+    superpower: "Versatile, well-rounded emotional response",
+    growthEdge: "Continuing to deepen nuanced emotional vocabulary",
+  };
+}

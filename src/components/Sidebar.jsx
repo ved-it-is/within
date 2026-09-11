@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAccount } from "./AccountContext";
+import { readDiagnosticResult, getUserEqTitle } from "../data/diagnostic";
+import { readTrackerEntries } from "../data/tracker";
 
 function HomeIcon() {
   return (
@@ -99,6 +101,7 @@ export default function Sidebar({
   const userInitial = session?.user?.email
     ? session.user.email.charAt(0).toUpperCase()
     : "U";
+  const eqTitle = getUserEqTitle(readDiagnosticResult(), readTrackerEntries());
 
   return (
     <aside className={`side ${scrolled ? "is-scrolled" : ""}`}>
@@ -239,28 +242,39 @@ export default function Sidebar({
 
         {session ? (
           <div className="user-profile-card">
-            <div className="profile-user-row">
+            <a
+              className="profile-user-row profile-link-btn"
+              href="#profile"
+              onClick={onNavigate}
+              aria-label="View Profile"
+            >
               <div className="profile-avatar" aria-hidden="true">
                 {userInitial}
               </div>
               <div className="profile-details">
-                <span className="profile-role">Learner</span>
-                <span className="profile-email" title={session.user.email}>
+                <span className="profile-role">
+                  {eqTitle.badge} {eqTitle.title}
+                </span>
+                <span className="profile-email">
                   {session.user.email}
                 </span>
               </div>
-            </div>
+            </a>
 
             <div className="profile-actions-row">
-              <a className="profile-action-btn" href="#password" onClick={onNavigate}>
-                Password
+              <a
+                className="profile-action-btn primary-subtle"
+                href="#profile"
+                onClick={onNavigate}
+              >
+                👤 Profile
               </a>
               <button
                 className="profile-action-btn btn-danger-subtle"
                 disabled={sending}
                 onClick={signOut}
               >
-                {sending ? "Signing out…" : "Sign out"}
+                {sending ? "…" : "Sign out"}
               </button>
             </div>
 

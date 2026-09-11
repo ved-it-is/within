@@ -8,6 +8,7 @@ import {
   determineArchetype,
   readDiagnosticResult,
   saveDiagnosticResult,
+  getUserEqTitle,
 } from "../src/data/diagnostic.js";
 
 test("diagnostic contains exactly 10 questions evenly divided among 5 pillars", () => {
@@ -73,4 +74,28 @@ test("diagnostic persistence can save and read results safely", () => {
 
   assert.equal(saveDiagnosticResult(mockResult), true);
   assert.deepEqual(readDiagnosticResult(), mockResult);
+});
+
+test("getUserEqTitle assigns creative titles based on scores or logs", () => {
+  // Untested user
+  const defaultTitle = getUserEqTitle(null, []);
+  assert.equal(defaultTitle.title, "Curious Seeker");
+
+  // User with tracker logs
+  const trackerTitle = getUserEqTitle(null, [{ id: 1 }, { id: 2 }, { id: 3 }]);
+  assert.equal(trackerTitle.title, "Somatic Explorer");
+
+  // High empathy diagnostic user
+  const empathyTitle = getUserEqTitle({
+    scores: { empathy: 95, awareness: 70, regulation: 60, communication: 50, resilience: 40 },
+  });
+  assert.equal(empathyTitle.title, "Empathy King");
+  assert.equal(empathyTitle.badge, "👑");
+
+  // High regulation user
+  const regulationTitle = getUserEqTitle({
+    scores: { regulation: 90, empathy: 50, awareness: 60, communication: 40, resilience: 55 },
+  });
+  assert.equal(regulationTitle.title, "Anchor of Calm");
+  assert.equal(regulationTitle.badge, "⚓");
 });

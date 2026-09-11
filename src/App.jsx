@@ -9,6 +9,7 @@ import ArcadePage from "./components/ArcadePage";
 import EmotionalIntelligencePage from "./components/EmotionalIntelligencePage";
 import EmotionTrackerPage from "./components/EmotionTrackerPage";
 import DiagnosticPage from "./components/DiagnosticPage";
+import ProfilePage from "./components/ProfilePage";
 import {
   readProgress,
   saveProgress,
@@ -17,6 +18,9 @@ import {
 
 function getRoute() {
   const hash = window.location.hash;
+  if (hash === "#profile" || hash === "#account") {
+    return { page: "profile", chapterId: null };
+  }
   if (hash === "#diagnostic" || hash === "#assessment") {
     return { page: "diagnostic", chapterId: null };
   }
@@ -149,8 +153,7 @@ function WithinApp() {
         collapsed={collapsed}
         onToggle={toggleSidebar}
         onNavigate={() => {
-          if (window.matchMedia("(max-width: 820px)").matches)
-            setCollapsed(true);
+          setCollapsed(true);
         }}
       />
       {!collapsed && (
@@ -160,8 +163,16 @@ function WithinApp() {
           onClick={() => setCollapsed(true)}
         />
       )}
-      <main>
-        {route.page === "diagnostic" ? (
+      <main
+        onClick={() => {
+          if (!collapsed && window.matchMedia("(max-width: 820px)").matches) {
+            setCollapsed(true);
+          }
+        }}
+      >
+        {route.page === "profile" ? (
+          <ProfilePage />
+        ) : route.page === "diagnostic" ? (
           <DiagnosticPage unlocked={unlocked} />
         ) : route.page === "tracker" ? (
           <EmotionTrackerPage unlocked={unlocked} />
