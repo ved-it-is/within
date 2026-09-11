@@ -15,6 +15,7 @@ import {
   advanceArcade,
   readArcade,
   saveArcade,
+  countConsecutiveCorrect,
 } from "../src/data/arcade.js";
 test("700 unique keyed questions across seven topics", () => {
   assert.equal(arcadeIds.size, 700);
@@ -107,4 +108,21 @@ test("revealed feedback survives refresh before Next", () => {
   const p = submitArcadeAnswer(emptyArcade(), "unknown");
   saveArcade(p);
   assert.deepEqual(readArcade(), p);
+});
+
+test("countConsecutiveCorrect tracks consecutive matches and resets on wrong or unknown", () => {
+  assert.equal(countConsecutiveCorrect({}, [], {}), 0);
+  const answers = [
+    { questionId: "q1", choice: 0, isCorrect: true },
+    { questionId: "q2", choice: 1, isCorrect: true },
+    { questionId: "q3", choice: 2, isCorrect: true },
+    { questionId: "q4", choice: 3, isCorrect: true },
+  ];
+  assert.equal(countConsecutiveCorrect({}, answers, {}), 4);
+
+  const broken = [...answers, { questionId: "q5", choice: 0, isCorrect: false }];
+  assert.equal(countConsecutiveCorrect({}, broken, {}), 0);
+
+  const restarted = [...broken, { questionId: "q6", choice: 2, isCorrect: true }];
+  assert.equal(countConsecutiveCorrect({}, restarted, {}), 1);
 });

@@ -14,19 +14,21 @@ export default function ChapterPractice({
   onUpdate,
   storageAvailable,
 }) {
-  const questions = chapterQuestions[chapter.id];
+  const questions = chapterQuestions[chapter.id] || [];
   const session = record?.session || createSession(questions);
-  const question = questions.find((item) => item.id === session.queue[0]);
+  const questionId = session.queue[0];
+  const question = questions.find((item) => item.id === questionId);
   const stage = stages.find((item) => item.id === chapter.stageId);
   const counts = sessionCounts(session);
   const settled = counts.matched + counts.revealed;
   const heading = useRef(null);
   const feedback = session.feedback;
+
   const attempt = question
-    ? (session.attempts[question.id] || 0) - (feedback ? 1 : 0)
+    ? (session.attempts?.[question.id] || 0) - (feedback ? 1 : 0)
     : 0;
   const questionNumber = question ? questions.indexOf(question) + 1 : 0;
-  const optionOrder = [0, 1, 2, 3].map((index) => (index + attempt) % 4);
+  const optionOrder = [0, 1, 2, 3].map((index) => (index + Math.max(0, attempt)) % 4);
 
   useEffect(() => {
     heading.current?.focus();
@@ -52,7 +54,10 @@ export default function ChapterPractice({
   return (
     <section
       className="lesson-page"
-      style={{ "--stage-color": stage.color, "--stage-tint": stage.tint }}
+      style={{
+        "--stage-color": stage?.color || "#000",
+        "--stage-tint": stage?.tint || "#fff",
+      }}
     >
       <div className="learning-wrap">
         <a className="text-link" href="#explore">
@@ -60,7 +65,7 @@ export default function ChapterPractice({
         </a>
         <header className="lesson-header">
           <span className="kicker">
-            Chapter {chapter.id} · {stage.skill}
+            Chapter {chapter.id} · {stage?.skill}
           </span>
           <h1>{chapter.title}</h1>
           <p className="practice-intro">
@@ -69,12 +74,14 @@ export default function ChapterPractice({
             removes that question from this session.
           </p>
         </header>
+
         {!storageAvailable && (
           <p className="notice" role="status">
             Progress can’t be saved in this browser. Keep this page open to
             continue this session.
           </p>
         )}
+
         <div className="practice-progress">
           <div>
             <strong>
@@ -90,14 +97,23 @@ export default function ChapterPractice({
                 key={item.id}
                 className={session.outcomes[item.id] || ""}
                 aria-current={question?.id === item.id ? "step" : undefined}
-                aria-label={`Question ${index + 1}: ${session.outcomes[item.id] === "matched" ? "answered correctly" : session.outcomes[item.id] === "revealed" ? "answer revealed; will not repeat" : session.outcomes[item.id] === "retry" ? "will return for practice" : "not answered"}`}
+                aria-label={`Question ${index + 1}: ${
+                  session.outcomes[item.id] === "matched"
+                    ? "answered correctly"
+                    : session.outcomes[item.id] === "revealed"
+                    ? "answer revealed; will not repeat"
+                    : session.outcomes[item.id] === "retry"
+                    ? "will return for practice"
+                    : "not answered"
+                }`}
               >
                 <span aria-hidden="true">{index + 1}</span>
               </li>
             ))}
           </ol>
         </div>
-        {session.completed ? (
+
+        {session.completed || !question ? (
           <div className="lesson-card practice-summary">
             <span className="kicker">Session complete</span>
             <h2 ref={heading} tabIndex={-1}>
@@ -205,8 +221,8 @@ export default function ChapterPractice({
                   {feedback.outcome === "matched"
                     ? "That fits this skill."
                     : feedback.outcome === "revealed"
-                      ? "Here’s the answer to learn from."
-                      : "Let’s revisit this one."}
+                    ? "Here’s the answer to learn from."
+                    : "Let’s revisit this one."}
                 </strong>
                 <p>
                   <b>Best fit:</b> {question.choices[question.correctIndex]}
@@ -216,8 +232,8 @@ export default function ChapterPractice({
                   {feedback.outcome === "matched"
                     ? "This question is finished for this session."
                     : feedback.outcome === "revealed"
-                      ? "This question will not return in this session. No replacement will be added."
-                      : "This choice doesn’t match the skill this question is practising. The same question will return after the other queued questions."}
+                    ? "This question will not return in this session. No replacement will be added."
+                    : "This choice doesn’t match the skill this question is practising. The same question will return after the other queued questions."}
                 </small>
               </div>
             )}
