@@ -670,6 +670,9 @@ export default function GlobeSection() {
                     <div className="metric-meta">
                       <span className="metric-type">WHAT PEOPLE SHOW</span>
                       <strong>{selectedCity.facade.metricLabel}</strong>
+                      {selectedCity.facade.source && (
+                        <span className="metric-source">Study: {selectedCity.facade.source}</span>
+                      )}
                     </div>
                   </div>
 
@@ -693,6 +696,9 @@ export default function GlobeSection() {
                     <div className="metric-meta">
                       <span className="metric-type">WHAT PEOPLE TRULY FEEL</span>
                       <strong>{selectedCity.within.metricLabel}</strong>
+                      {selectedCity.within.source && (
+                        <span className="metric-source">Study: {selectedCity.within.source}</span>
+                      )}
                     </div>
                   </div>
 

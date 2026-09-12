@@ -1149,6 +1149,14 @@ a {
   color: var(--ink);
 }
 
+.metric-meta .metric-source {
+  font-size: 0.69rem;
+  font-weight: 500;
+  color: #8c7e99;
+  margin-top: 3px;
+  letter-spacing: 0.01em;
+}
+
 /* Simple Readable Description */
 .inspector-simple-desc {
   font-size: 0.95rem;
