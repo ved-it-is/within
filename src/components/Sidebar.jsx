@@ -151,12 +151,12 @@ export default function Sidebar({
           </a>
           <a
             className="nav-link nav-guide-link"
-            href="#guide"
+            href="#tour"
             onClick={onNavigate}
-            title="Where to Start / User Guide"
+            title="App Tour / Onboarding Walkthrough"
           >
             <span className="nav-icon-wrap"><GuideIcon /></span>
-            <span className="sidebar-label">Where to Start?</span>
+            <span className="sidebar-label">App Tour / Guide</span>
           </a>
         </div>
 

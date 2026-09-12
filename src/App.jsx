@@ -11,6 +11,7 @@ import EmotionTrackerPage from "./components/EmotionTrackerPage";
 import DiagnosticPage from "./components/DiagnosticPage";
 import ProfilePage from "./components/ProfilePage";
 import NewUserGuide from "./components/NewUserGuide";
+import AppOnboardingModal from "./components/AppOnboardingModal";
 import {
   readProgress,
   saveProgress,
@@ -85,7 +86,27 @@ function WithinApp() {
   const [storageAvailable, setStorageAvailable] = useState(true);
   const [route, setRoute] = useState(getRoute);
   const [introductionRun, setIntroductionRun] = useState(0);
+  const [onboardingOpen, setOnboardingOpen] = useState(false);
   const unlocked = introductionComplete(progress.introduction);
+
+  // Automatic first-time app opening detection
+  useEffect(() => {
+    try {
+      const seen = localStorage.getItem("within_onboarding_seen");
+      if (!seen) {
+        const timer = setTimeout(() => setOnboardingOpen(true), 600);
+        return () => clearTimeout(timer);
+      }
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  useEffect(() => {
+    if (window.location.hash === "#tour" || window.location.hash === "#onboarding") {
+      setOnboardingOpen(true);
+    }
+  }, [route]);
   function restartIntroduction() {
     setProgress((current) => ({
       ...current,
@@ -234,9 +255,13 @@ function WithinApp() {
                     🧭 Take 3-Min EQ Baseline →
                   </a>
                   <div className="hero-secondary-row">
-                    <a className="hero-pill-link hero-guide-pill" href="#guide">
-                      🧭 Where to start?
-                    </a>
+                    <button
+                      type="button"
+                      className="hero-pill-link hero-guide-pill"
+                      onClick={() => setOnboardingOpen(true)}
+                    >
+                      🧭 App Tour / Where to start?
+                    </button>
                     <a className="hero-pill-link" href="#tracker">
                       📊 Daily Tracker
                     </a>
@@ -268,6 +293,21 @@ function WithinApp() {
           </>
         )}
       </main>
+
+      {/* First-time App Onboarding Walkthrough */}
+      <AppOnboardingModal
+        isOpen={onboardingOpen}
+        onClose={() => {
+          setOnboardingOpen(false);
+          if (window.location.hash === "#tour" || window.location.hash === "#onboarding") {
+            window.location.hash = "home";
+          }
+        }}
+        onComplete={() => {
+          setOnboardingOpen(false);
+          window.location.hash = "diagnostic";
+        }}
+      />
     </div>
   );
 }
