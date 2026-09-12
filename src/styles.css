@@ -2192,6 +2192,115 @@ a {
   }
 }
 
+/* ── Chapter Practice — Arcade-style layout ── */
+
+/* Slim top nav strip */
+.chapter-practice-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.chapter-practice-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex: 1;
+  text-align: center;
+}
+.chapter-practice-count {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Thin pip row */
+.chapter-pip-row {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  padding: 0;
+  margin: 0 0 18px;
+}
+.chapter-pip {
+  flex: 1;
+  height: 5px;
+  border-radius: 99px;
+  background: #e2e8f0;
+  transition: background 0.2s;
+}
+.chapter-pip.matched  { background: #22c55e; }
+.chapter-pip.revealed { background: #a78bfa; }
+.chapter-pip.retry    { background: #f59e0b; }
+.chapter-pip.current  { background: var(--stage-color); opacity: 0.45; }
+
+/* Question card — arcade feel */
+.chapter-question-card {
+  margin-bottom: 24px;
+}
+.chapter-situation {
+  font: 600 clamp(1.25rem, 2.6vw, 1.75rem)/1.4 Manrope, sans-serif;
+  letter-spacing: -0.02em;
+  margin: 14px 0 6px;
+}
+
+/* Chapter choice buttons — match arcade style */
+.chapter-choice-btn {
+  transition: border-color 0.18s, background 0.18s, transform 0.14s cubic-bezier(0.22,1,0.36,1);
+}
+.chapter-choice-btn:not(:disabled):hover {
+  transform: translateX(3px);
+}
+.chapter-correct {
+  background: #f0fdf4 !important;
+  border-color: #86efac !important;
+  border-left: 4px solid #22c55e !important;
+}
+.chapter-wrong {
+  background: #fff5f5 !important;
+  border-color: #fca5a5 !important;
+  border-left: 4px solid #ef4444 !important;
+  opacity: 0.9;
+}
+
+/* Chapter feedback panel */
+.chapter-feedback {
+  border-radius: 0 16px 16px 0;
+  padding: 18px 20px;
+  margin: 18px 0 0;
+  line-height: 1.65;
+}
+.chapter-feedback strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+.chapter-feedback p {
+  margin: 6px 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.chapter-feedback-correct {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 60%);
+  border-left: 3px solid #22c55e;
+}
+.chapter-feedback-retry {
+  background: linear-gradient(135deg, #fffbeb 0%, #ffffff 60%);
+  border-left: 3px solid #f59e0b;
+}
+.chapter-feedback-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+}
+
 /* Ten-question practice with spaced retries and retired reveals. */
 .practice-intro {
   font-size: 0.92rem !important;

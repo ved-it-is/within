@@ -53,66 +53,46 @@ export default function ChapterPractice({
 
   return (
     <section
-      className="lesson-page"
+      className="lesson-page chapter-practice-page"
       style={{
         "--stage-color": stage?.color || "#000",
         "--stage-tint": stage?.tint || "#fff",
       }}
     >
       <div className="learning-wrap">
-        <div className="page-top-bar">
+
+        {/* ── Slim top nav strip ── */}
+        <div className="chapter-practice-nav">
           <a className="back-pill-btn" href="#explore">
             <span className="back-pill-arrow" aria-hidden="true">←</span>
-            <span>All Chapters</span>
+            <span>Chapters</span>
           </a>
-          <span className="page-breadcrumb-current">Chapter {chapter.id}</span>
-        </div>
-        <header className="lesson-header">
-          <span className="kicker">
-            Chapter {chapter.id} · {stage?.skill}
+          <span className="chapter-practice-title">
+            Ch. {chapter.id} · {stage?.skill}
           </span>
-          <h1>{chapter.title}</h1>
-          <p className="practice-intro">
-            10 real-life scenarios. Choose the response that fits best.
-          </p>
-        </header>
+          <span className="chapter-practice-count">
+            {settled} / {questions.length} done
+          </span>
+        </div>
+
+        {/* ── Thin progress pip row ── */}
+        <ol className="chapter-pip-row" aria-label="Question progress">
+          {questions.map((item, index) => (
+            <li
+              key={item.id}
+              className={`chapter-pip ${session.outcomes[item.id] || ""} ${question?.id === item.id ? "current" : ""}`}
+              aria-label={`Q${index + 1}`}
+            />
+          ))}
+        </ol>
 
         {!storageAvailable && (
           <p className="notice" role="status">
-            Progress can't be saved in this browser. Keep this page open to
-            continue this session.
+            Progress can't be saved in this browser.
           </p>
         )}
 
-        <div className="practice-progress">
-          <div>
-            <strong>
-              {settled} of {questions.length} done
-            </strong>
-            <span>{counts.matched} correct · {counts.revealed} revealed</span>
-          </div>
-          <ol aria-label="Question progress">
-            {questions.map((item, index) => (
-              <li
-                key={item.id}
-                className={session.outcomes[item.id] || ""}
-                aria-current={question?.id === item.id ? "step" : undefined}
-                aria-label={`Question ${index + 1}: ${
-                  session.outcomes[item.id] === "matched"
-                    ? "answered correctly"
-                    : session.outcomes[item.id] === "revealed"
-                    ? "answer revealed"
-                    : session.outcomes[item.id] === "retry"
-                    ? "coming back"
-                    : "not answered"
-                }`}
-              >
-                <span aria-hidden="true">{index + 1}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-
+        {/* ── Main content ── */}
         {session.completed || !question ? (
           <div className="lesson-card practice-summary">
             <span className="kicker">Session complete</span>
@@ -156,7 +136,8 @@ export default function ChapterPractice({
             </button>
           </div>
         ) : (
-          <div className="lesson-card">
+          <div className="lesson-card chapter-question-card arcade-card-enter">
+            {/* Question meta: number + retry badge */}
             <div className="practice-question-meta">
               <span className="kicker">
                 Question {questionNumber} of {questions.length}
@@ -165,10 +146,14 @@ export default function ChapterPractice({
                 <span className="review-badge">↺ Back for another try</span>
               )}
             </div>
-            <h2 ref={heading} tabIndex={-1}>
+
+            {/* Situation — hero text */}
+            <h2 ref={heading} tabIndex={-1} className="chapter-situation">
               {question.situation}
             </h2>
             <p className="practice-prompt">{question.prompt}</p>
+
+            {/* Answer choices */}
             <div
               className="lesson-choices"
               role="group"
@@ -179,20 +164,17 @@ export default function ChapterPractice({
                   key={optionIndex}
                   disabled={!!feedback}
                   aria-pressed={feedback?.choice === optionIndex}
-                  className={
-                    feedback && optionIndex === question.correctIndex
-                      ? "practice-answer"
-                      : ""
-                  }
+                  className={[
+                    "chapter-choice-btn",
+                    feedback && optionIndex === question.correctIndex ? "practice-answer chapter-correct" : "",
+                    feedback && feedback.choice === optionIndex && optionIndex !== question.correctIndex ? "chapter-wrong" : "",
+                  ].filter(Boolean).join(" ")}
                   onClick={() => answer(optionIndex)}
                 >
                   <span className="choice-letter" aria-hidden="true">
                     {"ABCD"[displayIndex]}
                   </span>
                   <span>{question.choices[optionIndex]}</span>
-                  {feedback && optionIndex === question.correctIndex && (
-                    <span className="answer-label">Best fit</span>
-                  )}
                 </button>
               ))}
               <button
@@ -204,9 +186,11 @@ export default function ChapterPractice({
                 I don't know
               </button>
             </div>
+
+            {/* Feedback */}
             {feedback && (
               <div
-                className={`lesson-perspective practice-feedback chapter-feedback-${feedback.outcome === "matched" ? "correct" : "retry"}`}
+                className={`chapter-feedback chapter-feedback-${feedback.outcome === "matched" ? "correct" : "retry"}`}
                 role="status"
               >
                 <strong>
@@ -218,26 +202,25 @@ export default function ChapterPractice({
                   <b>Best fit:</b> {question.choices[question.correctIndex]}
                 </p>
                 {question.kind === "action" && <p>{question.explanation}</p>}
+                <div className="chapter-feedback-actions">
+                  <a className="text-link" href="#explore">
+                    Pause
+                  </a>
+                  <button className="primary" onClick={advance}>
+                    {session.queue.length === 1
+                      ? feedback.outcome === "retry"
+                        ? "Try again →"
+                        : "See summary →"
+                      : feedback.outcome === "matched"
+                      ? "Keep going →"
+                      : "Got it →"}
+                  </button>
+                </div>
               </div>
             )}
-            <div className="lesson-actions">
-              <a className="text-link" href="#explore">
-                Pause &amp; return to chapters
-              </a>
-              {feedback && (
-                <button className="primary" onClick={advance}>
-                  {session.queue.length === 1
-                    ? feedback.outcome === "retry"
-                      ? "Try again →"
-                      : "See summary →"
-                    : feedback.outcome === "matched"
-                    ? "Keep going →"
-                    : "Got it →"}
-                </button>
-              )}
-            </div>
           </div>
         )}
+
         <p className="learning-footnote">
           Choose the response that best fits the stated skill and situation.
           This is learning practice, not a rating of your feelings.
