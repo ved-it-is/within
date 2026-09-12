@@ -387,40 +387,24 @@ export default function ArcadePage() {
                     </button>
                   );
                 })}
-                <button
-                  className="uncertain-choice"
-                  disabled={!!feedback || answeredChoice !== null}
-                  onClick={() => handleAnswer("unknown")}
-                >
-                  I don't know · Show me a perspective
-                </button>
               </div>
 
               {feedback && (
                 <div className="practice-feedback arcade-feedback-reveal" role="status">
                   <div className="arcade-feedback-header">
-                    <span className={`arcade-feedback-icon ${feedback.outcome === "matched" ? "correct" : feedback.outcome === "revealed" ? "revealed" : "retry"}`}>
-                      {feedback.outcome === "matched" ? "✓" : feedback.outcome === "revealed" ? "💡" : "↩"}
+                    <span className={`arcade-feedback-icon ${feedback.outcome === "matched" ? "correct" : "retry"}`}>
+                      {feedback.outcome === "matched" ? "✓" : "↩"}
                     </span>
                     <h3>
                       {feedback.outcome === "matched"
                         ? "That fits this situation."
-                        : feedback.outcome === "revealed"
-                          ? "A perspective to take with you."
-                          : "Let's look at another approach."}
+                        : "Let's look at another approach."}
                     </h3>
                   </div>
                   <p className="arcade-feedback-answer">
                     <b>{question.choices[question.correctIndex]}</b>
                   </p>
                   <p className="arcade-feedback-explanation">{question.explanation}</p>
-                  {(feedback.outcome === "retry" || feedback.outcome === "revealed") && (
-                    <p className="arcade-feedback-note">
-                      {feedback.outcome === "retry"
-                        ? "This situation will return after a few others."
-                        : "This question is now retired from your Arcade."}
-                    </p>
-                  )}
                   <button className="primary arcade-next-btn" onClick={next}>
                     Another moment →
                   </button>
