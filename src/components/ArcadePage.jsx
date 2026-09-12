@@ -7,6 +7,8 @@ import {
   scoreAnswers,
   submitArcadeAnswer,
   advanceArcade,
+  getEqLevel,
+  getStreakTier,
 } from "../data/arcade";
 
 /**
@@ -88,6 +90,10 @@ export default function ArcadePage() {
   const [attempts, setAttempts] = useState({});
   const [correctAnswers, setCorrectAnswers] = useState({});
 
+  // Core Gamification state
+  const [floatingXp, setFloatingXp] = useState(null);
+  const [levelUpModal, setLevelUpModal] = useState(null);
+
   const heading = useRef(null);
 
   useEffect(() => {
@@ -97,6 +103,7 @@ export default function ArcadePage() {
   const question = questionById[progress.queue[0]];
   const feedback = progress.feedback;
   const score = scoreAnswers(progress.firstAnswers);
+  const eqLevel = getEqLevel(score.points);
 
   // Session representation
   const session = {
@@ -116,6 +123,16 @@ export default function ArcadePage() {
 
   // Calculate current streak in real-time
   const streak = countConsecutiveCorrect(session.attempts, questionsAnswered, correctAnswers);
+  const streakTier = getStreakTier(streak);
+
+  // Monitor level progression and trigger celebration modal when crossing thresholds
+  const prevLevelRef = useRef(eqLevel.level);
+  useEffect(() => {
+    if (eqLevel.level > prevLevelRef.current) {
+      setLevelUpModal(eqLevel);
+      prevLevelRef.current = eqLevel.level;
+    }
+  }, [eqLevel.level]);
 
   function handleAnswer(choice) {
     if (!question || feedback) return;
@@ -128,6 +145,20 @@ export default function ArcadePage() {
       setJustAnsweredWrong(true);
     } else {
       setJustAnsweredWrong(false);
+    }
+
+    if (isCorrect) {
+      // Calculate XP bonus preview for floating animation
+      const isFirstAttempt = !progress.firstAnswers || !Object.hasOwn(progress.firstAnswers, question.id);
+      const earnedXp = isFirstAttempt ? Math.round(10 * streakTier.multiplier) : 10;
+      setFloatingXp({
+        id: Date.now(),
+        text: `+${earnedXp} XP`,
+        bonus: streakTier.multiplier > 1.0 ? streakTier.sparkleText : null,
+        choiceIndex: choice,
+      });
+    } else {
+      setFloatingXp(null);
     }
 
     const updatedAttempts = {
@@ -151,6 +182,7 @@ export default function ArcadePage() {
   }
 
   function next() {
+    setFloatingXp(null);
     setProgress((current) => advanceArcade(current));
     requestAnimationFrame(() => {
       heading.current?.focus();
@@ -170,23 +202,86 @@ export default function ArcadePage() {
           </p>
         </header>
 
+        {/* EQ Level Progression Bar */}
+        <article className="arcade-level-card" aria-label="EQ Level Progression">
+          <div className="arcade-level-header">
+            <div className="arcade-level-title-group">
+              <span
+                className="arcade-level-badge"
+                style={{
+                  backgroundColor: `${eqLevel.color}18`,
+                  color: eqLevel.color,
+                  borderColor: `${eqLevel.color}45`,
+                }}
+              >
+                Level {eqLevel.level}
+              </span>
+              <span className="arcade-level-name">
+                {eqLevel.icon} {eqLevel.title}
+              </span>
+            </div>
+            <div className="arcade-level-stats">
+              <span className="arcade-level-pts">{score.points} XP total</span>
+              {eqLevel.next ? (
+                <span className="arcade-level-next">
+                  {eqLevel.pointsNeeded} XP to {eqLevel.next.icon} {eqLevel.next.title}
+                </span>
+              ) : (
+                <span className="arcade-level-next max-level">✨ Mastered All EQ Tiers</span>
+              )}
+            </div>
+          </div>
+          <div
+            className="arcade-level-bar-bg"
+            role="progressbar"
+            aria-valuenow={eqLevel.percent}
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-label={`Progress to next level: ${eqLevel.percent}%`}
+          >
+            <div
+              className="arcade-level-bar-fill"
+              style={{
+                width: `${eqLevel.percent}%`,
+                background: `linear-gradient(90deg, ${eqLevel.color}, ${
+                  eqLevel.next ? eqLevel.next.color : eqLevel.color
+                })`,
+              }}
+            />
+          </div>
+        </article>
+
         {/* Warning Card with Slide-in and Pulse animation */}
         {justAnsweredWrong && (
           <div className="arcade-streak-warning" role="alert">
-            ⚠️ Streak टूट गई! अगले को सही करो
+            ⚡ Streak reset! Take a breath — build a fresh streak on this one.
           </div>
         )}
 
         {/* Top Display Grid with Streak Card (Accent Background) */}
         <div className="arcade-display-grid">
-          <article className="arcade-display-card streak-card accent-background">
+          <article className={`arcade-display-card streak-card accent-background ${streakTier.glowClass}`}>
             <div className="streak-top-row">
-              <span className="streak-kicker">🔥 Streak</span>
-              {streak >= 3 && <span className="streak-badge">On fire</span>}
+              <span className="streak-kicker">{streakTier.icon} Streak</span>
+              {streakTier.badge ? (
+                <span className={`streak-badge streak-badge-${streakTier.tier}`}>
+                  {streakTier.badge}
+                </span>
+              ) : streak >= 1 ? (
+                <span className="streak-badge streak-badge-active">Active</span>
+              ) : null}
             </div>
             <strong className="streak-number">{streak}</strong>
             <span className="streak-caption">
-              {streak === 1 ? "consecutive correct answer" : "consecutive correct answers"}
+              {streak >= 10
+                ? "2.0x Double XP active! Unstoppable flow!"
+                : streak >= 5
+                ? "1.5x Flow active! You're in the zone!"
+                : streak >= 3
+                ? "1.2x Flame active! Heat is building up!"
+                : streak === 1
+                ? "1 consecutive correct answer"
+                : `${streak} consecutive correct answers`}
             </span>
           </article>
 
@@ -233,17 +328,25 @@ export default function ArcadePage() {
                   key={index}
                   disabled={!!feedback}
                   aria-pressed={feedback?.choice === index}
-                  className={
+                  className={`arcade-choice-btn ${
                     feedback && index === question.correctIndex
                       ? "practice-answer"
                       : ""
-                  }
+                  }`}
                   onClick={() => handleAnswer(index)}
                 >
                   <span className="arcade-letter" aria-hidden="true">
                     {String.fromCharCode(65 + index)}
                   </span>
                   <span>{choice}</span>
+                  {floatingXp && floatingXp.choiceIndex === index && (
+                    <span className="floating-xp-pill" key={floatingXp.id}>
+                      <span className="floating-xp-text">{floatingXp.text}</span>
+                      {floatingXp.bonus && (
+                        <span className="floating-xp-bonus">{floatingXp.bonus}</span>
+                      )}
+                    </span>
+                  )}
                 </button>
               ))}
               <button
@@ -371,6 +474,47 @@ export default function ArcadePage() {
               : "Browser storage is unavailable. Progress lasts while this page stays open."}
           </p>
         </section>
+
+        {/* Level-Up Celebration Modal */}
+        {levelUpModal && (
+          <div
+            className="level-up-overlay"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="level-up-title"
+          >
+            <div className="level-up-modal">
+              <div className="level-up-sparkles" aria-hidden="true">
+                ✨ ✦ 🌟 ✦ ✨
+              </div>
+              <span className="level-up-kicker">EQ LEVEL ACHIEVED!</span>
+              <div
+                className="level-up-icon-wrap"
+                style={{
+                  borderColor: levelUpModal.color,
+                  background: `${levelUpModal.color}15`,
+                }}
+              >
+                <span className="level-up-icon">{levelUpModal.icon}</span>
+              </div>
+              <h2 id="level-up-title" className="level-up-title">
+                Level {levelUpModal.level}: {levelUpModal.title}
+              </h2>
+              <p className="level-up-description">
+                You crossed <strong>{levelUpModal.minPoints} XP</strong> in emotional intelligence practice! Your ability to pause, reflect, and choose conscious responses is expanding.
+              </p>
+              <div className="level-up-actions">
+                <button
+                  className="primary level-up-btn"
+                  onClick={() => setLevelUpModal(null)}
+                  autoFocus
+                >
+                  Keep Practicing →
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

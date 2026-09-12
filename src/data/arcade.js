@@ -40,6 +40,91 @@ export function scoreAnswers(answers, ids = [...arcadeIds]) {
   };
 }
 
+export const EQ_LEVELS = [
+  { level: 1, title: "Mindful Explorer", minPoints: 0, maxPoints: 100, icon: "🌱", color: "#6c4cff" },
+  { level: 2, title: "Attuned Observer", minPoints: 100, maxPoints: 250, icon: "🧭", color: "#0284c7" },
+  { level: 3, title: "Perspective Shifter", minPoints: 250, maxPoints: 500, icon: "👁️", color: "#059669" },
+  { level: 4, title: "Calm Navigator", minPoints: 500, maxPoints: 850, icon: "⚖️", color: "#d97706" },
+  { level: 5, title: "Empathy Anchor", minPoints: 850, maxPoints: 1300, icon: "💖", color: "#db2777" },
+  { level: 6, title: "Resilience Alchemist", minPoints: 1300, maxPoints: 2000, icon: "⚡", color: "#7c3aed" },
+  { level: 7, title: "Emotional Sage", minPoints: 2000, maxPoints: 3500, icon: "🌟", color: "#f59e0b" },
+];
+
+export function getEqLevel(points = 0) {
+  const safePoints = Math.max(0, points || 0);
+  for (let i = EQ_LEVELS.length - 1; i >= 0; i--) {
+    if (safePoints >= EQ_LEVELS[i].minPoints) {
+      const current = EQ_LEVELS[i];
+      const next = EQ_LEVELS[i + 1] || null;
+      const progressInLevel = next ? safePoints - current.minPoints : 100;
+      const totalInLevel = next ? next.minPoints - current.minPoints : 100;
+      const percent = next
+        ? Math.min(100, Math.max(0, Math.round((progressInLevel / totalInLevel) * 100)))
+        : 100;
+      const pointsNeeded = next ? Math.max(0, next.minPoints - safePoints) : 0;
+      return {
+        ...current,
+        next,
+        percent,
+        pointsNeeded,
+        totalPoints: safePoints,
+      };
+    }
+  }
+  return {
+    ...EQ_LEVELS[0],
+    next: EQ_LEVELS[1],
+    percent: 0,
+    pointsNeeded: 100,
+    totalPoints: safePoints,
+  };
+}
+
+export function getStreakTier(streak = 0) {
+  if (streak >= 10) {
+    return {
+      tier: "unstoppable",
+      label: "Unstoppable",
+      badge: "🌟 2.0x DOUBLE XP",
+      multiplier: 2.0,
+      glowClass: "streak-glow-unstoppable",
+      icon: "🌟",
+      sparkleText: "2.0x Double XP",
+    };
+  }
+  if (streak >= 5) {
+    return {
+      tier: "flow",
+      label: "Flow State",
+      badge: "⚡ 1.5x FLOW",
+      multiplier: 1.5,
+      glowClass: "streak-glow-flow",
+      icon: "⚡",
+      sparkleText: "1.5x Multiplier",
+    };
+  }
+  if (streak >= 3) {
+    return {
+      tier: "fire",
+      label: "On Fire",
+      badge: "🔥 1.2x FIRE",
+      multiplier: 1.2,
+      glowClass: "streak-glow-fire",
+      icon: "🔥",
+      sparkleText: "1.2x Multiplier",
+    };
+  }
+  return {
+    tier: "normal",
+    label: "Building",
+    badge: null,
+    multiplier: 1.0,
+    glowClass: "",
+    icon: "🔥",
+    sparkleText: null,
+  };
+}
+
 // Adaptive Spacing and Strategy Helpers
 export function getRetrySpacing(retryCount) {
   const spacings = [3, 7, 15, 25];
