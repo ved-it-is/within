@@ -28,715 +28,670 @@ export const stage2Questions = [
   // ==========================================
   // CHAPTER 6: Catch the moment earlier
   // ==========================================
-  // Point 1: Noticing early warning signals prevents emotional hijacking.
   q(
     "6-action-1", 6,
-    "During a budget meeting, you feel a familiar tightness spreading in your neck and your fingers clenching into fists.",
+    "In a budget meeting, your neck tightens and your fists start to clench.",
     "What would you do next?",
     [
-      "Recognize the neck tightness as your body's early cue that anger is rising, drop your shoulders, and take a slow breath before speaking.",
-      "Ignore your body's cues and wait until you are screaming to realize you are angry.",
-      "Slam your hands on the table to release the tension immediately.",
-      "Assume your neck pain is purely orthopedic and complain about the office chairs.",
+      "Recognize the tightness as anger rising — drop your shoulders and breathe before speaking.",
+      "Wait to see how bad it gets before doing anything.",
+      "Slam the table to release the tension.",
+      "Assume it's just a posture problem and ignore it.",
     ],
     0,
-    "Catching early physical markers of irritation allows you to de-escalate before adrenaline takes over your rational voice."
+    "Catching early body signals lets you de-escalate before adrenaline overrides rational thinking."
   ),
   q(
     "6-understanding-1", 6,
-    "In physiological psychology, what is the 'Escalation Curve' of emotional reactivity?",
-    "Why is early intervention 10x easier than late intervention?",
+    "You felt irritated in a meeting but caught it early and stayed calm. A week later you catch it even earlier.",
+    "What does earlier detection mean for regulation?",
     [
-      "At low arousal (10–30%), the prefrontal cortex can easily guide choices; once arousal spikes past 80%, adrenaline overwhelms executive reasoning.",
-      "Emotions always stay at the exact same intensity for 24 hours.",
-      "The best time to regulate an emotion is when you are at 100% peak rage.",
-      "Escalation curves only exist in economics, not human biology.",
+      "You're building the skill — catching it at 20% intensity is far easier than at 80%.",
+      "You're becoming more anxious and sensitive over time.",
+      "Catching it earlier just means you'll have more feelings to manage.",
+      "Early detection doesn't matter — what counts is what you do at peak intensity.",
     ],
     0,
-    "Intervening at the first spark of tension requires minimal effort; trying to regulate a full five-alarm blaze is nearly impossible."
+    "Intervening at the first spark takes minimal effort; trying to manage a full blaze is nearly impossible."
   ),
-
-  // Point 2: Knowing your signature trigger topics prepares you in advance.
   q(
     "6-action-2", 6,
-    "You know that discussions about your family's inheritance always trigger feelings of defensive insecurity in you.",
+    "Family inheritance talks always make you defensive. You have one in an hour.",
     "What would you do next?",
     [
-      "Anticipate the trigger before the family phone call, set an intention to stay grounded, and decide on a soothing boundary if talks get heated.",
-      "Start the phone call by accusing everyone of being greedy to get ahead of the topic.",
-      "Pretend you have amnesia and don't remember having any family.",
-      "Drink five cups of espresso to make yourself hyper-vigilant.",
+      "Set an intention to stay grounded and plan a phrase to use if it heats up.",
+      "Go in cold — overthinking it will make you more anxious.",
+      "Start the call by addressing the tension immediately.",
+      "Reschedule it indefinitely to avoid the discomfort.",
     ],
     0,
-    "Knowing your emotional triggers in advance allows you to deploy intentional coping strategies rather than being blindsided."
+    "Knowing your triggers lets you deploy a strategy before the emotion hijacks your choices."
   ),
   q(
     "6-understanding-2", 6,
-    "What is an 'Emotional Trigger' from a neurological perspective?",
-    "What happens in the brain when a trigger is activated?",
+    "A specific colleague's tone instantly puts you on edge, even in casual conversations.",
+    "What most likely explains this?",
     [
-      "A current sensory cue unconsciously matches a past painful memory, triggering an instantaneous, conditioned threat response.",
-      "A trigger is an imaginary excuse invented by weak people.",
-      "A trigger means the other person is a certified criminal.",
-      "Triggers can be erased permanently by reading one motivational quote.",
+      "Their tone matches a past experience that felt threatening — it's a conditioned response.",
+      "You're simply incompatible with them and should avoid them.",
+      "You're being overly sensitive and need to toughen up.",
+      "Tone of voice has no real emotional effect on people.",
     ],
     0,
-    "Triggers are historical neurochemical shortcuts; awareness allows you to separate the memory of past pain from the reality of the present moment."
+    "Triggers are historical shortcuts — recognizing them separates the past from the present moment."
   ),
-
-  // Point 3: Subtle environmental cues can amplify reactivity without conscious awareness.
   q(
     "6-action-3", 6,
-    "You are stuck in a hot, noisy, crowded train after working a 10-hour shift and notice an intense urge to snap at a passenger listening to music.",
+    "You're exhausted, hungry, and stuck on a noisy crowded train. You want to snap at a stranger.",
     "What would you do next?",
     [
-      "Notice that heat, noise, hunger, and crowding have depleted your biological tolerance, put in earplugs, and focus on slow breathing.",
-      "Rip the headphones off the passenger and scream at the train car.",
-      "Decide that humanity is fundamentally corrupt and hopeless.",
-      "Pick a physical fight with the nearest commuter.",
+      "Notice that depletion is driving the urge — put in headphones and focus on breathing.",
+      "Say something to the stranger — you've earned the right to be honest.",
+      "Move cars and hope the next one is quieter.",
+      "Stew silently and let the irritation build.",
     ],
     0,
-    "Recognizing that biological depletion and sensory overload are masquerading as righteous anger keeps you calm and safe."
+    "Recognizing depletion masquerading as irritation prevents you from misdirecting frustration at innocent people."
   ),
   q(
     "6-understanding-3", 6,
-    "What does the acronym HALT (Hungry, Angry, Lonely, Tired) teach us about emotional regulation?",
-    "Why are physiological check-ins essential before difficult conversations?",
+    "You snapped at someone you care about for a small thing after a brutal day.",
+    "What was most likely really going on?",
     [
-      "Basic physical deficits (hunger, exhaustion, isolation) masquerade as complex emotional grievances, drastically lowering our patience threshold.",
-      "HALT is a military term with no psychological value.",
-      "If you are hungry, you are legally entitled to scream at coworkers.",
-      "Physical health has zero connection to emotional regulation.",
+      "Hunger, exhaustion, and stress lowered your tolerance long before they said anything.",
+      "They were genuinely more annoying than usual today.",
+      "You have a short temper that needs to be managed with discipline.",
+      "Snapping once means the relationship has a communication problem.",
     ],
     0,
-    "Often the most profound 'emotional regulation' is simply drinking a glass of water, eating a healthy snack, or getting eight hours of sleep."
+    "Basic physical deficits — hunger, sleep, overload — masquerade as interpersonal grievances."
   ),
-
-  // Point 4: Catching micro-behaviors before macro-outbursts.
   q(
     "6-action-4", 6,
-    "You find yourself typing a chat reply with unusually hard, aggressive keystrokes and breathing rapidly through your teeth.",
+    "You're typing a reply with hard, aggressive keystrokes and your jaw is clenched.",
     "What would you do next?",
     [
-      "Take your hands off the keyboard immediately, stand up from your chair, and drink a glass of cold water before reading the message again.",
-      "Hit send immediately while the anger is at peak intensity.",
-      "Smash your keyboard on the desk to demonstrate passion.",
-      "Add three exclamation marks to every sentence to make your point.",
+      "Step away from the keyboard, get some water, and re-read the message in 10 minutes.",
+      "Hit send while the clarity of anger gives you confidence.",
+      "Capitalize key words to make your position unmistakable.",
+      "Keep typing — getting it out will help you feel better.",
     ],
     0,
-    "Using hard keystrokes as an automatic biological alarm to step away stops regrettable digital fires before they ignite."
+    "Hard keystrokes are a body alarm — stepping away prevents a message you'll regret."
   ),
   q(
     "6-understanding-4", 6,
-    "Why is the physical keyboard or smartphone screen the most dangerous amplifier of emotional dysregulation in modern life?",
-    "What makes digital communication prone to toxic escalation?",
+    "You sent a sharp email in the heat of the moment. Hours later, you wish you hadn't.",
+    "What would have helped most in the moment?",
     [
-      "The absence of real-time vocal tone, eye contact, and facial empathy removes natural human de-escalation instincts, allowing rapid impulsive venting.",
-      "Keyboards emit electromagnetic waves that cause spontaneous rage.",
-      "Digital messages can never be read by human eyes.",
-      "Typing slowly cures all cognitive defects.",
+      "A deliberate pause before sending — even 10 minutes changes what feels urgent.",
+      "Rereading it more carefully before sending.",
+      "Writing it in a gentler tone while still angry.",
+      "Asking a colleague to check it for you.",
     ],
     0,
-    "Screens dehumanize communication; stepping away restores the visceral reminder that a real human being will read your words."
+    "Screens remove human cues that naturally de-escalate — distance from the keyboard restores judgment."
   ),
-
-  // Point 5: Tracking your recovery time provides progress metrics.
   q(
     "6-action-5", 6,
-    "You experienced a moment of sudden frustration during a meeting, but noticed you returned to baseline calm within five minutes instead of stewing for two days.",
+    "You got frustrated in a meeting — but you returned to calm in 3 minutes instead of stewing all day.",
     "What would you do next?",
     [
-      "Acknowledge this noticeable shortening of recovery time as tangible evidence of strengthening emotional regulation muscle.",
-      "Criticize yourself for having felt frustrated in the first place.",
-      "Expect that you will never experience any frustration ever again.",
-      "Tell everyone in the office that you have achieved complete zen enlightenment.",
+      "Notice the improvement — faster recovery is real evidence of growing regulation skill.",
+      "Criticize yourself for getting frustrated at all.",
+      "Wonder whether it means you no longer care enough.",
+      "Assume it was a fluke and don't read into it.",
     ],
     0,
-    "Celebrating faster recovery time recognizes that emotional fitness is measured by resilience and return to baseline, not the impossible absence of emotion."
+    "Emotional fitness is measured by how quickly you return to baseline, not by the absence of feelings."
   ),
   q(
     "6-understanding-5", 6,
-    "What is 'Refractory Period' in affective neuroscience?",
-    "How does emotional regulation training change this period?",
+    "Two people receive the same frustrating news. One is still upset the next day; the other moved on within hours.",
+    "What most likely explains the difference?",
     [
-      "The duration during which an activated emotion controls your perception and resists contradictory facts; training dramatically shortens this duration.",
-      "The time it takes to digest a heavy meal.",
-      "The period during which you are legally required to be angry.",
-      "It is a fixed genetic number that can never be altered.",
+      "One has practiced returning to baseline faster — it's a trainable skill.",
+      "One cares more about the outcome than the other.",
+      "Recovery speed is genetic and fixed at birth.",
+      "The one who moved on was probably suppressing their feelings.",
     ],
     0,
-    "Emotional maturity does not prevent the initial emotional splash; it dramatically accelerates how swiftly your cognitive clarity returns."
+    "Recovery time is trainable — the goal is not to stop feeling, but to return to calm more quickly."
   ),
 
   // ==========================================
   // CHAPTER 7: Pause before you respond
   // ==========================================
-  // Point 1: The 90-second chemical buffer resets rational thinking.
   q(
     "7-action-1", 7,
-    "A colleague makes a snide remark about your contribution right at the end of a team presentation.",
+    "A colleague makes a snide remark right at the end of your team presentation.",
     "What would you do next?",
     [
-      "Inhale slowly, count to ten, take a sip of water, and allow the 90-second chemical surge to pass before deciding whether a response is even necessary.",
-      "Immediately fire back with an insult targeting their appearance.",
-      "Burst into tears and run out of the room.",
-      "Challenge them to a physical duel in the parking lot.",
+      "Breathe slowly, count to ten, and let the first wave of anger pass before deciding what to say.",
+      "Fire back with a quick, sharp reply before they expect it.",
+      "Burst into tears and leave the room.",
+      "Call them out loudly in front of the team.",
     ],
     0,
-    "Giving your bloodstream 90 seconds to flush the initial adrenaline surge prevents impulsive counter-attacks."
+    "A 90-second pause flushes the initial adrenaline surge and lets rational thinking return."
   ),
   q(
     "7-understanding-1", 7,
-    "What did neuroanatomist Dr. Jill Bolte Taylor discover about the physiological lifespan of an emotional surge?",
-    "What is the famous '90-Second Rule' in neurobiology?",
+    "You feel furious the moment something happens — but 90 seconds later it feels less urgent.",
+    "Why does this happen?",
     [
-      "The initial biochemical surge of adrenaline and cortisol in the bloodstream lasts approximately 90 seconds; after that, lingering anger is fueled by mental storytelling.",
-      "Emotions chemically destroy the brain after 90 seconds.",
-      "You must scream for 90 seconds straight to clear your lungs.",
-      "Adrenaline remains in the blood for 40 consecutive days without stopping.",
+      "The initial biochemical surge dissipates — what lingers after is mostly mental storytelling.",
+      "You simply care less about the issue than you thought.",
+      "Your anger was irrational and your body self-corrects.",
+      "The 90 seconds proves the feeling wasn't real.",
     ],
     0,
-    "If you can breathe through the initial 90-second chemical wave without feeding it new angry thoughts, the body naturally returns to calm."
+    "If you breathe through the initial wave without feeding it new thoughts, the body naturally calms."
   ),
-
-  // Point 2: The pause creates the space for intentional agency.
   q(
     "7-action-2", 7,
-    "You receive a text from an ex-partner or difficult family member that feels emotionally manipulative.",
+    "A difficult family member sends a message that instantly triggers defensiveness.",
     "What would you do next?",
     [
-      "Put your phone on 'Do Not Disturb', set it in another room, and give yourself at least two hours before reading it with a steady mind.",
-      "Reply within three seconds with a furious paragraph defending yourself.",
-      "Send thirty question marks in a row.",
-      "Call them repeatedly until they answer so you can yell at them.",
+      "Put the phone down, give yourself two hours, and read it again with a steadier mind.",
+      "Reply immediately — a fast response shows you won't be pushed around.",
+      "Call them right away to address it before it festers.",
+      "Send a short reply just to acknowledge you saw it.",
     ],
     0,
-    "Creating intentional physical distance between the stimulus and your response restores your emotional sovereignty."
+    "Physical distance from the stimulus restores your emotional sovereignty before you respond."
   ),
   q(
     "7-understanding-2", 7,
-    "What did psychiatrist Viktor Frankl famously observe about the space between stimulus and response?",
-    "What is the philosophical foundation of the pause?",
+    "You're being pressured to respond immediately to a difficult situation.",
+    "What's the most useful thing to remember?",
     [
-      "'Between stimulus and response there is a space. In that space is our power to choose our response. In our response lies our growth and our freedom.'",
-      "Stimulus and response are genetically wired and can never be separated.",
-      "The fastest response is always the most virtuous.",
-      "Pausing is a sign of hesitation and moral weakness.",
+      "Between the pressure and your response, there is a space — and that space is your power.",
+      "Hesitation looks weak — fast responses signal that you're in control.",
+      "The urgency is real — delays make conflict worse.",
+      "Your first instinct is usually the most honest and should be trusted.",
     ],
     0,
-    "Human dignity and freedom reside in widening the pause between an external provocation and your chosen response."
+    "Human freedom lives in that space between what happens to you and what you choose to do."
   ),
-
-  // Point 3: Using a tactical delay script when pressured.
   q(
     "7-action-3", 7,
-    "A salesperson or vendor pressures you aggressively to sign a contract on the spot during a phone pitch.",
+    "A salesperson presses you to sign a contract on the phone right now.",
     "What would you do next?",
     [
-      "Say calmly: 'I have a strict policy of reviewing all agreements overnight. I will get back to you by 2 PM tomorrow.'",
-      "Cave in to the pressure and sign immediately while feeling sick to your stomach.",
-      "Scream obscenities at the salesperson and slam down the phone.",
-      "Agree verbally with no intention of paying.",
+      "Say calmly: 'I review all agreements overnight. I'll get back to you by tomorrow at 2 PM.'",
+      "Cave in to avoid the pressure and sign — you can cancel later.",
+      "Hang up immediately without explaining.",
+      "Ask them to email it and then avoid opening the email.",
     ],
     0,
-    "Deploying a pre-rehearsed delay policy neutralizes high-pressure sales tactics without requiring confrontation."
+    "A pre-decided delay policy removes the need to decide under emotional pressure in the moment."
   ),
   q(
     "7-understanding-3", 7,
-    "Why does having a pre-decided 'delay policy' protect your financial and emotional boundaries?",
-    "How does pre-commitment support emotional regulation?",
+    "You have a rule: never agree to anything significant in the same conversation it's proposed.",
+    "Why does this kind of pre-commitment work so well?",
     [
-      "It removes the cognitive burden of deciding under high emotional pressure, shifting the boundary onto a neutral, non-negotiable rule.",
-      "It allows you to blame invisible lawyers for your personal decisions.",
-      "Delay policies are unethical business practices.",
-      "Pre-commitment guarantees you will never buy anything again.",
+      "It removes the cognitive load of resisting pressure in real-time by making it a neutral policy.",
+      "It buys time to find reasons to say yes.",
+      "It keeps others from making requests of you.",
+      "It works because the other person will eventually give up.",
     ],
     0,
-    "Pre-commitment rules act as an external brake when smooth emotional manipulators attempt to rush your decision-making."
+    "Pre-commitment shifts the boundary onto a neutral rule, removing the emotional pressure from the moment."
   ),
-
-  // Point 4: Physical grounding anchors during the pause.
   q(
     "7-action-4", 7,
-    "You are about to step onto a stage to give a keynote and your heart is hammering like a drum.",
+    "You're about to go on stage and your heart is hammering hard.",
     "What would you do next?",
     [
-      "Plant your feet firmly into the floor, feel the solid earth beneath you, lengthen your exhale, and reframe the pounding heart as excitement.",
-      "Drink three double shots of espresso to override the racing heart.",
-      "Tell the event organizer that you have suddenly contracted the flu and run away.",
-      "Hyperventilate in the dressing room mirror.",
+      "Plant your feet, lengthen your exhale, and reframe the pounding as energy for the performance.",
+      "Drink something strong to take the edge off.",
+      "Ask if someone else can go first while you compose yourself.",
+      "Breathe faster to match the nervous energy and use it.",
     ],
     0,
-    "Physical grounding combined with cognitive reappraisal (reframing anxiety as excitement) stabilizes the nervous system for peak performance."
+    "Reframing physical arousal as performance energy works with the body instead of fighting it."
   ),
   q(
     "7-understanding-4", 7,
-    "Why is reframing somatic arousal from 'I am terrified' to 'My body is energized to perform' more effective than telling yourself 'Calm down'?",
-    "What does arousal reappraisal research demonstrate?",
+    "You've tried telling yourself 'calm down' before a performance — it never works.",
+    "What approach actually works better?",
     [
-      "Anxiety and excitement are both high-arousal states with nearly identical physiology; shifting from anxiety to excitement is a much smaller leap than forcing dead calm.",
-      "Telling yourself to calm down instantly cures 100% of stage fright.",
-      "Excitement and terror have completely different blood chemistry.",
-      "Stage fright can only be eliminated by years of hypnosis.",
+      "Reframing it as excitement — both states feel similar, so the shift is small and real.",
+      "Suppressing the physical sensations through controlled breathing.",
+      "Accepting that you'll always be nervous and learning to live with it.",
+      "Rehearsing more so you have nothing to be anxious about.",
     ],
     0,
-    "Riding high energy with a positive performance focus works with your body's adrenaline rather than fighting a futile war against it."
+    "Anxiety and excitement are physiologically similar — reframing is a smaller, more achievable shift."
   ),
-
-  // Point 5: Pausing protects your most cherished long-term goals from momentary moods.
   q(
     "7-action-5", 7,
-    "You are on day 45 of a strict recovery or health program and experience an intense, sudden craving to indulge after a brutal day.",
+    "You're on day 45 of a health goal and feel a strong urge to quit after a hard day.",
     "What would you do next?",
     [
-      "Tell yourself: 'I don't have to decide for the rest of my life, but I will wait 15 minutes and drink a cold seltzer before revisiting this urge.'",
-      "Throw your hands up, declare the program a failure, and binge immediately.",
-      "Beat yourself up mentally for having cravings in the first place.",
-      "Lock yourself in a closet to escape your own thoughts.",
+      "Tell yourself: 'I don't have to decide forever — I'll wait 15 minutes and drink some water first.'",
+      "Give yourself a break — you've come far enough to earn one.",
+      "Reason through why the goal still matters to reset your motivation.",
+      "Text a friend for accountability right now.",
     ],
     0,
-    "The '15-minute delay' surf allows the neurochemical peak of the craving to subside without forcing an agonizing permanent battle."
+    "A 15-minute delay lets the neurochemical peak of the craving pass without a permanent battle."
   ),
   q(
     "7-understanding-5", 7,
-    "What is 'Temporal Discounting' and how does the pause protect against it?",
-    "Why do momentary impulses destroy long-term goals?",
+    "You know exercise is good for you but skip it whenever you feel tired or unmotivated.",
+    "What's the most useful insight about this pattern?",
     [
-      "The primitive brain irrationally discounts distant rewards (health, reputation) in favor of immediate dopamine hits; pausing restores long-term prefrontal valuation.",
-      "Temporal discounting means watches run slower when you are angry.",
-      "Immediate dopamine is always superior to long-term well-being.",
-      "Temporal discounting only affects stock market traders.",
+      "The brain over-values immediate comfort and discounts future benefit — pausing interrupts that.",
+      "You genuinely need rest more than exercise on those days.",
+      "Motivation must come first — forcing exercise without it doesn't help.",
+      "Tiredness is your body's way of protecting you from overexertion.",
     ],
     0,
-    "A deliberate pause acts as an equalizer, giving your future self an equal vote against the loud demands of your immediate impulses."
+    "A deliberate pause gives your future self an equal vote against the loud demands of the present moment."
   ),
 
   // ==========================================
   // CHAPTER 8: Find what helps you settle
   // ==========================================
-  // Point 1: The physiological sigh directly resets respiratory sinus arrhythmia.
   q(
     "8-action-1", 8,
-    "You are feeling high, scattered anxiety after receiving four urgent work pings simultaneously.",
+    "Four urgent work pings arrive simultaneously. You feel scattered and panicky.",
     "What would you do next?",
     [
-      "Perform two quick inhales through the nose followed by a long, slow exhale through the mouth (the physiological sigh) two or three times.",
-      "Hold your breath for two minutes until you feel dizzy.",
-      "Drink a high-sugar energy drink to increase focus.",
-      "Open all four pings simultaneously and type panicked replies in capital letters.",
+      "Two quick inhales through the nose, then a long slow exhale through the mouth — twice.",
+      "Open all four messages at once and start replying rapidly.",
+      "Close everything and come back to it later when it feels less urgent.",
+      "Hold your breath until the anxious feeling passes.",
     ],
     0,
-    "The physiological sigh (double inhale followed by extended exhale) rapidly offloads carbon dioxide and triggers parasympathetic calming."
+    "A double inhale followed by a long exhale rapidly offloads CO2 and triggers the calm response."
   ),
   q(
     "8-understanding-1", 8,
-    "In respiratory neurobiology, why does extending the duration of the exhale slow your heart rate?",
-    "How does breathing directly modulate cardiac rhythm?",
+    "You notice a slow, long exhale calms you faster than a deep inhale.",
+    "Why does the exhale specifically slow things down?",
     [
-      "Exhalation increases intrathoracic pressure, signaling the vagus nerve to release acetylcholine onto the heart's sinoatrial node, slowing the pulse.",
-      "Exhaling makes your lungs stop working permanently.",
-      "The heart only speeds up when you breathe out.",
-      "Breathing has zero connection to the autonomic nervous system.",
+      "The exhale signals the vagus nerve to slow the heart — it's a built-in brake.",
+      "Exhaling reduces oxygen, which naturally sedates the nervous system.",
+      "The inhale energizes and the exhale cancels it out.",
+      "Both directions of breathing have the same calming effect.",
     ],
     0,
-    "Your breath is the single autonomic steering wheel you can consciously grab to physically slow your racing cardiac engine."
+    "Your breath is the only autonomic process you can consciously steer to slow your heart rate."
   ),
-
-  // Point 2: Sensory grounding anchors attention in the physical present.
   q(
     "8-action-2", 8,
-    "You are caught in a looping spiral of catastrophic thoughts about an upcoming performance review.",
+    "Your mind is looping through worst-case scenarios about a performance review tomorrow.",
     "What would you do next?",
     [
-      "Use the 5-4-3-2-1 technique: name 5 things you can see, 4 you can touch, 3 you hear, 2 you smell, and 1 you taste around you right now.",
-      "Follow the catastrophic thoughts into deeper worst-case scenarios for the next three hours.",
-      "Call six different coworkers and ask them if they think you will be fired.",
-      "Pinch yourself repeatedly until you bruise.",
+      "Ground yourself: name 5 things you can see, 4 you can touch, 3 you can hear, right now.",
+      "Think the scenarios through fully to prepare for every possibility.",
+      "Text a friend to talk through your worries.",
+      "Distract yourself with something entertaining until you fall asleep.",
     ],
     0,
-    "Sensory grounding shifts electrical activity from the default mode network (overthinking) to the primary sensory cortex (present reality)."
+    "Sensory grounding pulls attention into the present, interrupting the abstract worry circuit."
   ),
   q(
     "8-understanding-2", 8,
-    "Why does naming concrete physical objects in your immediate room dismantle an anxiety spiral?",
-    "What does sensory processing do to catastrophic looping?",
+    "You focus on the physical objects in the room and your spiraling thoughts slow down.",
+    "Why does focusing on the physical world help?",
     [
-      "Catastrophic anxiety requires abstract mental forecasting; forcing the brain to process concrete sensory signals interrupts the abstract worry circuit.",
-      "Naming objects casts a magical psychological barrier around the room.",
-      "Concrete objects absorb negative psychic energy from the body.",
-      "Sensory processing makes catastrophic thoughts come true faster.",
+      "Anxious spiraling needs abstract thinking — sensory focus uses a different brain circuit.",
+      "Physical focus works because it distracts the mind from real concerns.",
+      "Naming objects triggers a calming memory response.",
+      "It's a form of positive thinking that reframes the situation.",
     ],
     0,
-    "You cannot simultaneously be fully present in your immediate physical senses and lost in an imaginary future catastrophe."
+    "You can't simultaneously be lost in an imaginary future and fully present in your senses."
   ),
-
-  // Point 3: Temperature shifts stimulate the dive reflex.
   q(
     "8-action-3", 8,
-    "You feel intensely overwhelmed, on the verge of tears and panic after an agonizing conversation.",
+    "You're on the verge of tears and panic after an overwhelming conversation.",
     "What would you do next?",
     [
-      "Go to the restroom, fill the sink with cold water, and splash it over your eyes and cheeks, or hold a cold wet towel to your face.",
-      "Lock yourself in a hot car with the heater running.",
-      "Drink boiling hot tea as fast as possible.",
-      "Scream into the office ventilation ducts.",
+      "Splash cold water on your face — hold it there for a few seconds and breathe.",
+      "Find somewhere private to cry until it passes naturally.",
+      "Call the person back immediately to resolve it.",
+      "Lie down and wait for the feeling to go away on its own.",
     ],
     0,
-    "Cold water stimulation on the trigeminal facial nerve activates the mammalian dive reflex, rapidly down-regulating acute emotional agitation."
+    "Cold water on the face activates the dive reflex — an ancient circuit that rapidly quiets acute panic."
   ),
   q(
     "8-understanding-3", 8,
-    "What is the 'Mammalian Dive Reflex' in human physiology?",
-    "Why is cold water immersion an emergency down-regulator?",
+    "A colleague splashes cold water on their face after a tense situation. They say it always helps.",
+    "What's the most accurate explanation of why this works?",
     [
-      "A preserved evolutionary reflex where facial cold stimulation signals the vagus nerve to instantly drop heart rate and divert oxygen to vital organs.",
-      "It is a reflex that makes humans want to swim across the Atlantic ocean.",
-      "It is only found in dolphins and whales, not humans.",
-      "Cold water permanently shuts off all human emotional capacity.",
+      "Cold water triggers a reflex that signals the vagus nerve to slow the heart immediately.",
+      "The shock of cold distracts the mind from whatever caused the upset.",
+      "Water on the face activates a calming memory from childhood.",
+      "Physical sensations always override emotional ones — any sensation works.",
     ],
     0,
-    "Splashing cold water on the face leverages an ancient mammalian survival circuit to physically slam the brakes on runaway panic."
+    "Cold facial stimulation activates a preserved mammalian reflex that physically brakes acute distress."
   ),
-
-  // Point 4: Rhythmic bilateral movement metabolizes adrenaline.
   q(
     "8-action-4", 8,
-    "After receiving a frustrating email, your legs are jittery with restless, frustrated kinetic energy.",
+    "After a frustrating email, your legs are jittery and you can't sit still.",
     "What would you do next?",
     [
-      "Go for a brisk 15-minute walk around the block, letting your arms swing rhythmically and focusing on your stride.",
-      "Sit rigidly still in your chair and clench your teeth for an hour.",
-      "Kick your office trash can across the room.",
-      "Send an immediate aggressive reply to burn off the energy.",
+      "Walk briskly for 10–15 minutes, letting your arms swing and focusing on your stride.",
+      "Channel the energy into a fast, decisive reply.",
+      "Sit still and work through the frustration mentally.",
+      "Do some deep breathing at your desk until the energy dissipates.",
     ],
     0,
-    "Bilateral rhythmic movement (like walking) metabolizes circulating stress hormones and engages optic flow to quiet threat centers."
+    "Rhythmic movement metabolizes stress hormones and engages visual flow to quiet threat centers."
   ),
   q(
     "8-understanding-4", 8,
-    "In neuroscience, what is 'Optic Flow' and why does walking forward reduce amygdala activation?",
-    "How does moving forward visually soothe the brain?",
+    "You always feel better after a walk — even when you didn't want to go.",
+    "What best explains this?",
     [
-      "As images pass across your retinas while walking forward, lateral eye movements suppress the neural activity of the amygdala, signaling safety.",
-      "Optic flow makes you blind to danger.",
-      "Walking backward is 500% better for brain health.",
-      "Optic flow has no relationship to eye movement or stress.",
+      "Moving forward through space triggers eye movement that suppresses anxiety in the brain.",
+      "Exercise releases endorphins that override whatever caused the stress.",
+      "Physical exertion tires the body enough that stress feels less urgent.",
+      "Walking gives you time to think through the problem and find a solution.",
     ],
     0,
-    "Forward physical motion through space literally down-regulates fear circuits in the mammalian brain."
+    "Forward motion through space uses visual flow to naturally down-regulate fear circuits."
   ),
-
-  // Point 5: Developing a personalized, varied soothing menu.
   q(
     "8-action-5", 8,
-    "You notice that a breathing exercise that usually calms you isn't working today during an acute wave of frustration.",
+    "The breathing exercise that usually calms you isn't working today.",
     "What would you do next?",
     [
-      "Acknowledge that different states require different tools: switch from breathing to physical movement, stepping outside for fresh air or listening to music.",
-      "Conclude that emotional regulation is a hoax and give up on all tools.",
-      "Force the same breathing exercise harder until you hyperventilate.",
-      "Blame yourself for being a defective human who cannot regulate.",
+      "Switch tools — try movement, cold water, or music instead of forcing it.",
+      "Do more rounds until it works — consistency is the point.",
+      "Accept that today is a bad day and wait it out.",
+      "Question whether you've been doing the breathing correctly all along.",
     ],
     0,
-    "Having a diverse toolkit of soothing modalities prevents frustration when a single technique doesn't fit the specific neurochemical state."
+    "Different states have different needs — flexibility in your toolkit is the mark of real mastery."
   ),
   q(
     "8-understanding-5", 8,
-    "Why does treating emotional regulation as an experimental toolkit work better than relying on a rigid single method?",
-    "What is the power of a personalized regulation menu?",
+    "You have one go-to calming technique but it fails you in certain situations.",
+    "What's the most useful response to this?",
     [
-      "Emotional states have different biological signatures (some need discharge through movement; some need settling through breath); adaptability is mastery.",
-      "A single rigid method is always superior if you have enough willpower.",
-      "Experimental toolkits make people lazy and indecisive.",
-      "Toolkits should only be used by licensed mechanics.",
+      "Build a varied toolkit — some states need discharge through movement, others need stillness.",
+      "Practice the technique more until it works in every situation.",
+      "Recognize that some emotional states just can't be regulated.",
+      "Find a better single technique that works universally.",
     ],
     0,
-    "True emotional wisdom meets the specific texture of the moment with the appropriate tool, rather than forcing a one-size-fits-all hammer."
+    "Emotional mastery meets the specific texture of the moment with the right tool, not always the same one."
   ),
 
   // ==========================================
   // CHAPTER 9: Feel it without acting on it
   // ==========================================
-  // Point 1: Emotions are physiological waves that crest and subside.
   q(
     "9-action-1", 9,
-    "You feel an intense wave of jealousy when a peer receives a high-profile assignment you wanted.",
+    "A peer gets the high-profile assignment you wanted. Jealousy hits immediately.",
     "What would you do next?",
     [
-      "Sit with the uncomfortable feeling in your chest, observe the wave without judgment, and wait for it to crest and dissolve naturally.",
-      "Immediately post a disparaging comment about the peer's project to tear them down.",
-      "Swallow the jealousy, pretend you feel completely pure joy, and bury the resentment.",
-      "Confront your boss and accuse them of personal favoritism.",
+      "Sit with the feeling — observe it without acting on it and let it pass naturally.",
+      "Post something dismissive about their qualifications online.",
+      "Swallow it, pretend you're fine, and let the resentment build.",
+      "Go to your manager immediately to advocate for yourself.",
     ],
     0,
-    "Observing the physical wave of jealousy without converting it into sabotage or shame allows it to pass cleanly."
+    "Observing an emotion without converting it to action lets it pass cleanly without damage."
   ),
   q(
     "9-understanding-1", 9,
-    "In Acceptance and Commitment Therapy (ACT), what is 'Urge Surfing'?",
-    "What is the metaphor of the emotional wave?",
+    "You feel a strong urge to react — but you wait, and the intensity fades on its own.",
+    "What does this tell you about emotions?",
     [
-      "Viewing an emotional urge like an ocean wave: you don't fight it or drown in it; you balance on top of it and ride it until it naturally breaks on the shore.",
-      "Surfing the internet whenever you feel uncomfortable.",
-      "Suppressing all emotions until they vanish permanently.",
-      "Acting on every single impulse immediately like a wild wave.",
+      "Emotions are waves — they peak and subside if you don't act on them or suppress them.",
+      "The urge fading means you didn't actually care that much.",
+      "Waiting made the situation worse by letting it simmer.",
+      "Emotions need to be expressed before they go away.",
     ],
     0,
-    "Urges reach a peak intensity, plateau, and naturally subside if they are observed without resistance or reactive feeding."
+    "Urges reach a peak and subside naturally when observed without resistance or impulsive feeding."
   ),
-
-  // Point 2: Distinguishing the feeling from the behavior.
   q(
     "9-action-2", 9,
-    "Your child or pet spills juice all over a freshly cleaned white carpet, and you feel an instantaneous flash of volcanic rage.",
+    "Your child spills juice on a clean carpet. You feel an instant flash of rage.",
     "What would you do next?",
     [
-      "Acknowledge the flash of rage internally ('I am feeling furious right now'), hold your voice steady, and step back for five seconds before cleaning up.",
-      "Scream at the top of your lungs and terrify the household.",
-      "Throw the juice jug against the wall to match the rage.",
-      "Tell yourself you are an evil person for having felt a flash of anger.",
+      "Acknowledge the flash internally, hold your voice steady, and step back five seconds.",
+      "Express the frustration calmly so they learn that actions have consequences.",
+      "Ask them to clean it up immediately — it helps channel the energy constructively.",
+      "Take a long breath and remind yourself it's just juice.",
     ],
     0,
-    "Recognizing that feeling anger is an involuntary human reflex, while choosing your outward behavior is your moral responsibility, enables self-mastery."
+    "Feeling rage is involuntary — choosing your outward behavior is where self-mastery lives."
   ),
   q(
     "9-understanding-2", 9,
-    "Why is the belief 'If I feel angry, I must express it aggressively' a dangerous psychological myth?",
-    "What is the myth of emotional venting (catharsis)?",
+    "Someone tells you that expressing anger is always healthier than holding it in.",
+    "How accurate is that?",
     [
-      "Research shows that aggressive venting (screaming, punching pillows) actually reinforces aggressive neural pathways rather than discharging them.",
-      "Venting aggressively cures anger 100% of the time.",
-      "Aggression is biologically mandatory whenever anger arises.",
-      "Holding anger without yelling causes spontaneous combustion.",
+      "Not very — research shows venting aggressively reinforces anger rather than releasing it.",
+      "Completely accurate — suppressed emotions always cause physical harm.",
+      "True in personal relationships, but not at work.",
+      "Accurate for immediate anger, but not for long-term patterns.",
     ],
     0,
-    "Rehearsing aggression strengthens the habit of rage; holding the feeling quietly while letting the body cool deconstructs the circuit."
+    "Aggressive venting rehearses rage — holding the feeling quietly while cooling down deconstructs the circuit."
   ),
-
-  // Point 3: Holding the discomfort of sadness without reaching for numbing agents.
   q(
     "9-action-3", 9,
-    "You come home to an empty apartment after a painful breakup and feel a crushing, lonely sorrow in your chest.",
+    "You come home after a painful breakup to an empty apartment feeling crushed.",
     "What would you do next?",
     [
-      "Wrap yourself in a warm blanket, allow yourself to cry, listen to comforting music, and let the sorrow wash through you without numbing it.",
-      "Order three bottles of wine and drink until you pass out.",
-      "Spend $2,000 on impulsive online shopping to feel a dopamine rush.",
-      "Download dating apps immediately to find anyone to distract you tonight.",
+      "Let yourself feel it — wrap up, cry if you need to, and let the sorrow move through you.",
+      "Open a dating app to start meeting people as soon as possible.",
+      "Pour a drink and put on something distracting.",
+      "Call a friend and talk through every detail of what happened.",
     ],
     0,
-    "Allowing authentic sorrow to be felt with warmth and compassion prevents compensatory addictive loops and heals the heart."
+    "Letting sorrow move through without numbing it prevents compensatory habits from taking root."
   ),
   q(
     "9-understanding-3", 9,
-    "What did Brené Brown mean when she wrote: 'We cannot selectively numb emotion. If we numb the dark, we also numb the light'?",
-    "What is the systemic cost of chronic emotional numbing?",
+    "You've been reaching for your phone every time you feel sad or anxious.",
+    "What's the risk of this pattern over time?",
     [
-      "When we reach for alcohol, screens, or shopping to numb pain or sadness, we simultaneously dull our biological capacity to feel joy, love, and gratitude.",
-      "Numbing only affects negative feelings while leaving joy 100% intact.",
-      "Numbing is the most efficient way to achieve lasting enlightenment.",
-      "You should never feel any pain under any circumstances.",
+      "Numbing one emotion dulls your sensitivity to all emotions — including joy and connection.",
+      "The pattern is adaptive — emotional regulation through distraction is healthy.",
+      "Phones only numb surface-level emotions, leaving deeper ones intact.",
+      "The risk is only if you spend more than two hours a day on your phone.",
     ],
     0,
-    "Facing the full range of human sorrow protects the sensitivity of your heart to experience authentic joy and deep love."
+    "Numbing the dark also numbs the light — you can't selectively mute just the hard feelings."
   ),
-
-  // Point 4: Decoupling impulse from action in high-stakes negotiations.
   q(
     "9-action-4", 9,
-    "The opposing counsel or negotiator makes an insultingly low counter-offer designed to rattle your composure.",
+    "A negotiator makes an insulting low offer, clearly designed to rattle you.",
     "What would you do next?",
     [
-      "Feel the surge of indignation, let it sit quietly in your chest, maintain calm eye contact, and reply: 'That proposal doesn't reflect the asset value. Here are our numbers.'",
-      "Get up, flip the conference table over, and storm out shouting insults.",
-      "Cave in and accept the low offer just to stop feeling the tension.",
-      "Insult their professional credentials in front of their client.",
+      "Feel the surge, stay calm, hold eye contact, and respond with your actual position.",
+      "Match their aggression — show them you won't be intimidated.",
+      "Accept a middle-ground number to end the discomfort.",
+      "Ask for a break to compose yourself before continuing.",
     ],
     0,
-    "Holding the insult without flinching neutralizes their psychological tactic and keeps negotiation power firmly in your hands."
+    "Holding the insult without flinching neutralizes the tactic and keeps negotiating power with you."
   ),
   q(
     "9-understanding-4", 9,
-    "In game theory and tactical negotiation, why does showing emotional reactivity surrender leverage to the other side?",
-    "What does emotional reactivity signal to an opponent?",
+    "You gave away more in a negotiation than you planned because the pressure felt unbearable.",
+    "What would have helped most?",
     [
-      "It reveals your pressure points and triggers, signaling that you can be manipulated into making irrational, hasty concessions.",
-      "It proves to the opponent that you are an intimidating genius.",
-      "Reactivity makes opposing lawyers tremble in absolute terror.",
-      "Leverage is only determined by whoever yells the loudest.",
+      "Sitting with the discomfort instead of acting on it — discomfort isn't an emergency.",
+      "Preparing better arguments so you felt more confident.",
+      "Walking away earlier before the pressure escalated.",
+      "Bringing someone else to the negotiation for support.",
     ],
     0,
-    "Emotional unflappability is supreme tactical leverage; it renders provocative manipulation attempts completely impotent."
+    "Emotional reactivity signals your pressure points — staying unreadable removes the other side's leverage."
   ),
-
-  // Point 5: Experiencing fear without letting it dictate your boundaries.
   q(
     "9-action-5", 9,
-    "You need to set a boundary with a dominant, intimidating relative, and your knees are shaking with fear as you prepare to speak.",
+    "You need to set a firm boundary with a dominant family member. Your knees are shaking.",
     "What would you do next?",
     [
-      "Acknowledge the fear ('My body is trembling and that is okay'), take a deep breath, and deliver your boundary clearly anyway.",
-      "Let the fear convince you that speaking up is impossible, and remain silent and compliant.",
-      "Attack them pre-emptively with screaming to compensate for your fear.",
-      "Faint on purpose to escape the situation.",
+      "Acknowledge the fear, take a breath, and say what needs to be said anyway.",
+      "Wait until you feel calm and ready before addressing it.",
+      "Send a text or email instead so you don't have to face the discomfort.",
+      "Have someone else raise it on your behalf.",
     ],
     0,
-    "True courage is not the absence of fear; it is recognizing fear fully and choosing to stand in your integrity regardless."
+    "Courage is not the absence of fear — it's acting in alignment with your values while fear is present."
   ),
   q(
     "9-understanding-5", 9,
-    "Why is waiting for fear to disappear before taking brave action a lifelong developmental trap?",
-    "What is the paradox of courage and fear?",
+    "You keep telling yourself 'I'll speak up when I feel ready.' But ready never comes.",
+    "What's the most accurate insight about this?",
     [
-      "Fear naturally accompanies any meaningful expansion into unfamiliar territory; waiting for zero fear guarantees lifelong paralysis.",
-      "Brave people have a genetic mutation that removes all fear from their DNA.",
-      "If you feel fear, it is a cosmic sign that you must never proceed.",
-      "Courage means you feel 100% fearless and invincible every second.",
+      "Waiting for fear to disappear before acting creates permanent paralysis — fear doesn't leave first.",
+      "You need more preparation before the conversation is safe to have.",
+      "Ready will come — you just haven't waited long enough yet.",
+      "You should question whether the boundary is truly necessary.",
     ],
     0,
-    "Courage is taking fear along as a passenger on the journey, while refusing to let it grab the steering wheel."
+    "Fear accompanies every meaningful expansion — it doesn't leave before you act, it leaves because you do."
   ),
 
   // ==========================================
   // CHAPTER 10: Choose your next step
   // ==========================================
-  // Point 1: Shifting from reactive impulse to values-aligned outcome.
   q(
     "10-action-1", 10,
-    "A colleague takes credit for an idea you shared during an informal coffee chat.",
+    "A colleague presents an idea in the team meeting that you know you shared with them first.",
     "What would you do next?",
     [
-      "Clarify your desired outcome (credit for the idea and a good working relationship), and say in the next sync: 'I'm glad you liked the idea we discussed over coffee—let's co-lead the rollout.'",
-      "Publicly call them a thief in the all-hands company meeting.",
-      "Say nothing, but sabotage their project silently behind the scenes.",
-      "Resign from the company in protest.",
+      "Clarify your goal — credit and a good relationship — then say 'I'm glad you brought up what we discussed. Let's co-lead this.'",
+      "Call them out publicly in the meeting right now.",
+      "Say nothing but stop sharing ideas with them in future.",
+      "Bring it up with your manager after the meeting.",
     ],
     0,
-    "Focusing on the desired outcome (claiming rightful credit collaboratively) secures your visibility without toxic warfare."
+    "Knowing your desired outcome steers you away from impulse and toward what actually serves you."
   ),
   q(
     "10-understanding-1", 10,
-    "Before reacting to a provocation, why is asking 'What outcome do I actually want here?' the master question of emotional intelligence?",
-    "How does outcome-clarity reorient behavior?",
+    "Before you respond to a frustrating situation, you ask: 'What do I actually want here?'",
+    "Why does this question matter so much?",
     [
-      "It interrupts automated vindictive impulses and forces your prefrontal cortex to select behaviors that actually advance your long-term goals.",
-      "It guarantees you will always get revenge on your enemies.",
-      "It is a question meant only for corporate CEOs.",
-      "Asking questions delays revenge, which is the only true goal.",
+      "It interrupts automated vindictive impulses and points behavior toward what you really need.",
+      "It slows you down — by the time you've thought, the moment has passed.",
+      "It helps you find the most persuasive argument.",
+      "It's a technique to avoid conflict rather than engage with it.",
     ],
     0,
-    "Automated reactions satisfy momentary ego; outcome-clarity secures long-term strategic success and personal peace."
+    "Reactive answers satisfy the ego in the moment; outcome-clarity secures long-term success and peace."
   ),
-
-  // Point 2: Choosing an action that is 100% within your locus of control.
   q(
     "10-action-2", 10,
-    "An airline announces your flight is delayed by six hours, disrupting your travel plans.",
+    "Your flight is delayed six hours. Nothing you do will change this.",
     "What would you do next?",
     [
-      "Accept that the flight mechanics are outside your control, re-book a quiet workspace lounge, and catch up on reading or a favorite project.",
-      "Scream at the gate agent who has zero control over aircraft maintenance.",
-      "Sit on the floor in protest blocking the boarding door.",
-      "Refuse to eat or drink anything for six hours to punish the airline.",
+      "Accept what you can't control and use the time productively — read, work, rest.",
+      "Find the gate agent and explain the full impact of this delay on your plans.",
+      "Call the airline and push hard for compensation or a rebooking.",
+      "Sit by the gate so you're first to know of any change.",
     ],
     0,
-    "Redirecting energy from raging at uncontrollable delays toward constructive, enjoyable use of time preserves your peace."
+    "Redirecting energy from the uncontrollable toward what you can use preserves your peace and time."
   ),
   q(
     "10-understanding-2", 10,
-    "In Stoic philosophy, what is the 'Dichotomy of Control' and why is it essential for emotional stability?",
-    "What does the Dichotomy of Control teach?",
+    "You're furious about something completely outside your control.",
+    "What's the most useful thing to remember in that moment?",
     [
-      "Distinguish between what is up to us (our beliefs, choices, responses) and what is not (external events, other people's actions), investing energy only in the former.",
-      "It means you must control every single human being around you.",
-      "It teaches that you have zero control over your own choices.",
-      "Stoicism means feeling no emotion and acting like a stone statue.",
+      "Energy spent on what you can't control leaves nothing for what you actually can.",
+      "Your frustration is valid and the situation should be challenged.",
+      "Strong reactions sometimes move situations that seem unmovable.",
+      "Acceptance now means you're okay with the outcome.",
     ],
     0,
-    "Suffering arises when we demand that external reality obey our wishes; serenity arrives when we master our internal response."
+    "Suffering grows when you demand external reality obey your wishes — serenity comes from mastering your response."
   ),
-
-  // Point 3: Selecting small, low-friction micro-actions.
   q(
     "10-action-3", 10,
-    "You have procrastinated on a complex tax filing or project for three weeks and feel paralyzed by guilt and overwhelm.",
+    "You've procrastinated on a complex project for weeks and feel paralyzed by the size of it.",
     "What would you do next?",
     [
-      "Break the paralyzing mountain into one micro-step: 'I will open the folder and download the bank statement today, nothing more.'",
-      "Promise yourself that you will work for 16 consecutive hours tonight without bathroom breaks.",
-      "Declare bankruptcy to avoid filing taxes.",
-      "Pretend taxes don't exist and ignore all mail.",
+      "Do just one micro-step today — open the file, read one section, or write one sentence.",
+      "Block a full day to get it all done at once and stop postponing.",
+      "Make a detailed plan first so you know exactly where to start.",
+      "Tell yourself you work better under pressure and wait until the deadline.",
     ],
     0,
-    "Lowering the barrier to a single 2-minute micro-action dissolves paralysis and kickstarts effortless momentum."
+    "A single micro-action dissolves paralysis — action generates motivation, not the other way around."
   ),
   q(
     "10-understanding-3", 10,
-    "Why does behavioral activation (taking one small action) cure emotional overwhelm faster than thinking about it?",
-    "How does action generate motivation?",
+    "You don't feel motivated to start something important, so you wait until you do.",
+    "What's wrong with this approach?",
     [
-      "Action precedes motivation; completing a tiny micro-task releases dopamine, which neurologically generates the energy for the next step.",
-      "Motivation must always strike like lightning before you can lift a finger.",
-      "Thinking about a problem for 100 hours automatically solves it.",
-      "Small actions are useless and only massive leaps matter.",
+      "Motivation follows action, not the other way around — waiting for it first usually means never starting.",
+      "Motivation-first is correct — forced action without motivation leads to burnout.",
+      "Waiting shows self-awareness about your optimal working conditions.",
+      "The approach is fine if you set a clear deadline for when you'll start.",
     ],
     0,
-    "You don't need to feel like doing something to start; taking the first tiny step creates the motivation that follows."
+    "Completing even a tiny step releases dopamine — that energy creates the motivation to continue."
   ),
-
-  // Point 4: Evaluating the unintended secondary consequences of your response.
   q(
     "10-action-4", 10,
-    "You want to vent your frustration about your boss on Twitter/X to get sympathy from peers.",
+    "You want to post something sharp about your boss on social media to vent.",
     "What would you do next?",
     [
-      "Pause and assess second-order consequences: 'This might feel good for 5 minutes, but it could permanently damage my career and professional trust.'",
-      "Post the rant with your company's full name tagged.",
-      "Create five burner accounts to harass your boss online.",
-      "Post screenshots of internal company emails.",
+      "Pause and ask: 'How will this look in six months?' — then vent in a private journal instead.",
+      "Post it — it's your personal account and your honest opinion.",
+      "Post it anonymously so there's no professional risk.",
+      "Ask a trusted friend to read it before you post.",
     ],
     0,
-    "Evaluating second-order consequences prevents five minutes of emotional venting from creating years of professional regret."
+    "Second-order thinking — asking 'and then what?' — prevents five minutes of venting from causing years of regret."
   ),
   q(
     "10-understanding-4", 10,
-    "What is 'Second-Order Thinking' in emotional decision-making?",
-    "Why is second-order thinking the mark of mature character?",
+    "You made a decision that felt right in the moment but created bigger problems a week later.",
+    "What kind of thinking would have helped most?",
     [
-      "First-order thinking asks 'How does this feel right now?'; second-order thinking asks 'And then what happens? And what are the consequences of that?'",
-      "It is a psychiatric illness characterized by thinking twice.",
-      "It means you must let other people make all decisions for you.",
-      "Second-order thinking is only used in quantum physics.",
+      "Asking 'what happens next?' and 'what are the consequences of that?' before acting.",
+      "Slowing down the decision-making process by involving more people.",
+      "Trusting your gut less and using more data next time.",
+      "Reviewing similar past decisions to see if they worked out.",
     ],
     0,
-    "Immature minds react to first-order impulses; mature minds calculate the ripple effects across the pond of time."
+    "First-order thinking asks 'how does this feel?' — second-order asks 'what follows from that?'"
   ),
-
-  // Point 5: Celebrating conscious choices reinforces self-efficacy.
   q(
     "10-action-5", 10,
-    "You successfully navigated a tense conversation without losing your temper, raising your voice, or yielding your core boundaries.",
+    "You handled a tense conversation without losing your temper or backing down on your values.",
     "What would you do next?",
     [
-      "Take a moment to savor your self-command: 'I stayed grounded and true to my values under pressure, and I am proud of my growth.'",
-      "Worry that you weren't aggressive enough to win total dominance.",
-      "Dwell on the one sentence that wasn't 100% grammatically perfect.",
-      "Immediately look for another argument to test yourself again.",
+      "Acknowledge it — 'I stayed grounded under pressure. That's real growth.'",
+      "Immediately look for where you could have done better.",
+      "Move on quickly — dwelling on it might make you overconfident.",
+      "Tell someone about it so the moment gets the recognition it deserves.",
     ],
     0,
-    "Consciously savoring victories in self-mastery wires the brain to repeat constructive regulation in future high-stakes moments."
+    "Savoring moments of self-mastery wires the brain to repeat that regulated behavior next time."
   ),
   q(
     "10-understanding-5", 10,
-    "How does acknowledging your own emotional self-efficacy build long-term psychological resilience?",
-    "What is the internal foundation of emotional self-efficacy?",
+    "You handled a hard situation well, but didn't stop to acknowledge it. It's already forgotten.",
+    "What did you miss by moving on so quickly?",
     [
-      "It builds an unshakeable internal confidence that no matter what chaos or provocation external life throws at you, you have the capacity to handle yourself with dignity.",
-      "It makes you arrogant and condescending toward everyone else.",
-      "Self-efficacy means you will never face another difficult problem.",
-      "It is an artificial self-esteem boost with no scientific backing.",
+      "An opportunity to reinforce the neural pattern that made the success possible.",
+      "Nothing — reflecting on past wins is just ego.",
+      "The chance to thank others involved in the outcome.",
+      "A moment to analyze what you could improve for next time.",
     ],
     0,
-    "When you trust your own ability to regulate and choose, the world loses its power to terrorize you."
+    "Acknowledging your own self-efficacy builds the internal confidence that no external chaos can shake."
   ),
 ];

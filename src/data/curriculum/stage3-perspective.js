@@ -1,5 +1,5 @@
 // Stage 3: Perspective (Chapters 11 - 15)
-// Themes: Facts vs Assumptions, Alternative Explanations, Inquiring, Intent vs Impact, Respecting Differences
+// Themes: Facts vs. Assumptions, Alternative Explanations, Clarifying Questions, Intention vs. Impact, Different Doesn't Mean Wrong
 
 function q(id, chapterId, situation, prompt, choices, correctIndex, explanation, skillIds = ["perspective"]) {
   return {
@@ -28,715 +28,670 @@ export const stage3Questions = [
   // ==========================================
   // CHAPTER 11: What happened—and what did I assume?
   // ==========================================
-  // Point 1: Separating facts from assumptions prevents unnecessary defensiveness.
   q(
     "11-action-1", 11,
-    "Your supervisor walked past your desk in the hallway this morning without looking up or greeting you.",
+    "Your supervisor walked past without greeting you this morning.",
     "What would you do next?",
     [
-      "Note the observable fact (they walked past without greeting) and recognize that assuming they are angry at you is an unverified mental story.",
-      "Assume you are about to be fired and spend the morning frantically updating your resume.",
-      "Confront them in the breakroom: 'What did I do to make you hate me?'",
-      "Give them the cold shoulder in the afternoon team meeting.",
+      "Note the fact — they walked past — and recognize assuming anger is an unverified story.",
+      "Assume something is wrong and spend the morning preparing for bad news.",
+      "Ask a colleague if they noticed anything off about the supervisor today.",
+      "Give your supervisor the cold shoulder in the afternoon meeting.",
     ],
     0,
-    "Separating the neutral physical fact from your catastrophic narrative prevents self-inflicted anxiety."
+    "Separating observable facts from the stories we add to them prevents self-inflicted anxiety."
   ),
   q(
     "11-understanding-1", 11,
-    "In cognitive psychology, what is the 'Camera Test' when analyzing a stressful interaction?",
-    "What does the Camera Test ask you to do?",
+    "You're upset about a colleague's behavior, but you realize you're guessing at their motive.",
+    "What's the most useful thing to do?",
     [
-      "Filter the event down to only what a video camera would record (sights and sounds), stripping out subjective interpretations of motive.",
-      "Record your coworkers with a hidden camera to catch them making mistakes.",
-      "Analyze your own facial expressions in the mirror every morning.",
-      "Assume that cameras are always watching you.",
+      "Separate what you actually observed from the story you're adding about why they did it.",
+      "Trust your instinct — you've known them long enough to read the situation accurately.",
+      "Get a second opinion from someone who also knows them.",
+      "Confront them while the feeling is still fresh.",
     ],
     0,
-    "The camera test strips away subjective cognitive overlays, leaving clean, objective behavioral data to assess."
+    "Stripping away subjective interpretation leaves clean, objective data to actually assess."
   ),
-
-  // Point 2: Our emotional state shapes the stories we tell ourselves.
   q(
     "11-action-2", 11,
-    "You are feeling exhausted and insecure, and you receive an email from a client saying: 'We need to discuss the budget tomorrow.'",
+    "Exhausted and anxious, you get a client email: 'We need to discuss the budget tomorrow.'",
     "What would you do next?",
     [
-      "Notice that your current fatigue is amplifying fear, take three grounding breaths, and prepare a clear budget summary without doom-spiraling.",
-      "Reply with a defensive multi-page essay justifying every penny spent.",
-      "Cancel tomorrow's meeting out of fear.",
-      "Stay awake all night imagining your company going bankrupt.",
+      "Notice your tired state is amplifying fear — breathe, prepare a clear summary, and avoid doom-spiraling.",
+      "Reply with a defensive essay explaining every budget decision you've made.",
+      "Cancel the meeting — you need more time to prepare.",
+      "Stay up all night imagining worst-case scenarios.",
     ],
     0,
-    "Recognizing that low physical energy primes the brain for threat detection prevents panic reactions."
+    "Recognizing that exhaustion primes the brain for threat detection prevents unnecessary panic."
   ),
   q(
     "11-understanding-2", 11,
-    "How does low sleep or high physiological stress distort our narrative-generating brain?",
-    "What is the biological link between fatigue and negative storytelling?",
+    "You interpret a neutral email as hostile right after a very rough day.",
+    "What's most likely happening?",
     [
-      "Fatigue weakens the prefrontal cortex's ability to regulate the amygdala, making the brain default to threat-oriented, worst-case interpretations.",
-      "Fatigue makes your psychic powers stronger and your guesses 100% accurate.",
-      "Sleep deprivation has zero effect on cognitive interpretation.",
-      "Fatigue makes people excessively optimistic about budgets.",
+      "Low reserves weaken the brain's ability to regulate threat detection — neutral feels dangerous.",
+      "You have good instincts and your read is probably accurate.",
+      "The email is probably more hostile than you realize even rested.",
+      "You're reading between the lines — which is usually correct.",
     ],
     0,
-    "When biological reserves are low, the brain treats neutral ambiguity as an immediate survival threat."
+    "When biological reserves are low, the brain treats ambiguity as an immediate survival threat."
   ),
-
-  // Point 3: Verification breaks the assumption loop.
   q(
     "11-action-3", 11,
-    "A friend has not replied to your invitation to a birthday dinner sent two days ago.",
+    "A friend hasn't replied to your birthday dinner invite in two days.",
     "What would you do next?",
     [
-      "Send a light, low-pressure follow-up: 'Hey! Just finalizing headcounts for Saturday—no pressure, but let me know if you can make it!'",
-      "Post a quote on Instagram about fake friends who never show up.",
-      "Delete them from your contacts and resolve never to invite them again.",
-      "Call all your mutual friends to ask if they are boycotting you.",
+      "Send a light follow-up: 'Just finalizing numbers for Saturday — no pressure if plans changed!'",
+      "Post something about unreliable friends on your social media story.",
+      "Remove them from the guest list and don't bring it up.",
+      "Ask mutual friends if they know what's going on.",
     ],
     0,
-    "A simple, friendly ping checks the status objectively without manufacturing dramatic interpersonal rifts."
+    "A friendly ping checks reality objectively without manufacturing a dramatic interpersonal rift."
   ),
   q(
     "11-understanding-3", 11,
-    "Why does the human brain instinctively prefer inventing a negative certainty over enduring neutral ambiguity?",
-    "Why is ambiguity uncomfortable for the brain?",
+    "You spend three days anxious about something that turns out to be completely fine.",
+    "What would have helped most to do earlier?",
     [
-      "Evolutionary survival prioritized anticipating danger; a perceived negative outcome feels 'predictable', whereas uncertainty feels unsafe to the nervous system.",
-      "The brain is designed to seek misery and unhappiness.",
-      "Ambiguity is comfortable and enjoyable for all humans.",
-      "Negative thoughts always protect you from harm.",
+      "Ask a simple, direct question instead of inventing answers in your head.",
+      "Trust your anxiety — it's usually trying to protect you.",
+      "Wait a bit longer before worrying — you jumped to conclusions too fast.",
+      "Talk it through with someone to validate whether your concern was reasonable.",
     ],
     0,
-    "The brain seeks closure at all costs, frequently creating painful fiction just to escape the suspense of not knowing."
+    "The brain prefers painful fiction over uncertainty — a simple question breaks the loop."
   ),
-
-  // Point 4: Emotional projection distorts intent.
   q(
     "11-action-4", 11,
-    "You feel guilty about having been quiet during a meeting, and someone later asks: 'Are you feeling okay today?'",
+    "You feel guilty about being quiet in a meeting. Later a colleague asks: 'Are you okay?'",
     "What would you do next?",
     [
-      "Hear it as a genuine expression of care, rather than a hidden critique that you didn't contribute enough.",
-      "Snap defensively: 'Why? Do you think I did a terrible job in the meeting?'",
-      "Apologize profusely for being boring and quiet.",
-      "Complain that they are micromanaging your moods.",
+      "Hear it as genuine care — not a hidden comment about your contribution.",
+      "Apologize for not speaking up enough in the meeting.",
+      "Ask them to clarify what they meant by the question.",
+      "Deflect with 'all good' — you don't want to get into it.",
     ],
     0,
-    "Interpreting caring inquiries through the lens of generosity prevents your own internal guilt from distorting their intent."
+    "Interpreting a caring question through the lens of generosity prevents your guilt from distorting their intent."
   ),
   q(
     "11-understanding-4", 11,
-    "What is 'psychological projection' in everyday communication?",
-    "How does projection warp our perceptions of others?",
+    "You're convinced a colleague is annoyed at you, but you haven't verified it.",
+    "What's most likely happening?",
     [
-      "We project our own unacknowledged insecurities, guilt, or irritation onto another person, mistakenly believing they are feeling it toward us.",
-      "It is a cinematic technique for workplace presentations.",
-      "It is the ability to read someone else's mind from across a room.",
-      "It means you are always completely objective.",
+      "You may be projecting your own unease or guilt onto their behavior.",
+      "Your instinct is reliable — you're picking up a real signal.",
+      "You should ask them directly before assuming either way.",
+      "You're probably right and should adjust how you interact with them.",
     ],
     0,
-    "We do not see the world as it is; we see the world through the colored lens of our current internal preoccupations."
+    "We don't see the world as it is — we see it through the colored lens of our current preoccupations."
   ),
-
-  // Point 5: Replacing assumptions with curiosity leads to connection.
   q(
     "11-action-5", 11,
-    "A partner brings home a different grocery brand than the one you specifically asked for on the shared list.",
+    "Your partner bought a different grocery brand than the one you specifically listed.",
     "What would you do next?",
     [
-      "Ask with curiosity: 'Hey, did the store run out of the usual brand?' instead of assuming they ignored your preference.",
-      "Slam the groceries on the counter and accuse them of never listening to you.",
-      "Throw the item in the trash to prove a point.",
-      "Give them the silent treatment throughout dinner.",
+      "Ask with curiosity: 'Did the store not have the usual one?'",
+      "Point out that you were specific on the list and they didn't read it.",
+      "Let it go — it's not worth the conversation.",
+      "Make a note to do the shopping yourself next time.",
     ],
     0,
-    "Leading with curiosity about external circumstances preserves domestic harmony and easily resolves the mix-up."
+    "Curiosity about circumstances preserves harmony and usually resolves the 'problem' in ten seconds."
   ),
   q(
     "11-understanding-5", 11,
-    "Why is Hanlon's Razor ('Never attribute to malice that which is adequately explained by oversight or busyness') a foundation of emotional intelligence?",
-    "What is the power of generous attribution?",
+    "A friend forgets to mention your contribution during a group presentation.",
+    "Before assuming they did it intentionally, what should you consider?",
     [
-      "Most human mistakes stem from distraction, fatigue, or misunderstanding—not malicious conspiracies to harm you.",
-      "It teaches that everyone in the world is incompetent and foolish.",
-      "It proves that people are always trying to trick you.",
-      "It means you should never hold anyone accountable for anything.",
+      "Most oversights stem from distraction or stress — not deliberate malice.",
+      "If it happened, there's probably a pattern worth examining.",
+      "They likely noticed but decided it wasn't worth mentioning.",
+      "Your instinct about people is usually reliable — trust it.",
     ],
     0,
-    "Generous attribution defuses unnecessary outrage, allowing issues to be handled with calm practicality."
+    "Generous attribution defuses unnecessary outrage and allows real issues to be handled practically."
   ),
 
   // ==========================================
   // CHAPTER 12: What else could explain this?
   // ==========================================
-  // Point 1: Generating alternative explanations widens perspective.
   q(
     "12-action-1", 12,
-    "A driver cuts abruptly in front of you in traffic without using their turn signal.",
+    "A driver cuts in front of you in traffic without signaling.",
     "What would you do next?",
     [
-      "Take a breath, maintain safe following distance, and consider: 'Maybe they are rushing to a hospital emergency or simply made a panicked error.'",
-      "Tailgate them aggressively with your high beams on while honking your horn.",
-      "Speed up, cut them off in revenge, and brake check them.",
-      "Let road rage ruin your entire morning commute.",
+      "Breathe, maintain distance, and consider: maybe they're rushing to an emergency.",
+      "Tailgate them until they realize you're unhappy about it.",
+      "Cut them off in return — they need to learn.",
+      "Let the anger simmer for the rest of the commute.",
     ],
     0,
-    "Holding plausible alternative explanations cools road rage instantly and keeps you driving safely."
+    "Holding plausible alternative explanations cools road rage and keeps you driving safely."
   ),
   q(
     "12-understanding-1", 12,
-    "What is the 'Fundamental Attribution Error' in social psychology?",
-    "How does this cognitive bias distort our judgments of others?",
+    "A colleague is late to a meeting again. You immediately think: 'They don't respect my time.'",
+    "What's a more accurate way to assess this?",
     [
-      "We attribute others' mistakes to their flawed character ('They are an idiot'), while attributing our own mistakes to external situational stress ('I was in a rush').",
-      "It is an accounting error made by financial auditors.",
-      "It means other people never make mistakes.",
-      "It proves that people's personalities are 100% predictable.",
+      "Consider that their behavior might reflect circumstance — not character or disrespect.",
+      "Trust your read — repeated behavior is a reliable indicator of attitude.",
+      "Bring it up in the meeting so others are aware of the pattern.",
+      "Address it privately and assume the worst until proven otherwise.",
     ],
     0,
-    "Overcoming the fundamental attribution error means granting others the same situational grace you grant yourself."
+    "Overcoming attribution bias means granting others the same situational grace you'd give yourself."
   ),
-
-  // Point 2: Pausing before concluding protects relationships.
   q(
     "12-action-2", 12,
-    "Your coworker didn't review your pull request or draft document before the promised afternoon cutoff.",
+    "Your coworker didn't review your draft before the promised afternoon deadline.",
     "What would you do next?",
     [
-      "Consider that an urgent client emergency may have hijacked their afternoon, and send a polite reminder before judging their reliability.",
-      "Post in the team public channel that this coworker is holding up the entire company.",
-      "Complain to the CTO that you are working with an uncooperative team.",
-      "Delete your document in frustration.",
+      "Consider an urgent matter may have hijacked their afternoon — send a polite reminder first.",
+      "Post in the team channel that the review is holding up the whole project.",
+      "Tell your manager so they're aware of the reliability issue.",
+      "Do the review yourself to avoid depending on them next time.",
     ],
     0,
-    "Pausing before jumping to condemnation gives teammates room to explain legitimate emergency disruptions."
+    "Pausing before condemnation gives teammates room to explain legitimate disruptions."
   ),
   q(
     "12-understanding-2", 12,
-    "Why does cognitive flexibility (the ability to generate multiple interpretations) predict high resilience and low depression?",
-    "What does cognitive flexibility do for mental health?",
+    "You tend to reach firm conclusions quickly about why people do things.",
+    "What's the risk of this thinking pattern?",
     [
-      "It prevents the brain from getting trapped in rigid, catastrophic conclusions, allowing adaptive problem-solving when reality changes.",
-      "It means you never have to make a firm decision in life.",
-      "It guarantees you will always be happy 24/7.",
-      "Flexible people never experience any stress.",
+      "Quick conclusions often lock you into one interpretation and blind you to better explanations.",
+      "Fast conclusions signal good instincts — they're usually accurate.",
+      "The risk is low if you're also open to being corrected later.",
+      "Speed of judgment matters less than whether you act on it or not.",
     ],
     0,
-    "Flexibility is the antidote to cognitive despair; when one interpretation falls, a flexible mind discovers five other viable paths."
+    "Flexibility prevents the brain from getting trapped in rigid conclusions when reality is more complex."
   ),
-
-  // Point 3: Stress narrows vision; curiosity expands it.
   q(
     "12-action-3", 12,
-    "A normally chatty neighbor walks past you on the sidewalk with their head down and gives only a tight nod.",
+    "A usually chatty neighbor walks past with their head down and barely acknowledges you.",
     "What would you do next?",
     [
-      "Think: 'They might be dealing with terrible personal news or physical pain today,' and send them a gentle mental wish for well-being.",
-      "Assume they think they are better than you and decide to ignore them forever.",
-      "Walk up to their face and demand to know why they didn't say hello.",
-      "Complain to other neighbors that they are snobby and rude.",
+      "Think: 'They might be dealing with something hard today.' and move on warmly.",
+      "Assume they're unhappy with you and think about what you may have done.",
+      "Wave more expressively next time to see if you get a warmer reaction.",
+      "Mention it to another neighbor to check if they noticed too.",
     ],
     0,
-    "Allowing neighbors their private bad days without personalizing it fosters a mature, peaceful community."
+    "Allowing people their private bad days without personalizing it fosters a mature, peaceful community."
   ),
   q(
     "12-understanding-3", 12,
-    "Why does the brain's 'Spotlight Effect' make us assume everyone's behavior revolves around us?",
-    "What is the Spotlight Effect?",
+    "A colleague seems distracted when you're talking. You start wondering if they like you.",
+    "What's the most accurate thing to recognize here?",
     [
-      "Because we experience life from behind our own eyes, we egocentrically overestimate how much others are thinking about and judging us.",
-      "It is a lighting technique used in theatre productions.",
-      "It means that you are the main character of the universe.",
-      "Everyone is constantly evaluating your every breath.",
+      "We dramatically overestimate how much others are focused on us in any given moment.",
+      "Distraction during a conversation is usually a signal of how they feel about you.",
+      "You should check in — asking is more reliable than assuming.",
+      "Their distraction is likely about the topic, not about you personally.",
     ],
     0,
-    "Remembering that other people are the main characters in their own busy, stressful movies frees you from self-centered paranoia."
+    "Other people are the main characters in their own busy inner world — most behavior isn't about you."
   ),
-
-  // Point 4: Searching for missing data prevents hasty conclusions.
   q(
     "12-action-4", 12,
-    "A project budget shows a sudden 15% discrepancy that you didn't expect.",
+    "A project budget shows a sudden 15% discrepancy you didn't expect.",
     "What would you do next?",
     [
-      "Audit the ledger entries calmly, check for recent currency exchange adjustments or software fee changes, and consult the finance lead.",
-      "Accuse the project accountant of fraud and embezzlement on Slack.",
-      "Hide the spreadsheet so leadership doesn't see the discrepancy.",
-      "Panic and resign before anyone notices.",
+      "Audit entries calmly, check for recent fee changes or timing errors, then consult the finance lead.",
+      "Flag it immediately in the team meeting so everyone's aware.",
+      "Assume it's an accounting error and move on — it'll probably sort itself out.",
+      "Ask the team if anyone made unauthorized changes.",
     ],
     0,
-    "Looking for missing technical variables with calm analytical rigor resolves anomalies without unnecessary workplace panic."
+    "Looking for missing information with calm rigor resolves anomalies without unnecessary panic."
   ),
   q(
     "12-understanding-4", 12,
-    "What is the danger of 'Confirmation Bias' when investigating a workplace puzzle?",
-    "How does confirmation bias blind investigators?",
+    "You suspect someone mishandled a budget. You start finding evidence that confirms it everywhere.",
+    "What should make you pause?",
     [
-      "Once you form an initial suspicion, your brain actively hunts only for clues that prove your suspicion right while ignoring contradictory facts.",
-      "It ensures you will always find the correct thief.",
-      "It makes your memory photographic.",
-      "Confirmation bias is the hallmark of unbiased science.",
+      "Once you form a suspicion, the brain actively hunts for confirming evidence while ignoring contradictions.",
+      "If you're finding evidence, your initial read was probably correct.",
+      "Confirmation is normal — it means you should act on your suspicion.",
+      "You should present the evidence you have and let others decide.",
     ],
     0,
-    "Confirmation bias creates dangerous tunnel vision; mature thinkers actively search for evidence that disproves their first guess."
+    "Confirmation bias creates tunnel vision — mature investigators actively search for what disproves their first guess."
   ),
-
-  // Point 5: Embracing multiple truths fosters wisdom.
   q(
     "12-action-5", 12,
-    "A customer review gives your product 3 stars, praising the core utility but criticizing the onboarding complexity.",
+    "A customer gives your product 3 stars — praising the utility but criticizing the onboarding.",
     "What would you do next?",
     [
-      "Celebrate the validation of the core utility while taking the onboarding critique as a clear product improvement roadmap.",
-      "Report the review as malicious and try to get it deleted.",
-      "Despair that your product is a complete failure because it wasn't 5 stars.",
-      "Publicly attack the customer in the comments for being technically illiterate.",
+      "Celebrate the validation of the core product and take the onboarding critique as a roadmap.",
+      "Report it as unhelpful — mixed feedback creates confusion.",
+      "Focus on the positive and note the criticism separately for later review.",
+      "Reach out to the customer to better understand what went wrong.",
     ],
     0,
-    "Holding both the positive value and the constructive critique allows for continuous product excellence."
+    "Holding both the positive and critical truths simultaneously allows for real improvement."
   ),
   q(
     "12-understanding-5", 12,
-    "Why is nuance the ultimate hallmark of high emotional intelligence?",
-    "Why is binary black-and-white thinking a developmental trap?",
+    "You tend to judge situations as either great or terrible — rarely anything in between.",
+    "What's the cost of this pattern?",
     [
-      "Real human life and relationships rarely exist in binary absolutes (all good vs all bad); wisdom lives in tolerating complex, mixed truths.",
-      "Binary thinking is much simpler and faster, so it is always superior.",
-      "Nuance is an excuse for weak, indecisive people.",
-      "Everything in the world is strictly black or white.",
+      "Binary thinking misses the nuanced reality of most situations and amplifies unnecessary distress.",
+      "Clear thinking requires clear categories — ambiguity leads to poor decisions.",
+      "The cost is low if your assessments are usually accurate.",
+      "Most situations genuinely are either positive or negative — nuance is often overthinking.",
     ],
     0,
-    "Embracing nuance liberates you from childish emotional splits, enabling mature, grounded engagement with a complex world."
+    "Embracing nuance liberates you from emotional splits and enables grounded engagement with complexity."
   ),
 
   // ==========================================
   // CHAPTER 13: Ask instead of guessing
   // ==========================================
-  // Point 1: A clarifying question saves hours of anxiety.
   q(
     "13-action-1", 13,
-    "Your manager sends an email saying: 'We need to talk about your role on Monday morning.'",
+    "Your manager emails: 'We need to talk about your role on Monday morning.'",
     "What would you do next?",
     [
-      "Reply calmly: 'Sounds good! Could you let me know the main topics so I can come prepared with any helpful materials?'",
-      "Spend the entire weekend crying, convinced you are being demoted or terminated.",
-      "Send a panicked 10-page email listing all your accomplishments over the past three years.",
-      "Call in sick on Monday to avoid the conversation.",
+      "Reply calmly: 'Happy to chat. Could you share the main topics so I can come prepared?'",
+      "Spend the weekend mentally preparing for every bad scenario.",
+      "Send a long email listing your recent contributions preemptively.",
+      "Call in sick on Monday to delay the conversation.",
     ],
     0,
-    "A concise, professional question clarifies the agenda and protects your weekend peace of mind."
+    "A concise professional question clarifies the agenda and protects your weekend from dread."
   ),
   q(
     "13-understanding-1", 13,
-    "Why do people suffer from weeks of agonizing anxiety over things that could be clarified in a 30-second question?",
-    "What fear prevents people from asking clarifying questions?",
+    "You spent a week anxious about something your manager said — but never asked what they meant.",
+    "What's the most honest explanation for why you didn't ask?",
     [
-      "People fear that asking will reveal ignorance, seem confrontational, or confirm their worst dread, so they prefer silent agonizing.",
-      "People enjoy being anxious and terrified.",
-      "Clarifying questions are prohibited in modern companies.",
-      "Agonizing in silence always produces better results.",
+      "Asking felt risky — what if the answer confirmed your worst fear?",
+      "You gave them space to bring it up in their own time.",
+      "You were waiting for more context before asking.",
+      "You assumed they'd clarify without being prompted.",
     ],
     0,
-    "Overcoming the micro-fear of asking a question eliminates the macro-agony of weeks of unfounded dread."
+    "Overcoming the micro-fear of asking a single question eliminates weeks of unfounded dread."
   ),
-
-  // Point 2: Open questions invite deeper context.
   q(
     "13-action-2", 13,
-    "A client suddenly rejects a proposal they previously expressed enthusiasm for.",
+    "A client suddenly rejects a proposal they seemed excited about last week.",
     "What would you do next?",
     [
-      "Ask: 'We'd love to understand what shifted on your side so we can adapt our approach—what priorities changed?'",
-      "Accuse them of wasting your time and being deceitful.",
-      "Lower your prices by 70% in a desperate panic.",
-      "Ghost them immediately and never do business with them again.",
+      "Ask: 'We'd love to understand what shifted so we can adapt — what priorities changed?'",
+      "Lower the price significantly and see if that resolves it.",
+      "Let them cool off and follow up again in two weeks.",
+      "Ask if there's anything about the proposal that could be adjusted.",
     ],
     0,
-    "Inquiring into shifting organizational priorities uncovers vital business intelligence without burning bridges."
+    "Inquiring into what shifted uncovers business intelligence without burning bridges."
   ),
   q(
     "13-understanding-2", 13,
-    "What is the strategic difference between a closed 'Why did you do that?' and an open 'What shifted on your side?'",
-    "How does wording affect psychological safety in inquiry?",
+    "You asked 'Why did you do that?' and your colleague got defensive. Why?",
+    "What would have worked better?",
     [
-      "'Why did you...' sounds accusatory and invites defensive excuses; 'What shifted...' invites collaborative analysis of external circumstances.",
-      "'Why did you...' is much more aggressive and therefore superior in negotiations.",
-      "There is no difference; all questions sound identical to the listener.",
-      "Closed questions make people feel loved and cherished.",
+      "'Why did you...' sounds like an accusation — 'What led you to...' invites explanation.",
+      "They were probably feeling guilty and you just happened to ask.",
+      "You should have given them more time before asking.",
+      "The phrasing was fine — their reaction was just defensive personality.",
     ],
     0,
-    "Phrasing questions to explore circumstances rather than cross-examine character unlocks honest, non-defensive answers."
+    "Phrasing questions around circumstances rather than character unlocks honest, non-defensive answers."
   ),
-
-  // Point 3: Checking understanding before acting prevents costly rework.
   q(
     "13-action-3", 13,
-    "Your supervisor gives you verbal instructions for an analysis that sound slightly contradictory.",
+    "Your supervisor gives instructions for a report that sound slightly contradictory.",
     "What would you do next?",
     [
-      "Say: 'Just to make sure we're aligned: should I prioritize comparing Q1 versus Q2, or comparing this year against last year?'",
-      "Guess what they meant, spend 40 hours building the wrong report, and get frustrated when they reject it.",
-      "Complain to coworkers that the boss has lost their mind.",
-      "Refuse to work on the analysis until they send a 10-page certified document.",
+      "Clarify: 'Just to make sure we're aligned — should I compare Q1 vs Q2, or year over year?'",
+      "Make your best guess — they're busy and you don't want to bother them.",
+      "Start both versions and show them both at the review.",
+      "Ask a colleague who's worked with them before how they usually want it.",
     ],
     0,
-    "A 10-second alignment check saves 40 hours of wasted effort and demonstrates proactive diligence."
+    "A 10-second alignment check saves hours of rework and shows proactive diligence."
   ),
   q(
     "13-understanding-3", 13,
-    "Why is 'assuming everyone understood' the single most expensive error in team collaboration?",
-    "What does organizational research reveal about assumed alignment?",
+    "A project went sideways because two team members had different ideas of what was agreed.",
+    "What would have prevented this most effectively?",
     [
-      "Assumed alignment masks divergent assumptions until the final deliverable, causing massive rework, delayed launches, and mutual frustration.",
-      "Assumed alignment saves time and makes teams 100% efficient.",
-      "Verification is an insult to professional intelligence.",
-      "Alignment checks are only for children in elementary school.",
+      "A clear check-in after the decision — 'So to confirm, we're all doing X, right?'",
+      "Better documentation of the original meeting discussion.",
+      "Assigning one person to own the decision fully.",
+      "Following up individually with each team member after the meeting.",
     ],
     0,
-    "Verifying shared understanding up front is the cheapest, highest-return investment a team can make."
+    "Verifying shared understanding upfront is the cheapest, highest-return investment a team can make."
   ),
-
-  // Point 4: Inquiring with humility builds respect.
   q(
     "13-action-4", 13,
-    "A junior colleague challenges your proposed technical architecture during a design review.",
+    "A junior colleague challenges your proposed architecture during a design review.",
     "What would you do next?",
     [
-      "Say with genuine curiosity: 'Walk me through that concern—what bottlenecks are you anticipating with that approach?'",
-      "Remind them that you have ten years more experience than they do and dismiss their comment.",
-      "Get defensive and lecture them on technical history.",
-      "Feel humiliated and cancel the review.",
+      "Ask with genuine curiosity: 'Walk me through that concern — what bottlenecks are you seeing?'",
+      "Remind them you have more experience and move on.",
+      "Thank them and note the feedback for after the meeting.",
+      "Open it up to the room to see if others share the concern.",
     ],
     0,
-    "Welcoming technical pushback with intellectual curiosity sharpens system design and builds a culture of psychological safety."
+    "Welcoming pushback with intellectual curiosity sharpens design and builds psychological safety."
   ),
   q(
     "13-understanding-4", 13,
-    "What distinguishes intellectual arrogance from intellectual humility in high-stakes environments?",
-    "Why is intellectual humility a superpower in leadership?",
+    "You always felt the smartest person in the room should drive all the decisions.",
+    "What's the problem with this approach?",
     [
-      "Intellectual humility is fiercely committed to discovering the best truth, regardless of who points it out, while arrogance defends ego at all costs.",
-      "Humility means pretending you know nothing and letting everyone walk over you.",
-      "Arrogance is required to convince people that you are a genius.",
-      "Humility is a sign of executive weakness.",
+      "It closes off information from people who might spot what the smartest person misses.",
+      "It works well in high-stakes environments where speed matters.",
+      "It's efficient — consensus takes too much time.",
+      "It only becomes a problem if the smartest person lacks experience.",
     ],
     0,
-    "Leaders with intellectual humility prioritize getting it right over being right, which makes their teams invincible."
+    "Intellectual humility prioritizes getting it right over being right — making teams stronger."
   ),
-
-  // Point 5: Inquire about feelings, not just facts.
   q(
     "13-action-5", 13,
-    "Your partner has been unusually quiet and pensive throughout your Sunday evening walk.",
+    "Your partner has been unusually quiet on your Sunday evening walk.",
     "What would you do next?",
     [
-      "Gently ask: 'You seem a little quiet and reflective tonight—how is your heart feeling about the week ahead?'",
-      "Ignore them and scroll on your phone the entire walk.",
-      "Say: 'If you're going to be in a bad mood, we should have stayed home.'",
-      "Demand: 'Tell me right now what is wrong with you.'",
+      "Gently ask: 'You seem a bit reflective tonight — how are you feeling about the week ahead?'",
+      "Give them space — they'll talk when they're ready.",
+      "Ask if something happened or if you did something wrong.",
+      "Fill the silence with conversation so it doesn't feel awkward.",
     ],
     0,
-    "A gentle, warm inquiry creates an open door for connection without pressure or annoyance."
+    "A gentle, warm inquiry creates an open door for connection without pressure."
   ),
   q(
     "13-understanding-5", 13,
-    "Why does asking about someone's emotional state build deeper intimacy than merely asking logistical questions?",
-    "What does emotional attunement do for relationships?",
+    "You ask a friend about their feelings rather than just their plans. They open up more than usual.",
+    "What made the difference?",
     [
-      "It signals: 'I see you as a complete human being, not just a task manager or logistical roommate,' deepening bonding.",
-      "It is a manipulative trick to get people to do your chores.",
-      "Emotional questions are dangerous and should be avoided in marriage.",
-      "Logistics are all that matter in mature adult partnerships.",
+      "Asking about feelings signals: 'I see you as a whole person, not just a logistics partner.'",
+      "They were already ready to talk — the question was just the opener.",
+      "You asked at the right moment — timing matters more than phrasing.",
+      "They trust you more than they trust others — that's why they opened up.",
     ],
     0,
-    "Emotional inquiries bridge the gap between living together and truly connecting together."
+    "Emotional inquiry bridges the gap between living together and truly connecting with someone."
   ),
 
   // ==========================================
   // CHAPTER 14: Intention and impact
   // ==========================================
-  // Point 1: Good intentions do not erase painful impact.
   q(
     "14-action-1", 14,
-    "You meant to tease a friend affectionately about their singing voice, but they suddenly look hurt and look away.",
+    "You tease a friend about their singing. They go quiet and look away.",
     "What would you do next?",
     [
-      "Immediately step in: 'I'm so sorry, that was unkind of me. I was trying to joke, but it came out rude and hurtful. Are you okay?'",
-      "Say: 'Relax, it was just a joke! Why can't you take a joke?'",
-      "Pretend you didn't see them get hurt and keep making more singing jokes.",
-      "Get angry at them for being too sensitive and ruining the vibe.",
+      "Apologize immediately: 'That came out unkind — I'm sorry. Are you okay?'",
+      "Say 'It was just a joke — don't take it so seriously.'",
+      "Keep the energy light so the moment doesn't get heavier.",
+      "Wait to see if they bring it up before doing anything.",
     ],
     0,
-    "Acknowledging that your joke caused real pain and apologizing promptly proves that you care more about your friend than defending your joke."
+    "Acknowledging that your joke caused real pain shows you care more about them than defending your intent."
   ),
   q(
     "14-understanding-1", 14,
-    "Why is 'I didn't mean to hurt you' an incomplete and dismissive response to someone who has been hurt?",
-    "What is the flaw in focusing solely on intention?",
+    "You said something hurtful by accident. Your first instinct is to explain that you didn't mean it.",
+    "What's the problem with leading with that?",
     [
-      "Focusing solely on intention demands that the hurt person comfort you for your good motives, while leaving their actual pain ignored and unaddressed.",
-      "Intention is the only thing that matters in ethics; if you didn't mean it, no harm occurred.",
-      "It proves you are an innocent victim of their hypersensitivity.",
-      "Saying you didn't mean it magically repairs all broken bones and feelings.",
+      "It asks the hurt person to comfort you, while their pain goes unacknowledged.",
+      "It's the honest thing to do — intent is what matters most.",
+      "It's only a problem if they're already upset before you explain.",
+      "It works fine as long as you follow up with an apology afterward.",
     ],
     0,
-    "If you accidentally step on someone's foot, you don't argue that your foot had good intentions; you say sorry and step off."
+    "If you step on someone's foot, you don't explain your foot's intentions — you step off and say sorry."
   ),
-
-  // Point 2: Holding intention and impact simultaneously enables repair.
   q(
     "14-action-2", 14,
-    "A colleague was trying to help you by reorganizing your shared filing system, but now you cannot find critical client files.",
+    "A colleague reorganized your shared file system helpfully — but now you can't find the Acme files.",
     "What would you do next?",
     [
-      "Say: 'I appreciate that you were trying to make the system cleaner, but because the layout changed, I can't locate the Acme files for today's deadline. Can you help me find them?'",
-      "Scream that they are an incompetent saboteur who ruined your life.",
-      "Quietly complain to HR without ever speaking to the colleague.",
-      "Delete all their personal folders in retaliation.",
+      "Say: 'I appreciate you tidying it up — can you help me find the Acme files for today's deadline?'",
+      "Undo everything they did and restore it yourself.",
+      "Let them know via message that the reorganization caused a problem.",
+      "Find the files yourself so you don't make them feel bad.",
     ],
     0,
-    "Acknowledging their helpful motive while clearly addressing the disruptive practical impact resolves the issue constructively."
+    "Acknowledging their good motive while naming the real impact resolves the issue without blame."
   ),
   q(
     "14-understanding-2", 14,
-    "How does holding BOTH intention and impact simultaneously prevent toxic blame games?",
-    "What is the superpower of dual-awareness?",
+    "A colleague insists they meant well. You're still frustrated by what happened.",
+    "What's the most emotionally intelligent response?",
     [
-      "It avoids painting the person as an evil villain (respecting their intent) while ensuring the concrete damage is acknowledged and repaired (respecting the impact).",
-      "It allows you to blame everyone for everything simultaneously.",
-      "It makes conversations take five times longer with zero benefit.",
-      "Dual-awareness is impossible for human beings to achieve.",
+      "Acknowledge their intent AND state the concrete impact — both are real at the same time.",
+      "Accept that they meant well and let go of the frustration.",
+      "Ask them to be more careful next time without getting into the details.",
+      "Decide whether their intent or the impact matters more to you here.",
     ],
     0,
-    "Dual-awareness bridges the chasm between defensiveness ('I meant well!') and resentment ('You hurt me!')."
+    "Dual-awareness bridges defensiveness ('I meant well!') and resentment ('But it hurt!') — both are true."
   ),
-
-  // Point 3: Feedback about impact is an opportunity to calibrate.
   q(
     "14-action-3", 14,
-    "A team member tells you: 'When you check in multiple times a day on my progress, it makes me feel micromanaged and distrusted.'",
+    "A team member says your daily check-ins make them feel micromanaged and distrusted.",
     "What would you do next?",
     [
-      "Say: 'Thank you for telling me. My intent was just to stay on top of launch deadlines, but I see how checking so often feels suffocating. Let's agree on one daily check-in instead.'",
-      "Say: 'I'm the manager, so I will check in every five minutes if I want to.'",
-      "Stop speaking to them completely and never check in again, hoping their project fails.",
-      "Tell them they clearly lack professional stamina.",
+      "Thank them for saying so and agree on one check-in per day instead of several.",
+      "Explain your intention — you're trying to stay on top of deadlines, not micromanage.",
+      "Ask them if they have a preferred cadence that would work better.",
+      "Back off the check-ins but flag the risk to your manager.",
     ],
     0,
-    "Validating their experience of micromanagement and establishing an agreed check-in cadence builds mutual trust."
+    "Validating their experience and agreeing on a new cadence builds trust without abandoning accountability."
   ),
   q(
     "14-understanding-3", 14,
-    "Why is impact feedback from teammates the most valuable mirror a leader can receive?",
-    "What does impact feedback provide to leaders?",
+    "You manage your team the way you'd want to be managed — but some team members are unhappy.",
+    "What's most likely missing?",
     [
-      "We cannot see our own shadow or how our habits land on others; feedback allows us to calibrate our behavior to match our highest intentions.",
-      "It allows leaders to identify which employees need to be fired immediately.",
-      "It proves that subordinates have too much power.",
-      "Impact feedback is a sign of organizational breakdown.",
+      "Feedback on how your approach lands on others — not everyone wants the same things you do.",
+      "Clearer expectations about what good management looks like in your company.",
+      "More frequent check-ins so you know sooner when someone's unhappy.",
+      "Better alignment between your style and the company culture.",
     ],
     0,
-    "Without feedback on impact, leaders operate blind, convinced of their own benevolence while leaving unintentional wreckage behind."
+    "Without impact feedback, leaders operate blind — convinced of their own benevolence while missing the effect."
   ),
-
-  // Point 4: Distinguishing malicious intent from clumsy execution.
   q(
     "14-action-4", 14,
-    "An older relative tries to compliment your appearance by saying: 'You look so much healthier now that you've put on a little weight.'",
+    "A relative compliments you by saying you look 'so much healthier' now that you've gained weight.",
     "What would you do next?",
     [
-      "Recognize that in their generation 'healthy' was a compliment for vitality, take a breath, and say gently: 'I appreciate the love, but I prefer not talking about my body weight.'",
-      "Scream that they are body-shaming you and throw your drink at them.",
-      "Storm out of the family holiday dinner crying.",
-      "Make an insulting comment about their wrinkles.",
+      "Recognize the affectionate intent and gently say: 'I prefer not talking about my weight.'",
+      "Tell them that comment is inappropriate and explain why.",
+      "Laugh it off — it's not worth making it awkward.",
+      "Change the subject immediately so everyone can move on.",
     ],
     0,
-    "Discerning the clumsy generational affection behind the remark allows you to set a boundary with calm dignity rather than fury."
+    "Discerning clumsy affection lets you set a boundary with dignity instead of fury."
   ),
   q(
     "14-understanding-4", 14,
-    "Why does attributing clumsy comments to malice cause unnecessary relational destruction?",
-    "What happens when we mistake clumsiness for malice?",
+    "A family member keeps making comments that feel hurtful but are probably well-intentioned.",
+    "What's the most useful thing to recognize?",
     [
-      "It treats well-meaning but socially awkward people as dangerous enemies, destroying family and community bonds that could be healed with gentle boundaries.",
-      "It ensures that only perfect, polished communicators are allowed in your life.",
-      "It protects you from ever hearing an awkward phrase again.",
-      "Everyone who makes a clumsy remark is secretly evil.",
+      "Attributing every clumsy comment to malice destroys bonds that could be healed with gentle boundaries.",
+      "Well-intentioned comments don't cause real harm — only intentional ones do.",
+      "If it keeps happening, the intent probably isn't as good as they claim.",
+      "You can address it or not — the impact is the same either way.",
     ],
     0,
-    "Giving grace for social clumsiness while gently clarifying boundaries keeps loving connections alive across differences."
+    "Giving grace for social clumsiness while gently clarifying limits keeps loving connections alive."
   ),
-
-  // Point 5: Sincere amends requires prioritizing the recipient's experience.
   q(
     "14-action-5", 14,
-    "You accidentally broke your friend's favorite coffee mug that they brought back from a memorable trip to Japan.",
+    "You accidentally broke a friend's favorite mug from a meaningful trip they took.",
     "What would you do next?",
     [
-      "Apologize sincerely, acknowledge the sentimental value that cannot easily be replaced, and offer to research an authentic replacement or treat them to a special dinner.",
-      "Say: 'It's just a piece of cheap ceramic, why are you making a big deal out of it?'",
-      "Hide the broken pieces under the couch and pretend you never saw it.",
-      "Blame them for leaving the mug so close to the edge of the counter.",
+      "Apologize sincerely, acknowledge the sentimental value, and offer to find a replacement or treat them.",
+      "Say 'I'll replace it' and move on quickly so it doesn't become a big moment.",
+      "Apologize once and then let it go — dwelling on it makes it worse.",
+      "Tell them it was an accident and you feel terrible — then see how they want to handle it.",
     ],
     0,
-    "Honoring the sentimental impact and taking active responsibility demonstrates authentic respect for what they cherish."
+    "Honoring the sentimental value and taking active responsibility shows respect for what they cherish."
   ),
   q(
     "14-understanding-5", 14,
-    "Why does minimizing someone else's loss ('It's just a cheap mug') feel like a double violation?",
-    "What does minimization do to the injured party?",
+    "Someone breaks something of yours and says 'It's just a thing — you can replace it.'",
+    "Why does that response feel worse than the loss itself?",
     [
-      "First they suffered the loss of an item they loved; then they suffered the erasure of their right to feel sad about it, compounding the pain.",
-      "It helps them realize that material possessions are illusions of the ego.",
-      "It saves you money on replacement costs.",
-      "It cures their sadness in five seconds.",
+      "First you lost something you loved. Then you lost your right to feel sad about it.",
+      "It's dismissive of your attachment to material things.",
+      "It shifts focus to the practical solution before you've processed the feeling.",
+      "It shows they don't understand the sentimental value of what was lost.",
     ],
     0,
-    "Minimizing another's pain adds the insult of emotional invalidation on top of the original injury."
+    "Minimizing pain adds the insult of invalidation on top of the original injury — that's the double violation."
   ),
 
   // ==========================================
   // CHAPTER 15: Different doesn't mean unreasonable
   // ==========================================
-  // Point 1: Recognizing diverse communication styles avoids false conflict.
   q(
     "15-action-1", 15,
-    "Your new project partner is highly analytical and sends bulleted lists, while you prefer warm, conversational storytelling.",
+    "Your project partner communicates in crisp bullet lists; you prefer warm, flowing conversation.",
     "What would you do next?",
     [
-      "Appreciate that their bulleted precision keeps logistics crisp, and adapt to use clear summaries while bringing your warm storytelling to team meetings.",
-      "Send an email accusing them of being a cold, soulless robot.",
-      "Refuse to read their bullet points until they write in complete, poetic paragraphs.",
-      "Complain to management that your communication styles are fundamentally incompatible.",
+      "Appreciate that their precision complements your warmth — use both styles intentionally.",
+      "Ask them to write in a warmer, more conversational tone so you can relate to it better.",
+      "Adjust to their style completely to make collaboration smoother.",
+      "Bring up the difference directly and agree on a shared format.",
     ],
     0,
-    "Valuing diverse cognitive and communication styles leverages complementary strengths rather than manufacturing cultural friction."
+    "Different communication styles are complementary strengths, not incompatibilities to resolve."
   ),
   q(
     "15-understanding-1", 15,
-    "Why do people fall into the trap of thinking 'My way of communicating is the normal, objective standard'?",
-    "What is the bias of cultural egocentrism?",
+    "You find yourself thinking 'Why can't they just communicate normally?' about a colleague.",
+    "What's the most important thing to recognize?",
     [
-      "We grow up immersed in our personal cultural and family communication norms, unconsciously mistaking our familiarity for universal human propriety.",
-      "Our personal communication style was ordained by evolutionary science as the absolute best.",
-      "Anyone who communicates differently is suffering from a personality disorder.",
-      "All humans are born with the exact same communication preferences.",
+      "Your normal is just the style you grew up with — not a universal standard.",
+      "If their style creates friction, it's worth addressing directly.",
+      "Different styles are fine unless they affect team output.",
+      "Normal communication is actually well-defined — they may need coaching.",
     ],
     0,
-    "True emotional sophistication realizes that your personal style is merely one dialect among a rich global tapestry of expression."
+    "Your personal style is one dialect among many — mistaking familiarity for universality creates false judgment."
   ),
-
-  // Point 2: Respecting introversion and extroversion rhythms.
   q(
     "15-action-2", 15,
-    "After an intense 8-hour strategy workshop, your extroverted colleagues want to go to a loud bar, while an introverted teammate wants to go straight to their hotel room to read.",
+    "After an intense workshop, colleagues want to go to a bar. An introverted teammate wants to rest.",
     "What would you do next?",
     [
-      "Warmly say to the introverted teammate: 'Enjoy your quiet evening to recharge!' and let everyone celebrate in their preferred way without guilt.",
-      "Drag the introverted teammate by the arm to the bar, yelling: 'Don't be a party pooper, you have to come!'",
-      "Mock the introverted teammate for having no social skills.",
-      "Cancel the bar outing for everyone to force group uniformity.",
+      "Warmly tell them: 'Enjoy your quiet evening!' and let everyone recharge their own way.",
+      "Encourage them to come for at least an hour — they might enjoy it.",
+      "Ask if they'd prefer somewhere quieter so they can still join.",
+      "Make it optional and keep the pressure off.",
     ],
     0,
-    "Validating different neurological recharge needs (solitude vs social stimulation) creates an inclusive, pressure-free team culture."
+    "Validating different recharge needs creates an inclusive culture without pressure or guilt."
   ),
   q(
     "15-understanding-2", 15,
-    "What is the biological difference between introverted and extroverted nervous systems regarding dopamine and stimulation?",
-    "What does neuroscience teach about social energy?",
+    "An introverted colleague consistently skips social events. A teammate says they're antisocial.",
+    "What's more accurate to say?",
     [
-      "Introverted nervous systems are more sensitive to dopamine and easily overwhelmed by intense external stimulation; extroverts require higher stimulation to feel energized.",
-      "Introversion is a psychological illness that needs medication.",
-      "Extroverts are selfish people who hate reading books.",
-      "There is zero biological difference; it is purely a matter of willpower.",
+      "Their nervous system reaches capacity at a lower stimulation threshold — it's not antisocial.",
+      "They probably just don't enjoy the team — that's worth watching.",
+      "Introversion can become a problem if it limits team cohesion.",
+      "Without more context, it's hard to say whether it's preference or avoidance.",
     ],
     0,
-    "Honoring biological variations in stimulation sensitivity removes the toxic moral judgment often cast on social preferences."
+    "Honoring neurological variation removes the moral judgment often cast on social preferences."
   ),
-
-  // Point 3: Pacing differences are operational, not moral.
   q(
     "15-action-3", 15,
-    "You prefer making rapid decisions in five minutes, while your business partner insists on sleeping on every major contract overnight.",
+    "You decide quickly. Your business partner always wants to sleep on major decisions.",
     "What would you do next?",
     [
-      "Recognize that their overnight reflection protects the partnership from impulsive errors, and agree on a standard 24-hour decision buffer.",
-      "Call them indecisive and cowardly, and sign contracts without their approval.",
-      "Slow your work down to a complete halt out of spite.",
-      "Dissolve the business because you have different processing tempos.",
+      "Recognize their reflection protects the partnership — agree on a 24-hour decision buffer.",
+      "Point out that slow decisions have a real cost in fast-moving situations.",
+      "Take the lead on time-sensitive decisions and loop them in after.",
+      "Find a middle ground — some decisions get more time, others less.",
     ],
     0,
-    "Pairing fast visionary drive with deliberate reflective scrutiny creates a resilient, high-performing leadership partnership."
+    "Pairing fast drive with deliberate reflection creates a resilient, well-rounded leadership partnership."
   ),
   q(
     "15-understanding-3", 15,
-    "Why is equating speed of response with intelligence or commitment a dangerous cognitive fallacy?",
-    "What is the risk of speed bias?",
+    "A colleague takes three days to respond to messages. You see it as a sign they don't care.",
+    "What's a more balanced interpretation?",
     [
-      "Rapid responders often react on instinct, whereas reflective thinkers process systemic second-order consequences; both tempos offer vital, balanced value.",
-      "Fast responders are always 100% smarter than reflective thinkers.",
-      "Slow responders are lazy and don't care about the company.",
-      "True intelligence is measured solely with a stopwatch.",
+      "Slow response speed often reflects a different processing style — not indifference.",
+      "Three days is too long — response norms matter in team communication.",
+      "If the pattern is consistent, it's worth raising as a team expectation.",
+      "Speed of response genuinely signals level of commitment in most contexts.",
     ],
     0,
-    "High-functioning organizations deliberately balance the agility of fast responders with the depth of reflective synthesizers."
+    "Rapid responders and reflective processors both offer vital value — neither is the better standard."
   ),
-
-  // Point 4: Direct vs indirect communication cultures.
   q(
     "15-action-4", 15,
-    "A colleague from a high-context cultural background says 'That might be a little challenging' to signal that an idea is completely unworkable.",
+    "A colleague says 'That might be a little challenging' — but clearly means the idea won't work.",
     "What would you do next?",
     [
-      "Pick up on the polite diplomatic cue, and explore: 'What specific hurdles do you foresee so we can rethink the direction?'",
-      "Ignore the polite cue and push the bad idea forward, saying: 'Well, you said it's only a little challenging, so let's do it!'",
-      "Loudly demand that they stop speaking in riddles and yell at them.",
-      "Tell them that American bluntness is the only acceptable language in business.",
+      "Hear the diplomatic signal and ask: 'What specific hurdles do you foresee?'",
+      "Take them at their word — 'a little challenging' suggests it's worth pursuing.",
+      "Ask them to be more direct so you can understand their concern.",
+      "Flag the hesitation and revisit it after the meeting.",
     ],
     0,
-    "Understanding high-context diplomatic communication allows you to hear the underlying dissent without demanding blunt confrontation."
+    "Understanding indirect communication lets you hear real dissent without demanding bluntness."
   ),
   q(
     "15-understanding-4", 15,
-    "What is the distinction between 'High-Context' (indirect) and 'Low-Context' (direct) communication cultures?",
-    "What is the key cross-cultural communication framework?",
+    "A team member from another culture rarely disagrees directly in meetings.",
+    "What's the most useful thing to know about this?",
     [
-      "Low-context cultures place all meaning directly into explicit words; high-context cultures weave meaning into relationships, nonverbal cues, and social hierarchy.",
-      "Low-context cultures are barbaric, while high-context cultures are weak.",
-      "High-context communication is an obsolete relic that should be abolished.",
-      "There is only one universal communication culture on Earth.",
+      "Many cultures express disagreement through indirectness — silence or hesitation can mean 'no.'",
+      "Silence in a meeting usually signals agreement across most cultures.",
+      "You should address it directly and explain that directness is expected here.",
+      "Their culture's communication style may create problems in a fast-moving team.",
     ],
     0,
-    "Cross-cultural fluency recognizes that direct bluntness and diplomatic indirectness are both coherent, sophisticated systems of human harmony."
+    "Direct bluntness and diplomatic indirectness are both coherent systems — neither is more professional."
   ),
-
-  // Point 5: Celebrating complementary differences builds formidable teams.
   q(
     "15-action-5", 15,
-    "You are an optimistic, big-picture visionary paired with a pragmatic, detail-obsessed risk manager who constantly questions your assumptions.",
+    "You're an optimistic visionary. Your partner in the project constantly stress-tests your ideas.",
     "What would you do next?",
     [
-      "Embrace them as your greatest asset: 'Your eye for risk protects my vision from blowing up. Let's stress-test this concept together.'",
-      "Try to get them removed from the team because they crush your enthusiasm.",
-      "Surround yourself exclusively with people who always say yes to all your ideas.",
-      "Give up on all big-picture visions and become cynical.",
+      "Embrace them as a co-pilot: 'Your eye for risk protects my vision from blowing up.'",
+      "Find a way to get more sign-off without their input first.",
+      "Balance their skepticism by advocating more strongly for your ideas.",
+      "Agree to a review step where they can raise concerns before you move forward.",
     ],
     0,
-    "Welcoming your cognitive opposite as a co-pilot creates bulletproof strategies that neither could achieve alone."
+    "Welcoming your cognitive opposite creates bulletproof strategies neither could achieve alone."
   ),
   q(
     "15-understanding-5", 15,
-    "Why does assembling a team of identical clones who think and communicate exactly like you lead to catastrophic failure?",
-    "What is the fatal flaw of intellectual monoculture?",
+    "Your team all share the same working style, background, and approach. Projects feel smooth.",
+    "What's the hidden risk in this?",
     [
-      "Homogeneous teams share the exact same blind spots, resulting in groupthink, unvetted risks, and sudden blind-sided collapse.",
-      "Monocultures are celebrated for their incredible creativity and innovation.",
-      "Clones are always more fun at office holiday parties.",
-      "Diversity in thinking is only a marketing slogan with no operational value.",
+      "Homogeneous teams share the same blind spots — groupthink can lead to sudden collapse.",
+      "Teams that work smoothly tend to perform better long-term.",
+      "Shared style reduces friction, which actually improves problem-solving.",
+      "The risk is low if the team is highly experienced and talented.",
     ],
     0,
-    "Resilient teams thrive on cognitive friction; diverse perspectives illuminate blind spots before reality delivers a painful lesson."
+    "Resilient teams thrive on cognitive friction — diverse perspectives illuminate blind spots before reality does."
   ),
 ];

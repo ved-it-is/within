@@ -28,570 +28,534 @@ export const stage5Questions = [
   // ==========================================
   // CHAPTER 21: Put your experience into words
   // ==========================================
-  // Point 1: A concrete observation and impact give the conversation a clearer starting point.
   q(
     "21-action-1", 21,
-    "Your roommate repeatedly leaves clean laundry piled on the shared sofa for several days.",
+    "Your roommate's laundry sits on the shared sofa for days every week.",
     "What would you do next?",
     [
-      "Say: 'When your laundry stays on the couch for a few days, I feel frustrated because I can't sit down to relax after work.'",
-      "Yell: 'You are the most inconsiderate, messy person I have ever lived with!'",
-      "Throw their laundry on the floor and slam your bedroom door.",
-      "Say nothing, but sigh loudly every time you squeeze onto the corner of the sofa.",
+      "Say: 'When laundry stays on the couch for days, I can't sit down after work to relax.'",
+      "Tell them they're the most inconsiderate person you've ever lived with.",
+      "Throw their laundry on the floor to make a point.",
+      "Sigh loudly every time you squeeze into the corner of the sofa.",
     ],
     0,
-    "Stating a concrete neutral observation paired with its personal impact opens problem-solving without provoking instant defense."
+    "Stating an observable fact paired with its personal impact opens problem-solving without triggering defense."
   ),
   q(
     "21-understanding-1", 21,
-    "Why is beginning a conversation with a specific factual observation more effective than starting with an evaluation?",
-    "What is the key communication insight?",
+    "You tell a colleague: 'You always make me feel ignored in meetings.'",
+    "Why does this approach tend to backfire?",
     [
-      "Factual observations describe what a camera could record, making it harder to dispute, whereas evaluations sound like personal attacks.",
-      "Starting with evaluations shows that you are dominant and authoritative.",
-      "Observations are only useful if the other person is already calm.",
-      "Starting with evaluations gets to the emotional truth faster.",
+      "Absolute words and character claims trigger defensiveness instead of addressing the real behavior.",
+      "It's too direct — indirect hints often work better in professional settings.",
+      "It's fine to start there if you soften it with a compliment first.",
+      "The real issue is that you haven't given them enough feedback before.",
     ],
     0,
-    "Observable facts provide a shared, neutral ground for discussion, whereas character judgments immediately trigger counter-attacks."
+    "Observable facts create shared neutral ground — character judgments immediately trigger counter-attacks."
   ),
-
-  // Point 2: A specific impact is easier to discuss than a claim about their character.
   q(
     "21-action-2", 21,
-    "A team member arrived twenty minutes late to a client kickoff meeting you were co-hosting.",
+    "A team member arrived 20 minutes late to a client kickoff meeting you were co-hosting.",
     "What would you do next?",
     [
-      "Say in private: 'When you arrived twenty minutes late, I had to scramble to cover the technical slides alone without preparation.'",
-      "Tell the client in front of everyone: 'Sorry my colleague has terrible time management.'",
-      "Say: 'You clearly don't care about this project or my career.'",
-      "Pretend nothing happened and let it slide, hoping they won't repeat it.",
+      "Tell them privately: 'When you arrived late, I had to cover the technical slides alone without prep.'",
+      "Apologize to the client in front of everyone for your colleague's poor time management.",
+      "Tell them they clearly don't care about this project.",
+      "Let it go and hope they don't repeat it.",
     ],
     0,
-    "Describing the operational impact of their lateness keeps the issue professional and clearly understood."
+    "Describing the operational impact keeps the issue professional and clearly understood."
   ),
   q(
     "21-understanding-2", 21,
-    "Someone says to you: 'You never care about anyone else's schedule.' How does this character claim affect the dialogue?",
-    "What happens when character claims are used?",
+    "Someone says to you: 'You never care about anyone else's schedule.'",
+    "What makes this hard to respond to constructively?",
     [
-      "Absolute words like 'never' and character accusations force you into defending your morality rather than discussing the specific schedule conflict.",
-      "It helps you reflect on your lifelong flaws and become a better person immediately.",
-      "It encourages a collaborative, win-win negotiation.",
-      "It makes the conversation much shorter and more productive.",
+      "Absolute words like 'never' force you to defend your whole character instead of discussing the specific event.",
+      "It's a fair observation — 'never' is just used for emphasis.",
+      "You need to agree with the feeling even if the 'never' isn't literally true.",
+      "The best response is to give them a counterexample that disproves 'never.'",
     ],
     0,
-    "Sweeping accusations derail conversations into debates about character rather than resolving the practical behavior."
+    "Sweeping accusations derail conversations into character debates instead of resolving the real issue."
   ),
-
-  // Point 3: Observation and personal impact avoid assuming why they acted.
   q(
     "21-action-3", 21,
-    "Your partner didn't reply to a text message you sent five hours ago about dinner plans.",
+    "Your partner didn't reply to your text about dinner plans five hours ago.",
     "What would you do next?",
     [
-      "When they get home, ask: 'I didn't hear back about dinner and felt stranded. Did your day get unexpectedly hectic?'",
-      "Send a text: 'I guess I'm invisible to you now.'",
+      "When they get home, say: 'I felt stranded about dinner — did something come up today?'",
+      "Text: 'I guess I'm invisible to you now.'",
       "Order dinner only for yourself to teach them a lesson.",
-      "Call ten times in a row leaving increasingly frantic voicemails.",
+      "Call repeatedly until they pick up.",
     ],
     0,
-    "Expressing your stranded feeling while staying open to their context avoids assigning malicious motives."
+    "Expressing your experience while staying open to their context avoids assigning malicious motives."
   ),
   q(
     "21-understanding-3", 21,
-    "You find yourself thinking: 'They didn't invite me to lunch because they want to exclude me.'",
-    "How can you untangle fact from interpretation?",
+    "You weren't invited to a lunch your colleagues went to and you feel deliberately excluded.",
+    "What's the most accurate way to look at this?",
     [
-      "The fact is you were not invited; the idea that they deliberately sought to exclude you is an unverified mental interpretation.",
-      "Your gut feeling is infallible proof of their secret motives.",
-      "Assume everyone at the table spent the entire lunch gossiping about you.",
-      "Conclude that you must immediately distance yourself from the whole group.",
+      "The fact is you weren't invited — the belief that it was deliberate exclusion is unverified.",
+      "Your gut feeling about social dynamics is usually reliable.",
+      "Even if it wasn't intentional, the pattern matters and is worth addressing.",
+      "Bring it up with a trusted colleague to get their read on what happened.",
     ],
     0,
-    "Distinguishing what actually occurred from the story your brain constructed prevents self-inflicted interpersonal drama."
+    "Distinguishing what actually happened from the story your brain added prevents self-inflicted drama."
   ),
-
-  // Point 4: Naming your experience gives the conversation a clear focus.
   q(
     "21-action-4", 21,
-    "A colleague interrupts you three times during a technical briefing.",
+    "A colleague interrupts you three times during your technical briefing.",
     "What would you do next?",
     [
-      "Calmly say: 'Hold on, let me finish this thought so the full context is clear, and then I'll hand it over to you.'",
-      "Stop speaking, fold your arms, and glare at the table for the rest of the briefing.",
-      "Loudly insult their lack of manners in front of the team.",
-      "Interrupt them constantly for the remainder of the meeting in revenge.",
+      "Say calmly: 'Hold on — let me finish this thought, then it's yours.'",
+      "Stop talking, cross your arms, and glare at the table.",
+      "Call out their lack of manners in front of the team.",
+      "Interrupt them right back for the rest of the meeting.",
     ],
     0,
-    "A calm, assertive boundary holds the floor constructively without turning the meeting into a battleground."
+    "A calm, assertive redirection holds the floor constructively without turning the meeting into a battleground."
   ),
   q(
     "21-understanding-4", 21,
-    "Why does using 'I feel [emotion]' communicate more cleanly than using 'I feel like you [accusation]'?",
-    "What is the grammatical and emotional distinction?",
+    "You say 'I feel like you don't respect me.' Your colleague gets defensive.",
+    "What's the core issue with that phrasing?",
     [
-      "'I feel like you...' is an accusation in disguise, whereas 'I feel...' actually communicates your internal emotional reality.",
-      "There is no difference; both are equally effective 'I' statements.",
-      "'I feel like you...' is much more honest because it focuses on what the other person did wrong.",
-      "Using genuine feeling words makes you appear vulnerable and weak in negotiations.",
+      "'I feel like you...' is a veiled accusation — 'I feel [emotion]' actually names your inner experience.",
+      "The problem is the topic — respect is too charged to raise directly.",
+      "It would have landed better in writing than spoken out loud.",
+      "You should have asked a question first before stating how you feel.",
     ],
     0,
-    "Disguising thoughts and blame as feelings sabotages communication, whereas authentic feeling words build bridgeheads."
+    "Disguising accusations as feelings sabotages communication — authentic feeling words build connection."
   ),
-
-  // Point 5: A concrete account communicates the effect without judging the whole person.
   q(
     "21-action-5", 21,
-    "A friend made a joke at your expense during a dinner party that made you feel humiliated.",
+    "A friend made a joke about your career struggles at dinner in front of the group.",
     "What would you do next?",
     [
-      "Pull them aside later and say: 'When you joked about my career struggles in front of the group, I felt embarrassed and hurt.'",
-      "Roast them back viciously at the table targeting their deepest insecurity.",
-      "Block their number on your phone the moment you get home without explaining why.",
-      "Laugh along loudly at the table while secretly planning to cut them off forever.",
+      "Pull them aside later: 'When you joked about my career in front of everyone, I felt humiliated.'",
+      "Roast them back viciously, targeting their deepest insecurity.",
+      "Block their number when you get home without saying why.",
+      "Laugh along while privately planning to distance yourself.",
     ],
     0,
-    "Addressing the specific joke in private separates the hurtful act from their character and allows for genuine accountability."
+    "Addressing the specific moment in private separates the act from their character and allows real accountability."
   ),
   q(
     "21-understanding-5", 21,
-    "A close friend tells you: 'When you canceled our plans at the last minute yesterday, I felt let down.'",
-    "What is the most emotionally intelligent way to hear this?",
+    "A friend tells you: 'When you canceled yesterday, I felt let down.'",
+    "What's the most emotionally intelligent way to hear that?",
     [
-      "Hear it as a specific reflection of how your cancellation affected them, rather than an indictment of you as a terrible human being.",
-      "Argue immediately that you had a very good excuse and that they have no right to feel let down.",
-      "Spiral into self-hatred, believing you are incapable of being a loyal friend.",
-      "Counter-attack by bringing up a time they canceled on you six months ago.",
+      "Hear it as feedback about a specific moment — not a verdict on who you are as a person.",
+      "Apologize once and then explain why canceling was unavoidable.",
+      "Point out a time they canceled on you so the context is fair.",
+      "Ask if there are other things that have been bothering them too.",
     ],
     0,
-    "Hearing feedback about impact without taking it as a death sentence for your self-worth enables gracious repair."
+    "Hearing impact feedback without treating it as a condemnation of your character enables gracious repair."
   ),
 
   // ==========================================
   // CHAPTER 22: Make a clear request
   // ==========================================
-  // Point 1: The request names a specific action and when it matters.
   q(
     "22-action-1", 22,
-    "You need your coworker to review a 10-page document before an upcoming board presentation.",
+    "You need a coworker to review your 10-page document before a board presentation.",
     "What would you do next?",
     [
-      "Ask: 'Could you review pages 4 through 8 by Thursday at 2 PM, specifically checking the financial forecasts?'",
+      "Ask: 'Can you review pages 4–8 by Thursday at 2 PM, focusing on the financial forecasts?'",
       "Say: 'Can you look over my stuff whenever you get a chance?'",
-      "Leave the printout on their desk with no note and get angry if they don't read it.",
-      "Demand: 'Drop whatever you're doing right now and read this immediately.'",
+      "Leave the printout on their desk with no note and hope they read it.",
+      "Drop by and say: 'Drop everything — I need your eyes on this now.'",
     ],
     0,
-    "Specifying the section, focus area, and deadline turns a vague chore into a manageable, actionable task."
+    "Specifying the section, focus, and deadline turns a vague chore into a clear, manageable task."
   ),
   q(
     "22-understanding-1", 22,
-    "Why do vague complaints like 'Please be more considerate' rarely lead to lasting behavioral change?",
-    "What makes vague complaints ineffective?",
+    "You ask a colleague to 'be more considerate' but nothing changes.",
+    "What's most likely the issue?",
     [
-      "Consideration means different things to different people; without naming the concrete behavior desired, the other person must guess what you want.",
-      "People are inherently selfish and will only respond to strict financial penalties.",
-      "Complaints should always be broad to cover all future mistakes.",
-      "Vague complaints are more polite than specific requests.",
+      "Consideration means different things to different people — without naming the specific behavior, they're guessing.",
+      "They don't take your feedback seriously — it's a relationship issue.",
+      "Vague feedback sometimes needs to be repeated before it lands.",
+      "You need to be more direct about the consequences if they don't change.",
     ],
     0,
-    "Clarity is kindness; naming the exact action desired eliminates guesswork and reduces friction."
+    "Clarity is kindness — naming the exact behavior desired eliminates guesswork and reduces friction."
   ),
-
-  // Point 2: An action and a time make the request concrete enough to discuss.
   q(
     "22-action-2", 22,
     "You want your partner to take a more active role in keeping the kitchen clean on weeknights.",
     "What would you do next?",
     [
-      "Propose: 'Could we agree that whoever doesn't cook washes the dishes and wipes the counters before 9 PM?'",
-      "Sigh and loudly slam pots in the sink every night while muttering: 'Nobody helps me in this house.'",
-      "Demand that they hire a full-time cleaner out of their personal budget.",
-      "Stop cooking dinner entirely and eat takeout in your car.",
+      "Propose: 'Could whoever doesn't cook wash the dishes and wipe the counters before 9 PM?'",
+      "Sigh and slam pots in the sink every night while muttering.",
+      "Tell them you'll handle everything if they handle all grocery shopping.",
+      "Stop cooking until they notice and bring it up themselves.",
     ],
     0,
-    "Proposing a shared, concrete routine with clear roles and timing transforms resentment into practical agreement."
+    "Proposing a concrete, shared routine with clear roles turns silent resentment into workable agreement."
   ),
   q(
     "22-understanding-2", 22,
-    "Someone responds to your request by saying: 'I can't do Thursday, but I could do Friday morning.'",
-    "What does this response demonstrate about requests versus demands?",
+    "You make a request and they offer a different time than what you asked for.",
+    "What does this tell you about requests vs. demands?",
     [
-      "A genuine request allows room for negotiation and counter-offers, whereas a demand punishes any response other than instant compliance.",
-      "It proves they don't respect your authority.",
-      "You should reject their Friday offer to show that your initial deadline was non-negotiable.",
-      "It shows they are deliberately testing your patience.",
+      "A genuine request makes room for negotiation — a demand punishes anything other than instant compliance.",
+      "They're not taking your timeline seriously — it's worth pushing back.",
+      "Counter-offers are a sign they want to help but need the terms adjusted.",
+      "You should accept the counter-offer to keep the relationship smooth.",
     ],
     0,
-    "True requests respect the other person's agency, treating counter-proposals as collaborative problem-solving."
+    "Real requests respect the other person's agency — counter-proposals are collaborative problem-solving."
   ),
-
-  // Point 3: A clear timeframe explains when the action would be helpful.
   q(
     "22-action-3", 22,
-    "You are asking a family member to pick you up from the airport after a delayed evening flight.",
+    "You need a family member to pick you up from the airport after a delayed evening flight.",
     "What would you do next?",
     [
-      "Text: 'My flight lands at 9:45 PM at Terminal 2. If you're free, could you pick me up outside baggage claim around 10:15 PM? If not, no worries at all—I will grab a cab.'",
+      "Text: 'Flight lands at 9:45 PM, Terminal 2 — could you pick me up at 10:15? No worries if not, I'll grab a cab.'",
       "Text: 'Pick me up tonight.'",
-      "Call them from the curb at 10:15 PM demanding to know why they aren't waiting for you.",
-      "Assume they don't want to help and pay for an expensive private car without asking.",
+      "Call from the curb demanding to know why they're not there.",
+      "Book a private car without asking — you don't want to impose.",
     ],
     0,
-    "Providing flight details, estimated curb time, and an explicit low-pressure alternative respects their schedule."
+    "Providing details, time, and a no-pressure alternative respects their schedule and invites genuine help."
   ),
   q(
     "22-understanding-3", 22,
-    "Why does attaching an open exit clause (e.g., 'If not, no problem, I have a backup') strengthen relationships?",
-    "What is the psychological effect of a low-pressure request?",
+    "You add 'No worries if not — I have a backup plan' to a request. The person says yes enthusiastically.",
+    "Why does that exit clause matter?",
     [
-      "It removes the fear of obligation, allowing the other person to say yes from authentic generosity rather than guilty compliance.",
-      "It signals to the other person that you don't actually need their help.",
-      "It makes you look indecisive and weak.",
-      "It guarantees they will always say no.",
+      "It removes the fear of obligation — they say yes from genuine generosity, not guilty compliance.",
+      "It signals you don't actually need their help, so they feel less pressured.",
+      "It makes you seem more organized, which builds trust.",
+      "It tells them their answer won't affect your relationship either way.",
     ],
     0,
-    "When people feel genuinely free to say no, their 'yes' becomes sincere, joyful, and free from underlying resentment."
+    "When people feel truly free to say no, their yes becomes sincere — free from hidden resentment."
   ),
-
-  // Point 4: Naming the desired action is clearer than a general complaint about consideration.
   q(
     "22-action-4", 22,
-    "Your supervisor regularly sends work emails after 9 PM that cause your phone to ping and disrupt your sleep.",
+    "Your supervisor regularly emails after 9 PM and the pings disrupt your sleep.",
     "What would you do next?",
     [
-      "Say in your 1-on-1: 'I've noticed emails coming in late; I turn notifications off at 8 PM to recharge, so I'll review and respond to evening messages first thing at 8:30 AM.'",
-      "Reply at 11 PM with a furious email accusing them of violating your human rights.",
-      "Ignore all emails throughout the workday to punish them for messaging late.",
-      "Complain to HR before having a direct conversation with your supervisor.",
+      "Say in your 1-on-1: 'I turn off notifications at 8 PM to recharge — I'll respond to evening emails first thing at 8:30 AM.'",
+      "Reply at 11 PM with a furious email about work-life balance.",
+      "Start ignoring all emails during the workday to set a precedent.",
+      "Complain to HR before having a conversation with your supervisor.",
     ],
     0,
-    "Proactively defining your communication rhythms and response commitments establishes professional boundaries smoothly."
+    "Proactively defining your communication rhythm and response commitment sets boundaries professionally."
   ),
   q(
     "22-understanding-4", 22,
-    "Why is asking for what you DO want more productive than listing all the things you DON'T want?",
-    "What is the power of positive action formulation?",
+    "You tell a team member what you DON'T want them to do. The behavior keeps happening in different ways.",
+    "What's the better approach?",
     [
-      "Stating positive actions provides an immediate behavioral target, whereas listing negatives leaves countless other undesirable alternatives open.",
-      "Listing negatives is more psychologically satisfying.",
-      "People are incapable of understanding negative statements.",
-      "Positive requests always guarantee 100% immediate obedience.",
+      "Tell them exactly what you DO want — negatives leave too many alternatives open.",
+      "Be more specific about what you don't want next time.",
+      "Pair the 'don't' with an explanation of why it matters.",
+      "Set a clear consequence so they understand the stakes.",
     ],
     0,
-    "Focusing on the desired target behavior gives people a clear roadmap for success instead of navigating a minefield of 'don'ts'."
+    "Stating the desired target behavior gives people a roadmap for success instead of a minefield of don'ts."
   ),
-
-  // Point 5: A specific, feasible request allows an informed yes, no, or alternative.
   q(
     "22-action-5", 22,
-    "You are organizing a charity fundraiser and need volunteers to manage the registration desk.",
+    "You need two volunteers for a 90-minute registration shift at a charity event.",
     "What would you do next?",
     [
-      "Send a message: 'We need two people for a 90-minute shift from 9:00 to 10:30 AM to hand out badges. Let me know by Wednesday if you can take that slot.'",
-      "Post: 'We need tons of help, please show up whenever you can on Saturday.'",
-      "Guilt-trip your friends privately: 'If you really supported my values, you would spend your whole Saturday here.'",
-      "Assign people to shifts without asking their availability.",
+      "Message: 'We need two people for 9:00–10:30 AM on Saturday to hand out badges. Let me know by Wednesday.'",
+      "Post: 'We need tons of help — just show up whenever you can!'",
+      "Message friends privately: 'If you really cared about this cause you'd spend your whole Saturday here.'",
+      "Assign people to shifts without checking their availability.",
     ],
     0,
-    "A bounded, clearly timed request makes volunteering easy to evaluate and commit to without anxiety."
+    "A bounded, clearly timed request makes volunteering easy to commit to without anxiety."
   ),
   q(
     "22-understanding-5", 22,
-    "When someone asks you for a massive favor that you cannot fully accommodate, what is the best collaborative approach?",
-    "How can you negotiate a request you cannot fulfill completely?",
+    "Someone asks you for a massive favor you can't fully accommodate.",
+    "What's the most constructive response?",
     [
-      "Decline the parts you cannot do while offering a feasible alternative within your genuine capacity.",
-      "Say yes anyway and resent them deeply the entire time you do it.",
-      "Ignore their message completely and pretend you never received it.",
-      "Lecture them on why their request was unreasonable and selfish.",
+      "Decline what you can't do and offer a specific, smaller alternative within your real capacity.",
+      "Say yes and do your best even if the result will be subpar.",
+      "Explain why the request is too large and ask them to scale it down.",
+      "Check whether anyone else could take on the parts you can't.",
     ],
     0,
-    "Offering a counter-proposal that reflects your true capacity maintains the connection while honoring your limits."
+    "Offering a counter-proposal that reflects your real capacity maintains the connection while honoring your limits."
   ),
 
   // ==========================================
   // CHAPTER 23: Say no respectfully
   // ==========================================
-  // Point 1: A brief, honest limit can be enough. You do not have to provide every personal detail.
   q(
     "23-action-1", 23,
-    "A neighbor invites you to a Saturday afternoon barbecue, but you already planned a quiet weekend to rest after a grueling week.",
+    "A neighbor invites you to a Saturday barbecue. You planned a quiet rest day.",
     "What would you do next?",
     [
-      "Say warmly: 'Thanks so much for the invite! I won't be able to make it this Saturday, but I hope you all have a wonderful time.'",
-      "Invent an elaborate lie about a sick relative and worry all weekend that they will catch you in the lie.",
-      "Agree to go, show up in an exhausted bad mood, and leave after twenty minutes.",
-      "Ignore the invitation and avoid making eye contact whenever you see them outside.",
+      "Say warmly: 'Thanks so much for the invite! I won't make it this weekend, but hope you all have a great time.'",
+      "Invent an elaborate excuse and worry all weekend about getting caught.",
+      "Agree to go, show up exhausted, and leave after twenty minutes.",
+      "Ignore the invitation and avoid eye contact when you see them outside.",
     ],
     0,
-    "A warm, gracious decline requires no fabricated excuses; an honest boundary delivered with kindness is complete in itself."
+    "A warm, gracious decline needs no fabricated excuse — a kind boundary is complete in itself."
   ),
   q(
     "23-understanding-1", 23,
-    "Why do people feel an overwhelming compulsion to over-explain and fabricate elaborate excuses when saying no?",
-    "What emotional mechanism drives over-explaining?",
+    "You find yourself inventing elaborate excuses whenever you have to say no.",
+    "What's most likely driving that?",
     [
-      "Over-explaining is driven by anxiety and the desire to manage the other person's feelings, mistakenly believing a simple limit isn't valid on its own.",
-      "It proves that you are an honest and transparent communicator.",
-      "Elaborate excuses always make the other person happier.",
-      "It is illegal to decline an invitation without a verifiable doctor's note.",
+      "Anxiety that a simple 'I can't' won't feel valid enough — so you over-explain to manage their reaction.",
+      "You genuinely need to give reasons for people to accept your decisions.",
+      "You're protecting the relationship — reasons make a no feel less personal.",
+      "It's a habit from childhood — most people do this unconsciously.",
     ],
     0,
-    "Recognizing that your personal capacity is a legitimate boundary on its own frees you from the trap of anxious over-explaining."
+    "Recognizing that your personal capacity is a legitimate boundary on its own frees you from anxious over-explaining."
   ),
-
-  // Point 2: A brief limit can be clear without judging the request or the person.
   q(
     "23-action-2", 23,
-    "A friend asks to borrow your car for the weekend, but you are not comfortable lending your vehicle to anyone.",
+    "A friend asks to borrow your car for the weekend. You're not comfortable lending it.",
     "What would you do next?",
     [
-      "Say honestly: 'I'm not comfortable lending my car, but I'd be happy to help look up local rental deals or give you a ride to the station.'",
-      "Say: 'What kind of irresponsible person asks to borrow someone's car?'",
-      "Lend the car while biting your nails in panic all weekend.",
-      "Lie and say the transmission is broken.",
+      "Say: 'I'm not comfortable lending the car, but I'd be happy to help find local rental deals or give you a lift to the station.'",
+      "Ask why they need it before deciding — more context might change your answer.",
+      "Lend it while biting your nails all weekend.",
+      "Say the car is in the shop.",
     ],
     0,
-    "Stating your personal comfort boundary clearly without shaming the request maintains self-respect and friendship."
+    "Stating your comfort limit clearly without shaming the request maintains self-respect and friendship."
   ),
   q(
     "23-understanding-2", 23,
-    "Someone reacts to your clear 'no' by getting angry and asking: 'Why not? Give me one good reason!'",
-    "How can you hold your ground without escalating?",
+    "You say no clearly. The person asks: 'Why not? Give me one good reason!'",
+    "What's the most constructive way to respond?",
     [
-      "Calmly repeat the boundary without getting drawn into a debate: 'I understand this is disappointing, but my answer is no.'",
-      "Start yelling back and listing every time they wronged you in the past.",
-      "Crumble immediately and apologize for having boundaries.",
-      "Fabricate ten new excuses to justify your decision.",
+      "Calmly repeat the boundary without debating: 'I understand it's disappointing, but my answer is no.'",
+      "Provide a reason — they deserve to know why you're declining.",
+      "Apologize for being unable to help and suggest someone else.",
+      "Ask what they'd need to hear to feel okay with your answer.",
     ],
     0,
-    "Refusing to debate your boundary signals that your 'no' is firm and not a negotiation point."
+    "Refusing to debate your boundary signals that your no is firm — not an opening for negotiation."
   ),
-
-  // Point 3: You can decline honestly without making a commitment you cannot sustain.
   q(
     "23-action-3", 23,
-    "Your department head asks if you can take on managing the summer intern program in addition to your current full workload.",
+    "Your department head asks you to manage the intern program on top of your full workload.",
     "What would you do next?",
     [
-      "Say: 'I want the interns to have great mentorship, but with my current deliverables on the launch, I don't have the bandwidth to do it justice.'",
-      "Say yes impulsively to impress the boss, then burn out and neglect both the interns and your deliverables.",
+      "Say: 'I want the interns to have great mentorship — with my current launch deliverables, I can't do it justice right now.'",
+      "Say yes impulsively to impress the boss, then burn out and underdeliver on both.",
       "Roll your eyes and complain to coworkers that leadership is out of touch.",
-      "Say yes, but deliberately ignore the interns so leadership reassigns them.",
+      "Accept but deliberately give the interns minimal attention so they reassign someone else.",
     ],
     0,
-    "Framing your decline around the quality of mentorship and current commitments demonstrates professional integrity."
+    "Framing your decline around output quality and existing commitments shows professional integrity."
   ),
   q(
     "23-understanding-3", 23,
-    "What is the true interpersonal cost of saying 'yes' when you secretly mean 'no'?",
-    "What is the hidden consequence of unauthentic compliance?",
+    "You said yes to something you didn't want to do. Two weeks later you're seething with resentment.",
+    "What would have been better?",
     [
-      "It breeds internal resentment, leads to substandard execution, and erodes trust because your word is no longer reliable.",
-      "It guarantees you will be loved and admired by everyone forever.",
-      "It prevents all workplace conflict permanently.",
-      "It has zero cost as long as you pretend to be happy.",
+      "An honest no upfront — resentment is the hidden cost of inauthentic compliance.",
+      "Setting better expectations at the start about what you could realistically give.",
+      "Asking for support from others so the burden felt more manageable.",
+      "Taking breaks during the commitment to protect your energy.",
     ],
     0,
-    "A resentful, overburdened 'yes' damages relationships far more over time than an honest, prompt 'no'."
+    "A resentful yes damages relationships far more over time than an honest, prompt no."
   ),
-
-  // Point 4: A privacy boundary can be stated without providing the information itself.
   q(
     "23-action-4", 23,
-    "An acquaintance at a networking event asks an intrusive, personal question about your divorce or medical history.",
+    "A networking acquaintance asks a personal question about your divorce.",
     "What would you do next?",
     [
-      "Smile gently and say: 'I prefer to keep those personal details private, but I'd love to hear more about the project you mentioned earlier.'",
-      "Freeze in awkwardness and over-share your private medical trauma.",
-      "Make a loud scene and accuse them of being a monster.",
-      "Tell a bizarre lie to confuse them.",
+      "Smile and say: 'I keep those details private — tell me more about the project you mentioned.'",
+      "Freeze and over-share your private history to fill the silence.",
+      "Tell them the question is inappropriate and explain why.",
+      "Make up a brief answer so the conversation can move on.",
     ],
     0,
-    "A polite, smooth pivot protects your personal privacy without creating an awkward social standoff."
+    "A polite, smooth pivot protects your privacy without creating a social standoff."
   ),
   q(
     "23-understanding-4", 23,
-    "Why is stating a boundary around personal privacy an act of self-care rather than rudeness?",
-    "What is the core distinction between rudeness and privacy?",
+    "You decline to answer a personal question from a casual acquaintance. They seem offended.",
+    "What's the most accurate way to understand your choice?",
     [
-      "You are the sole steward of your personal story; declining to disclose private matters to casual acquaintances is a healthy, dignified boundary.",
-      "Declining to answer is always rude, so you must always answer any question you are asked.",
-      "Privacy boundaries are only meant for celebrities.",
-      "Being authentic means sharing all your secrets with every stranger.",
+      "You're the steward of your own story — private details aren't owed to casual connections.",
+      "You were too abrupt — a softer decline would have avoided the offense.",
+      "Declining personal questions is fine in personal settings, but trickier professionally.",
+      "Their offense suggests the question wasn't as inappropriate as it felt to you.",
     ],
     0,
-    "Healthy emotional boundaries recognize that intimacy is earned through trust, not surrendered on demand."
+    "Healthy emotional boundaries recognize that intimacy is earned through trust — not surrendered on demand."
   ),
-
-  // Point 5: A concrete limit makes your availability explicit.
   q(
     "23-action-5", 23,
-    "A client asks you to perform an extra round of revisions that falls completely outside the agreed project scope.",
+    "A client asks for an extra round of revisions outside your agreed project scope.",
     "What would you do next?",
     [
-      "Say: 'I'd be happy to handle these extra additions! Since they fall outside our original scope, I can send over an addendum with the estimated hours and cost.'",
-      "Do the extra work for free while fuming with anger.",
-      "Send a furious email threatening legal action for breach of contract.",
-      "Ghost the client and abandon the project unfinished.",
+      "Say: 'Happy to handle those additions — I'll send an addendum with the estimated hours and cost.'",
+      "Do the extra work for free while building resentment.",
+      "Send a firm email citing the contract and refusing to proceed.",
+      "Stop responding until they agree to pay first.",
     ],
     0,
-    "Tying additional requests to scope addenda and fees turns boundary-setting into standard professional consulting."
+    "Tying out-of-scope requests to addenda and fees turns boundary-setting into standard professional practice."
   ),
   q(
     "23-understanding-5", 23,
-    "How does having clear, predictable boundaries actually make you more trustworthy to clients and partners?",
-    "Why do clear boundaries increase trust?",
+    "A client trusts you more after you declined an unreasonable request clearly.",
+    "Why did that clear no actually build trust?",
     [
-      "When people know you have the courage to say no to unreasonable demands, they can fully trust that your 'yes' is genuine and backed by capacity.",
-      "Clients only trust vendors who work for free.",
-      "Boundaries make you unpredictable and mysterious.",
-      "It forces people to fear you, which is the root of trust.",
+      "When people know you'll say no to what you can't deliver, they trust your yes is genuine and backed by real capacity.",
+      "Clients respect assertiveness — it signals you're confident in your work.",
+      "You showed them the contract matters to you, which is a good sign for future projects.",
+      "Setting limits made you seem more in demand, which raised your perceived value.",
     ],
     0,
-    "Clear limits eliminate ambiguity and second-guessing, creating a foundation of mutual professional respect."
+    "Clear limits eliminate ambiguity — knowing you can say no makes every yes more trustworthy."
   ),
 
   // ==========================================
   // CHAPTER 24: Stay constructive in disagreement
   // ==========================================
-  // Point 1: Checking understanding can reduce confusion without requiring you to surrender your position.
   q(
     "24-action-1", 24,
-    "You and a colleague strongly disagree on which database technology to adopt for an upcoming migration.",
+    "You and a colleague strongly disagree on which database to adopt for a migration.",
     "What would you do next?",
     [
-      "Say: 'Before I explain my recommendation again, let me see if I understand yours: you're prioritizing write speed and schema flexibility, right?'",
-      "Interrupt them every time they mention their preferred database to list its technical flaws.",
-      "Appeal to leadership behind their back to overrule them without their knowledge.",
-      "Throw your hands in the air and say: 'Fine, do whatever you want, when it crashes don't blame me.'",
+      "Say: 'Let me make sure I understand your case — you're prioritizing write speed and schema flexibility, right?'",
+      "Interrupt each time they mention their choice to list its flaws.",
+      "Go to leadership behind their back to override the decision.",
+      "Say: 'Fine, do whatever you want — when it crashes, don't come to me.'",
     ],
     0,
-    "Reflecting their core technical priorities back to them demonstrates thorough comprehension and lowers defensive tension."
+    "Reflecting their priorities back demonstrates comprehension and lowers defensive tension before you respond."
   ),
   q(
     "24-understanding-1", 24,
-    "Why does summarizing someone else's argument accurately NOT mean you are agreeing with their conclusion?",
-    "What is the difference between understanding and agreement?",
+    "You accurately summarize your colleague's argument before disagreeing with it.",
+    "Does understanding their argument mean you've agreed with it?",
     [
-      "Understanding demonstrates that you have accurately received their message; agreement is whether you share their verdict. You can understand 100% and still disagree.",
-      "Summarizing someone's argument legally binds you to their position.",
-      "If you understand someone's argument, you are obligated to surrender yours.",
-      "Summarizing shows that you have no ideas of your own.",
+      "No — understanding means you received their message accurately; agreement is a separate question.",
+      "Mostly yes — summarizing someone's argument means you've accepted its logic.",
+      "It depends on how you phrase the summary — agreement can be implied.",
+      "Yes — summarizing without pushing back signals acceptance.",
     ],
     0,
-    "Separating comprehension from consensus allows two people to feel deeply heard without abandoning differing perspectives."
+    "Separating comprehension from consensus lets both people feel heard without abandoning their views."
   ),
-
-  // Point 2: Understanding the needs behind positions may reveal workable options.
   q(
     "24-action-2", 24,
-    "You want to work remotely full-time, but your manager insists on three days a week in the office.",
+    "You want full remote work. Your manager insists on three days a week in office.",
     "What would you do next?",
     [
-      "Ask: 'What core outcomes are you hoping in-office days achieve? If it's collaborative brainstorming, could we cluster those on two set days?'",
-      "Threaten to quit on the spot unless you get 100% remote work immediately.",
-      "Complain about your manager on LinkedIn without names.",
-      "Show up to the office, put on headphones, and refuse to speak to anyone.",
+      "Ask: 'What outcomes do in-office days need to achieve? Could we cluster collaborative work on two set days?'",
+      "Threaten to quit unless you get 100% remote immediately.",
+      "Complain about your manager online without naming them.",
+      "Show up to the office, put headphones on, and refuse to engage.",
     ],
     0,
-    "Inquiring into the underlying business need (collaboration) opens up creative structural compromises that satisfy both parties."
+    "Exploring the underlying need behind the policy opens up creative compromises that satisfy both parties."
   ),
   q(
     "24-understanding-2", 24,
-    "In negotiation theory, what is the distinction between a 'position' and an 'underlying need'?",
-    "What is the key principle of interest-based negotiation?",
+    "Your manager says 'three days in office.' You want fully remote. You seem stuck.",
+    "What would most help move the conversation forward?",
     [
-      "A position is a rigid stance (e.g. '3 days in office'); an underlying need is the deeper motive (e.g. 'team connection'). Needs can often be satisfied in multiple creative ways.",
-      "Positions are emotional, while needs are always financial.",
-      "There is no difference; positions and needs are identical.",
-      "Focusing on needs means you must give up all your positions.",
+      "Explore what outcome the three-day policy is meant to achieve — needs are more flexible than fixed positions.",
+      "Propose a trial period to test whether two days achieves the same result.",
+      "Ask what it would take for them to approve an exception in your case.",
+      "Look for data showing remote teams perform as well as in-office ones.",
     ],
     0,
-    "Moving conversations from fixed positions to underlying needs unlocks flexible, win-win solutions."
+    "Moving from fixed positions to underlying needs unlocks flexible, win-win solutions."
   ),
-
-  // Point 3: A focused discussion makes the immediate arrangement easier to address.
   q(
     "24-action-3", 24,
-    "During an argument about whose turn it is to do the dishes, your partner suddenly brings up a dispute from your holiday trip six months ago.",
+    "During a dishes argument, your partner suddenly brings up a dispute from six months ago.",
     "What would you do next?",
     [
-      "Say gently: 'That trip still feels unresolved, and I want to talk about it, but right now can we figure out the kitchen plan for tonight first?'",
-      "Bring up something embarrassing they did two years ago to retaliate.",
-      "Yell: 'Why do you always drag up ancient history?' and storm out.",
-      "Deny that the holiday trip ever had any problems.",
+      "Say: 'That still feels unresolved and I want to talk about it — can we handle the kitchen plan first?'",
+      "Bring up something embarrassing they did two years ago.",
+      "Yell: 'Why do you always drag up the past?' and walk out.",
+      "Tell them you don't remember what happened on that trip anyway.",
     ],
     0,
-    "Acknowledging the past issue while keeping the immediate focus on the present chore prevents kitchen-sink arguments."
+    "Acknowledging the past issue while refocusing on the present prevents kitchen-sink arguments."
   ),
   q(
     "24-understanding-3", 24,
-    "What happens when a disagreement succumbs to 'kitchen-sinking' (bringing in every past grievance at once)?",
-    "What is the destructive impact of kitchen-sinking?",
+    "An argument that started about scheduling has turned into a list of every grievance from the past year.",
+    "What's the main risk of letting this continue?",
     [
-      "The conversation becomes hopelessly overloaded with unresolved emotional baggage, making it impossible to solve the immediate issue at hand.",
-      "It resolves all past conflicts in a single efficient sitting.",
-      "It proves that you have an extraordinary memory.",
-      "It forces the other person to concede on every point.",
+      "The conversation becomes overloaded with unresolved baggage — the original issue never gets solved.",
+      "It can actually be cathartic to get everything out at once.",
+      "You're more likely to reach a deeper resolution by addressing everything together.",
+      "Old grievances will keep surfacing until they're properly aired.",
     ],
     0,
-    "Confining disagreements to a single, manageable topic protects the conversation from emotional collapse."
+    "Confining disagreements to a single manageable topic protects the conversation from emotional collapse."
   ),
-
-  // Point 4: A planned pause can protect the conversation when continuing is not productive.
   q(
     "24-action-4", 24,
-    "You notice your voice rising, your fists clenching, and a strong urge to yell during a discussion with a family member.",
+    "You notice your voice rising and fists clenching mid-argument with a family member.",
     "What would you do next?",
     [
-      "Say: 'I'm feeling heated and I want to treat you with respect. Let's take a 20-minute break to cool down and resume at 4 PM.'",
-      "Push through and shout louder so they understand how serious you are.",
-      "Storm out of the house slamming every door without saying when you will return.",
-      "Start breaking dishes to express your rage physically.",
+      "Say: 'I'm getting heated and want to treat you well — can we take 20 minutes and come back at 4 PM?'",
+      "Push through — raising your voice shows how serious you are.",
+      "Walk out without saying when you'll return.",
+      "Keep talking but try harder to stay calm.",
     ],
     0,
-    "Calling for a time-out with a specific return time halts emotional flooding while reassuring them that you are not abandoning the conversation."
+    "Calling a time-out with a return time halts emotional flooding while reassuring them you're not abandoning the conversation."
   ),
   q(
     "24-understanding-4", 24,
-    "What happens biologically when you enter 'emotional flooding' (heart rate > 100 bpm during conflict)?",
-    "What does physiology teach us about heated arguments?",
+    "You're in a heated argument and your brain feels completely foggy — you can't think clearly.",
+    "What's most likely happening physiologically?",
     [
-      "The prefrontal cortex loses control to the amygdala; creative problem solving and empathy shut down, making productive resolution biologically impossible until you settle.",
-      "Adrenaline makes you 50% more logical and persuasive.",
-      "Flooding is a myth invented by psychologists.",
-      "You should never stop talking when your heart is racing.",
+      "Emotional flooding has shifted control away from the thinking brain — clarity will return after you settle.",
+      "You haven't slept enough — physical fatigue is distorting your reasoning.",
+      "You're losing the argument and your brain is searching for a way out.",
+      "You need to focus harder — the ability to think clearly is always a choice.",
     ],
     0,
-    "Respecting the biology of emotional flooding prevents the catastrophic words spoken in the heat of fight-or-flight."
+    "Respecting the biology of emotional flooding prevents catastrophic words spoken in the heat of fight-or-flight."
   ),
-
-  // Point 5: Accurate understanding can coexist with continued disagreement.
   q(
     "24-action-5", 24,
-    "You and your business co-founder disagree on whether to raise venture capital or stay bootstrapped, and both have valid logic.",
+    "You and your co-founder disagree on whether to raise funding or stay bootstrapped — both have valid logic.",
     "What would you do next?",
     [
-      "Write down the core risks and benefits of both paths together on a whiteboard, and define a clear milestone metric to trigger the final decision.",
-      "Accuse your co-founder of lacking vision or courage.",
-      "Secretly take meetings with investors behind their back.",
-      "Dissolve the company immediately rather than exploring compromise.",
+      "Map the core risks and benefits of both paths together and define a milestone that will trigger a final decision.",
+      "Accuse them of lacking vision or being too risk-averse.",
+      "Quietly take investor meetings without telling them.",
+      "Decide alone and present it as a done deal.",
     ],
     0,
-    "Collaborative risk mapping and objective milestone triggers turn ideological standoffs into empirical strategic choices."
+    "Collaborative risk mapping and objective milestones turn ideological standoffs into empirical strategic choices."
   ),
   q(
     "24-understanding-5", 24,
-    "Why is disagreement between passionate teammates not necessarily a sign of a toxic relationship?",
-    "What is the true function of healthy conflict?",
+    "Your team disagrees passionately during planning sessions. A new hire seems uncomfortable with the tension.",
+    "What's most useful to explain to them?",
     [
-      "Healthy disagreement tests ideas from diverse angles, exposes blind spots, and produces far more robust solutions than artificial harmony.",
-      "Any disagreement is proof that teammates do not respect each other.",
-      "Great teams never experience disagreement.",
-      "Conflict should be suppressed immediately to keep everyone comfortable.",
+      "Healthy disagreement tests ideas from different angles — it produces stronger outcomes than artificial harmony.",
+      "The team has a difficult dynamic — they'll need to learn to work around it.",
+      "Conflict in planning sessions usually signals misaligned values or goals.",
+      "Some people thrive in conflict-heavy environments — it depends on personality.",
     ],
     0,
     "Vigorous, respectful debate around ideas is the engine of high-performing, innovative teams."
@@ -600,143 +564,134 @@ export const stage5Questions = [
   // ==========================================
   // CHAPTER 25: Repair after a difficult moment
   // ==========================================
-  // Point 1: A specific acknowledgement and an offer to change address both the moment and what happens next.
   q(
     "25-action-1", 25,
-    "You snapped at your partner in the car after a long, stressful workday when they asked a simple logistical question.",
+    "You snapped at your partner when they asked a simple question after your rough work day.",
     "What would you do next?",
     [
-      "Say: 'I'm sorry for snapping at you earlier. You were just asking a question, and I took out my work stress on you. Next time I will take a breath before answering.'",
-      "Say: 'I'm sorry, but if you saw what my boss did to me today, you wouldn't blame me.'",
-      "Buy them an expensive gift and pretend the car incident never occurred.",
-      "Wait for them to apologize to you for asking questions when you were clearly tired.",
+      "Say: 'I'm sorry for snapping — you were just asking a question and I took my stress out on you.'",
+      "Say: 'I'm sorry, but if you saw what my boss did today you'd understand.'",
+      "Buy them something as a gesture and move on without discussing it.",
+      "Wait for them to bring it up — then apologize if they seem upset.",
     ],
     0,
-    "A clean apology acknowledges the specific hurtful behavior, validates the impact, takes ownership without excuses, and commits to change."
+    "A clean apology names the behavior, validates the impact, takes ownership, and commits to doing better."
   ),
   q(
     "25-understanding-1", 25,
-    "Why does adding the word 'BUT' in an apology (e.g. 'I'm sorry I yelled, but you made me angry') ruin the repair?",
-    "What does 'but' do to an apology?",
+    "You apologize: 'I'm sorry I yelled, but you made me really angry.'",
+    "What's wrong with this apology?",
     [
-      "'But' immediately erases the apology and shifts the blame back onto the other person, turning an act of accountability into self-justification.",
-      "'But' makes an apology much more comprehensive and detailed.",
-      "'But' is required in all legal apologies.",
-      "It proves that the other person was the primary culprit.",
+      "'But' immediately shifts blame back to them — it turns accountability into self-justification.",
+      "It's too brief — a real apology needs more detail about what you did wrong.",
+      "It's fine — acknowledging your emotion makes the apology feel more honest.",
+      "Starting with 'I'm sorry' is enough — the 'but' just adds context.",
     ],
     0,
-    "A genuine apology stands on its own without conditional clauses or defensive justifications."
+    "A genuine apology stands on its own — without conditional clauses or defensive justifications."
   ),
-
-  // Point 2: A repair names the action and includes realistic follow-through.
   q(
     "25-action-2", 25,
-    "You promised a friend you would attend their art exhibition, but forgot and double-booked yourself with dinner plans.",
+    "You promised to attend a friend's art exhibition but double-booked yourself and forgot.",
     "What would you do next?",
     [
-      "Call them directly, apologize sincerely for the oversight, and ask if you can visit the gallery together this Sunday and take them out for coffee.",
-      "Send a text saying 'Something came up' and never mention the exhibition again.",
-      "Show up for five minutes to their exhibition, take a photo for social media, and leave immediately.",
-      "Blame your calendar app for failing to notify you.",
+      "Call directly, apologize sincerely, and ask if you can visit the gallery together on Sunday.",
+      "Text 'Something came up' and never mention the exhibition again.",
+      "Drop by for five minutes, take a photo, and leave.",
+      "Blame your calendar app for not reminding you.",
     ],
     0,
-    "Direct accountability paired with a concrete, caring reschedule initiative demonstrates that you genuinely value their craft."
+    "Direct accountability plus a concrete caring reschedule shows you genuinely value their work."
   ),
   q(
     "25-understanding-2", 25,
-    "What transforms an apology from empty words into a meaningful relational repair?",
-    "What is the anchor of genuine repair?",
+    "You said sorry to a friend but they're still distant weeks later.",
+    "What most likely needs to happen?",
     [
-      "Consistent, observable change in behavior over time; words acknowledge the fracture, but consistent action rebuilds the trust.",
-      "Saying the words 'I'm sorry' at least fifty times.",
-      "Giving the other person lavish gifts.",
-      "Demanding that they immediately forgive you so you stop feeling guilty.",
+      "Consistent behavior change over time — words acknowledge the fracture, but actions rebuild the trust.",
+      "Another conversation where you explain your intention more clearly.",
+      "Give them more time — distance after an apology is normal and will pass.",
+      "Ask them directly if they've forgiven you so you both know where you stand.",
     ],
     0,
-    "Trust is rebuilt in the consistent follow-through that proves the apology was an authentic commitment, not just damage control."
+    "Trust is rebuilt in consistent follow-through that proves the apology was a real commitment — not damage control."
   ),
-
-  // Point 3: Specific responsibility avoids making the other person carry your unrelated frustration.
   q(
     "25-action-3", 25,
-    "You were irritable and short-tempered with your junior colleague all morning because your laptop crashed.",
+    "You were short and irritable with a junior colleague all morning while your laptop was crashing.",
     "What would you do next?",
     [
-      "Approach them and say: 'I was irritable with you this morning while dealing with computer issues. That wasn't fair to you, and I appreciate your patience.'",
-      "Assume they understood that you were having computer problems so no apology is needed.",
-      "Avoid talking to them for the rest of the week so things blow over.",
-      "Tell them that dealing with difficult mornings is good preparation for their career.",
+      "Tell them: 'I was irritable this morning while dealing with tech issues. That wasn't fair to you — I'm sorry.'",
+      "Assume they understood what was happening, so no apology is needed.",
+      "Avoid them for the rest of the week until the awkwardness fades.",
+      "Tell them difficult mornings are good prep for their career.",
     ],
     0,
-    "Owning your misplaced frustration reassures junior colleagues that they were not at fault and strengthens psychological safety."
+    "Owning your misplaced frustration reassures junior colleagues they weren't at fault and builds psychological safety."
   ),
   q(
     "25-understanding-3", 25,
-    "Why do people often hesitate to apologize, fearing it will make them look weak or incompetent?",
-    "What does leadership research show about apologies?",
+    "A leader you respect quickly admits when they're wrong. You find yourself trusting them more.",
+    "What's the reason behind that response?",
     [
-      "Vulnerability and prompt accountability actually enhance perceived competence and integrity, whereas defensive dodging damages credibility.",
-      "Apologizing legally confirms that you are incompetent.",
-      "Strong leaders should never apologize under any circumstances.",
-      "People only respect leaders who blame external factors.",
+      "Prompt accountability enhances perceived integrity — defensive dodging actually damages credibility.",
+      "They seem human and relatable — you trust people you can identify with.",
+      "Admitting mistakes shows they're self-aware, which is a sign of good judgment.",
+      "You trust them because they've proven they'll correct course when something goes wrong.",
     ],
     0,
-    "Taking swift, dignified responsibility is a hallmark of emotional strength and commands deep professional respect."
+    "Swift, dignified accountability is a mark of emotional strength — and it commands deep professional respect."
   ),
-
-  // Point 4: Repair includes addressing the actual impact, not just expressing regret.
   q(
     "25-action-4", 25,
-    "You accidentally leaked confidential news about a teammate's departure before they had a chance to tell the team themselves.",
+    "You accidentally leaked a teammate's confidential departure news before they could tell the team.",
     "What would you do next?",
     [
-      "Immediately go to the teammate in private, apologize deeply for betraying their confidence, and ask how you can help manage the communication now.",
-      "Pretend someone else leaked the news and act surprised in front of the team.",
-      "Avoid the teammate until their last day at the company.",
-      "Tell them they should be grateful the news is out so they don't have to announce it.",
+      "Go to them privately immediately, apologize for betraying their confidence, and ask how you can help now.",
+      "Pretend someone else leaked it and act surprised.",
+      "Avoid them until their last day hoping it blows over.",
+      "Tell them you did them a favor — now they don't have to announce it.",
     ],
     0,
-    "Facing the impacted party immediately and offering to assist with the fallout demonstrates courage and authentic remorse."
+    "Facing the impact directly and offering to help with the fallout demonstrates real courage and remorse."
   ),
   q(
     "25-understanding-4", 25,
-    "When you have hurt someone, what is their emotional right regarding how quickly they forgive you?",
-    "What is the principle of emotional timeline in forgiveness?",
+    "You apologized sincerely, but your friend hasn't forgiven you yet and needs more time.",
+    "What's the right thing to do?",
     [
-      "Forgiveness is a gift on the injured party's timeline; demanding immediate forgiveness or reassurance shifts the focus back to soothing your own guilt.",
-      "They are obligated to forgive you the exact second you say sorry.",
-      "If they don't forgive you within 24 hours, they are toxic.",
-      "You should badger them continuously until they say 'it's okay.'",
+      "Respect their timeline — demanding fast forgiveness shifts the focus to easing your guilt.",
+      "Check in again — they may need reminding that you're still sorry.",
+      "Give it a week, then have an honest conversation about where you stand.",
+      "Accept that the relationship may not survive this and start adjusting your expectations.",
     ],
     0,
-    "Patiently giving others the space to heal without pressuring them for instant absolution proves your apology was selfless."
+    "Patiently giving others space to heal — without pressuring them — proves your apology was genuinely selfless."
   ),
-
-  // Point 5: An offer to change the behaviour gives the apology practical meaning.
   q(
     "25-action-5", 25,
-    "You have repeatedly interrupted a quiet team member during brainstorming sessions over the past month.",
+    "You've been regularly talking over a quiet team member in brainstorming meetings.",
     "What would you do next?",
     [
-      "Say privately: 'I noticed I've been talking over you in brainstorming. I value your ideas, and in our next meeting I'm going to intentionally make sure you have the floor.'",
-      "Announce in the next meeting: 'Everyone listen to this person now because they complained I talk too much.'",
-      "Stop speaking completely in all meetings to show how ridiculous the feedback is.",
-      "Assume that because they are quiet, they don't have anything valuable to contribute anyway.",
+      "Tell them privately: 'I've been talking over you and I want to fix that — next session I'll make sure you have the floor.'",
+      "Announce in the next meeting that everyone should listen to this person more.",
+      "Stop speaking in all meetings to compensate.",
+      "Decide they probably don't have much to add since they're so quiet anyway.",
     ],
     0,
-    "Proactively recognizing a habitual pattern and changing how you hold space creates tangible inclusion and builds lasting trust."
+    "Recognizing a habitual pattern and naming a specific change creates real inclusion and lasting trust."
   ),
   q(
     "25-understanding-5", 25,
-    "What is the difference between guilt and shame when making a repair?",
-    "How does distinguishing guilt from shame aid relational healing?",
+    "After hurting someone, you feel crushed by shame and can't bring yourself to apologize.",
+    "What's the difference between that feeling and guilt?",
     [
-      "Guilt says 'I did something hurtful' and motivates constructive repair; shame says 'I am a bad person' and leads to defensive withdrawal or self-pity.",
-      "Guilt is useless, while shame is the only emotion that makes people good.",
-      "There is no difference between guilt and shame.",
-      "Shame motivates healthy accountability, while guilt causes avoidance.",
+      "Shame says 'I'm a bad person' — which leads to paralysis. Guilt says 'I did something hurtful' — which motivates repair.",
+      "Shame is more honest — it reflects the seriousness of what happened.",
+      "There's no practical difference — both are uncomfortable and should be moved through quickly.",
+      "Guilt is the healthier emotion, but shame is usually what people feel first.",
     ],
     0,
-    "Focusing on the behavior (healthy guilt) empowers repair, whereas collapsing into self-reproach (shame) forces others to comfort you."
+    "Focusing on the behavior (healthy guilt) empowers repair — shame spirals force others to comfort you instead."
   ),
 ];

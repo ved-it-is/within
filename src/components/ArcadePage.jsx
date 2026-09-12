@@ -80,6 +80,17 @@ export function countConsecutiveCorrect(attempts, questionsAnswered, correctAnsw
   return streak;
 }
 
+// Domain colors for topic badges
+const DOMAIN_COLORS = {
+  awareness:     { bg: "#f0eaff", text: "#6c4cff", border: "#d4c8f8" },
+  regulation:    { bg: "#fff7ed", text: "#c2410c", border: "#fed7aa" },
+  perspective:   { bg: "#eff6ff", text: "#1d4ed8", border: "#bfdbfe" },
+  empathy:       { bg: "#fdf2f8", text: "#be185d", border: "#fbcfe8" },
+  communication: { bg: "#f0fdf4", text: "#065f46", border: "#a7f3d0" },
+  resilience:    { bg: "#fffbeb", text: "#b45309", border: "#fde68a" },
+  decisions:     { bg: "#f8fafc", text: "#475569", border: "#cbd5e1" },
+};
+
 export default function ArcadePage() {
   const [progress, setProgress] = useState(readArcade);
   const [storageAvailable, setStorageAvailable] = useState(true);
@@ -93,6 +104,10 @@ export default function ArcadePage() {
   // Core Gamification state
   const [floatingXp, setFloatingXp] = useState(null);
   const [levelUpModal, setLevelUpModal] = useState(null);
+  // Card animation key — changes on each new question to retrigger CSS animation
+  const [questionKey, setQuestionKey] = useState(0);
+  // Track the last answered choice index for ✓/✗ visual
+  const [answeredChoice, setAnsweredChoice] = useState(null);
 
   const heading = useRef(null);
 
@@ -140,6 +155,9 @@ export default function ArcadePage() {
     const isCorrect = choice === question.correctIndex;
     const currentStreak = countConsecutiveCorrect(session.attempts, questionsAnswered, correctAnswers);
 
+    // Track which button was pressed for ✓/✗ visual
+    setAnsweredChoice(choice);
+
     // If user just got 1 wrong after a streak > 3, trigger the warning
     if (!isCorrect && currentStreak > 3) {
       setJustAnsweredWrong(true);
@@ -183,6 +201,8 @@ export default function ArcadePage() {
 
   function next() {
     setFloatingXp(null);
+    setAnsweredChoice(null);
+    setQuestionKey((k) => k + 1);
     setProgress((current) => advanceArcade(current));
     requestAnimationFrame(() => {
       heading.current?.focus();
@@ -306,88 +326,113 @@ export default function ArcadePage() {
           </article>
         </div>
 
-        {question ? (
-          <article className="lesson-card arcade-play">
-            <span className="kicker">
-              {
-                arcade.domains.find((d) => d.questionIds.includes(question.id))
-                  ?.label
-              }
-            </span>
-            <div className="arcade-moment">
-              <span aria-hidden="true">✦</span> A moment to explore{" "}
-              <small>{score.seen} / 700 encountered</small>
-            </div>
-            <h2 ref={heading} tabIndex={-1}>
-              {question.situation}
-            </h2>
-            <p>{question.prompt}</p>
-            <div className="lesson-choices" aria-label="Choose a response">
-              {question.choices.map((choice, index) => (
-                <button
-                  key={index}
-                  disabled={!!feedback}
-                  aria-pressed={feedback?.choice === index}
-                  className={`arcade-choice-btn ${
-                    feedback && index === question.correctIndex
-                      ? "practice-answer"
-                      : ""
-                  }`}
-                  onClick={() => handleAnswer(index)}
+        {question ? (() => {
+          const domain = arcade.domains.find((d) => d.questionIds.includes(question.id));
+          const domainColor = DOMAIN_COLORS[domain?.id] || DOMAIN_COLORS.decisions;
+          return (
+            <article className="lesson-card arcade-play arcade-card-enter" key={questionKey}>
+              {/* Color-coded domain pill */}
+              <div className="arcade-domain-row">
+                <span
+                  className="arcade-domain-pill"
+                  style={{
+                    background: domainColor.bg,
+                    color: domainColor.text,
+                    borderColor: domainColor.border,
+                  }}
                 >
-                  <span className="arcade-letter" aria-hidden="true">
-                    {String.fromCharCode(65 + index)}
-                  </span>
-                  <span>{choice}</span>
-                  {floatingXp && floatingXp.choiceIndex === index && (
-                    <span className="floating-xp-pill" key={floatingXp.id}>
-                      <span className="floating-xp-text">{floatingXp.text}</span>
-                      {floatingXp.bonus && (
-                        <span className="floating-xp-bonus">{floatingXp.bonus}</span>
+                  {domain?.label || "EQ Practice"}
+                </span>
+                <span className="arcade-encounter-count">
+                  {score.seen} / 700
+                </span>
+              </div>
+
+              <h2 ref={heading} tabIndex={-1} className="arcade-situation">
+                {question.situation}
+              </h2>
+              <p className="arcade-prompt">{question.prompt}</p>
+
+              <div className="lesson-choices" aria-label="Choose a response">
+                {question.choices.map((choice, index) => {
+                  const isAnswered = answeredChoice !== null || !!feedback;
+                  const isCorrectChoice = index === question.correctIndex;
+                  const isChosen = answeredChoice === index || (feedback && feedback.choice === index);
+                  const wasWrong = isChosen && !isCorrectChoice && isAnswered;
+                  const isRight = isCorrectChoice && isAnswered;
+
+                  return (
+                    <button
+                      key={index}
+                      disabled={isAnswered}
+                      aria-pressed={isChosen}
+                      className={`arcade-choice-btn${isRight ? " practice-answer" : ""}${wasWrong ? " arcade-choice-wrong" : ""}`}
+                      onClick={() => handleAnswer(index)}
+                    >
+                      <span
+                        className={`arcade-letter${isRight ? " arcade-letter-correct" : ""}${wasWrong ? " arcade-letter-wrong" : ""}`}
+                        aria-hidden="true"
+                      >
+                        {isRight ? "✓" : wasWrong ? "✗" : String.fromCharCode(65 + index)}
+                      </span>
+                      <span>{choice}</span>
+                      {floatingXp && floatingXp.choiceIndex === index && (
+                        <span className="floating-xp-pill" key={floatingXp.id}>
+                          <span className="floating-xp-text">{floatingXp.text}</span>
+                          {floatingXp.bonus && (
+                            <span className="floating-xp-bonus">{floatingXp.bonus}</span>
+                          )}
+                        </span>
                       )}
-                    </span>
-                  )}
-                </button>
-              ))}
-              <button
-                className="uncertain-choice"
-                disabled={!!feedback}
-                onClick={() => handleAnswer("unknown")}
-              >
-                I don’t know · Show me a perspective
-              </button>
-            </div>
-            {feedback && (
-              <div className="practice-feedback" role="status">
-                <h3>
-                  {feedback.outcome === "matched"
-                    ? "That fits this situation."
-                    : feedback.outcome === "revealed"
-                      ? "A perspective to take with you."
-                      : "Let’s look at another approach."}
-                </h3>
-                <p>
-                  <b>{question.choices[question.correctIndex]}</b>
-                </p>
-                <p>{question.explanation}</p>
-                <p>
-                  {feedback.outcome === "retry"
-                    ? "This situation will return after a few others."
-                    : feedback.outcome === "revealed"
-                      ? "This question is now retired from your Arcade."
-                      : ""}
-                </p>
-                <button className="primary" onClick={next}>
-                  Another moment →
+                    </button>
+                  );
+                })}
+                <button
+                  className="uncertain-choice"
+                  disabled={!!feedback || answeredChoice !== null}
+                  onClick={() => handleAnswer("unknown")}
+                >
+                  I don't know · Show me a perspective
                 </button>
               </div>
-            )}
-          </article>
-        ) : (
+
+              {feedback && (
+                <div className="practice-feedback arcade-feedback-reveal" role="status">
+                  <div className="arcade-feedback-header">
+                    <span className={`arcade-feedback-icon ${feedback.outcome === "matched" ? "correct" : feedback.outcome === "revealed" ? "revealed" : "retry"}`}>
+                      {feedback.outcome === "matched" ? "✓" : feedback.outcome === "revealed" ? "💡" : "↩"}
+                    </span>
+                    <h3>
+                      {feedback.outcome === "matched"
+                        ? "That fits this situation."
+                        : feedback.outcome === "revealed"
+                          ? "A perspective to take with you."
+                          : "Let's look at another approach."}
+                    </h3>
+                  </div>
+                  <p className="arcade-feedback-answer">
+                    <b>{question.choices[question.correctIndex]}</b>
+                  </p>
+                  <p className="arcade-feedback-explanation">{question.explanation}</p>
+                  {(feedback.outcome === "retry" || feedback.outcome === "revealed") && (
+                    <p className="arcade-feedback-note">
+                      {feedback.outcome === "retry"
+                        ? "This situation will return after a few others."
+                        : "This question is now retired from your Arcade."}
+                    </p>
+                  )}
+                  <button className="primary arcade-next-btn" onClick={next}>
+                    Another moment →
+                  </button>
+                </div>
+              )}
+            </article>
+          );
+        })() : (
           <article className="lesson-card">
             <h2>Every question has been revealed.</h2>
             <p>
-              You’ve retired all 700 questions. Your scores and topic coverage
+              You've retired all 700 questions. Your scores and topic coverage
               are saved below.
             </p>
             <a className="primary" href="#explore">
