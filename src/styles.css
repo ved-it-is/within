@@ -2011,6 +2011,8 @@ a {
   color: var(--ink);
   line-height: 1.55;
   cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .lesson-choices button:hover,
 .lesson-choices button[aria-pressed="true"] {
