@@ -10,18 +10,16 @@ export const GLOBAL_CITIES = [
     region: "East Asia",
     facade: {
       metric: "84%",
-      metricLabel: "Conceal stress behind social harmony",
-      description: "Polite smiles and long working hours are expected daily. Showing personal struggle is avoided to maintain group harmony (tatemae).",
-      quote: "“On the crowded morning trains, nobody sighs or complains. Everyone looks at their screens and acts like nothing is hard.”",
-      source: "Japan MHLW / Gallup East Asia Report"
+      metricLabel: "Hide stress so they never burden others",
+      quote: "“Nobody complains on the morning trains. Everyone acts like nothing is hard.”",
+      source: "Japan MHLW / Gallup East Asia"
     },
     within: {
       metric: "82%",
-      metricLabel: "Chronic workplace anxiety & overwork",
-      description: "Carrying immense internal pressure alone, afraid that opening up will burden family, peers, or team members.",
-      bodyCue: "Tight throat, stiff shoulders, smiling when deeply exhausted.",
-      quote: "“Trying to keep everyone happy shouldn't mean ignoring your own pain.”",
-      source: "Japan MHLW White Paper on Workplace Stress"
+      metricLabel: "Carry chronic overwork anxiety in silence",
+      bodyCue: "Tight throat, stiff shoulders, smiling when exhausted",
+      quote: "“Keeping everyone happy shouldn't mean ignoring your own pain.”",
+      source: "Japan MHLW Stress White Paper"
     }
   },
   {
@@ -33,18 +31,16 @@ export const GLOBAL_CITIES = [
     region: "North America",
     facade: {
       metric: "76%",
-      metricLabel: "Pressure to project non-stop productivity",
-      description: "Hustle culture demands relentless momentum. Admitting you're exhausted or uncertain feels like falling behind your peers.",
-      quote: "“Everyone on feeds is 'crushing it'. If you admit you're exhausted or lost, you feel like a failure.”",
-      source: "Deloitte Global Workplace Wellbeing Study"
+      metricLabel: "Pretend they are constantly “crushing it”",
+      quote: "“Everyone on feeds is winning. If you admit you're tired, you feel like a failure.”",
+      source: "Deloitte Global Workplace Wellbeing"
     },
     within: {
       metric: "71%",
-      metricLabel: "Physical symptoms of chronic stress",
-      description: "Worrying that one mistake will unravel your momentum. Experiencing sudden anxiety spikes, sleep disruptions, and racing thoughts.",
-      bodyCue: "Tight chest, shallow breathing, waking up at 3 AM with a racing heart.",
-      quote: "“True confidence doesn't need you to pretend you never get tired.”",
-      source: "American Psychological Association (APA) Stress Report"
+      metricLabel: "Wake up at 3 AM with racing anxiety",
+      bodyCue: "Tight chest, shallow breathing, dreading mistake consequences",
+      quote: "“True confidence doesn't ask you to pretend you never get tired.”",
+      source: "American Psychological Association"
     }
   },
   {
@@ -56,18 +52,16 @@ export const GLOBAL_CITIES = [
     region: "Western Europe",
     facade: {
       metric: "79%",
-      metricLabel: "Say 'I’m fine' with witty deflection",
-      description: "Downplaying personal struggles and laughing off worries with self-deprecating humor so nobody thinks you are making a fuss.",
-      quote: "“Whatever falls apart, we make a joke about the rain, say 'could be worse', and carry on.”",
-      source: "CIPD Health & Wellbeing / YouGov UK"
+      metricLabel: "Laugh off pain and say “I’m fine”",
+      quote: "“Whatever falls apart, we joke about the rain, say 'could be worse', and carry on.”",
+      source: "CIPD Wellbeing & YouGov UK"
     },
     within: {
       metric: "74%",
-      metricLabel: "Felt overwhelmed or unable to cope",
-      description: "Holding feelings inside until emotional numbness sets in. Avoiding asking for support out of fear of burdening others.",
-      bodyCue: "Clenched jaw, stiff neck, feeling emotionally drained after small interactions.",
-      quote: "“Holding everything inside isn't strength; it just locks the pain in your body.”",
-      source: "Mental Health Foundation UK National Study"
+      metricLabel: "Felt so overwhelmed they couldn’t cope",
+      bodyCue: "Clenched jaw, stiff neck, emotional numbness",
+      quote: "“Holding everything inside isn't strength; it locks pain in your body.”",
+      source: "Mental Health Foundation UK"
     }
   },
   {
@@ -79,16 +73,14 @@ export const GLOBAL_CITIES = [
     region: "South Asia",
     facade: {
       metric: "86%",
-      metricLabel: "Expected to agree without complaint",
-      description: "Boundless resilience and putting family and work demands first. Saying 'I can't take on more' is culturally difficult.",
-      quote: "“You are expected to make everyone proud. Saying 'I need time for myself' feels selfish.”",
-      source: "Deloitte Corporate India Mental Health Survey"
+      metricLabel: "Feel it’s selfish to say “no”",
+      quote: "“You're expected to make everyone proud. Taking a break feels like letting them down.”",
+      source: "Deloitte India Workplace Mental Health"
     },
     within: {
       metric: "80%",
-      metricLabel: "Severe workplace burnout & pressure",
-      description: "Nervous knot in the stomach when trying to say no. Carrying multiple family and professional expectations simultaneously.",
-      bodyCue: "Stomach churn, restless sleep, feeling guilty for resting.",
+      metricLabel: "Carry silent burnout in their bodies",
+      bodyCue: "Stomach churn, restless sleep, guilt when resting",
       quote: "“Caring for others shouldn't mean leaving yourself behind.”",
       source: "Deloitte Well-being in Corporate India"
     }
@@ -102,18 +94,16 @@ export const GLOBAL_CITIES = [
     region: "South America",
     facade: {
       metric: "83%",
-      metricLabel: "Compelled to maintain upbeat energy",
-      description: "Warm embraces, animated laughter, and contagious enthusiasm. Showing gloom feels like bringing the entire room down.",
-      quote: "“When everyone is dancing and laughing, having a sad day feels like you're ruining the mood for everyone.”",
-      source: "ISMA-BR / Workplace Culture Observatory"
+      metricLabel: "Force cheerfulness so they don’t spoil the mood",
+      quote: "“When everyone is laughing, having a down day feels like ruining it for everyone.”",
+      source: "ISMA-BR Workplace Culture"
     },
     within: {
       metric: "72%",
-      metricLabel: "Severe chronic stress & burnout symptoms",
-      description: "Facial muscles ache from maintaining a smile. Experiencing emotional fatigue after social events with no quiet space to decompress.",
-      bodyCue: "Heavy chest, tired face muscles, deep physical exhaustion.",
-      quote: "“Allowing yourself to feel sad is the only way real joy ever comes back.”",
-      source: "ISMA-BR National Stress & Burnout Study"
+      metricLabel: "Mentally drained from constant forced joy",
+      bodyCue: "Heavy chest, facial muscle ache, crash after events",
+      quote: "“Allowing yourself to feel down is the only way real joy returns.”",
+      source: "ISMA-BR National Stress Study"
     }
   },
   {
@@ -125,18 +115,16 @@ export const GLOBAL_CITIES = [
     region: "Western Europe",
     facade: {
       metric: "75%",
-      metricLabel: "Emotional reserve behind poise & wit",
-      description: "Discussing dilemmas with intellectual elegance and irony. Avoiding any public display of vulnerability or personal crisis.",
-      quote: "“It's uncool to look fragile or needy. We use clever words and irony so nobody sees our hurt.”",
-      source: "Empreinte Humaine / OpinionWay Observatory"
+      metricLabel: "Shield vulnerability behind wit and sarcasm",
+      quote: "“It's uncool to look needy. We use clever words so nobody sees where it hurts.”",
+      source: "Empreinte Humaine / OpinionWay"
     },
     within: {
       metric: "48%",
-      metricLabel: "High psychological distress or burnout",
-      description: "Using analytical detachment to keep people at arm's length before they can judge you, while quietly craving genuine empathy.",
-      bodyCue: "Lump in the throat, guarded posture, avoiding honest vulnerability.",
-      quote: "“You cannot think your way through an emotion that was meant to be felt.”",
-      source: "French National Occupational Health Survey"
+      metricLabel: "Battle active, silent psychological distress",
+      bodyCue: "Lump in the throat, emotional detachment, guarded posture",
+      quote: "“You cannot think your way through an emotion meant to be felt.”",
+      source: "French Occupational Health Observatory"
     }
   },
   {
@@ -148,18 +136,16 @@ export const GLOBAL_CITIES = [
     region: "Oceania",
     facade: {
       metric: "71%",
-      metricLabel: "Mask distress behind 'No worries' chill",
-      description: "Sunny days, beach banter, and acting like everything rolls off your back. Laughing off personal distress over casual drinks.",
-      quote: "“The motto is 'she'll be right mate'. But when your life feels upside down, you feel silly saying anything.”",
-      source: "Australian Psychological Society (APS)"
+      metricLabel: "Mask distress behind “No worries, mate”",
+      quote: "“The motto is 'she'll be right'. When life feels upside down, you feel silly speaking up.”",
+      source: "Australian Psychological Society"
     },
     within: {
       metric: "64%",
-      metricLabel: "Silent struggles & emotional disconnection",
-      description: "Smiling and making others laugh while quietly feeling completely disconnected, overwhelmed, and alone.",
-      bodyCue: "Grinding teeth at night, tight shoulders, empty feeling inside.",
+      metricLabel: "Fight deep loneliness beneath the banter",
+      bodyCue: "Grinding teeth at night, tight shoulders, empty feeling",
       quote: "“Real strength is saying 'I'm not alright' when the storm gets heavy.”",
-      source: "Black Dog Institute / APS Wellbeing Study"
+      source: "Black Dog Institute / APS Study"
     }
   },
   {
@@ -171,18 +157,16 @@ export const GLOBAL_CITIES = [
     region: "East Africa",
     facade: {
       metric: "78%",
-      metricLabel: "Unshakable pillar everyone leans on",
-      description: "Providing emotional and financial support for extended circles without ever showing doubt, hesitation, or fatigue.",
-      quote: "“Everyone leans on you because you're the strong one. But nobody asks: who is holding the pillar?”",
+      metricLabel: "Stay the strong pillar everyone depends on",
+      quote: "“Everyone leans on you because you're the strong one. But who holds the pillar?”",
       source: "WHO Africa / Kenya Mental Health Taskforce"
     },
     within: {
       metric: "67%",
-      metricLabel: "Exhausted from family breadwinner load",
-      description: "Carrying the emotional and economic weight of extended family with no personal space or permission to rest.",
-      bodyCue: "Heavy body fatigue, lower back ache, feeling quietly overwhelmed.",
-      quote: "“A tree that gives shade to an entire village still needs water for its own roots.”",
-      source: "Kenya National Mental Health Action Plan / WHO"
+      metricLabel: "Depleted from carrying the whole family load",
+      bodyCue: "Deep body fatigue, lower back pain, persistent overwhelm",
+      quote: "“A tree giving shade to the whole village still needs water for its own roots.”",
+      source: "Kenya Mental Health Action Plan"
     }
   }
 ];

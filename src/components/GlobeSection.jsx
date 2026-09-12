@@ -653,12 +653,6 @@ export default function GlobeSection() {
                     {selectedCity.name}, {selectedCity.country}
                   </h3>
                 </div>
-                <div className="city-coords">
-                  <code>
-                    {Math.abs(selectedCity.lat).toFixed(1)}°{selectedCity.lat >= 0 ? "N" : "S"},{" "}
-                    {Math.abs(selectedCity.lon).toFixed(1)}°{selectedCity.lon >= 0 ? "E" : "W"}
-                  </code>
-                </div>
               </div>
 
               {/* Dynamic Perspective Content */}
@@ -668,15 +662,13 @@ export default function GlobeSection() {
                   <div className="metric-banner gold-banner">
                     <div className="metric-score">{selectedCity.facade.metric}</div>
                     <div className="metric-meta">
-                      <span className="metric-type">WHAT PEOPLE SHOW</span>
-                      <strong>{selectedCity.facade.metricLabel}</strong>
+                      <span className="metric-type">WHAT PEOPLE PROJECT</span>
+                      <strong className="metric-loud-headline">{selectedCity.facade.metricLabel}</strong>
                       {selectedCity.facade.source && (
-                        <span className="metric-source">Study: {selectedCity.facade.source}</span>
+                        <span className="metric-source">{selectedCity.facade.source}</span>
                       )}
                     </div>
                   </div>
-
-                  <p className="inspector-simple-desc">{selectedCity.facade.description}</p>
 
                   <div className="inspector-quote-box gold-quote">
                     <p>{selectedCity.facade.quote}</p>
@@ -684,7 +676,7 @@ export default function GlobeSection() {
 
                   <div className="inspector-cta-row">
                     <a className="inspector-action-btn facade-action" href="#diagnostic">
-                      Check Your EQ Archetype →
+                      Discover Your EQ Mask →
                     </a>
                   </div>
                 </div>
@@ -695,22 +687,22 @@ export default function GlobeSection() {
                     <div className="metric-score pink-score">{selectedCity.within.metric}</div>
                     <div className="metric-meta">
                       <span className="metric-type">WHAT PEOPLE TRULY FEEL</span>
-                      <strong>{selectedCity.within.metricLabel}</strong>
+                      <strong className="metric-loud-headline">{selectedCity.within.metricLabel}</strong>
                       {selectedCity.within.source && (
-                        <span className="metric-source">Study: {selectedCity.within.source}</span>
+                        <span className="metric-source">{selectedCity.within.source}</span>
                       )}
                     </div>
                   </div>
 
-                  <p className="inspector-simple-desc">{selectedCity.within.description}</p>
-
-                  <div className="somatic-symptom-box">
-                    <div className="somatic-header">
-                      <span className="somatic-icon">🫀</span>
-                      <strong>Where tension builds up:</strong>
+                  {selectedCity.within.bodyCue && (
+                    <div className="somatic-symptom-box">
+                      <div className="somatic-header">
+                        <span className="somatic-icon">📍</span>
+                        <strong>Where tension builds:</strong>
+                      </div>
+                      <p>{selectedCity.within.bodyCue}</p>
                     </div>
-                    <p>{selectedCity.within.bodyCue}</p>
-                  </div>
+                  )}
 
                   <div className="inspector-quote-box violet-quote">
                     <p>{selectedCity.within.quote}</p>
@@ -718,7 +710,7 @@ export default function GlobeSection() {
 
                   <div className="inspector-cta-row">
                     <a className="inspector-action-btn" href="#tracker">
-                      Log How You Feel Today →
+                      Track Your Body Cues →
                     </a>
                   </div>
                 </div>
