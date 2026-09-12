@@ -6813,3 +6813,325 @@ a {
     flex-direction: column;
   }
 }
+
+/* ========================================================
+   NEW USER GUIDE / ORIENTATION SECTION
+   ======================================================== */
+.user-guide-section {
+  margin: 50px 0 30px;
+  scroll-margin-top: 40px;
+}
+
+.user-guide-wrapper {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(24px, 4vw, 42px);
+  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.05);
+}
+
+.user-guide-header {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.guide-kicker-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.guide-title {
+  font: 800 clamp(1.8rem, 3.2vw, 2.4rem)/1.2 Manrope, sans-serif;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+  margin: 0 0 10px;
+}
+
+.guide-lead {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Guide Mode Switch */
+.guide-mode-switch {
+  display: inline-flex;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 12px;
+  gap: 4px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.guide-switch-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.88rem;
+  font-weight: 650;
+  color: var(--muted);
+  padding: 9px 18px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.guide-switch-btn.is-active {
+  background: white;
+  color: var(--ink);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 4-Step Journey Grid */
+.guide-path-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.guide-step-card {
+  background: #ffffff;
+  border: 1.5px solid var(--line);
+  border-radius: 20px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guide-step-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--step-color);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.step-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.step-number-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--step-color);
+  background: var(--step-tint);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.step-time-tag {
+  font-size: 0.74rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.step-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.step-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.step-badge {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  color: var(--step-color);
+  letter-spacing: 0.05em;
+}
+
+.step-name {
+  font: 800 1.22rem/1.25 Manrope, sans-serif;
+  color: var(--ink);
+  margin: 2px 0 0;
+  letter-spacing: -0.015em;
+}
+
+.step-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.step-desc-block strong {
+  display: block;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.step-desc-block p {
+  margin: 0;
+}
+
+.step-card-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+}
+
+.step-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--step-color);
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.step-action-link:hover {
+  transform: translateX(3px);
+  text-decoration: underline;
+}
+
+/* Goal-Based Quick Match */
+.guide-goal-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 24px;
+  margin-top: 24px;
+  align-items: stretch;
+}
+
+.goal-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.goal-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  padding: 16px 18px;
+  border-radius: 16px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.goal-btn:hover {
+  border-color: #cbd5e1;
+  background: #ffffff;
+}
+
+.goal-btn.is-selected {
+  background: #ffffff;
+  border-color: #6366f1;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.12);
+}
+
+.goal-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.goal-label {
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.goal-result-card {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 80%);
+  border: 1.5px solid #c7d2fe;
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goal-rec-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4f46e5;
+  background: #e0e7ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.goal-rec-action-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.goal-rec-icon {
+  font-size: 2rem;
+}
+
+.goal-rec-title {
+  font: 800 1.45rem/1.25 Manrope, sans-serif;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.goal-rec-text {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 16px 0 24px;
+}
+
+.goal-cta-btn {
+  display: inline-block;
+}
+
+/* Hero Guide Pill Highlight */
+.hero-guide-pill {
+  background: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+  color: #15803d !important;
+  font-weight: 650 !important;
+}
+
+.hero-guide-pill:hover {
+  background: #dcfce7 !important;
+}
+
+/* Sidebar Guide Link Accent */
+.nav-guide-link {
+  color: #4f46e5 !important;
+  font-weight: 650 !important;
+}
+
+.nav-guide-link:hover {
+  background: #eef2ff !important;
+}
+
+@media (max-width: 900px) {
+  .guide-goal-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

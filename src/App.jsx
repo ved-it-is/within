@@ -10,6 +10,7 @@ import EmotionalIntelligencePage from "./components/EmotionalIntelligencePage";
 import EmotionTrackerPage from "./components/EmotionTrackerPage";
 import DiagnosticPage from "./components/DiagnosticPage";
 import ProfilePage from "./components/ProfilePage";
+import NewUserGuide from "./components/NewUserGuide";
 import {
   readProgress,
   saveProgress,
@@ -233,6 +234,9 @@ function WithinApp() {
                     🧭 Take 3-Min EQ Baseline →
                   </a>
                   <div className="hero-secondary-row">
+                    <a className="hero-pill-link hero-guide-pill" href="#guide">
+                      🧭 Where to start?
+                    </a>
                     <a className="hero-pill-link" href="#tracker">
                       📊 Daily Tracker
                     </a>
@@ -246,6 +250,7 @@ function WithinApp() {
                 </div>
               </div>
             </section>
+            <NewUserGuide />
             <GlobeSection />
             <PeopleCarousel />
             <JourneyExperience
