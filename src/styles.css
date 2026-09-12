@@ -4719,6 +4719,570 @@ a {
   background: #f8fafc;
 }
 
+/* ========================================================
+   3D BRAIN INTERACTIVE SECTION
+   ======================================================== */
+.brain-interactive-section {
+  margin: 60px 0;
+}
+
+.brain-stage-row {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 28px;
+}
+
+.brain-canvas-card {
+  background: radial-gradient(circle at 50% 40%, #151a38 0%, #080b18 100%);
+  border: 1px solid #2e3658;
+  border-radius: 26px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 50px rgba(8, 11, 24, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.brain-canvas-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  cursor: grab;
+}
+
+.brain-canvas-container:active {
+  cursor: grabbing;
+}
+
+.brain-canvas-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.brain-fallback-msg {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: #a5b4fc;
+  font-weight: 600;
+}
+
+.brain-hud-controls {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.brain-gesture-hint {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  color: #c7d2fe;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.brain-pills-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brain-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.brain-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.brain-pill-btn.is-active {
+  background: var(--region-color);
+  border-color: var(--region-color);
+  color: #ffffff;
+  box-shadow: 0 4px 14px -2px var(--region-color);
+}
+
+.pill-beacon-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--region-color, #818cf8);
+}
+
+/* Brain Region Inspector Card */
+.brain-inspector-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.brain-region-card {
+  background: #ffffff;
+  border: 1.5px solid var(--region-accent, #6366f1);
+  border-radius: 26px;
+  padding: 26px 28px;
+  box-shadow: 0 16px 45px rgba(99, 102, 241, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.brain-card-header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+}
+
+.brain-region-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--region-accent);
+  background: var(--region-tint);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.brain-region-name {
+  font: 800 1.5rem/1.25 Manrope, sans-serif;
+  color: var(--ink);
+  margin: 0 0 4px;
+  letter-spacing: -0.02em;
+}
+
+.brain-region-subtitle {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0;
+  font-weight: 550;
+}
+
+.brain-card-block {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #334155;
+}
+
+.brain-card-block strong {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+  color: var(--ink);
+}
+
+.brain-card-block p {
+  margin: 0;
+}
+
+.brain-card-block.stress-block {
+  background: #fff7ed;
+  border-left: 3px solid #f97316;
+  padding: 10px 14px;
+  border-radius: 0 10px 10px 0;
+}
+
+.brain-card-block.stress-block strong {
+  color: #c2410c;
+}
+
+.brain-card-block.eq-move-block {
+  background: #f0fdf4;
+  border-left: 3px solid #22c55e;
+  padding: 10px 14px;
+  border-radius: 0 10px 10px 0;
+}
+
+.brain-card-block.eq-move-block strong {
+  color: #15803d;
+}
+
+.brain-card-quote {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.brain-card-quote p {
+  margin: 0;
+}
+
+/* ========================================================
+   SOMATIC EMOTION MAPPING TABLE SECTION
+   ======================================================== */
+.somatic-table-section {
+  margin: 60px 0;
+}
+
+.somatic-heading-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.pnas-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 3px 9px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.somatic-view-switch {
+  display: inline-flex;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 12px;
+  gap: 4px;
+  margin-top: 18px;
+}
+
+.somatic-switch-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 8px 16px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.somatic-switch-btn.is-active {
+  background: white;
+  color: var(--ink);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Somatic Interactive Wrap */
+.somatic-interactive-wrap {
+  margin-top: 24px;
+}
+
+.somatic-emotion-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.somatic-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid var(--line);
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 650;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.somatic-tab-btn:hover {
+  border-color: #cbd5e1;
+  color: var(--ink);
+}
+
+.somatic-tab-btn.is-active {
+  background: var(--emotion-accent);
+  border-color: var(--emotion-accent);
+  color: white;
+  box-shadow: 0 4px 14px -2px var(--emotion-accent);
+}
+
+/* Active Somatic Card */
+.somatic-active-card {
+  background: white;
+  border: 1.5px solid var(--emotion-accent);
+  border-radius: 26px;
+  padding: 30px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.somatic-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
+}
+
+.somatic-title-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.somatic-card-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.somatic-source-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--emotion-accent);
+  letter-spacing: 0.06em;
+}
+
+.somatic-card-title {
+  font: 800 1.6rem/1.2 Manrope, sans-serif;
+  color: var(--ink);
+  margin: 2px 0 0;
+  letter-spacing: -0.02em;
+}
+
+.somatic-study-cite {
+  font-size: 0.8rem;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 5px 12px;
+  border-radius: 8px;
+}
+
+/* Hotspots Panel */
+.somatic-hotspots-panel {
+  background: var(--emotion-tint);
+  border: 1px solid var(--emotion-accent);
+  padding: 16px 20px;
+  border-radius: 16px;
+}
+
+.hotspot-header-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--emotion-accent);
+  margin-bottom: 10px;
+}
+
+.hotspot-tags-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hotspot-tag {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.somatic-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.somatic-detail-block {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 16px 18px;
+  border-radius: 16px;
+}
+
+.somatic-detail-block strong {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 750;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.somatic-detail-block p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #475569;
+}
+
+.somatic-experience-block {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.somatic-experience-block strong {
+  color: var(--ink);
+  margin-right: 6px;
+}
+
+.somatic-experience-block p {
+  margin: 6px 0 0;
+}
+
+.somatic-reset-card {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 80%);
+  border: 1.5px solid #86efac;
+  border-radius: 18px;
+  padding: 18px 22px;
+}
+
+.reset-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #15803d;
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.reset-card-body {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #166534;
+}
+
+/* Full Scientific Table */
+.somatic-full-table-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.05);
+  margin-top: 24px;
+}
+
+.somatic-table-scroller {
+  overflow-x: auto;
+}
+
+.somatic-concrete-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 680px;
+}
+
+.somatic-concrete-table th {
+  background: #f8fafc;
+  padding: 14px 18px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  border-bottom: 1px solid var(--line);
+}
+
+.somatic-concrete-table td {
+  padding: 18px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #334155;
+}
+
+.table-emotion-cell {
+  white-space: nowrap;
+}
+
+.table-emotion-cell strong {
+  display: block;
+  color: var(--ink);
+  margin-top: 4px;
+}
+
+.table-emotion-icon {
+  font-size: 1.6rem;
+}
+
+.table-hotspots-cell ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.table-hotspots-cell li {
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+}
+
+.table-mechanism-cell p,
+.table-reset-cell p {
+  margin: 0;
+}
+
+.somatic-table-footer {
+  padding: 12px 18px;
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .brain-stage-row {
+    grid-template-columns: 1fr;
+  }
+  .somatic-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Practice Perks */
 .practice-perks-grid {
   display: grid;

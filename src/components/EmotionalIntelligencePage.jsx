@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import BrainSection from "./BrainSection";
+import SomaticEmotionTable from "./SomaticEmotionTable";
 
 const PILLARS = [
   {
@@ -287,6 +289,9 @@ export default function EmotionalIntelligencePage({ unlocked }) {
           </article>
         </section>
 
+        {/* 3D Interactive Brain Explorer */}
+        <BrainSection />
+
         {/* The Neuroscience & The 90-Second Rule */}
         <section className="eq-neuroscience-section">
           <div className="neuro-card">
@@ -336,6 +341,9 @@ export default function EmotionalIntelligencePage({ unlocked }) {
             </div>
           </div>
         </section>
+
+        {/* Real Scientific Somatic Bodily Mapping Table */}
+        <SomaticEmotionTable />
 
         {/* Why Practice Beats Reading */}
         <section className="eq-why-practice">
