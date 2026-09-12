@@ -91,6 +91,16 @@ const DOMAIN_COLORS = {
   decisions:     { bg: "#f8fafc", text: "#475569", border: "#cbd5e1" },
 };
 
+const TAGLINES = [
+  "What would you actually do here?",
+  "Real moments. Honest choices.",
+  "Practice the thing most people skip.",
+  "Where curiosity beats certainty.",
+  "One moment at a time.",
+  "Small decisions. Big patterns.",
+  "Think it through — there's no rush.",
+];
+
 export default function ArcadePage() {
   const [progress, setProgress] = useState(readArcade);
   const [storageAvailable, setStorageAvailable] = useState(true);
@@ -110,6 +120,7 @@ export default function ArcadePage() {
   const [answeredChoice, setAnsweredChoice] = useState(null);
 
   const heading = useRef(null);
+  const taglineRef = useRef(TAGLINES[Math.floor(Math.random() * TAGLINES.length)]);
 
   useEffect(() => {
     setStorageAvailable(saveArcade(progress));
@@ -216,10 +227,7 @@ export default function ArcadePage() {
         <header className="chapter-browser-heading">
           <span className="kicker">Arcade · Endless practice</span>
           <h1>Small choices. Fresh perspectives.</h1>
-          <p>
-            Real-life moments, a little curiosity, and room to try again. Where
-            will the next question take you?
-          </p>
+          <p>{taglineRef.current}</p>
         </header>
 
         {/* EQ Level Progression Bar */}
@@ -278,52 +286,41 @@ export default function ArcadePage() {
           </div>
         )}
 
-        {/* Top Display Grid with Streak Card (Accent Background) */}
-        <div className="arcade-display-grid">
-          <article className={`arcade-display-card streak-card accent-background ${streakTier.glowClass}`}>
-            <div className="streak-top-row">
-              <span className="streak-kicker">{streakTier.icon} Streak</span>
-              {streakTier.badge ? (
-                <span className={`streak-badge streak-badge-${streakTier.tier}`}>
-                  {streakTier.badge}
-                </span>
-              ) : streak >= 1 ? (
-                <span className="streak-badge streak-badge-active">Active</span>
-              ) : null}
-            </div>
-            <strong className="streak-number">{streak}</strong>
-            <span className="streak-caption">
-              {streak >= 10
-                ? "2.0x Double XP active! Unstoppable flow!"
-                : streak >= 5
-                ? "1.5x Flow active! You're in the zone!"
-                : streak >= 3
-                ? "1.2x Flame active! Heat is building up!"
-                : streak === 1
-                ? "1 consecutive correct answer"
-                : `${streak} consecutive correct answers`}
-            </span>
-          </article>
+        {/* Streak Card */}
+        <article className={`arcade-display-card streak-card accent-background ${streakTier.glowClass}`}>
+          <div className="streak-top-row">
+            <span className="streak-kicker">{streakTier.icon} Streak</span>
+            {streakTier.badge ? (
+              <span className={`streak-badge streak-badge-${streakTier.tier}`}>
+                {streakTier.badge}
+              </span>
+            ) : streak >= 1 ? (
+              <span className="streak-badge streak-badge-active">Active</span>
+            ) : null}
+          </div>
+          <strong className="streak-number">{streak}</strong>
+          <span className="streak-caption">
+            {streak >= 10
+              ? "2.0x Double XP active! Unstoppable flow!"
+              : streak >= 5
+              ? "1.5x Flow active! You're in the zone!"
+              : streak >= 3
+              ? "1.2x Flame active! Heat is building up!"
+              : streak === 1
+              ? "1 correct in a row"
+              : streak === 0
+              ? "Answer correctly to start a streak"
+              : `${streak} correct in a row`}
+          </span>
+        </article>
 
-          <article className="arcade-display-card">
-            <div className="streak-top-row">
-              <span className="stat-kicker">Lifetime Points</span>
-            </div>
-            <strong className="stat-number">{score.points}</strong>
-            <span className="stat-caption">10 pts per first-attempt match</span>
-          </article>
-
-          <article className="arcade-display-card">
-            <div className="streak-top-row">
-              <span className="stat-kicker">First-Answer Accuracy</span>
-            </div>
-            <strong className="stat-number">
-              {score.accuracy === null ? "—" : `${score.accuracy}%`}
-            </strong>
-            <span className="stat-caption">
-              {score.seen} of 700 questions encountered
-            </span>
-          </article>
+        {/* Compact inline stats */}
+        <div className="arcade-stats-strip">
+          <span>{score.points} XP</span>
+          <span className="arcade-stats-divider">·</span>
+          <span>{score.accuracy === null ? "—" : `${score.accuracy}%`} accuracy</span>
+          <span className="arcade-stats-divider">·</span>
+          <span>{questionsAnswered.length} this session</span>
         </div>
 
         {question ? (() => {
@@ -331,23 +328,6 @@ export default function ArcadePage() {
           const domainColor = DOMAIN_COLORS[domain?.id] || DOMAIN_COLORS.decisions;
           return (
             <article className="lesson-card arcade-play arcade-card-enter" key={questionKey}>
-              {/* Color-coded domain pill */}
-              <div className="arcade-domain-row">
-                <span
-                  className="arcade-domain-pill"
-                  style={{
-                    background: domainColor.bg,
-                    color: domainColor.text,
-                    borderColor: domainColor.border,
-                  }}
-                >
-                  {domain?.label || "EQ Practice"}
-                </span>
-                <span className="arcade-encounter-count">
-                  {score.seen} / 700
-                </span>
-              </div>
-
               <h2 ref={heading} tabIndex={-1} className="arcade-situation">
                 {question.situation}
               </h2>
@@ -390,7 +370,10 @@ export default function ArcadePage() {
               </div>
 
               {feedback && (
-                <div className="practice-feedback arcade-feedback-reveal" role="status">
+                <div
+                  className={`practice-feedback arcade-feedback-reveal outcome-${feedback.outcome === "matched" ? "correct" : "retry"}`}
+                  role="status"
+                >
                   <div className="arcade-feedback-header">
                     <span className={`arcade-feedback-icon ${feedback.outcome === "matched" ? "correct" : "retry"}`}>
                       {feedback.outcome === "matched" ? "✓" : "↩"}
@@ -405,9 +388,21 @@ export default function ArcadePage() {
                     <b>{question.choices[question.correctIndex]}</b>
                   </p>
                   <p className="arcade-feedback-explanation">{question.explanation}</p>
-                  <button className="primary arcade-next-btn" onClick={next}>
-                    Another moment →
-                  </button>
+                  <div className="arcade-feedback-footer">
+                    <span
+                      className="arcade-domain-pill"
+                      style={{
+                        background: domainColor.bg,
+                        color: domainColor.text,
+                        borderColor: domainColor.border,
+                      }}
+                    >
+                      {domain?.label || "EQ Practice"}
+                    </span>
+                    <button className="primary arcade-next-btn" onClick={next}>
+                      {feedback.outcome === "matched" ? "Keep going →" : "Got it →"}
+                    </button>
+                  </div>
                 </div>
               )}
             </article>
