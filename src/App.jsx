@@ -10,7 +10,6 @@ import EmotionalIntelligencePage from "./components/EmotionalIntelligencePage";
 import EmotionTrackerPage from "./components/EmotionTrackerPage";
 import DiagnosticPage from "./components/DiagnosticPage";
 import ProfilePage from "./components/ProfilePage";
-import NewUserGuide from "./components/NewUserGuide";
 import AppOnboardingModal from "./components/AppOnboardingModal";
 import {
   readProgress,
@@ -275,7 +274,6 @@ function WithinApp() {
                 </div>
               </div>
             </section>
-            <NewUserGuide />
             <GlobeSection />
             <PeopleCarousel />
             <JourneyExperience
