@@ -73,15 +73,13 @@ export default function ChapterPractice({
           </span>
           <h1>{chapter.title}</h1>
           <p className="practice-intro">
-            10 questions. Learn through your choices. Questions to practise
-            again return after the others; “I don’t know” reveals the answer and
-            removes that question from this session.
+            10 real-life scenarios. Choose the response that fits best.
           </p>
         </header>
 
         {!storageAvailable && (
           <p className="notice" role="status">
-            Progress can’t be saved in this browser. Keep this page open to
+            Progress can't be saved in this browser. Keep this page open to
             continue this session.
           </p>
         )}
@@ -89,11 +87,9 @@ export default function ChapterPractice({
         <div className="practice-progress">
           <div>
             <strong>
-              {settled} of {questions.length} questions finished
+              {settled} of {questions.length} done
             </strong>
-            <span>
-              {counts.matched} matched · {counts.revealed} revealed
-            </span>
+            <span>{counts.matched} correct · {counts.revealed} revealed</span>
           </div>
           <ol aria-label="Question progress">
             {questions.map((item, index) => (
@@ -105,9 +101,9 @@ export default function ChapterPractice({
                   session.outcomes[item.id] === "matched"
                     ? "answered correctly"
                     : session.outcomes[item.id] === "revealed"
-                    ? "answer revealed; will not repeat"
+                    ? "answer revealed"
                     : session.outcomes[item.id] === "retry"
-                    ? "will return for practice"
+                    ? "coming back"
                     : "not answered"
                 }`}
               >
@@ -121,7 +117,7 @@ export default function ChapterPractice({
           <div className="lesson-card practice-summary">
             <span className="kicker">Session complete</span>
             <h2 ref={heading} tabIndex={-1}>
-              You’ve worked through this set.
+              You've worked through this set.
             </h2>
             <div className="practice-totals">
               <div>
@@ -133,10 +129,6 @@ export default function ChapterPractice({
                 <span>answers revealed</span>
               </div>
             </div>
-            <p>
-              Revealed questions are not counted as correct answers. They did
-              not repeat, and no replacement questions were added.
-            </p>
             <p className="lesson-help">
               This is a record of this practice session, not an EQ score or a
               judgment of you.
@@ -162,10 +154,6 @@ export default function ChapterPractice({
             >
               Practise this set again
             </button>
-            <p className="lesson-help">
-              Starts a new session with all ten questions. Your chapter
-              completion stays saved.
-            </p>
           </div>
         ) : (
           <div className="lesson-card">
@@ -207,51 +195,36 @@ export default function ChapterPractice({
                   )}
                 </button>
               ))}
-              <button
-                className="uncertain-choice"
-                disabled={!!feedback}
-                aria-pressed={feedback?.choice === "unknown"}
-                onClick={() => answer("unknown")}
-              >
-                I don’t know
-              </button>
             </div>
             {feedback && (
               <div
-                className={`lesson-perspective practice-feedback ${feedback.outcome}`}
+                className={`lesson-perspective practice-feedback chapter-feedback-${feedback.outcome === "matched" ? "correct" : "retry"}`}
                 role="status"
               >
                 <strong>
                   {feedback.outcome === "matched"
                     ? "That fits this skill."
-                    : feedback.outcome === "revealed"
-                    ? "Here’s the answer to learn from."
-                    : "Let’s revisit this one."}
+                    : "Let's look at another approach."}
                 </strong>
                 <p>
                   <b>Best fit:</b> {question.choices[question.correctIndex]}
                 </p>
                 {question.kind === "action" && <p>{question.explanation}</p>}
-                <small>
-                  {feedback.outcome === "matched"
-                    ? "This question is finished for this session."
-                    : feedback.outcome === "revealed"
-                    ? "This question will not return in this session. No replacement will be added."
-                    : "This choice doesn’t match the skill this question is practising. The same question will return after the other queued questions."}
-                </small>
               </div>
             )}
             <div className="lesson-actions">
               <a className="text-link" href="#explore">
-                Pause & return to chapters
+                Pause &amp; return to chapters
               </a>
               {feedback && (
                 <button className="primary" onClick={advance}>
                   {session.queue.length === 1
                     ? feedback.outcome === "retry"
-                      ? "Try this question again →"
-                      : "See session summary →"
-                    : "Next question →"}
+                      ? "Try again →"
+                      : "See summary →"
+                    : feedback.outcome === "matched"
+                    ? "Keep going →"
+                    : "Got it →"}
                 </button>
               )}
             </div>

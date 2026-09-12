@@ -2304,6 +2304,15 @@ a {
   background: #eafff6;
   border-color: #279477;
 }
+/* Chapter practice outcome classes */
+.chapter-feedback-correct {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 60%);
+  border-left: 3px solid #22c55e;
+}
+.chapter-feedback-retry {
+  background: linear-gradient(135deg, #fffbeb 0%, #ffffff 60%);
+  border-left: 3px solid #f59e0b;
+}
 .practice-totals {
   display: grid;
   grid-template-columns: 1fr 1fr;
