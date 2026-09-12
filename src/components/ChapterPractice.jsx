@@ -195,6 +195,14 @@ export default function ChapterPractice({
                   )}
                 </button>
               ))}
+              <button
+                className="uncertain-choice"
+                disabled={!!feedback}
+                aria-pressed={feedback?.choice === "unknown"}
+                onClick={() => answer("unknown")}
+              >
+                I don't know
+              </button>
             </div>
             {feedback && (
               <div

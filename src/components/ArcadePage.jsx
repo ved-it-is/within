@@ -349,11 +349,8 @@ export default function ArcadePage() {
                       className={`arcade-choice-btn${isRight ? " practice-answer" : ""}${wasWrong ? " arcade-choice-wrong" : ""}`}
                       onClick={() => handleAnswer(index)}
                     >
-                      <span
-                        className={`arcade-letter${isRight ? " arcade-letter-correct" : ""}${wasWrong ? " arcade-letter-wrong" : ""}`}
-                        aria-hidden="true"
-                      >
-                        {isRight ? "✓" : wasWrong ? "✗" : String.fromCharCode(65 + index)}
+                      <span className="arcade-letter" aria-hidden="true">
+                        {String.fromCharCode(65 + index)}
                       </span>
                       <span>{choice}</span>
                       {floatingXp && floatingXp.choiceIndex === index && (
@@ -367,6 +364,13 @@ export default function ArcadePage() {
                     </button>
                   );
                 })}
+                <button
+                  className="uncertain-choice"
+                  disabled={!!feedback || answeredChoice !== null}
+                  onClick={() => handleAnswer("unknown")}
+                >
+                  I don't know
+                </button>
               </div>
 
               {feedback && (

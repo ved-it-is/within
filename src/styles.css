@@ -3263,33 +3263,21 @@ a {
   transition: background 0.18s, color 0.18s, border-color 0.18s;
 }
 
-/* ✓ Correct badge */
-.arcade-letter-correct {
-  background: #10b981;
-  border-color: #10b981;
-  color: white;
-  font-size: 1.1rem;
+/* Correct answer — green left border on the button, letter stays neutral */
+.arcade-play .lesson-choices .practice-answer {
+  background: #f0fdf4 !important;
+  border-color: #86efac !important;
+  border-left: 4px solid #22c55e !important;
 }
 
-/* ✗ Wrong badge */
-.arcade-letter-wrong {
-  background: #ef4444;
-  border-color: #ef4444;
-  color: white;
-  font-size: 1.1rem;
-}
-
-/* Wrong choice button styling */
+/* Wrong chosen answer — red left border, light red bg */
 .arcade-choice-wrong {
   background: #fff5f5 !important;
   border-color: #fca5a5 !important;
-  opacity: 0.85;
+  border-left: 4px solid #ef4444 !important;
+  opacity: 0.9;
 }
 
-.arcade-play .lesson-choices .practice-answer {
-  background: #e4f8ef !important;
-  border-color: #8dc6af;
-}
 .arcade-play .lesson-choices button[aria-pressed="true"] {
   outline: 2px solid #9e87ce;
   outline-offset: 2px;
@@ -4099,7 +4087,7 @@ a {
   background: white;
   border: 1px solid var(--line, #e2e8f0);
   border-radius: 16px;
-  padding: 16px 20px;
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -4139,16 +4127,16 @@ a {
 
 .streak-number {
   display: block;
-  font: 700 clamp(1.7rem, 2.8vw, 2.3rem)/1.1 Manrope, sans-serif;
+  font: 700 clamp(1.2rem, 2vw, 1.6rem)/1.1 Manrope, sans-serif;
   color: #9a3412;
-  margin: 8px 0 4px;
-  letter-spacing: -0.035em;
+  margin: 6px 0 2px;
+  letter-spacing: -0.03em;
 }
 
 .streak-caption {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #9a3412;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .stat-kicker {
