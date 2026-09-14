@@ -81,15 +81,6 @@ function CollapseIcon() {
   );
 }
 
-function GuideIcon() {
-  return (
-    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="12" cy="12" r="10" />
-      <polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2" fill="currentColor" fillOpacity="0.2" />
-    </svg>
-  );
-}
-
 export default function Sidebar({
   unlocked,
   page,
@@ -148,15 +139,6 @@ export default function Sidebar({
           >
             <span className="nav-icon-wrap"><HomeIcon /></span>
             <span className="sidebar-label">Home</span>
-          </a>
-          <a
-            className="nav-link nav-guide-link"
-            href="#tour"
-            onClick={onNavigate}
-            title="App Tour / Onboarding Walkthrough"
-          >
-            <span className="nav-icon-wrap"><GuideIcon /></span>
-            <span className="sidebar-label">App Tour / Guide</span>
           </a>
         </div>
 

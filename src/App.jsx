@@ -254,13 +254,6 @@ function WithinApp() {
                     🧭 Take 3-Min EQ Baseline →
                   </a>
                   <div className="hero-secondary-row">
-                    <button
-                      type="button"
-                      className="hero-pill-link hero-guide-pill"
-                      onClick={() => setOnboardingOpen(true)}
-                    >
-                      🧭 App Tour / Where to start?
-                    </button>
                     <a className="hero-pill-link" href="#tracker">
                       📊 Daily Tracker
                     </a>
